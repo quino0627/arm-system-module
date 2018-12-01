@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ALU
-Thu Nov 29 17:56:47 2018
+Fri Nov 30 05:50:29 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -42,13 +42,13 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Nov 29 17:56:47 2018        ;
+; Analysis & Synthesis Status        ; Successful - Fri Nov 30 05:50:29 2018        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; ALU                                          ;
 ; Top-level Entity Name              ; ALU                                          ;
 ; Family                             ; Cyclone II                                   ;
-; Total logic elements               ; 32                                           ;
-;     Total combinational functions  ; 32                                           ;
+; Total logic elements               ; 129                                          ;
+;     Total combinational functions  ; 129                                          ;
 ;     Dedicated logic registers      ; 0                                            ;
 ; Total registers                    ; 0                                            ;
 ; Total pins                         ; 102                                          ;
@@ -149,13 +149,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                            ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                        ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------+
-; ALU.v                            ; yes             ; User Verilog HDL File  ; C:/Users/송동욱학부재학컴퓨터학과/Desktop/ALU/ALU.v ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                     ;
++----------------------------------+-----------------+------------------------+----------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                 ;
++----------------------------------+-----------------+------------------------+----------------------------------------------+
+; ALU.v                            ; yes             ; User Verilog HDL File  ; C:/GitRepository/arm-system-module/ALU/ALU.v ;
++----------------------------------+-----------------+------------------------+----------------------------------------------+
 
 
 +-------------------------------------------------------------+
@@ -163,27 +163,27 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+---------------+
 ; Resource                                    ; Usage         ;
 +---------------------------------------------+---------------+
-; Estimated Total logic elements              ; 32            ;
+; Estimated Total logic elements              ; 129           ;
 ;                                             ;               ;
-; Total combinational functions               ; 32            ;
+; Total combinational functions               ; 129           ;
 ; Logic element usage by number of LUT inputs ;               ;
 ;     -- 4 input functions                    ; 32            ;
-;     -- 3 input functions                    ; 0             ;
-;     -- <=2 input functions                  ; 0             ;
+;     -- 3 input functions                    ; 63            ;
+;     -- <=2 input functions                  ; 34            ;
 ;                                             ;               ;
 ; Logic elements by mode                      ;               ;
-;     -- normal mode                          ; 32            ;
-;     -- arithmetic mode                      ; 0             ;
+;     -- normal mode                          ; 97            ;
+;     -- arithmetic mode                      ; 32            ;
 ;                                             ;               ;
 ; Total registers                             ; 0             ;
 ;     -- Dedicated logic registers            ; 0             ;
 ;     -- I/O registers                        ; 0             ;
 ;                                             ;               ;
 ; I/O pins                                    ; 102           ;
-; Maximum fan-out node                        ; ALUControl[1] ;
-; Maximum fan-out                             ; 32            ;
-; Total fan-out                               ; 160           ;
-; Average fan-out                             ; 1.19          ;
+; Maximum fan-out node                        ; ALUControl[0] ;
+; Maximum fan-out                             ; 65            ;
+; Total fan-out                               ; 417           ;
+; Average fan-out                             ; 1.81          ;
 +---------------------------------------------+---------------+
 
 
@@ -192,7 +192,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |ALU                       ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 102  ; 0            ; |ALU                ; work         ;
+; |ALU                       ; 129 (129)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 102  ; 0            ; |ALU                ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -227,13 +227,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu Nov 29 17:56:46 2018
+    Info: Processing started: Fri Nov 30 05:50:28 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU -c ALU
 Info: Found 1 design units, including 1 entities, in source file alu.v
     Info: Found entity 1: ALU
 Warning (10236): Verilog HDL Implicit Net warning at ALU.v(30): created implicit net for "ALUflags"
 Info: Elaborating entity "ALU" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at ALU.v(30): object "ALUflags" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at ALU.v(19): truncated value with size 33 to match size of target (32)
 Warning (10230): Verilog HDL assignment warning at ALU.v(30): truncated value with size 4 to match size of target (1)
 Warning (10034): Output port "ALUFlags" at ALU.v(7) has no driver
 Warning: Output pins are stuck at VCC or GND
@@ -241,14 +242,14 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "ALUFlags[1]" is stuck at GND
     Warning (13410): Pin "ALUFlags[2]" is stuck at GND
     Warning (13410): Pin "ALUFlags[3]" is stuck at GND
-Info: Generated suppressed messages file C:/Users/송동욱학부재학컴퓨터학과/Desktop/ALU/ALU.map.smsg
-Info: Implemented 134 device resources after synthesis - the final resource count might be different
+Info: Generated suppressed messages file C:/GitRepository/arm-system-module/ALU/ALU.map.smsg
+Info: Implemented 231 device resources after synthesis - the final resource count might be different
     Info: Implemented 66 input pins
     Info: Implemented 36 output pins
-    Info: Implemented 32 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 229 megabytes
-    Info: Processing ended: Thu Nov 29 17:56:47 2018
+    Info: Implemented 129 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 230 megabytes
+    Info: Processing ended: Fri Nov 30 05:50:29 2018
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
@@ -256,6 +257,6 @@ Info: Quartus II Analysis & Synthesis was successful. 0 errors, 9 warnings
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/송동욱학부재학컴퓨터학과/Desktop/ALU/ALU.map.smsg.
+The suppressed messages can be found in C:/GitRepository/arm-system-module/ALU/ALU.map.smsg.
 
 

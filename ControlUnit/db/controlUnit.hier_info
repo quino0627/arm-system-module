@@ -1,0 +1,163 @@
+|controlUnit
+clk => clk.IN1
+reset => reset.IN1
+Instr[12] => Instr[12].IN1
+Instr[13] => Instr[13].IN1
+Instr[14] => Instr[14].IN1
+Instr[15] => Instr[15].IN1
+Instr[16] => ~NO_FANOUT~
+Instr[17] => ~NO_FANOUT~
+Instr[18] => ~NO_FANOUT~
+Instr[19] => ~NO_FANOUT~
+Instr[20] => Instr[20].IN1
+Instr[21] => Instr[21].IN1
+Instr[22] => Instr[22].IN1
+Instr[23] => Instr[23].IN1
+Instr[24] => Instr[24].IN1
+Instr[25] => Instr[25].IN1
+Instr[26] => Instr[26].IN1
+Instr[27] => Instr[27].IN1
+Instr[28] => Instr[28].IN1
+Instr[29] => Instr[29].IN1
+Instr[30] => Instr[30].IN1
+Instr[31] => Instr[31].IN1
+ALUFlags[0] => ALUFlags[0].IN1
+ALUFlags[1] => ALUFlags[1].IN1
+ALUFlags[2] => ALUFlags[2].IN1
+ALUFlags[3] => ALUFlags[3].IN1
+RegSrc[0] <= decoder:dec.RegSrc
+RegSrc[1] <= decoder:dec.RegSrc
+RegWrite <= condlogic:cl.RegWrite
+ImmSrc[0] <= decoder:dec.ImmSrc
+ImmSrc[1] <= decoder:dec.ImmSrc
+ALUSrc <= decoder:dec.ALUSrc
+ALUControl[0] <= decoder:dec.ALUControl
+ALUControl[1] <= decoder:dec.ALUControl
+MemWrite <= condlogic:cl.MemWrite
+MemtoReg <= decoder:dec.MemtoReg
+PCSrc <= condlogic:cl.PCSrc
+
+
+|controlUnit|decoder:dec
+Op[0] => Mux3.IN5
+Op[0] => Mux4.IN5
+Op[0] => Mux5.IN4
+Op[0] => Mux6.IN5
+Op[0] => Mux7.IN5
+Op[0] => Mux8.IN4
+Op[0] => Mux9.IN5
+Op[1] => Mux3.IN4
+Op[1] => Mux4.IN4
+Op[1] => Mux5.IN3
+Op[1] => Mux6.IN4
+Op[1] => Mux7.IN4
+Op[1] => Mux8.IN3
+Op[1] => Mux9.IN4
+Funct[0] => FlagW_.IN1
+Funct[0] => FlagW_.DATAB
+Funct[0] => Mux5.IN5
+Funct[0] => Mux4.IN3
+Funct[1] => ~NO_FANOUT~
+Funct[2] => ~NO_FANOUT~
+Funct[3] => Mux1.IN5
+Funct[3] => Mux2.IN5
+Funct[3] => Mux0.IN5
+Funct[4] => ALUControl.OUTPUTSELECT
+Funct[4] => Mux1.IN4
+Funct[4] => Mux2.IN4
+Funct[4] => Mux0.IN4
+Funct[4] => ALUControl[1]$latch.DATAIN
+Funct[4] => ALUControl[1].IN0
+Funct[5] => ALUControl.OUTPUTSELECT
+Funct[5] => ALUControl.OUTPUTSELECT
+Funct[5] => Mux0.IN3
+Funct[5] => ALUControl[1].IN1
+Funct[5] => Mux8.IN5
+Rd[0] => Equal2.IN3
+Rd[1] => Equal2.IN2
+Rd[2] => Equal2.IN1
+Rd[3] => Equal2.IN0
+FlagW[0] <= FlagW_.DB_MAX_OUTPUT_PORT_TYPE
+FlagW[1] <= FlagW_.DB_MAX_OUTPUT_PORT_TYPE
+PCS <= PCS.DB_MAX_OUTPUT_PORT_TYPE
+RegW <= controls[3].DB_MAX_OUTPUT_PORT_TYPE
+MemW <= controls[2].DB_MAX_OUTPUT_PORT_TYPE
+MemtoReg <= controls[4].DB_MAX_OUTPUT_PORT_TYPE
+ALUSrc <= controls[5].DB_MAX_OUTPUT_PORT_TYPE
+ImmSrc[0] <= controls[6].DB_MAX_OUTPUT_PORT_TYPE
+ImmSrc[1] <= controls[7].DB_MAX_OUTPUT_PORT_TYPE
+RegSrc[0] <= controls[8].DB_MAX_OUTPUT_PORT_TYPE
+RegSrc[1] <= controls[9].DB_MAX_OUTPUT_PORT_TYPE
+ALUControl[0] <= ALUControl[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+ALUControl[1] <= ALUControl[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+NoWrite <= <VCC>
+
+
+|controlUnit|condlogic:cl
+clk => clk.IN2
+reset => reset.IN2
+Cond[0] => Cond[0].IN1
+Cond[1] => Cond[1].IN1
+Cond[2] => Cond[2].IN1
+Cond[3] => Cond[3].IN1
+ALUFlags[0] => ALUFlags[0].IN1
+ALUFlags[1] => ALUFlags[1].IN1
+ALUFlags[2] => ALUFlags[2].IN1
+ALUFlags[3] => ALUFlags[3].IN1
+FlagW[0] => FlagWrite.IN1
+FlagW[1] => FlagWrite.IN1
+PCS => PCSrc.IN1
+RegW => RegWrite.IN1
+MemW => MemWrite.IN1
+PCSrc <= PCSrc.DB_MAX_OUTPUT_PORT_TYPE
+RegWrite <= RegWrite.DB_MAX_OUTPUT_PORT_TYPE
+MemWrite <= MemWrite.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controlUnit|condlogic:cl|flopenr:flagreg1
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+reset => q[0]~reg0.ACLR
+reset => q[1]~reg0.ACLR
+en => q[1]~reg0.ENA
+en => q[0]~reg0.ENA
+d[0] => q[0]~reg0.DATAIN
+d[1] => q[1]~reg0.DATAIN
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controlUnit|condlogic:cl|flopenr:flagreg0
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+reset => q[0]~reg0.ACLR
+reset => q[1]~reg0.ACLR
+en => q[1]~reg0.ENA
+en => q[0]~reg0.ENA
+d[0] => q[0]~reg0.DATAIN
+d[1] => q[1]~reg0.DATAIN
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controlUnit|condlogic:cl|condcheck:cc
+Cond[0] => Mux0.IN14
+Cond[1] => Mux0.IN13
+Cond[2] => Mux0.IN12
+Cond[3] => Mux0.IN11
+Flags[0] => ge.IN0
+Flags[0] => Mux0.IN18
+Flags[0] => Mux0.IN5
+Flags[1] => CondEx.IN0
+Flags[1] => Mux0.IN17
+Flags[1] => Mux0.IN3
+Flags[2] => Mux0.IN16
+Flags[2] => CondEx.IN1
+Flags[2] => CondEx.IN1
+Flags[2] => Mux0.IN8
+Flags[3] => ge.IN1
+Flags[3] => Mux0.IN15
+Flags[3] => Mux0.IN4
+CondEx <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -6,19 +6,21 @@ module ALU(
 	output reg [3:0] ALUFlags
 	);
 	
-	wire [31:0] condinvb; //???
+	wire [31:0] condinvb; 
 	wire [32:0] sum;
 	wire Neg, Zero, Carry, oVerflow;
 	
 	assign condinvb = ALUControl[0] ? ~srcB:srcB;
 	assign sum = srcA + condinvb + ALUControl[0];
+	//2의 보수
 	
 	always @(*)
 	
 		casex(ALUControl)
-			2'b0x: ALUResult = 2'b00; //ADD, SUB
-			2'b10: ALUResult = srcA & srcB; //AND
-			2'b11: ALUResult = srcA | srcB; //OR
+			2'b0x: ALUResult = sum; //ADD, SUB
+			// 2'b10: ALUResult = srcA & srcB; //AND
+			// 2'b11: ALUResult = srcA | srcB; //OR
+			2'b10 : ALUResult = srcB + 0 // equal 
 			default: ALUResult = 2'bx;
 		endcase
 
