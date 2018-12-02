@@ -27,7 +27,8 @@ ALUFlags[2] => ALUFlags[2].IN1
 ALUFlags[3] => ALUFlags[3].IN1
 RegSrc[0] <= decoder:dec.RegSrc
 RegSrc[1] <= decoder:dec.RegSrc
-RegWrite <= condlogic:cl.RegWrite
+RegWrite[0] <= condlogic:cl.RegWrite
+RegWrite[1] <= condlogic:cl.RegWrite
 ImmSrc[0] <= decoder:dec.ImmSrc
 ImmSrc[1] <= decoder:dec.ImmSrc
 ALUSrc <= decoder:dec.ALUSrc
@@ -39,6 +40,7 @@ PCSrc <= condlogic:cl.PCSrc
 
 
 |controlUnit|decoder:dec
+Op[0] => Decoder0.IN1
 Op[0] => Mux3.IN5
 Op[0] => Mux4.IN5
 Op[0] => Mux5.IN4
@@ -46,6 +48,7 @@ Op[0] => Mux6.IN5
 Op[0] => Mux7.IN5
 Op[0] => Mux8.IN4
 Op[0] => Mux9.IN5
+Op[1] => Decoder0.IN0
 Op[1] => Mux3.IN4
 Op[1] => Mux4.IN4
 Op[1] => Mux5.IN3
@@ -66,6 +69,7 @@ Funct[4] => ALUControl.OUTPUTSELECT
 Funct[4] => Mux1.IN4
 Funct[4] => Mux2.IN4
 Funct[4] => Mux0.IN4
+Funct[4] => BLFlag.DATAB
 Funct[4] => ALUControl[1]$latch.DATAIN
 Funct[4] => ALUControl[1].IN0
 Funct[5] => ALUControl.OUTPUTSELECT
@@ -91,6 +95,7 @@ RegSrc[1] <= controls[9].DB_MAX_OUTPUT_PORT_TYPE
 ALUControl[0] <= ALUControl[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
 ALUControl[1] <= ALUControl[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
 NoWrite <= <VCC>
+BLFlag <= BLFlag.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |controlUnit|condlogic:cl
@@ -109,9 +114,12 @@ FlagW[1] => FlagWrite.IN1
 PCS => PCSrc.IN1
 RegW => RegWrite.IN1
 MemW => MemWrite.IN1
+NoWrite => RegWrite.IN1
+BLFlag => RegWrite[1].DATAIN
 PCSrc <= PCSrc.DB_MAX_OUTPUT_PORT_TYPE
-RegWrite <= RegWrite.DB_MAX_OUTPUT_PORT_TYPE
 MemWrite <= MemWrite.DB_MAX_OUTPUT_PORT_TYPE
+RegWrite[0] <= RegWrite.DB_MAX_OUTPUT_PORT_TYPE
+RegWrite[1] <= BLFlag.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |controlUnit|condlogic:cl|flopenr:flagreg1

@@ -1,5 +1,5 @@
 Flow report for controlUnit
-Sun Dec 02 02:24:07 2018
+Mon Dec 03 00:59:27 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +------------------------------------+----------------------------------------------+
-; Flow Status                        ; Successful - Sun Dec 02 02:24:07 2018        ;
+; Flow Status                        ; Successful - Mon Dec 03 00:59:27 2018        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; controlUnit                                  ;
 ; Top-level Entity Name              ; controlUnit                                  ;
@@ -50,7 +50,7 @@ applicable agreement for further details.
 ;     Total combinational functions  ; 28 / 33,216 ( < 1 % )                        ;
 ;     Dedicated logic registers      ; 4 / 33,216 ( < 1 % )                         ;
 ; Total registers                    ; 4                                            ;
-; Total pins                         ; 37 / 475 ( 8 % )                             ;
+; Total pins                         ; 38 / 475 ( 8 % )                             ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 0 / 483,840 ( 0 % )                          ;
 ; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                               ;
@@ -63,7 +63,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/02/2018 02:23:58 ;
+; Start date & time ; 12/03/2018 00:59:18 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; controlUnit         ;
 +-------------------+---------------------+
@@ -74,7 +74,7 @@ applicable agreement for further details.
 +------------------------------------+---------------------------------+---------------+-------------+----------------+
 ; Assignment Name                    ; Value                           ; Default Value ; Entity Name ; Section Id     ;
 +------------------------------------+---------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 263988422744424.154368503804596 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID              ; 263988422744424.154376635710888 ; --            ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP             ; 85                              ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP             ; 0                               ; --            ; --          ; --             ;
 ; PARTITION_COLOR                    ; 16764057                        ; --            ; --          ; Top            ;
@@ -90,9 +90,9 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Analysis & Synthesis    ; 00:00:01     ; 1.0                     ; 233 MB              ; 00:00:01                           ;
 ; Fitter                  ; 00:00:04     ; 1.0                     ; 311 MB              ; 00:00:04                           ;
-; Assembler               ; 00:00:01     ; 1.0                     ; 276 MB              ; 00:00:02                           ;
-; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 181 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:06     ; --                      ; --                  ; 00:00:07                           ;
+; Assembler               ; 00:00:02     ; 1.0                     ; 276 MB              ; 00:00:02                           ;
+; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 181 MB              ; 00:00:00                           ;
+; Total                   ; 00:00:08     ; --                      ; --                  ; 00:00:07                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

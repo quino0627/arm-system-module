@@ -1,4 +1,4 @@
-module RegFile( //register file
+ module RegFile( //register file
    input clk,
    input reset,
 
@@ -6,7 +6,7 @@ module RegFile( //register file
    input [3:0] A2,
    input [3:0] A3,   //write address
    input [31:0] WD3, //write data input
-   input RegWrite,   //write enable input (RE3)
+   input [1:0 ]RegWrite,   //write enable input (RE3)
    input [31:0] PCPlus8,   //PCPlus8, R15
 
    output [31:0] RD1,   //data from reg addr A1
@@ -27,11 +27,17 @@ module RegFile( //register file
          end
          
          else 
-         begin         
-            if(RegWrite == 1'b1) begin // if RegWrite == 1, write data into reg
+         begin     
+         //11 BL
+         //01 write
+         //00 no write
+            R[15] <= PCPlus8;    
+            if(RegWrite == 2'b01) begin // if RegWrite == 1, write data into reg
                R[A3] <= WD3;
             end
-            R[15] <= PCPlus8;
+            else if(RegWrite == 2'b11) begin
+               R[14] <= (PCPlus8-32'b4); //PC = PC+4
+            
          end
    end
    assign RD1 = R[A1];

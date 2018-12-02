@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for controlUnit
-Sun Dec 02 02:24:07 2018
+Mon Dec 03 00:59:27 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -44,11 +44,11 @@ applicable agreement for further details.
 +------------------------------+-------+---------------+----------------------------------+------------------------------------+------------------------------------+------------+-----------+--------------+
 ; Type                         ; Slack ; Required Time ; Actual Time                      ; From                               ; To                                 ; From Clock ; To Clock  ; Failed Paths ;
 +------------------------------+-------+---------------+----------------------------------+------------------------------------+------------------------------------+------------+-----------+--------------+
-; Worst-case tsu               ; N/A   ; None          ; 6.697 ns                         ; Instr[29]                          ; condlogic:cl|flopenr:flagreg0|q[1] ; --         ; clk       ; 0            ;
-; Worst-case tco               ; N/A   ; None          ; 10.750 ns                        ; decoder:dec|controls[8]            ; RegSrc[0]                          ; Instr[27]  ; --        ; 0            ;
-; Worst-case tpd               ; N/A   ; None          ; 12.257 ns                        ; Instr[29]                          ; MemWrite                           ; --         ; --        ; 0            ;
-; Worst-case th                ; N/A   ; None          ; -1.294 ns                        ; Instr[27]                          ; decoder:dec|controls[8]            ; --         ; Instr[27] ; 0            ;
-; Clock Setup: 'clk'           ; N/A   ; None          ; 257.33 MHz ( period = 3.886 ns ) ; condlogic:cl|flopenr:flagreg1|q[0] ; condlogic:cl|flopenr:flagreg0|q[1] ; clk        ; clk       ; 0            ;
+; Worst-case tsu               ; N/A   ; None          ; 6.030 ns                         ; Instr[31]                          ; condlogic:cl|flopenr:flagreg1|q[1] ; --         ; clk       ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 9.540 ns                         ; decoder:dec|controls[9]            ; MemWrite                           ; Instr[26]  ; --        ; 0            ;
+; Worst-case tpd               ; N/A   ; None          ; 12.068 ns                        ; Instr[31]                          ; PCSrc                              ; --         ; --        ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -0.905 ns                        ; Instr[26]                          ; decoder:dec|controls[6]            ; --         ; Instr[26] ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 288.60 MHz ( period = 3.465 ns ) ; condlogic:cl|flopenr:flagreg0|q[1] ; condlogic:cl|flopenr:flagreg1|q[1] ; clk        ; clk       ; 0            ;
 ; Total number of failed paths ;       ;               ;                                  ;                                    ;                                    ;            ;           ; 0            ;
 +------------------------------+-------+---------------+----------------------------------+------------------------------------+------------------------------------+------------+-----------+--------------+
 
@@ -93,8 +93,8 @@ applicable agreement for further details.
 ; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
 +-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
 ; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
-; Instr[26]       ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
 ; Instr[27]       ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; Instr[26]       ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
 ; Instr[25]       ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
 ; Instr[24]       ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
 ; Instr[23]       ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
@@ -117,22 +117,22 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------+------------------------------------------------+------------------------------------+------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
 ; Slack ; Actual fmax (period)                           ; From                               ; To                                 ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
 +-------+------------------------------------------------+------------------------------------+------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
-; N/A   ; 257.33 MHz ( period = 3.886 ns )               ; condlogic:cl|flopenr:flagreg1|q[0] ; condlogic:cl|flopenr:flagreg0|q[0] ; clk        ; clk      ; None                        ; None                      ; 3.672 ns                ;
-; N/A   ; 257.33 MHz ( period = 3.886 ns )               ; condlogic:cl|flopenr:flagreg1|q[0] ; condlogic:cl|flopenr:flagreg0|q[1] ; clk        ; clk      ; None                        ; None                      ; 3.672 ns                ;
-; N/A   ; 266.10 MHz ( period = 3.758 ns )               ; condlogic:cl|flopenr:flagreg0|q[1] ; condlogic:cl|flopenr:flagreg0|q[0] ; clk        ; clk      ; None                        ; None                      ; 3.544 ns                ;
-; N/A   ; 266.10 MHz ( period = 3.758 ns )               ; condlogic:cl|flopenr:flagreg0|q[1] ; condlogic:cl|flopenr:flagreg0|q[1] ; clk        ; clk      ; None                        ; None                      ; 3.544 ns                ;
-; N/A   ; 287.11 MHz ( period = 3.483 ns )               ; condlogic:cl|flopenr:flagreg1|q[0] ; condlogic:cl|flopenr:flagreg1|q[0] ; clk        ; clk      ; None                        ; None                      ; 3.269 ns                ;
-; N/A   ; 287.11 MHz ( period = 3.483 ns )               ; condlogic:cl|flopenr:flagreg1|q[0] ; condlogic:cl|flopenr:flagreg1|q[1] ; clk        ; clk      ; None                        ; None                      ; 3.269 ns                ;
-; N/A   ; 298.06 MHz ( period = 3.355 ns )               ; condlogic:cl|flopenr:flagreg0|q[1] ; condlogic:cl|flopenr:flagreg1|q[0] ; clk        ; clk      ; None                        ; None                      ; 3.141 ns                ;
-; N/A   ; 298.06 MHz ( period = 3.355 ns )               ; condlogic:cl|flopenr:flagreg0|q[1] ; condlogic:cl|flopenr:flagreg1|q[1] ; clk        ; clk      ; None                        ; None                      ; 3.141 ns                ;
-; N/A   ; 326.48 MHz ( period = 3.063 ns )               ; condlogic:cl|flopenr:flagreg0|q[0] ; condlogic:cl|flopenr:flagreg0|q[0] ; clk        ; clk      ; None                        ; None                      ; 2.849 ns                ;
-; N/A   ; 326.48 MHz ( period = 3.063 ns )               ; condlogic:cl|flopenr:flagreg0|q[0] ; condlogic:cl|flopenr:flagreg0|q[1] ; clk        ; clk      ; None                        ; None                      ; 2.849 ns                ;
-; N/A   ; 375.94 MHz ( period = 2.660 ns )               ; condlogic:cl|flopenr:flagreg0|q[0] ; condlogic:cl|flopenr:flagreg1|q[0] ; clk        ; clk      ; None                        ; None                      ; 2.446 ns                ;
-; N/A   ; 375.94 MHz ( period = 2.660 ns )               ; condlogic:cl|flopenr:flagreg0|q[0] ; condlogic:cl|flopenr:flagreg1|q[1] ; clk        ; clk      ; None                        ; None                      ; 2.446 ns                ;
-; N/A   ; 377.22 MHz ( period = 2.651 ns )               ; condlogic:cl|flopenr:flagreg1|q[1] ; condlogic:cl|flopenr:flagreg0|q[0] ; clk        ; clk      ; None                        ; None                      ; 2.437 ns                ;
-; N/A   ; 377.22 MHz ( period = 2.651 ns )               ; condlogic:cl|flopenr:flagreg1|q[1] ; condlogic:cl|flopenr:flagreg0|q[1] ; clk        ; clk      ; None                        ; None                      ; 2.437 ns                ;
-; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; condlogic:cl|flopenr:flagreg1|q[1] ; condlogic:cl|flopenr:flagreg1|q[0] ; clk        ; clk      ; None                        ; None                      ; 2.034 ns                ;
-; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; condlogic:cl|flopenr:flagreg1|q[1] ; condlogic:cl|flopenr:flagreg1|q[1] ; clk        ; clk      ; None                        ; None                      ; 2.034 ns                ;
+; N/A   ; 288.60 MHz ( period = 3.465 ns )               ; condlogic:cl|flopenr:flagreg0|q[1] ; condlogic:cl|flopenr:flagreg1|q[0] ; clk        ; clk      ; None                        ; None                      ; 3.251 ns                ;
+; N/A   ; 288.60 MHz ( period = 3.465 ns )               ; condlogic:cl|flopenr:flagreg0|q[1] ; condlogic:cl|flopenr:flagreg1|q[1] ; clk        ; clk      ; None                        ; None                      ; 3.251 ns                ;
+; N/A   ; 289.60 MHz ( period = 3.453 ns )               ; condlogic:cl|flopenr:flagreg0|q[1] ; condlogic:cl|flopenr:flagreg0|q[0] ; clk        ; clk      ; None                        ; None                      ; 3.239 ns                ;
+; N/A   ; 289.60 MHz ( period = 3.453 ns )               ; condlogic:cl|flopenr:flagreg0|q[1] ; condlogic:cl|flopenr:flagreg0|q[1] ; clk        ; clk      ; None                        ; None                      ; 3.239 ns                ;
+; N/A   ; 300.12 MHz ( period = 3.332 ns )               ; condlogic:cl|flopenr:flagreg1|q[0] ; condlogic:cl|flopenr:flagreg1|q[0] ; clk        ; clk      ; None                        ; None                      ; 3.118 ns                ;
+; N/A   ; 300.12 MHz ( period = 3.332 ns )               ; condlogic:cl|flopenr:flagreg1|q[0] ; condlogic:cl|flopenr:flagreg1|q[1] ; clk        ; clk      ; None                        ; None                      ; 3.118 ns                ;
+; N/A   ; 301.20 MHz ( period = 3.320 ns )               ; condlogic:cl|flopenr:flagreg1|q[0] ; condlogic:cl|flopenr:flagreg0|q[0] ; clk        ; clk      ; None                        ; None                      ; 3.106 ns                ;
+; N/A   ; 301.20 MHz ( period = 3.320 ns )               ; condlogic:cl|flopenr:flagreg1|q[0] ; condlogic:cl|flopenr:flagreg0|q[1] ; clk        ; clk      ; None                        ; None                      ; 3.106 ns                ;
+; N/A   ; 327.12 MHz ( period = 3.057 ns )               ; condlogic:cl|flopenr:flagreg0|q[0] ; condlogic:cl|flopenr:flagreg1|q[0] ; clk        ; clk      ; None                        ; None                      ; 2.843 ns                ;
+; N/A   ; 327.12 MHz ( period = 3.057 ns )               ; condlogic:cl|flopenr:flagreg0|q[0] ; condlogic:cl|flopenr:flagreg1|q[1] ; clk        ; clk      ; None                        ; None                      ; 2.843 ns                ;
+; N/A   ; 328.41 MHz ( period = 3.045 ns )               ; condlogic:cl|flopenr:flagreg0|q[0] ; condlogic:cl|flopenr:flagreg0|q[0] ; clk        ; clk      ; None                        ; None                      ; 2.831 ns                ;
+; N/A   ; 328.41 MHz ( period = 3.045 ns )               ; condlogic:cl|flopenr:flagreg0|q[0] ; condlogic:cl|flopenr:flagreg0|q[1] ; clk        ; clk      ; None                        ; None                      ; 2.831 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; condlogic:cl|flopenr:flagreg1|q[1] ; condlogic:cl|flopenr:flagreg1|q[0] ; clk        ; clk      ; None                        ; None                      ; 2.037 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; condlogic:cl|flopenr:flagreg1|q[1] ; condlogic:cl|flopenr:flagreg1|q[1] ; clk        ; clk      ; None                        ; None                      ; 2.037 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; condlogic:cl|flopenr:flagreg1|q[1] ; condlogic:cl|flopenr:flagreg0|q[0] ; clk        ; clk      ; None                        ; None                      ; 2.025 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; condlogic:cl|flopenr:flagreg1|q[1] ; condlogic:cl|flopenr:flagreg0|q[1] ; clk        ; clk      ; None                        ; None                      ; 2.025 ns                ;
 +-------+------------------------------------------------+------------------------------------+------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
 
 
@@ -141,63 +141,63 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------+--------------+------------+-------------+------------------------------------+-----------+
 ; Slack ; Required tsu ; Actual tsu ; From        ; To                                 ; To Clock  ;
 +-------+--------------+------------+-------------+------------------------------------+-----------+
-; N/A   ; None         ; 6.697 ns   ; Instr[29]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
-; N/A   ; None         ; 6.697 ns   ; Instr[29]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
-; N/A   ; None         ; 6.694 ns   ; Instr[31]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
-; N/A   ; None         ; 6.694 ns   ; Instr[31]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
-; N/A   ; None         ; 6.294 ns   ; Instr[29]   ; condlogic:cl|flopenr:flagreg1|q[0] ; clk       ;
-; N/A   ; None         ; 6.294 ns   ; Instr[29]   ; condlogic:cl|flopenr:flagreg1|q[1] ; clk       ;
-; N/A   ; None         ; 6.291 ns   ; Instr[31]   ; condlogic:cl|flopenr:flagreg1|q[0] ; clk       ;
-; N/A   ; None         ; 6.291 ns   ; Instr[31]   ; condlogic:cl|flopenr:flagreg1|q[1] ; clk       ;
-; N/A   ; None         ; 6.077 ns   ; Instr[30]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
-; N/A   ; None         ; 6.077 ns   ; Instr[30]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
-; N/A   ; None         ; 5.734 ns   ; Instr[25]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
-; N/A   ; None         ; 5.734 ns   ; Instr[25]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
-; N/A   ; None         ; 5.674 ns   ; Instr[30]   ; condlogic:cl|flopenr:flagreg1|q[0] ; clk       ;
-; N/A   ; None         ; 5.674 ns   ; Instr[30]   ; condlogic:cl|flopenr:flagreg1|q[1] ; clk       ;
-; N/A   ; None         ; 5.554 ns   ; Instr[24]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
-; N/A   ; None         ; 5.554 ns   ; Instr[24]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
-; N/A   ; None         ; 5.059 ns   ; Instr[28]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
-; N/A   ; None         ; 5.059 ns   ; Instr[28]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
-; N/A   ; None         ; 4.895 ns   ; Instr[20]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
-; N/A   ; None         ; 4.895 ns   ; Instr[20]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
-; N/A   ; None         ; 4.656 ns   ; Instr[28]   ; condlogic:cl|flopenr:flagreg1|q[0] ; clk       ;
-; N/A   ; None         ; 4.656 ns   ; Instr[28]   ; condlogic:cl|flopenr:flagreg1|q[1] ; clk       ;
-; N/A   ; None         ; 4.579 ns   ; Instr[24]   ; decoder:dec|ALUControl[1]          ; Instr[25] ;
-; N/A   ; None         ; 4.522 ns   ; Instr[23]   ; decoder:dec|ALUControl[0]          ; Instr[25] ;
-; N/A   ; None         ; 4.488 ns   ; Instr[20]   ; condlogic:cl|flopenr:flagreg1|q[0] ; clk       ;
-; N/A   ; None         ; 4.488 ns   ; Instr[20]   ; condlogic:cl|flopenr:flagreg1|q[1] ; clk       ;
-; N/A   ; None         ; 4.481 ns   ; Instr[24]   ; decoder:dec|ALUControl[1]          ; Instr[24] ;
-; N/A   ; None         ; 4.428 ns   ; Instr[23]   ; decoder:dec|ALUControl[0]          ; Instr[24] ;
-; N/A   ; None         ; 4.300 ns   ; Instr[23]   ; decoder:dec|ALUControl[0]          ; Instr[23] ;
-; N/A   ; None         ; 3.578 ns   ; ALUFlags[3] ; condlogic:cl|flopenr:flagreg1|q[1] ; clk       ;
-; N/A   ; None         ; 3.506 ns   ; ALUFlags[0] ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
-; N/A   ; None         ; 3.287 ns   ; Instr[27]   ; decoder:dec|controls[0]            ; Instr[26] ;
-; N/A   ; None         ; 3.270 ns   ; ALUFlags[1] ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
-; N/A   ; None         ; 3.243 ns   ; Instr[26]   ; decoder:dec|controls[0]            ; Instr[26] ;
-; N/A   ; None         ; 3.185 ns   ; Instr[27]   ; decoder:dec|controls[5]            ; Instr[26] ;
-; N/A   ; None         ; 3.154 ns   ; ALUFlags[2] ; condlogic:cl|flopenr:flagreg1|q[0] ; clk       ;
-; N/A   ; None         ; 3.145 ns   ; Instr[27]   ; decoder:dec|controls[0]            ; Instr[27] ;
-; N/A   ; None         ; 3.118 ns   ; Instr[25]   ; decoder:dec|controls[5]            ; Instr[26] ;
-; N/A   ; None         ; 3.101 ns   ; Instr[26]   ; decoder:dec|controls[0]            ; Instr[27] ;
-; N/A   ; None         ; 3.043 ns   ; Instr[27]   ; decoder:dec|controls[5]            ; Instr[27] ;
-; N/A   ; None         ; 3.033 ns   ; Instr[26]   ; decoder:dec|controls[5]            ; Instr[26] ;
-; N/A   ; None         ; 3.020 ns   ; Instr[26]   ; decoder:dec|controls[3]            ; Instr[26] ;
-; N/A   ; None         ; 3.010 ns   ; Instr[20]   ; decoder:dec|controls[3]            ; Instr[26] ;
-; N/A   ; None         ; 2.976 ns   ; Instr[25]   ; decoder:dec|controls[5]            ; Instr[27] ;
-; N/A   ; None         ; 2.891 ns   ; Instr[26]   ; decoder:dec|controls[5]            ; Instr[27] ;
-; N/A   ; None         ; 2.885 ns   ; Instr[27]   ; decoder:dec|controls[3]            ; Instr[26] ;
-; N/A   ; None         ; 2.878 ns   ; Instr[26]   ; decoder:dec|controls[3]            ; Instr[27] ;
-; N/A   ; None         ; 2.868 ns   ; Instr[20]   ; decoder:dec|controls[3]            ; Instr[27] ;
-; N/A   ; None         ; 2.771 ns   ; Instr[20]   ; decoder:dec|controls[9]            ; Instr[26] ;
-; N/A   ; None         ; 2.743 ns   ; Instr[27]   ; decoder:dec|controls[3]            ; Instr[27] ;
-; N/A   ; None         ; 2.664 ns   ; Instr[26]   ; decoder:dec|controls[9]            ; Instr[26] ;
-; N/A   ; None         ; 2.629 ns   ; Instr[20]   ; decoder:dec|controls[9]            ; Instr[27] ;
-; N/A   ; None         ; 2.522 ns   ; Instr[26]   ; decoder:dec|controls[9]            ; Instr[27] ;
-; N/A   ; None         ; 2.500 ns   ; Instr[26]   ; decoder:dec|controls[6]            ; Instr[26] ;
-; N/A   ; None         ; 2.358 ns   ; Instr[26]   ; decoder:dec|controls[6]            ; Instr[27] ;
-; N/A   ; None         ; 2.121 ns   ; Instr[27]   ; decoder:dec|controls[8]            ; Instr[26] ;
-; N/A   ; None         ; 1.979 ns   ; Instr[27]   ; decoder:dec|controls[8]            ; Instr[27] ;
+; N/A   ; None         ; 6.030 ns   ; Instr[31]   ; condlogic:cl|flopenr:flagreg1|q[0] ; clk       ;
+; N/A   ; None         ; 6.030 ns   ; Instr[31]   ; condlogic:cl|flopenr:flagreg1|q[1] ; clk       ;
+; N/A   ; None         ; 6.022 ns   ; Instr[29]   ; condlogic:cl|flopenr:flagreg1|q[0] ; clk       ;
+; N/A   ; None         ; 6.022 ns   ; Instr[29]   ; condlogic:cl|flopenr:flagreg1|q[1] ; clk       ;
+; N/A   ; None         ; 6.018 ns   ; Instr[31]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
+; N/A   ; None         ; 6.018 ns   ; Instr[31]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
+; N/A   ; None         ; 6.010 ns   ; Instr[29]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
+; N/A   ; None         ; 6.010 ns   ; Instr[29]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
+; N/A   ; None         ; 5.528 ns   ; Instr[30]   ; condlogic:cl|flopenr:flagreg1|q[0] ; clk       ;
+; N/A   ; None         ; 5.528 ns   ; Instr[30]   ; condlogic:cl|flopenr:flagreg1|q[1] ; clk       ;
+; N/A   ; None         ; 5.516 ns   ; Instr[30]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
+; N/A   ; None         ; 5.516 ns   ; Instr[30]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
+; N/A   ; None         ; 5.128 ns   ; Instr[24]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
+; N/A   ; None         ; 5.128 ns   ; Instr[24]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
+; N/A   ; None         ; 5.054 ns   ; Instr[25]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
+; N/A   ; None         ; 5.054 ns   ; Instr[25]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
+; N/A   ; None         ; 5.044 ns   ; Instr[24]   ; decoder:dec|ALUControl[1]          ; Instr[25] ;
+; N/A   ; None         ; 4.952 ns   ; Instr[24]   ; decoder:dec|ALUControl[1]          ; Instr[24] ;
+; N/A   ; None         ; 4.921 ns   ; Instr[28]   ; condlogic:cl|flopenr:flagreg1|q[0] ; clk       ;
+; N/A   ; None         ; 4.921 ns   ; Instr[28]   ; condlogic:cl|flopenr:flagreg1|q[1] ; clk       ;
+; N/A   ; None         ; 4.909 ns   ; Instr[28]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
+; N/A   ; None         ; 4.909 ns   ; Instr[28]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
+; N/A   ; None         ; 4.792 ns   ; Instr[23]   ; decoder:dec|ALUControl[0]          ; Instr[25] ;
+; N/A   ; None         ; 4.670 ns   ; Instr[23]   ; decoder:dec|ALUControl[0]          ; Instr[23] ;
+; N/A   ; None         ; 4.562 ns   ; Instr[23]   ; decoder:dec|ALUControl[0]          ; Instr[24] ;
+; N/A   ; None         ; 4.499 ns   ; Instr[20]   ; condlogic:cl|flopenr:flagreg1|q[0] ; clk       ;
+; N/A   ; None         ; 4.499 ns   ; Instr[20]   ; condlogic:cl|flopenr:flagreg1|q[1] ; clk       ;
+; N/A   ; None         ; 4.489 ns   ; Instr[20]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
+; N/A   ; None         ; 4.489 ns   ; Instr[20]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
+; N/A   ; None         ; 3.525 ns   ; ALUFlags[3] ; condlogic:cl|flopenr:flagreg1|q[1] ; clk       ;
+; N/A   ; None         ; 3.523 ns   ; ALUFlags[1] ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
+; N/A   ; None         ; 3.370 ns   ; ALUFlags[2] ; condlogic:cl|flopenr:flagreg1|q[0] ; clk       ;
+; N/A   ; None         ; 3.320 ns   ; ALUFlags[0] ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
+; N/A   ; None         ; 2.909 ns   ; Instr[26]   ; decoder:dec|controls[0]            ; Instr[27] ;
+; N/A   ; None         ; 2.828 ns   ; Instr[27]   ; decoder:dec|controls[0]            ; Instr[27] ;
+; N/A   ; None         ; 2.793 ns   ; Instr[20]   ; decoder:dec|controls[9]            ; Instr[27] ;
+; N/A   ; None         ; 2.748 ns   ; Instr[26]   ; decoder:dec|controls[0]            ; Instr[26] ;
+; N/A   ; None         ; 2.736 ns   ; Instr[27]   ; decoder:dec|controls[5]            ; Instr[27] ;
+; N/A   ; None         ; 2.697 ns   ; Instr[25]   ; decoder:dec|controls[5]            ; Instr[27] ;
+; N/A   ; None         ; 2.667 ns   ; Instr[27]   ; decoder:dec|controls[0]            ; Instr[26] ;
+; N/A   ; None         ; 2.632 ns   ; Instr[20]   ; decoder:dec|controls[9]            ; Instr[26] ;
+; N/A   ; None         ; 2.625 ns   ; Instr[26]   ; decoder:dec|controls[9]            ; Instr[27] ;
+; N/A   ; None         ; 2.584 ns   ; Instr[20]   ; decoder:dec|controls[3]            ; Instr[27] ;
+; N/A   ; None         ; 2.575 ns   ; Instr[27]   ; decoder:dec|controls[5]            ; Instr[26] ;
+; N/A   ; None         ; 2.560 ns   ; Instr[26]   ; decoder:dec|controls[5]            ; Instr[27] ;
+; N/A   ; None         ; 2.559 ns   ; Instr[27]   ; decoder:dec|controls[3]            ; Instr[27] ;
+; N/A   ; None         ; 2.536 ns   ; Instr[25]   ; decoder:dec|controls[5]            ; Instr[26] ;
+; N/A   ; None         ; 2.464 ns   ; Instr[26]   ; decoder:dec|controls[9]            ; Instr[26] ;
+; N/A   ; None         ; 2.423 ns   ; Instr[20]   ; decoder:dec|controls[3]            ; Instr[26] ;
+; N/A   ; None         ; 2.416 ns   ; Instr[26]   ; decoder:dec|controls[3]            ; Instr[27] ;
+; N/A   ; None         ; 2.399 ns   ; Instr[26]   ; decoder:dec|controls[5]            ; Instr[26] ;
+; N/A   ; None         ; 2.398 ns   ; Instr[27]   ; decoder:dec|controls[3]            ; Instr[26] ;
+; N/A   ; None         ; 2.255 ns   ; Instr[26]   ; decoder:dec|controls[3]            ; Instr[26] ;
+; N/A   ; None         ; 1.967 ns   ; Instr[27]   ; decoder:dec|controls[8]            ; Instr[27] ;
+; N/A   ; None         ; 1.891 ns   ; Instr[26]   ; decoder:dec|controls[6]            ; Instr[27] ;
+; N/A   ; None         ; 1.806 ns   ; Instr[27]   ; decoder:dec|controls[8]            ; Instr[26] ;
+; N/A   ; None         ; 1.730 ns   ; Instr[26]   ; decoder:dec|controls[6]            ; Instr[26] ;
 +-------+--------------+------------+-------------+------------------------------------+-----------+
 
 
@@ -206,68 +206,68 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------+--------------+------------+------------------------------------+---------------+------------+
 ; Slack ; Required tco ; Actual tco ; From                               ; To            ; From Clock ;
 +-------+--------------+------------+------------------------------------+---------------+------------+
-; N/A   ; None         ; 10.750 ns  ; decoder:dec|controls[8]            ; RegSrc[0]     ; Instr[27]  ;
-; N/A   ; None         ; 10.730 ns  ; decoder:dec|controls[8]            ; ImmSrc[1]     ; Instr[27]  ;
-; N/A   ; None         ; 10.608 ns  ; decoder:dec|controls[8]            ; RegSrc[0]     ; Instr[26]  ;
-; N/A   ; None         ; 10.588 ns  ; decoder:dec|controls[8]            ; ImmSrc[1]     ; Instr[26]  ;
-; N/A   ; None         ; 9.516 ns   ; decoder:dec|controls[9]            ; MemWrite      ; Instr[27]  ;
-; N/A   ; None         ; 9.446 ns   ; condlogic:cl|flopenr:flagreg1|q[0] ; MemWrite      ; clk        ;
-; N/A   ; None         ; 9.374 ns   ; decoder:dec|controls[9]            ; MemWrite      ; Instr[26]  ;
-; N/A   ; None         ; 9.365 ns   ; condlogic:cl|flopenr:flagreg1|q[0] ; PCSrc         ; clk        ;
-; N/A   ; None         ; 9.318 ns   ; condlogic:cl|flopenr:flagreg0|q[1] ; MemWrite      ; clk        ;
-; N/A   ; None         ; 9.237 ns   ; condlogic:cl|flopenr:flagreg0|q[1] ; PCSrc         ; clk        ;
-; N/A   ; None         ; 9.237 ns   ; condlogic:cl|flopenr:flagreg1|q[0] ; RegWrite      ; clk        ;
-; N/A   ; None         ; 9.109 ns   ; condlogic:cl|flopenr:flagreg0|q[1] ; RegWrite      ; clk        ;
-; N/A   ; None         ; 9.080 ns   ; decoder:dec|controls[3]            ; RegWrite      ; Instr[27]  ;
-; N/A   ; None         ; 8.938 ns   ; decoder:dec|controls[3]            ; RegWrite      ; Instr[26]  ;
-; N/A   ; None         ; 8.899 ns   ; decoder:dec|controls[3]            ; PCSrc         ; Instr[27]  ;
-; N/A   ; None         ; 8.865 ns   ; decoder:dec|controls[8]            ; PCSrc         ; Instr[27]  ;
-; N/A   ; None         ; 8.757 ns   ; decoder:dec|controls[3]            ; PCSrc         ; Instr[26]  ;
-; N/A   ; None         ; 8.723 ns   ; decoder:dec|controls[8]            ; PCSrc         ; Instr[26]  ;
-; N/A   ; None         ; 8.623 ns   ; condlogic:cl|flopenr:flagreg0|q[0] ; MemWrite      ; clk        ;
-; N/A   ; None         ; 8.607 ns   ; decoder:dec|controls[6]            ; MemtoReg      ; Instr[27]  ;
-; N/A   ; None         ; 8.597 ns   ; decoder:dec|controls[6]            ; ImmSrc[0]     ; Instr[27]  ;
-; N/A   ; None         ; 8.542 ns   ; condlogic:cl|flopenr:flagreg0|q[0] ; PCSrc         ; clk        ;
-; N/A   ; None         ; 8.465 ns   ; decoder:dec|controls[6]            ; MemtoReg      ; Instr[26]  ;
-; N/A   ; None         ; 8.455 ns   ; decoder:dec|controls[6]            ; ImmSrc[0]     ; Instr[26]  ;
-; N/A   ; None         ; 8.414 ns   ; condlogic:cl|flopenr:flagreg0|q[0] ; RegWrite      ; clk        ;
-; N/A   ; None         ; 8.211 ns   ; condlogic:cl|flopenr:flagreg1|q[1] ; MemWrite      ; clk        ;
-; N/A   ; None         ; 8.162 ns   ; decoder:dec|controls[9]            ; RegSrc[1]     ; Instr[27]  ;
-; N/A   ; None         ; 8.130 ns   ; condlogic:cl|flopenr:flagreg1|q[1] ; PCSrc         ; clk        ;
-; N/A   ; None         ; 8.130 ns   ; decoder:dec|controls[5]            ; ALUSrc        ; Instr[27]  ;
-; N/A   ; None         ; 8.020 ns   ; decoder:dec|controls[9]            ; RegSrc[1]     ; Instr[26]  ;
-; N/A   ; None         ; 8.002 ns   ; condlogic:cl|flopenr:flagreg1|q[1] ; RegWrite      ; clk        ;
-; N/A   ; None         ; 7.988 ns   ; decoder:dec|controls[5]            ; ALUSrc        ; Instr[26]  ;
-; N/A   ; None         ; 7.036 ns   ; decoder:dec|ALUControl[1]          ; ALUControl[1] ; Instr[24]  ;
-; N/A   ; None         ; 6.938 ns   ; decoder:dec|ALUControl[1]          ; ALUControl[1] ; Instr[25]  ;
-; N/A   ; None         ; 6.249 ns   ; decoder:dec|ALUControl[0]          ; ALUControl[0] ; Instr[23]  ;
-; N/A   ; None         ; 6.121 ns   ; decoder:dec|ALUControl[0]          ; ALUControl[0] ; Instr[24]  ;
-; N/A   ; None         ; 6.027 ns   ; decoder:dec|ALUControl[0]          ; ALUControl[0] ; Instr[25]  ;
+; N/A   ; None         ; 9.540 ns   ; decoder:dec|controls[9]            ; MemWrite      ; Instr[26]  ;
+; N/A   ; None         ; 9.503 ns   ; condlogic:cl|flopenr:flagreg0|q[1] ; PCSrc         ; clk        ;
+; N/A   ; None         ; 9.499 ns   ; decoder:dec|controls[3]            ; PCSrc         ; Instr[26]  ;
+; N/A   ; None         ; 9.430 ns   ; decoder:dec|controls[8]            ; PCSrc         ; Instr[26]  ;
+; N/A   ; None         ; 9.410 ns   ; condlogic:cl|flopenr:flagreg0|q[1] ; MemWrite      ; clk        ;
+; N/A   ; None         ; 9.379 ns   ; decoder:dec|controls[9]            ; MemWrite      ; Instr[27]  ;
+; N/A   ; None         ; 9.370 ns   ; condlogic:cl|flopenr:flagreg1|q[0] ; PCSrc         ; clk        ;
+; N/A   ; None         ; 9.338 ns   ; decoder:dec|controls[3]            ; PCSrc         ; Instr[27]  ;
+; N/A   ; None         ; 9.306 ns   ; decoder:dec|controls[3]            ; RegWrite[0]   ; Instr[26]  ;
+; N/A   ; None         ; 9.277 ns   ; condlogic:cl|flopenr:flagreg1|q[0] ; MemWrite      ; clk        ;
+; N/A   ; None         ; 9.269 ns   ; decoder:dec|controls[8]            ; PCSrc         ; Instr[27]  ;
+; N/A   ; None         ; 9.181 ns   ; condlogic:cl|flopenr:flagreg0|q[1] ; RegWrite[0]   ; clk        ;
+; N/A   ; None         ; 9.145 ns   ; decoder:dec|controls[3]            ; RegWrite[0]   ; Instr[27]  ;
+; N/A   ; None         ; 9.095 ns   ; condlogic:cl|flopenr:flagreg0|q[0] ; PCSrc         ; clk        ;
+; N/A   ; None         ; 9.048 ns   ; condlogic:cl|flopenr:flagreg1|q[0] ; RegWrite[0]   ; clk        ;
+; N/A   ; None         ; 9.002 ns   ; condlogic:cl|flopenr:flagreg0|q[0] ; MemWrite      ; clk        ;
+; N/A   ; None         ; 8.896 ns   ; decoder:dec|controls[6]            ; MemtoReg      ; Instr[26]  ;
+; N/A   ; None         ; 8.884 ns   ; decoder:dec|controls[8]            ; RegSrc[0]     ; Instr[26]  ;
+; N/A   ; None         ; 8.876 ns   ; decoder:dec|controls[6]            ; ImmSrc[0]     ; Instr[26]  ;
+; N/A   ; None         ; 8.859 ns   ; decoder:dec|controls[8]            ; ImmSrc[1]     ; Instr[26]  ;
+; N/A   ; None         ; 8.773 ns   ; condlogic:cl|flopenr:flagreg0|q[0] ; RegWrite[0]   ; clk        ;
+; N/A   ; None         ; 8.735 ns   ; decoder:dec|controls[6]            ; MemtoReg      ; Instr[27]  ;
+; N/A   ; None         ; 8.723 ns   ; decoder:dec|controls[8]            ; RegSrc[0]     ; Instr[27]  ;
+; N/A   ; None         ; 8.715 ns   ; decoder:dec|controls[6]            ; ImmSrc[0]     ; Instr[27]  ;
+; N/A   ; None         ; 8.698 ns   ; decoder:dec|controls[8]            ; ImmSrc[1]     ; Instr[27]  ;
+; N/A   ; None         ; 8.397 ns   ; decoder:dec|controls[5]            ; ALUSrc        ; Instr[26]  ;
+; N/A   ; None         ; 8.377 ns   ; decoder:dec|controls[9]            ; RegSrc[1]     ; Instr[26]  ;
+; N/A   ; None         ; 8.289 ns   ; condlogic:cl|flopenr:flagreg1|q[1] ; PCSrc         ; clk        ;
+; N/A   ; None         ; 8.236 ns   ; decoder:dec|controls[5]            ; ALUSrc        ; Instr[27]  ;
+; N/A   ; None         ; 8.216 ns   ; decoder:dec|controls[9]            ; RegSrc[1]     ; Instr[27]  ;
+; N/A   ; None         ; 8.196 ns   ; condlogic:cl|flopenr:flagreg1|q[1] ; MemWrite      ; clk        ;
+; N/A   ; None         ; 7.967 ns   ; condlogic:cl|flopenr:flagreg1|q[1] ; RegWrite[0]   ; clk        ;
+; N/A   ; None         ; 6.245 ns   ; decoder:dec|ALUControl[0]          ; ALUControl[0] ; Instr[24]  ;
+; N/A   ; None         ; 6.137 ns   ; decoder:dec|ALUControl[0]          ; ALUControl[0] ; Instr[23]  ;
+; N/A   ; None         ; 6.015 ns   ; decoder:dec|ALUControl[0]          ; ALUControl[0] ; Instr[25]  ;
+; N/A   ; None         ; 5.837 ns   ; decoder:dec|ALUControl[1]          ; ALUControl[1] ; Instr[24]  ;
+; N/A   ; None         ; 5.745 ns   ; decoder:dec|ALUControl[1]          ; ALUControl[1] ; Instr[25]  ;
 +-------+--------------+------------+------------------------------------+---------------+------------+
 
 
-+--------------------------------------------------------------------+
-; tpd                                                                ;
-+-------+-------------------+-----------------+-----------+----------+
-; Slack ; Required P2P Time ; Actual P2P Time ; From      ; To       ;
-+-------+-------------------+-----------------+-----------+----------+
-; N/A   ; None              ; 12.257 ns       ; Instr[29] ; MemWrite ;
-; N/A   ; None              ; 12.254 ns       ; Instr[31] ; MemWrite ;
-; N/A   ; None              ; 12.176 ns       ; Instr[29] ; PCSrc    ;
-; N/A   ; None              ; 12.173 ns       ; Instr[31] ; PCSrc    ;
-; N/A   ; None              ; 12.048 ns       ; Instr[29] ; RegWrite ;
-; N/A   ; None              ; 12.045 ns       ; Instr[31] ; RegWrite ;
-; N/A   ; None              ; 11.637 ns       ; Instr[30] ; MemWrite ;
-; N/A   ; None              ; 11.556 ns       ; Instr[30] ; PCSrc    ;
-; N/A   ; None              ; 11.428 ns       ; Instr[30] ; RegWrite ;
-; N/A   ; None              ; 10.619 ns       ; Instr[28] ; MemWrite ;
-; N/A   ; None              ; 10.538 ns       ; Instr[28] ; PCSrc    ;
-; N/A   ; None              ; 10.437 ns       ; Instr[13] ; PCSrc    ;
-; N/A   ; None              ; 10.410 ns       ; Instr[28] ; RegWrite ;
-; N/A   ; None              ; 10.076 ns       ; Instr[12] ; PCSrc    ;
-; N/A   ; None              ; 9.688 ns        ; Instr[15] ; PCSrc    ;
-; N/A   ; None              ; 9.555 ns        ; Instr[14] ; PCSrc    ;
-+-------+-------------------+-----------------+-----------+----------+
++-----------------------------------------------------------------------+
+; tpd                                                                   ;
++-------+-------------------+-----------------+-----------+-------------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From      ; To          ;
++-------+-------------------+-----------------+-----------+-------------+
+; N/A   ; None              ; 12.068 ns       ; Instr[31] ; PCSrc       ;
+; N/A   ; None              ; 12.060 ns       ; Instr[29] ; PCSrc       ;
+; N/A   ; None              ; 11.975 ns       ; Instr[31] ; MemWrite    ;
+; N/A   ; None              ; 11.967 ns       ; Instr[29] ; MemWrite    ;
+; N/A   ; None              ; 11.746 ns       ; Instr[31] ; RegWrite[0] ;
+; N/A   ; None              ; 11.738 ns       ; Instr[29] ; RegWrite[0] ;
+; N/A   ; None              ; 11.566 ns       ; Instr[30] ; PCSrc       ;
+; N/A   ; None              ; 11.473 ns       ; Instr[30] ; MemWrite    ;
+; N/A   ; None              ; 11.244 ns       ; Instr[30] ; RegWrite[0] ;
+; N/A   ; None              ; 10.959 ns       ; Instr[28] ; PCSrc       ;
+; N/A   ; None              ; 10.866 ns       ; Instr[28] ; MemWrite    ;
+; N/A   ; None              ; 10.773 ns       ; Instr[14] ; PCSrc       ;
+; N/A   ; None              ; 10.637 ns       ; Instr[28] ; RegWrite[0] ;
+; N/A   ; None              ; 10.415 ns       ; Instr[13] ; PCSrc       ;
+; N/A   ; None              ; 10.014 ns       ; Instr[12] ; PCSrc       ;
+; N/A   ; None              ; 9.879 ns        ; Instr[15] ; PCSrc       ;
++-------+-------------------+-----------------+-----------+-------------+
 
 
 +--------------------------------------------------------------------------------------------------------+
@@ -275,63 +275,63 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------+-------------+-----------+-------------+------------------------------------+-----------+
 ; Minimum Slack ; Required th ; Actual th ; From        ; To                                 ; To Clock  ;
 +---------------+-------------+-----------+-------------+------------------------------------+-----------+
-; N/A           ; None        ; -1.294 ns ; Instr[27]   ; decoder:dec|controls[8]            ; Instr[27] ;
-; N/A           ; None        ; -1.314 ns ; Instr[26]   ; decoder:dec|controls[6]            ; Instr[27] ;
-; N/A           ; None        ; -1.436 ns ; Instr[27]   ; decoder:dec|controls[8]            ; Instr[26] ;
-; N/A           ; None        ; -1.456 ns ; Instr[26]   ; decoder:dec|controls[6]            ; Instr[26] ;
-; N/A           ; None        ; -1.807 ns ; Instr[26]   ; decoder:dec|controls[5]            ; Instr[27] ;
-; N/A           ; None        ; -1.837 ns ; Instr[26]   ; decoder:dec|controls[9]            ; Instr[27] ;
-; N/A           ; None        ; -1.849 ns ; Instr[27]   ; decoder:dec|controls[3]            ; Instr[27] ;
-; N/A           ; None        ; -1.892 ns ; Instr[25]   ; decoder:dec|controls[5]            ; Instr[27] ;
-; N/A           ; None        ; -1.944 ns ; Instr[20]   ; decoder:dec|controls[9]            ; Instr[27] ;
-; N/A           ; None        ; -1.949 ns ; Instr[26]   ; decoder:dec|controls[5]            ; Instr[26] ;
-; N/A           ; None        ; -1.959 ns ; Instr[27]   ; decoder:dec|controls[5]            ; Instr[27] ;
-; N/A           ; None        ; -1.974 ns ; Instr[20]   ; decoder:dec|controls[3]            ; Instr[27] ;
-; N/A           ; None        ; -1.979 ns ; Instr[26]   ; decoder:dec|controls[9]            ; Instr[26] ;
-; N/A           ; None        ; -1.984 ns ; Instr[26]   ; decoder:dec|controls[3]            ; Instr[27] ;
-; N/A           ; None        ; -1.991 ns ; Instr[27]   ; decoder:dec|controls[3]            ; Instr[26] ;
-; N/A           ; None        ; -2.034 ns ; Instr[25]   ; decoder:dec|controls[5]            ; Instr[26] ;
-; N/A           ; None        ; -2.086 ns ; Instr[20]   ; decoder:dec|controls[9]            ; Instr[26] ;
-; N/A           ; None        ; -2.101 ns ; Instr[27]   ; decoder:dec|controls[5]            ; Instr[26] ;
-; N/A           ; None        ; -2.116 ns ; Instr[20]   ; decoder:dec|controls[3]            ; Instr[26] ;
-; N/A           ; None        ; -2.126 ns ; Instr[26]   ; decoder:dec|controls[3]            ; Instr[26] ;
-; N/A           ; None        ; -2.393 ns ; Instr[26]   ; decoder:dec|controls[0]            ; Instr[27] ;
-; N/A           ; None        ; -2.437 ns ; Instr[27]   ; decoder:dec|controls[0]            ; Instr[27] ;
-; N/A           ; None        ; -2.535 ns ; Instr[26]   ; decoder:dec|controls[0]            ; Instr[26] ;
-; N/A           ; None        ; -2.579 ns ; Instr[27]   ; decoder:dec|controls[0]            ; Instr[26] ;
-; N/A           ; None        ; -2.924 ns ; ALUFlags[2] ; condlogic:cl|flopenr:flagreg1|q[0] ; clk       ;
-; N/A           ; None        ; -3.040 ns ; ALUFlags[1] ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
-; N/A           ; None        ; -3.276 ns ; ALUFlags[0] ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
-; N/A           ; None        ; -3.348 ns ; ALUFlags[3] ; condlogic:cl|flopenr:flagreg1|q[1] ; clk       ;
-; N/A           ; None        ; -3.461 ns ; Instr[23]   ; decoder:dec|ALUControl[0]          ; Instr[23] ;
-; N/A           ; None        ; -3.589 ns ; Instr[23]   ; decoder:dec|ALUControl[0]          ; Instr[24] ;
-; N/A           ; None        ; -3.610 ns ; Instr[24]   ; decoder:dec|ALUControl[1]          ; Instr[24] ;
-; N/A           ; None        ; -3.683 ns ; Instr[23]   ; decoder:dec|ALUControl[0]          ; Instr[25] ;
-; N/A           ; None        ; -3.708 ns ; Instr[24]   ; decoder:dec|ALUControl[1]          ; Instr[25] ;
-; N/A           ; None        ; -4.258 ns ; Instr[20]   ; condlogic:cl|flopenr:flagreg1|q[0] ; clk       ;
-; N/A           ; None        ; -4.258 ns ; Instr[20]   ; condlogic:cl|flopenr:flagreg1|q[1] ; clk       ;
-; N/A           ; None        ; -4.426 ns ; Instr[28]   ; condlogic:cl|flopenr:flagreg1|q[0] ; clk       ;
-; N/A           ; None        ; -4.426 ns ; Instr[28]   ; condlogic:cl|flopenr:flagreg1|q[1] ; clk       ;
-; N/A           ; None        ; -4.665 ns ; Instr[20]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
-; N/A           ; None        ; -4.665 ns ; Instr[20]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
-; N/A           ; None        ; -4.829 ns ; Instr[28]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
-; N/A           ; None        ; -4.829 ns ; Instr[28]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
-; N/A           ; None        ; -5.042 ns ; Instr[30]   ; condlogic:cl|flopenr:flagreg1|q[0] ; clk       ;
-; N/A           ; None        ; -5.042 ns ; Instr[30]   ; condlogic:cl|flopenr:flagreg1|q[1] ; clk       ;
-; N/A           ; None        ; -5.177 ns ; Instr[31]   ; condlogic:cl|flopenr:flagreg1|q[0] ; clk       ;
-; N/A           ; None        ; -5.177 ns ; Instr[31]   ; condlogic:cl|flopenr:flagreg1|q[1] ; clk       ;
-; N/A           ; None        ; -5.324 ns ; Instr[24]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
-; N/A           ; None        ; -5.324 ns ; Instr[24]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
-; N/A           ; None        ; -5.445 ns ; Instr[30]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
-; N/A           ; None        ; -5.445 ns ; Instr[30]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
-; N/A           ; None        ; -5.504 ns ; Instr[25]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
-; N/A           ; None        ; -5.504 ns ; Instr[25]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
-; N/A           ; None        ; -5.580 ns ; Instr[31]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
-; N/A           ; None        ; -5.580 ns ; Instr[31]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
-; N/A           ; None        ; -5.796 ns ; Instr[29]   ; condlogic:cl|flopenr:flagreg1|q[0] ; clk       ;
-; N/A           ; None        ; -5.796 ns ; Instr[29]   ; condlogic:cl|flopenr:flagreg1|q[1] ; clk       ;
-; N/A           ; None        ; -6.199 ns ; Instr[29]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
-; N/A           ; None        ; -6.199 ns ; Instr[29]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
+; N/A           ; None        ; -0.905 ns ; Instr[26]   ; decoder:dec|controls[6]            ; Instr[26] ;
+; N/A           ; None        ; -0.948 ns ; Instr[27]   ; decoder:dec|controls[8]            ; Instr[26] ;
+; N/A           ; None        ; -1.066 ns ; Instr[26]   ; decoder:dec|controls[6]            ; Instr[27] ;
+; N/A           ; None        ; -1.109 ns ; Instr[27]   ; decoder:dec|controls[8]            ; Instr[27] ;
+; N/A           ; None        ; -1.430 ns ; Instr[26]   ; decoder:dec|controls[3]            ; Instr[26] ;
+; N/A           ; None        ; -1.573 ns ; Instr[27]   ; decoder:dec|controls[3]            ; Instr[26] ;
+; N/A           ; None        ; -1.576 ns ; Instr[26]   ; decoder:dec|controls[5]            ; Instr[26] ;
+; N/A           ; None        ; -1.579 ns ; Instr[26]   ; decoder:dec|controls[9]            ; Instr[26] ;
+; N/A           ; None        ; -1.591 ns ; Instr[26]   ; decoder:dec|controls[3]            ; Instr[27] ;
+; N/A           ; None        ; -1.598 ns ; Instr[20]   ; decoder:dec|controls[3]            ; Instr[26] ;
+; N/A           ; None        ; -1.713 ns ; Instr[25]   ; decoder:dec|controls[5]            ; Instr[26] ;
+; N/A           ; None        ; -1.734 ns ; Instr[27]   ; decoder:dec|controls[3]            ; Instr[27] ;
+; N/A           ; None        ; -1.737 ns ; Instr[26]   ; decoder:dec|controls[5]            ; Instr[27] ;
+; N/A           ; None        ; -1.740 ns ; Instr[26]   ; decoder:dec|controls[9]            ; Instr[27] ;
+; N/A           ; None        ; -1.747 ns ; Instr[20]   ; decoder:dec|controls[9]            ; Instr[26] ;
+; N/A           ; None        ; -1.752 ns ; Instr[27]   ; decoder:dec|controls[5]            ; Instr[26] ;
+; N/A           ; None        ; -1.759 ns ; Instr[20]   ; decoder:dec|controls[3]            ; Instr[27] ;
+; N/A           ; None        ; -1.874 ns ; Instr[25]   ; decoder:dec|controls[5]            ; Instr[27] ;
+; N/A           ; None        ; -1.908 ns ; Instr[20]   ; decoder:dec|controls[9]            ; Instr[27] ;
+; N/A           ; None        ; -1.913 ns ; Instr[27]   ; decoder:dec|controls[5]            ; Instr[27] ;
+; N/A           ; None        ; -1.971 ns ; Instr[27]   ; decoder:dec|controls[0]            ; Instr[26] ;
+; N/A           ; None        ; -2.052 ns ; Instr[26]   ; decoder:dec|controls[0]            ; Instr[26] ;
+; N/A           ; None        ; -2.132 ns ; Instr[27]   ; decoder:dec|controls[0]            ; Instr[27] ;
+; N/A           ; None        ; -2.213 ns ; Instr[26]   ; decoder:dec|controls[0]            ; Instr[27] ;
+; N/A           ; None        ; -3.090 ns ; ALUFlags[0] ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
+; N/A           ; None        ; -3.140 ns ; ALUFlags[2] ; condlogic:cl|flopenr:flagreg1|q[0] ; clk       ;
+; N/A           ; None        ; -3.293 ns ; ALUFlags[1] ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
+; N/A           ; None        ; -3.295 ns ; ALUFlags[3] ; condlogic:cl|flopenr:flagreg1|q[1] ; clk       ;
+; N/A           ; None        ; -3.639 ns ; Instr[24]   ; decoder:dec|ALUControl[1]          ; Instr[24] ;
+; N/A           ; None        ; -3.699 ns ; Instr[23]   ; decoder:dec|ALUControl[0]          ; Instr[24] ;
+; N/A           ; None        ; -3.731 ns ; Instr[24]   ; decoder:dec|ALUControl[1]          ; Instr[25] ;
+; N/A           ; None        ; -3.807 ns ; Instr[23]   ; decoder:dec|ALUControl[0]          ; Instr[23] ;
+; N/A           ; None        ; -3.929 ns ; Instr[23]   ; decoder:dec|ALUControl[0]          ; Instr[25] ;
+; N/A           ; None        ; -4.259 ns ; Instr[20]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
+; N/A           ; None        ; -4.259 ns ; Instr[20]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
+; N/A           ; None        ; -4.269 ns ; Instr[20]   ; condlogic:cl|flopenr:flagreg1|q[0] ; clk       ;
+; N/A           ; None        ; -4.269 ns ; Instr[20]   ; condlogic:cl|flopenr:flagreg1|q[1] ; clk       ;
+; N/A           ; None        ; -4.679 ns ; Instr[28]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
+; N/A           ; None        ; -4.679 ns ; Instr[28]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
+; N/A           ; None        ; -4.691 ns ; Instr[28]   ; condlogic:cl|flopenr:flagreg1|q[0] ; clk       ;
+; N/A           ; None        ; -4.691 ns ; Instr[28]   ; condlogic:cl|flopenr:flagreg1|q[1] ; clk       ;
+; N/A           ; None        ; -4.824 ns ; Instr[25]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
+; N/A           ; None        ; -4.824 ns ; Instr[25]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
+; N/A           ; None        ; -4.863 ns ; Instr[31]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
+; N/A           ; None        ; -4.863 ns ; Instr[31]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
+; N/A           ; None        ; -4.875 ns ; Instr[31]   ; condlogic:cl|flopenr:flagreg1|q[0] ; clk       ;
+; N/A           ; None        ; -4.875 ns ; Instr[31]   ; condlogic:cl|flopenr:flagreg1|q[1] ; clk       ;
+; N/A           ; None        ; -4.898 ns ; Instr[24]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
+; N/A           ; None        ; -4.898 ns ; Instr[24]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
+; N/A           ; None        ; -5.042 ns ; Instr[30]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
+; N/A           ; None        ; -5.042 ns ; Instr[30]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
+; N/A           ; None        ; -5.054 ns ; Instr[30]   ; condlogic:cl|flopenr:flagreg1|q[0] ; clk       ;
+; N/A           ; None        ; -5.054 ns ; Instr[30]   ; condlogic:cl|flopenr:flagreg1|q[1] ; clk       ;
+; N/A           ; None        ; -5.387 ns ; Instr[29]   ; condlogic:cl|flopenr:flagreg0|q[0] ; clk       ;
+; N/A           ; None        ; -5.387 ns ; Instr[29]   ; condlogic:cl|flopenr:flagreg0|q[1] ; clk       ;
+; N/A           ; None        ; -5.399 ns ; Instr[29]   ; condlogic:cl|flopenr:flagreg1|q[0] ; clk       ;
+; N/A           ; None        ; -5.399 ns ; Instr[29]   ; condlogic:cl|flopenr:flagreg1|q[1] ; clk       ;
 +---------------+-------------+-----------+-------------+------------------------------------+-----------+
 
 
@@ -341,7 +341,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II Classic Timing Analyzer
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sun Dec 02 02:24:07 2018
+    Info: Processing started: Mon Dec 03 00:59:26 2018
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off controlUnit -c controlUnit --timing_analysis_only
 Warning: Timing Analysis is analyzing one or more combinational loops as latches
     Warning: Node "decoder:dec|controls[0]" is a latch
@@ -354,8 +354,8 @@ Warning: Timing Analysis is analyzing one or more combinational loops as latches
     Warning: Node "decoder:dec|ALUControl[0]" is a latch
 Warning: Found pins functioning as undefined clocks and/or memory enables
     Info: Assuming node "clk" is an undefined clock
-    Info: Assuming node "Instr[26]" is a latch enable. Will not compute fmax for this pin.
     Info: Assuming node "Instr[27]" is a latch enable. Will not compute fmax for this pin.
+    Info: Assuming node "Instr[26]" is a latch enable. Will not compute fmax for this pin.
     Info: Assuming node "Instr[25]" is a latch enable. Will not compute fmax for this pin.
     Info: Assuming node "Instr[24]" is a latch enable. Will not compute fmax for this pin.
     Info: Assuming node "Instr[23]" is a latch enable. Will not compute fmax for this pin.
@@ -363,88 +363,92 @@ Warning: Found 3 node(s) in clock paths which may be acting as ripple and/or gat
     Info: Detected gated clock "decoder:dec|Mux0~0" as buffer
     Info: Detected gated clock "decoder:dec|ALUControl[1]~0" as buffer
     Info: Detected gated clock "decoder:dec|Mux6~0" as buffer
-Info: Clock "clk" has Internal fmax of 257.33 MHz between source register "condlogic:cl|flopenr:flagreg1|q[0]" and destination register "condlogic:cl|flopenr:flagreg0|q[0]" (period= 3.886 ns)
-    Info: + Longest register to register delay is 3.672 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X19_Y35_N21; Fanout = 2; REG Node = 'condlogic:cl|flopenr:flagreg1|q[0]'
-        Info: 2: + IC(0.319 ns) + CELL(0.271 ns) = 0.590 ns; Loc. = LCCOMB_X19_Y35_N16; Fanout = 2; COMB Node = 'condlogic:cl|condcheck:cc|Mux0~0'
-        Info: 3: + IC(0.678 ns) + CELL(0.150 ns) = 1.418 ns; Loc. = LCCOMB_X19_Y35_N8; Fanout = 1; COMB Node = 'condlogic:cl|condcheck:cc|Mux0~2'
-        Info: 4: + IC(0.267 ns) + CELL(0.275 ns) = 1.960 ns; Loc. = LCCOMB_X19_Y35_N2; Fanout = 5; COMB Node = 'condlogic:cl|condcheck:cc|Mux0~5'
-        Info: 5: + IC(0.260 ns) + CELL(0.150 ns) = 2.370 ns; Loc. = LCCOMB_X19_Y35_N6; Fanout = 2; COMB Node = 'condlogic:cl|FlagWrite[0]~2'
-        Info: 6: + IC(0.642 ns) + CELL(0.660 ns) = 3.672 ns; Loc. = LCFF_X19_Y35_N19; Fanout = 1; REG Node = 'condlogic:cl|flopenr:flagreg0|q[0]'
-        Info: Total cell delay = 1.506 ns ( 41.01 % )
-        Info: Total interconnect delay = 2.166 ns ( 58.99 % )
+Info: Clock "clk" has Internal fmax of 288.6 MHz between source register "condlogic:cl|flopenr:flagreg0|q[1]" and destination register "condlogic:cl|flopenr:flagreg1|q[0]" (period= 3.465 ns)
+    Info: + Longest register to register delay is 3.251 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X19_Y35_N17; Fanout = 2; REG Node = 'condlogic:cl|flopenr:flagreg0|q[1]'
+        Info: 2: + IC(0.328 ns) + CELL(0.271 ns) = 0.599 ns; Loc. = LCCOMB_X19_Y35_N14; Fanout = 2; COMB Node = 'condlogic:cl|condcheck:cc|Mux0~0'
+        Info: 3: + IC(0.259 ns) + CELL(0.275 ns) = 1.133 ns; Loc. = LCCOMB_X19_Y35_N30; Fanout = 2; COMB Node = 'condlogic:cl|condcheck:cc|Mux0~3'
+        Info: 4: + IC(0.254 ns) + CELL(0.150 ns) = 1.537 ns; Loc. = LCCOMB_X19_Y35_N28; Fanout = 1; COMB Node = 'condlogic:cl|condcheck:cc|Mux0~4'
+        Info: 5: + IC(0.251 ns) + CELL(0.150 ns) = 1.938 ns; Loc. = LCCOMB_X19_Y35_N18; Fanout = 5; COMB Node = 'condlogic:cl|condcheck:cc|Mux0~5'
+        Info: 6: + IC(0.260 ns) + CELL(0.150 ns) = 2.348 ns; Loc. = LCCOMB_X19_Y35_N0; Fanout = 2; COMB Node = 'condlogic:cl|FlagWrite[1]~0'
+        Info: 7: + IC(0.243 ns) + CELL(0.660 ns) = 3.251 ns; Loc. = LCFF_X19_Y35_N11; Fanout = 2; REG Node = 'condlogic:cl|flopenr:flagreg1|q[0]'
+        Info: Total cell delay = 1.656 ns ( 50.94 % )
+        Info: Total interconnect delay = 1.595 ns ( 49.06 % )
     Info: - Smallest clock skew is 0.000 ns
         Info: + Shortest clock path from clock "clk" to destination register is 2.686 ns
             Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'clk'
             Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 4; COMB Node = 'clk~clkctrl'
-            Info: 3: + IC(1.032 ns) + CELL(0.537 ns) = 2.686 ns; Loc. = LCFF_X19_Y35_N19; Fanout = 1; REG Node = 'condlogic:cl|flopenr:flagreg0|q[0]'
+            Info: 3: + IC(1.032 ns) + CELL(0.537 ns) = 2.686 ns; Loc. = LCFF_X19_Y35_N11; Fanout = 2; REG Node = 'condlogic:cl|flopenr:flagreg1|q[0]'
             Info: Total cell delay = 1.536 ns ( 57.19 % )
             Info: Total interconnect delay = 1.150 ns ( 42.81 % )
         Info: - Longest clock path from clock "clk" to source register is 2.686 ns
             Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'clk'
             Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 4; COMB Node = 'clk~clkctrl'
-            Info: 3: + IC(1.032 ns) + CELL(0.537 ns) = 2.686 ns; Loc. = LCFF_X19_Y35_N21; Fanout = 2; REG Node = 'condlogic:cl|flopenr:flagreg1|q[0]'
+            Info: 3: + IC(1.032 ns) + CELL(0.537 ns) = 2.686 ns; Loc. = LCFF_X19_Y35_N17; Fanout = 2; REG Node = 'condlogic:cl|flopenr:flagreg0|q[1]'
             Info: Total cell delay = 1.536 ns ( 57.19 % )
             Info: Total interconnect delay = 1.150 ns ( 42.81 % )
     Info: + Micro clock to output delay of source is 0.250 ns
     Info: + Micro setup delay of destination is -0.036 ns
-Info: tsu for register "condlogic:cl|flopenr:flagreg0|q[0]" (data pin = "Instr[29]", clock pin = "clk") is 6.697 ns
-    Info: + Longest pin to register delay is 9.419 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.840 ns) = 0.840 ns; Loc. = PIN_C9; Fanout = 2; PIN Node = 'Instr[29]'
-        Info: 2: + IC(5.060 ns) + CELL(0.437 ns) = 6.337 ns; Loc. = LCCOMB_X19_Y35_N16; Fanout = 2; COMB Node = 'condlogic:cl|condcheck:cc|Mux0~0'
-        Info: 3: + IC(0.678 ns) + CELL(0.150 ns) = 7.165 ns; Loc. = LCCOMB_X19_Y35_N8; Fanout = 1; COMB Node = 'condlogic:cl|condcheck:cc|Mux0~2'
-        Info: 4: + IC(0.267 ns) + CELL(0.275 ns) = 7.707 ns; Loc. = LCCOMB_X19_Y35_N2; Fanout = 5; COMB Node = 'condlogic:cl|condcheck:cc|Mux0~5'
-        Info: 5: + IC(0.260 ns) + CELL(0.150 ns) = 8.117 ns; Loc. = LCCOMB_X19_Y35_N6; Fanout = 2; COMB Node = 'condlogic:cl|FlagWrite[0]~2'
-        Info: 6: + IC(0.642 ns) + CELL(0.660 ns) = 9.419 ns; Loc. = LCFF_X19_Y35_N19; Fanout = 1; REG Node = 'condlogic:cl|flopenr:flagreg0|q[0]'
-        Info: Total cell delay = 2.512 ns ( 26.67 % )
-        Info: Total interconnect delay = 6.907 ns ( 73.33 % )
+Info: tsu for register "condlogic:cl|flopenr:flagreg1|q[0]" (data pin = "Instr[31]", clock pin = "clk") is 6.030 ns
+    Info: + Longest pin to register delay is 8.752 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.840 ns) = 0.840 ns; Loc. = PIN_H12; Fanout = 5; PIN Node = 'Instr[31]'
+        Info: 2: + IC(4.840 ns) + CELL(0.420 ns) = 6.100 ns; Loc. = LCCOMB_X19_Y35_N14; Fanout = 2; COMB Node = 'condlogic:cl|condcheck:cc|Mux0~0'
+        Info: 3: + IC(0.259 ns) + CELL(0.275 ns) = 6.634 ns; Loc. = LCCOMB_X19_Y35_N30; Fanout = 2; COMB Node = 'condlogic:cl|condcheck:cc|Mux0~3'
+        Info: 4: + IC(0.254 ns) + CELL(0.150 ns) = 7.038 ns; Loc. = LCCOMB_X19_Y35_N28; Fanout = 1; COMB Node = 'condlogic:cl|condcheck:cc|Mux0~4'
+        Info: 5: + IC(0.251 ns) + CELL(0.150 ns) = 7.439 ns; Loc. = LCCOMB_X19_Y35_N18; Fanout = 5; COMB Node = 'condlogic:cl|condcheck:cc|Mux0~5'
+        Info: 6: + IC(0.260 ns) + CELL(0.150 ns) = 7.849 ns; Loc. = LCCOMB_X19_Y35_N0; Fanout = 2; COMB Node = 'condlogic:cl|FlagWrite[1]~0'
+        Info: 7: + IC(0.243 ns) + CELL(0.660 ns) = 8.752 ns; Loc. = LCFF_X19_Y35_N11; Fanout = 2; REG Node = 'condlogic:cl|flopenr:flagreg1|q[0]'
+        Info: Total cell delay = 2.645 ns ( 30.22 % )
+        Info: Total interconnect delay = 6.107 ns ( 69.78 % )
     Info: + Micro setup delay of destination is -0.036 ns
     Info: - Shortest clock path from clock "clk" to destination register is 2.686 ns
         Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'clk'
         Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 4; COMB Node = 'clk~clkctrl'
-        Info: 3: + IC(1.032 ns) + CELL(0.537 ns) = 2.686 ns; Loc. = LCFF_X19_Y35_N19; Fanout = 1; REG Node = 'condlogic:cl|flopenr:flagreg0|q[0]'
+        Info: 3: + IC(1.032 ns) + CELL(0.537 ns) = 2.686 ns; Loc. = LCFF_X19_Y35_N11; Fanout = 2; REG Node = 'condlogic:cl|flopenr:flagreg1|q[0]'
         Info: Total cell delay = 1.536 ns ( 57.19 % )
         Info: Total interconnect delay = 1.150 ns ( 42.81 % )
-Info: tco from clock "Instr[27]" to destination pin "RegSrc[0]" through register "decoder:dec|controls[8]" is 10.750 ns
-    Info: + Longest clock path from clock "Instr[27]" to source register is 4.795 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.850 ns) = 0.850 ns; Loc. = PIN_B10; Fanout = 5; CLK Node = 'Instr[27]'
-        Info: 2: + IC(0.970 ns) + CELL(0.275 ns) = 2.095 ns; Loc. = LCCOMB_X23_Y35_N2; Fanout = 1; COMB Node = 'decoder:dec|Mux6~0'
-        Info: 3: + IC(1.150 ns) + CELL(0.000 ns) = 3.245 ns; Loc. = CLKCTRL_G10; Fanout = 6; COMB Node = 'decoder:dec|Mux6~0clkctrl'
-        Info: 4: + IC(1.400 ns) + CELL(0.150 ns) = 4.795 ns; Loc. = LCCOMB_X23_Y35_N20; Fanout = 3; REG Node = 'decoder:dec|controls[8]'
-        Info: Total cell delay = 1.275 ns ( 26.59 % )
-        Info: Total interconnect delay = 3.520 ns ( 73.41 % )
+Info: tco from clock "Instr[26]" to destination pin "MemWrite" through register "decoder:dec|controls[9]" is 9.540 ns
+    Info: + Longest clock path from clock "Instr[26]" to source register is 5.043 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.850 ns) = 0.850 ns; Loc. = PIN_B10; Fanout = 6; CLK Node = 'Instr[26]'
+        Info: 2: + IC(0.986 ns) + CELL(0.275 ns) = 2.111 ns; Loc. = LCCOMB_X23_Y35_N18; Fanout = 1; COMB Node = 'decoder:dec|Mux6~0'
+        Info: 3: + IC(1.381 ns) + CELL(0.000 ns) = 3.492 ns; Loc. = CLKCTRL_G8; Fanout = 6; COMB Node = 'decoder:dec|Mux6~0clkctrl'
+        Info: 4: + IC(1.401 ns) + CELL(0.150 ns) = 5.043 ns; Loc. = LCCOMB_X23_Y35_N26; Fanout = 2; REG Node = 'decoder:dec|controls[9]'
+        Info: Total cell delay = 1.275 ns ( 25.28 % )
+        Info: Total interconnect delay = 3.768 ns ( 74.72 % )
     Info: + Micro clock to output delay of source is 0.000 ns
-    Info: + Longest register to pin delay is 5.955 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCCOMB_X23_Y35_N20; Fanout = 3; REG Node = 'decoder:dec|controls[8]'
-        Info: 2: + IC(3.147 ns) + CELL(2.808 ns) = 5.955 ns; Loc. = PIN_AF9; Fanout = 0; PIN Node = 'RegSrc[0]'
-        Info: Total cell delay = 2.808 ns ( 47.15 % )
-        Info: Total interconnect delay = 3.147 ns ( 52.85 % )
-Info: Longest tpd from source pin "Instr[29]" to destination pin "MemWrite" is 12.257 ns
-    Info: 1: + IC(0.000 ns) + CELL(0.840 ns) = 0.840 ns; Loc. = PIN_C9; Fanout = 2; PIN Node = 'Instr[29]'
-    Info: 2: + IC(5.060 ns) + CELL(0.437 ns) = 6.337 ns; Loc. = LCCOMB_X19_Y35_N16; Fanout = 2; COMB Node = 'condlogic:cl|condcheck:cc|Mux0~0'
-    Info: 3: + IC(0.678 ns) + CELL(0.150 ns) = 7.165 ns; Loc. = LCCOMB_X19_Y35_N8; Fanout = 1; COMB Node = 'condlogic:cl|condcheck:cc|Mux0~2'
-    Info: 4: + IC(0.267 ns) + CELL(0.275 ns) = 7.707 ns; Loc. = LCCOMB_X19_Y35_N2; Fanout = 5; COMB Node = 'condlogic:cl|condcheck:cc|Mux0~5'
-    Info: 5: + IC(0.703 ns) + CELL(0.275 ns) = 8.685 ns; Loc. = LCCOMB_X23_Y35_N18; Fanout = 1; COMB Node = 'condlogic:cl|MemWrite'
-    Info: 6: + IC(0.784 ns) + CELL(2.788 ns) = 12.257 ns; Loc. = PIN_D10; Fanout = 0; PIN Node = 'MemWrite'
-    Info: Total cell delay = 4.765 ns ( 38.88 % )
-    Info: Total interconnect delay = 7.492 ns ( 61.12 % )
-Info: th for register "decoder:dec|controls[8]" (data pin = "Instr[27]", clock pin = "Instr[27]") is -1.294 ns
-    Info: + Longest clock path from clock "Instr[27]" to destination register is 4.795 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.850 ns) = 0.850 ns; Loc. = PIN_B10; Fanout = 5; CLK Node = 'Instr[27]'
-        Info: 2: + IC(0.970 ns) + CELL(0.275 ns) = 2.095 ns; Loc. = LCCOMB_X23_Y35_N2; Fanout = 1; COMB Node = 'decoder:dec|Mux6~0'
-        Info: 3: + IC(1.150 ns) + CELL(0.000 ns) = 3.245 ns; Loc. = CLKCTRL_G10; Fanout = 6; COMB Node = 'decoder:dec|Mux6~0clkctrl'
-        Info: 4: + IC(1.400 ns) + CELL(0.150 ns) = 4.795 ns; Loc. = LCCOMB_X23_Y35_N20; Fanout = 3; REG Node = 'decoder:dec|controls[8]'
-        Info: Total cell delay = 1.275 ns ( 26.59 % )
-        Info: Total interconnect delay = 3.520 ns ( 73.41 % )
+    Info: + Longest register to pin delay is 4.497 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCCOMB_X23_Y35_N26; Fanout = 2; REG Node = 'decoder:dec|controls[9]'
+        Info: 2: + IC(0.475 ns) + CELL(0.438 ns) = 0.913 ns; Loc. = LCCOMB_X23_Y35_N0; Fanout = 1; COMB Node = 'condlogic:cl|MemWrite'
+        Info: 3: + IC(0.816 ns) + CELL(2.768 ns) = 4.497 ns; Loc. = PIN_F12; Fanout = 0; PIN Node = 'MemWrite'
+        Info: Total cell delay = 3.206 ns ( 71.29 % )
+        Info: Total interconnect delay = 1.291 ns ( 28.71 % )
+Info: Longest tpd from source pin "Instr[31]" to destination pin "PCSrc" is 12.068 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.840 ns) = 0.840 ns; Loc. = PIN_H12; Fanout = 5; PIN Node = 'Instr[31]'
+    Info: 2: + IC(4.840 ns) + CELL(0.420 ns) = 6.100 ns; Loc. = LCCOMB_X19_Y35_N14; Fanout = 2; COMB Node = 'condlogic:cl|condcheck:cc|Mux0~0'
+    Info: 3: + IC(0.259 ns) + CELL(0.275 ns) = 6.634 ns; Loc. = LCCOMB_X19_Y35_N30; Fanout = 2; COMB Node = 'condlogic:cl|condcheck:cc|Mux0~3'
+    Info: 4: + IC(0.254 ns) + CELL(0.150 ns) = 7.038 ns; Loc. = LCCOMB_X19_Y35_N28; Fanout = 1; COMB Node = 'condlogic:cl|condcheck:cc|Mux0~4'
+    Info: 5: + IC(0.251 ns) + CELL(0.150 ns) = 7.439 ns; Loc. = LCCOMB_X19_Y35_N18; Fanout = 5; COMB Node = 'condlogic:cl|condcheck:cc|Mux0~5'
+    Info: 6: + IC(0.904 ns) + CELL(0.150 ns) = 8.493 ns; Loc. = LCCOMB_X23_Y35_N10; Fanout = 1; COMB Node = 'condlogic:cl|PCSrc~1'
+    Info: 7: + IC(0.817 ns) + CELL(2.758 ns) = 12.068 ns; Loc. = PIN_G12; Fanout = 0; PIN Node = 'PCSrc'
+    Info: Total cell delay = 4.743 ns ( 39.30 % )
+    Info: Total interconnect delay = 7.325 ns ( 60.70 % )
+Info: th for register "decoder:dec|controls[6]" (data pin = "Instr[26]", clock pin = "Instr[26]") is -0.905 ns
+    Info: + Longest clock path from clock "Instr[26]" to destination register is 5.043 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.850 ns) = 0.850 ns; Loc. = PIN_B10; Fanout = 6; CLK Node = 'Instr[26]'
+        Info: 2: + IC(0.986 ns) + CELL(0.275 ns) = 2.111 ns; Loc. = LCCOMB_X23_Y35_N18; Fanout = 1; COMB Node = 'decoder:dec|Mux6~0'
+        Info: 3: + IC(1.381 ns) + CELL(0.000 ns) = 3.492 ns; Loc. = CLKCTRL_G8; Fanout = 6; COMB Node = 'decoder:dec|Mux6~0clkctrl'
+        Info: 4: + IC(1.401 ns) + CELL(0.150 ns) = 5.043 ns; Loc. = LCCOMB_X23_Y35_N30; Fanout = 2; REG Node = 'decoder:dec|controls[6]'
+        Info: Total cell delay = 1.275 ns ( 25.28 % )
+        Info: Total interconnect delay = 3.768 ns ( 74.72 % )
     Info: + Micro hold delay of destination is 0.000 ns
-    Info: - Shortest pin to register delay is 6.089 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.850 ns) = 0.850 ns; Loc. = PIN_B10; Fanout = 5; CLK Node = 'Instr[27]'
-        Info: 2: + IC(4.820 ns) + CELL(0.419 ns) = 6.089 ns; Loc. = LCCOMB_X23_Y35_N20; Fanout = 3; REG Node = 'decoder:dec|controls[8]'
-        Info: Total cell delay = 1.269 ns ( 20.84 % )
-        Info: Total interconnect delay = 4.820 ns ( 79.16 % )
+    Info: - Shortest pin to register delay is 5.948 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.850 ns) = 0.850 ns; Loc. = PIN_B10; Fanout = 6; CLK Node = 'Instr[26]'
+        Info: 2: + IC(4.827 ns) + CELL(0.271 ns) = 5.948 ns; Loc. = LCCOMB_X23_Y35_N30; Fanout = 2; REG Node = 'decoder:dec|controls[6]'
+        Info: Total cell delay = 1.121 ns ( 18.85 % )
+        Info: Total interconnect delay = 4.827 ns ( 81.15 % )
 Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 11 warnings
     Info: Peak virtual memory: 196 megabytes
-    Info: Processing ended: Sun Dec 02 02:24:08 2018
+    Info: Processing ended: Mon Dec 03 00:59:27 2018
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 

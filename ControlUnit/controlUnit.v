@@ -3,7 +3,7 @@ module controlUnit(input clk,reset,
                   input [31:12] Instr,
                   input [3:0] ALUFlags,
                   output [1:0] RegSrc,
-                  output RegWrite,
+                  output [1:0]RegWrite,
                   output [1:0] ImmSrc,
                   output ALUSrc,
                   output [1:0] ALUControl,
@@ -13,8 +13,9 @@ module controlUnit(input clk,reset,
   wire [1:0] FlagW;
   wire PCS, RegW, MemW;
   wire NoWrite;
+  wire BLFlag;
   
-  decoder dec( .Op(Instr[27:26]), .Funct(Instr[25:20]), .Rd(Instr[15:12]), .FlagW(FlagW), .PCS(PCS), .RegW(RegW), .MemW(MemW), .MemtoReg(MemtoReg), .ALUSrc(ALUSrc), .ImmSrc(ImmSrc), .RegSrc(RegSrc), .ALUControl(ALUControl), .NoWrite(NoWrite) );
+  decoder dec( .Op(Instr[27:26]), .Funct(Instr[25:20]), .Rd(Instr[15:12]), .FlagW(FlagW), .PCS(PCS), .RegW(RegW), .MemW(MemW), .MemtoReg(MemtoReg), .ALUSrc(ALUSrc), .ImmSrc(ImmSrc), .RegSrc(RegSrc), .ALUControl(ALUControl), .NoWrite(NoWrite), .BLFlag(BLFlag));
   
   condlogic cl( .clk(clk), .reset(reset), .Cond(Instr[31:28]), .ALUFlags(ALUFlags), .FlagW(FlagW), .PCS(PCS), .RegW(RegW), .MemW(MemW), .PCSrc(PCSrc), .RegWrite(RegWrite), .MemWrite(MemWrite) );
   
@@ -27,7 +28,10 @@ input  [3:0] Cond,
 input  [3:0] ALUFlags,
 input  [1:0] FlagW,
 input  PCS, RegW, MemW,
-output  PCSrc, RegWrite, MemWrite); // will be wires in tb
+input NoWrite,
+input BLFlag,
+output  PCSrc, MemWrite,
+output [1:0] RegWrite); // will be wires in tb
 	wire [1:0] FlagWrite;
 	wire [3:0] Flags;
 	//reg [3:0] Flags_r;
@@ -38,7 +42,8 @@ output  PCSrc, RegWrite, MemWrite); // will be wires in tb
 // write controls are conditional
   condcheck cc(.Cond(Cond), .Flags(Flags), .CondEx(CondEx) );
 assign FlagWrite = FlagW & {2{CondEx}};
-assign RegWrite = RegW & CondEx;
+assign RegWrite[1] = BLFlag;
+assign RegWrite[0] = RegW & CondEx & !NoWrite;
 assign MemWrite = MemW & CondEx;
 assign PCSrc = PCS & CondEx;
 endmodule
@@ -81,14 +86,16 @@ module decoder(input  [1:0] Op,
 	output  MemtoReg, ALUSrc,
 	output  [1:0] ImmSrc, RegSrc,
     output reg[1:0] ALUControl,
-    output reg NoWrite
+    output reg  NoWrite,
+    output reg BLFlag
     );
 	reg [9:0] controls;
 	wire Branch, ALUOp;
   reg [1:0] FlagW_;
   assign FlagW = FlagW_;
 		// Main Decoder
-  always @(*)  begin
+  always @(*)  begin 
+  BLFlag = 1'b0;
 		case(Op)
 		// Data-processing immediate
 		2'b00: if (Funct[5]) controls = 10'b0000101001;
@@ -99,7 +106,10 @@ module decoder(input  [1:0] Op,
 		// STR
 		else controls = 10'b1001110100;
 		// B
-		2'b10: controls = 10'b0110100010;
+		2'b10: begin
+		controls = 10'b0110100010;
+		if(Funct[4]) BLFlag = 1'b1;
+		end
 		endcase
   end
 	assign {RegSrc, ImmSrc, ALUSrc, MemtoReg,
@@ -108,7 +118,7 @@ module decoder(input  [1:0] Op,
 // ALU Decoder
  always @(*)  begin
  NoWrite = 1'b1;
- if (ALUOp) begin // which DP Instr?
+ if (ALUOp) begin // dp
   	case(Funct[4:1])
 		4'b0100: ALUControl = 2'b00; // ADD
 		4'b0010: ALUControl = 2'b01; // SUB
@@ -128,14 +138,15 @@ module decoder(input  [1:0] Op,
 		end
 		default: ALUControl = 2'bx; // unimplemented
     endcase
-    // update flags if S bit is set (C & V only for arith)
     FlagW_[1] = Funct[0];
     FlagW_[0] = Funct[0] & (ALUControl == 2'b00 | ALUControl == 2'b01);
-         end else begin
-            ALUControl = 2'b00; // add for non-DP instructions
-            FlagW_ = 2'b00; // don't update Flags
+    end 
+    else //not dp
+	begin
+        ALUControl = 2'b00; // add for non-DP instructions
+        FlagW_ = 2'b00; // don't update Flags
+	end
 end
- end
 // PC Logic
 assign PCS = ((Rd == 4'b1111) & RegW) | Branch;
 endmodule
