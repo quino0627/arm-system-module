@@ -1,36 +1,35 @@
 module ALU(
-	input [31:0] srcA,
-	input [31:0] srcB,
+	input [31:0] SrcA,
+	input [31:0] SrcB,
 	input [1:0] ALUControl,
-	output reg [31:0] ALUResult,
-	output reg [3:0] ALUFlags
+	output reg[31:0] ALUResult,
+	output reg ALUFlags
 	);
-	
-	wire [31:0] condinvb; 
-	wire [32:0] sum;
-	wire Neg, Zero, Carry, oVerflow;
-	
-	assign condinvb = ALUControl[0] ? ~srcB:srcB;
-	assign sum = srcA + condinvb + ALUControl[0];
-	//2의 보수
-	
+	// ALUControl == 00 :-> Result = SrcA + SrcB
+	// ALUControl == 01 :-> Result = SrcA - SrcB
+	// ALUControl == 10 :-> Result = SrcB
+	// ALUControl == 11 :-> Result = SrcA - SrcB (which is only for CMP Op)
+	// and then if Result == 0 :-> ALUFlags = 1 else 0
 	always @(*)
-	
-		casex(ALUControl)
-			2'b0x: ALUResult = sum; //ADD, SUB
-			// 2'b10: ALUResult = srcA & srcB; //AND
-			// 2'b11: ALUResult = srcA | srcB; //OR
-			2'b10 : ALUResult = srcB + 0; // equal 
-			2'b11:
-			begin
-				assign Neg = ALUResult[31];
-				assign Zero = (ALUResult == 32'b0);
-				assign Carry = (ALUControl[1] == 1'b0) & sum[32];
-				assign oVerflow = (ALUControl[1] == 1'b0) & ~(srcA[31]^srcB[31]^ALUControl[0]) & (srcA[31]^sum[31]);
-				assign ALUflags  = {Neg, Zero, Carry, oVerflow};
+	begin
+		case(ALUControl)
+		2'b00: begin
+			ALUResult = SrcA + SrcB;
+			ALUFlags = 0;
 			end
-			default: ALUResult = 2'bx;
+		2'b01: begin
+			ALUResult = SrcA - SrcB;
+			ALUFlags = 0;
+			end
+		2'b10: begin
+			ALUResult = SrcB;
+			ALUFlags = 0;
+			end
+		2'b11: begin
+			ALUResult = SrcA - SrcB;
+			ALUFlags = (ALUResult==32'd0) ? 1'b1 : 1'b0;
+			end
 		endcase
-
-	
+	end
 endmodule
+		

@@ -1,5 +1,5 @@
 Fitter report for controlUnit
-Tue Dec 04 06:21:44 2018
+Tue Dec 04 06:31:21 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -60,7 +60,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                    ;
 +------------------------------------+----------------------------------------------+
-; Fitter Status                      ; Successful - Tue Dec 04 06:21:44 2018        ;
+; Fitter Status                      ; Successful - Tue Dec 04 06:31:21 2018        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; controlUnit                                  ;
 ; Top-level Entity Name              ; controlUnit                                  ;
@@ -71,7 +71,7 @@ applicable agreement for further details.
 ;     Total combinational functions  ; 74 / 33,216 ( < 1 % )                        ;
 ;     Dedicated logic registers      ; 0 / 33,216 ( 0 % )                           ;
 ; Total registers                    ; 0                                            ;
-; Total pins                         ; 35 / 475 ( 7 % )                             ;
+; Total pins                         ; 32 / 475 ( 7 % )                             ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 0 / 483,840 ( 0 % )                          ;
 ; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                               ;
@@ -149,8 +149,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                    ; Value              ;
 +-------------------------+--------------------+
 ; Placement               ;                    ;
-;     -- Requested        ; 0 / 117 ( 0.00 % ) ;
-;     -- Achieved         ; 0 / 117 ( 0.00 % ) ;
+;     -- Requested        ; 0 / 114 ( 0.00 % ) ;
+;     -- Achieved         ; 0 / 114 ( 0.00 % ) ;
 ;                         ;                    ;
 ; Routing (by Connection) ;                    ;
 ;     -- Requested        ; 0 / 0 ( 0.00 % )   ;
@@ -172,7 +172,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +----------------+---------+-------------------+-------------------------+-------------------+
-; Top            ; 117     ; 0                 ; N/A                     ; Source File       ;
+; Top            ; 114     ; 0                 ; N/A                     ; Source File       ;
 +----------------+---------+-------------------+-------------------------+-------------------+
 
 
@@ -209,7 +209,7 @@ The pin-out file can be found in C:/GitRepository/arm-system-module/ControlUnit/
 ; Total LABs:  partially or completely used   ; 10 / 2,076 ( < 1 % )  ;
 ; User inserted logic elements                ; 0                     ;
 ; Virtual pins                                ; 0                     ;
-; I/O pins                                    ; 35 / 475 ( 7 % )      ;
+; I/O pins                                    ; 32 / 475 ( 7 % )      ;
 ;     -- Clock pins                           ; 1 / 8 ( 13 % )        ;
 ; Global signals                              ; 4                     ;
 ; M4Ks                                        ; 0 / 105 ( 0 % )       ;
@@ -222,47 +222,44 @@ The pin-out file can be found in C:/GitRepository/arm-system-module/ControlUnit/
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )         ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )         ;
 ; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%          ;
-; Peak interconnect usage (total/H/V)         ; 0% / 0% / 0%          ;
+; Peak interconnect usage (total/H/V)         ; 1% / 0% / 2%          ;
 ; Maximum fan-out node                        ; Op[0]                 ;
 ; Maximum fan-out                             ; 20                    ;
 ; Highest non-global fan-out signal           ; Op[0]                 ;
 ; Highest non-global fan-out                  ; 20                    ;
 ; Total fan-out                               ; 283                   ;
-; Average fan-out                             ; 2.44                  ;
+; Average fan-out                             ; 2.50                  ;
 +---------------------------------------------+-----------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Input Pins                                                                                                                                                                                                                                                        ;
-+-------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
-; Name        ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
-+-------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
-; ALUFlags[0] ; B11   ; 3        ; 29           ; 36           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; ALUFlags[1] ; B9    ; 3        ; 20           ; 36           ; 3           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; ALUFlags[2] ; D23   ; 5        ; 65           ; 34           ; 3           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; ALUFlags[3] ; J20   ; 5        ; 65           ; 30           ; 3           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Cond[0]     ; G15   ; 4        ; 44           ; 36           ; 3           ; 7                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Cond[1]     ; C17   ; 4        ; 46           ; 36           ; 1           ; 5                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Cond[2]     ; D17   ; 4        ; 46           ; 36           ; 0           ; 5                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Cond[3]     ; B18   ; 4        ; 46           ; 36           ; 2           ; 6                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Funct[0]    ; E22   ; 5        ; 65           ; 34           ; 2           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Funct[1]    ; A18   ; 4        ; 46           ; 36           ; 3           ; 12                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Funct[2]    ; B17   ; 4        ; 42           ; 36           ; 0           ; 9                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Funct[3]    ; E15   ; 4        ; 40           ; 36           ; 1           ; 14                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Funct[4]    ; H15   ; 4        ; 42           ; 36           ; 3           ; 12                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Funct[5]    ; F16   ; 4        ; 44           ; 36           ; 1           ; 13                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Op[0]       ; F15   ; 4        ; 44           ; 36           ; 2           ; 20                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Op[1]       ; G16   ; 4        ; 44           ; 36           ; 0           ; 11                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Op[2]       ; H16   ; 4        ; 42           ; 36           ; 2           ; 10                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Rd[0]       ; D13   ; 3        ; 31           ; 36           ; 3           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Rd[1]       ; F14   ; 4        ; 35           ; 36           ; 3           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Rd[2]       ; K25   ; 5        ; 65           ; 22           ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Rd[3]       ; C19   ; 4        ; 53           ; 36           ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; clk         ; C13   ; 3        ; 31           ; 36           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; reset       ; F20   ; 5        ; 65           ; 34           ; 0           ; 10                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-+-------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                                                                                                                                                     ;
++----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
+; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
++----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
+; ALUFlags ; J10   ; 3        ; 27           ; 36           ; 1           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Cond[0]  ; L10   ; 2        ; 0            ; 23           ; 0           ; 7                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Cond[1]  ; R3    ; 1        ; 0            ; 17           ; 3           ; 5                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Cond[2]  ; J11   ; 3        ; 27           ; 36           ; 0           ; 5                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Cond[3]  ; F12   ; 3        ; 27           ; 36           ; 3           ; 6                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Funct[0] ; Y12   ; 8        ; 29           ; 0            ; 0           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Funct[1] ; B11   ; 3        ; 29           ; 36           ; 2           ; 12                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Funct[2] ; D14   ; 4        ; 33           ; 36           ; 0           ; 9                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Funct[3] ; B14   ; 4        ; 33           ; 36           ; 2           ; 14                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Funct[4] ; A14   ; 4        ; 33           ; 36           ; 1           ; 12                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Funct[5] ; C11   ; 3        ; 29           ; 36           ; 3           ; 13                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Op[0]    ; B12   ; 3        ; 29           ; 36           ; 0           ; 20                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Op[1]    ; C12   ; 3        ; 29           ; 36           ; 1           ; 11                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Op[2]    ; M21   ; 5        ; 65           ; 21           ; 3           ; 10                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Rd[0]    ; D13   ; 3        ; 31           ; 36           ; 3           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Rd[1]    ; B18   ; 4        ; 46           ; 36           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Rd[2]    ; K25   ; 5        ; 65           ; 22           ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Rd[3]    ; C19   ; 4        ; 53           ; 36           ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; clk      ; C13   ; 3        ; 31           ; 36           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; reset    ; N20   ; 5        ; 65           ; 21           ; 2           ; 10                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
++----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -270,18 +267,18 @@ The pin-out file can be found in C:/GitRepository/arm-system-module/ControlUnit/
 +---------------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 ; Name          ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Output Enable Register ; Power Up High ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination ; Location assigned by ; Load ; Output Enable Source ; Output Enable Group ;
 +---------------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
-; ALUControl[0] ; W15   ; 7        ; 42           ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; ALUControl[1] ; Y16   ; 7        ; 46           ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; ALUSrc        ; G17   ; 4        ; 48           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; ImmSrc[0]     ; AF17  ; 7        ; 44           ; 0            ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; ImmSrc[1]     ; D15   ; 4        ; 40           ; 36           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; MemWrite      ; D16   ; 4        ; 40           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; MemtoReg      ; C16   ; 4        ; 37           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; PCSrc         ; B16   ; 4        ; 37           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; RegSrc[0]     ; F21   ; 5        ; 65           ; 34           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; RegSrc[1]     ; C15   ; 4        ; 37           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; RegWrite[0]   ; W16   ; 7        ; 42           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; RegWrite[1]   ; A17   ; 4        ; 42           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; ALUControl[0] ; V11   ; 8        ; 29           ; 0            ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; ALUControl[1] ; J13   ; 3        ; 24           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; ALUSrc        ; AA12  ; 8        ; 29           ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; ImmSrc[0]     ; G12   ; 3        ; 27           ; 36           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; ImmSrc[1]     ; AD12  ; 8        ; 31           ; 0            ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; MemWrite      ; V13   ; 8        ; 27           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; MemtoReg      ; E12   ; 3        ; 24           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; PCSrc         ; G14   ; 4        ; 35           ; 36           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; RegSrc[0]     ; F13   ; 4        ; 35           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; RegSrc[1]     ; J14   ; 3        ; 24           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; RegWrite[0]   ; D12   ; 3        ; 24           ; 36           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; RegWrite[1]   ; U12   ; 8        ; 29           ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
 +---------------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 
 
@@ -290,14 +287,14 @@ The pin-out file can be found in C:/GitRepository/arm-system-module/ControlUnit/
 +----------+------------------+---------------+--------------+
 ; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
 +----------+------------------+---------------+--------------+
-; 1        ; 0 / 64 ( 0 % )   ; 3.3V          ; --           ;
-; 2        ; 2 / 59 ( 3 % )   ; 3.3V          ; --           ;
-; 3        ; 4 / 56 ( 7 % )   ; 3.3V          ; --           ;
-; 4        ; 21 / 58 ( 36 % ) ; 3.3V          ; --           ;
-; 5        ; 6 / 65 ( 9 % )   ; 3.3V          ; --           ;
+; 1        ; 1 / 64 ( 2 % )   ; 3.3V          ; --           ;
+; 2        ; 3 / 59 ( 5 % )   ; 3.3V          ; --           ;
+; 3        ; 14 / 56 ( 25 % ) ; 3.3V          ; --           ;
+; 4        ; 7 / 58 ( 12 % )  ; 3.3V          ; --           ;
+; 5        ; 3 / 65 ( 5 % )   ; 3.3V          ; --           ;
 ; 6        ; 1 / 59 ( 2 % )   ; 3.3V          ; --           ;
-; 7        ; 4 / 58 ( 7 % )   ; 3.3V          ; --           ;
-; 8        ; 0 / 56 ( 0 % )   ; 3.3V          ; --           ;
+; 7        ; 0 / 58 ( 0 % )   ; 3.3V          ; --           ;
+; 8        ; 6 / 56 ( 11 % )  ; 3.3V          ; --           ;
 +----------+------------------+---------------+--------------+
 
 
@@ -318,11 +315,11 @@ The pin-out file can be found in C:/GitRepository/arm-system-module/ControlUnit/
 ; A11      ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; A12      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; A13      ; 430        ; 4        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; A14      ; 427        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; A14      ; 427        ; 4        ; Funct[4]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; A15      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; A16      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; A17      ; 412        ; 4        ; RegWrite[1]                              ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; A18      ; 406        ; 4        ; Funct[1]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A17      ; 412        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; A18      ; 406        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A19      ; 394        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A20      ; 390        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A21      ; 382        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -341,7 +338,7 @@ The pin-out file can be found in C:/GitRepository/arm-system-module/ControlUnit/
 ; AA9      ; 152        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA10     ; 153        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA11     ; 155        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AA12     ; 179        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AA12     ; 179        ; 8        ; ALUSrc                                   ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AA13     ; 192        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA14     ; 194        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA15     ; 197        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -419,7 +416,7 @@ The pin-out file can be found in C:/GitRepository/arm-system-module/ControlUnit/
 ; AD9      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AD10     ; 167        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AD11     ; 173        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AD12     ; 181        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AD12     ; 181        ; 8        ; ImmSrc[1]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AD13     ; 186        ; 8        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; AD14     ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AD15     ; 190        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -475,7 +472,7 @@ The pin-out file can be found in C:/GitRepository/arm-system-module/ControlUnit/
 ; AF14     ; 187        ; 7        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; AF15     ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AF16     ;            ; 7        ; VCCIO7                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; AF17     ; 205        ; 7        ; ImmSrc[0]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AF17     ; 205        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AF18     ; 211        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AF19     ; 213        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AF20     ; 223        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -492,16 +489,16 @@ The pin-out file can be found in C:/GitRepository/arm-system-module/ControlUnit/
 ; B6       ; 480        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B7       ; 466        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B8       ; 458        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B9       ; 452        ; 3        ; ALUFlags[1]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B9       ; 452        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B10      ; 448        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B11      ; 435        ; 3        ; ALUFlags[0]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; B12      ; 433        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; B11      ; 435        ; 3        ; Funct[1]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B12      ; 433        ; 3        ; Op[0]                                    ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; B13      ; 429        ; 4        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; B14      ; 428        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; B14      ; 428        ; 4        ; Funct[3]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; B15      ; 420        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B16      ; 419        ; 4        ; PCSrc                                    ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; B17      ; 411        ; 4        ; Funct[2]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; B18      ; 405        ; 4        ; Cond[3]                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B16      ; 419        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; B17      ; 411        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; B18      ; 405        ; 4        ; Rd[1]                                    ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; B19      ; 393        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B20      ; 389        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B21      ; 381        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -520,13 +517,13 @@ The pin-out file can be found in C:/GitRepository/arm-system-module/ControlUnit/
 ; C8       ; 463        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C9       ; 459        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C10      ; 450        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; C11      ; 436        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; C12      ; 434        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; C11      ; 436        ; 3        ; Funct[5]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; C12      ; 434        ; 3        ; Op[1]                                    ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; C13      ; 431        ; 3        ; clk                                      ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; C14      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; C15      ; 421        ; 4        ; RegSrc[1]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; C16      ; 418        ; 4        ; MemtoReg                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; C17      ; 404        ; 4        ; Cond[1]                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; C15      ; 421        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; C16      ; 418        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; C17      ; 404        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C18      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; C19      ; 391        ; 4        ; Rd[3]                                    ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; C20      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
@@ -547,18 +544,18 @@ The pin-out file can be found in C:/GitRepository/arm-system-module/ControlUnit/
 ; D9       ; 460        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D10      ; 449        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D11      ; 445        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; D12      ; 443        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; D12      ; 443        ; 3        ; RegWrite[0]                              ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; D13      ; 432        ; 3        ; Rd[0]                                    ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; D14      ; 426        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; D15      ; 417        ; 4        ; ImmSrc[1]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; D16      ; 415        ; 4        ; MemWrite                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; D17      ; 403        ; 4        ; Cond[2]                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D14      ; 426        ; 4        ; Funct[2]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D15      ; 417        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; D16      ; 415        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; D17      ; 403        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D18      ; 396        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D19      ; 392        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D20      ; 387        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D21      ; 376        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D22      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; D23      ; 369        ; 5        ; ALUFlags[2]                              ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; D23      ; 369        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; D24      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; D25      ; 358        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; D26      ; 359        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -573,17 +570,17 @@ The pin-out file can be found in C:/GitRepository/arm-system-module/ControlUnit/
 ; E9       ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; E10      ; 453        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; E11      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; E12      ; 444        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; E12      ; 444        ; 3        ; MemtoReg                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; E13      ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; E14      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; E15      ; 416        ; 4        ; Funct[3]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; E15      ; 416        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; E16      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; E17      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; E18      ; 395        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; E19      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; E20      ; 388        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; E21      ;            ;          ; GND_PLL2                                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; E22      ; 370        ; 5        ; Funct[0]                                 ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; E22      ; 370        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; E23      ; 365        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; E24      ; 364        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; E25      ; 355        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -599,16 +596,16 @@ The pin-out file can be found in C:/GitRepository/arm-system-module/ControlUnit/
 ; F9       ; 470        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F10      ; 462        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F11      ; 454        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; F12      ; 440        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; F13      ; 423        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; F14      ; 425        ; 4        ; Rd[1]                                    ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; F15      ; 409        ; 4        ; Op[0]                                    ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; F16      ; 408        ; 4        ; Funct[5]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; F12      ; 440        ; 3        ; Cond[3]                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; F13      ; 423        ; 4        ; RegSrc[0]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; F14      ; 425        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; F15      ; 409        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; F16      ; 408        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F17      ; 401        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F18      ; 398        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F19      ;            ;          ; GNDA_PLL2                                ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; F20      ; 372        ; 5        ; reset                                    ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; F21      ; 371        ; 5        ; RegSrc[0]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; F20      ; 372        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; F21      ; 371        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; F22      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; F23      ; 353        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; F24      ; 354        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -625,12 +622,12 @@ The pin-out file can be found in C:/GitRepository/arm-system-module/ControlUnit/
 ; G9       ; 471        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G10      ; 461        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G11      ; 446        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; G12      ; 439        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; G12      ; 439        ; 3        ; ImmSrc[0]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; G13      ; 422        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; G14      ; 424        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; G15      ; 410        ; 4        ; Cond[0]                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; G16      ; 407        ; 4        ; Op[1]                                    ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; G17      ; 402        ; 4        ; ALUSrc                                   ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; G14      ; 424        ; 4        ; PCSrc                                    ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; G15      ; 410        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; G16      ; 407        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; G17      ; 402        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G18      ; 397        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G19      ;            ;          ; VCCA_PLL2                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; G20      ;            ;          ; GND_PLL2                                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -654,8 +651,8 @@ The pin-out file can be found in C:/GitRepository/arm-system-module/ControlUnit/
 ; H12      ; 455        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H13      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; H14      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; H15      ; 414        ; 4        ; Funct[4]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; H16      ; 413        ; 4        ; Op[2]                                    ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; H15      ; 414        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; H16      ; 413        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H17      ; 400        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H18      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; H19      ; 335        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -675,17 +672,17 @@ The pin-out file can be found in C:/GitRepository/arm-system-module/ControlUnit/
 ; J7       ; 17         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J8       ; 16         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J9       ; 475        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; J10      ; 438        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; J11      ; 437        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; J10      ; 438        ; 3        ; ALUFlags                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; J11      ; 437        ; 3        ; Cond[2]                                  ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; J12      ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; J13      ; 442        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; J14      ; 441        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; J13      ; 442        ; 3        ; ALUControl[1]                            ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; J14      ; 441        ; 3        ; RegSrc[1]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; J15      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; J16      ; 385        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; J17      ; 399        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; J18      ; 383        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; J19      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; J20      ; 351        ; 5        ; ALUFlags[3]                              ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J20      ; 351        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J21      ; 352        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J22      ; 357        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J23      ; 339        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -727,7 +724,7 @@ The pin-out file can be found in C:/GitRepository/arm-system-module/ControlUnit/
 ; L7       ; 47         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; L8       ; 59         ; 2        ; #TMS                                     ; input  ;              ;         ; --         ;                 ; --       ; --           ;
 ; L9       ; 49         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; L10      ; 52         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; L10      ; 52         ; 2        ; Cond[0]                                  ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; L11      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; L12      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; L13      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -764,7 +761,7 @@ The pin-out file can be found in C:/GitRepository/arm-system-module/ControlUnit/
 ; M18      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; M19      ; 317        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; M20      ; 316        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; M21      ; 314        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; M21      ; 314        ; 5        ; Op[2]                                    ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; M22      ; 319        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; M23      ; 318        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; M24      ; 313        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -789,7 +786,7 @@ The pin-out file can be found in C:/GitRepository/arm-system-module/ControlUnit/
 ; N17      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; N18      ; 348        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; N19      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; N20      ; 315        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; N20      ; 315        ; 5        ; reset                                    ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; N21      ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; N22      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; N23      ; 311        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -824,7 +821,7 @@ The pin-out file can be found in C:/GitRepository/arm-system-module/ControlUnit/
 ; P26      ; 306        ; 6        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; R1       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; R2       ; 71         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; R3       ; 72         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; R3       ; 72         ; 1        ; Cond[1]                                  ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; R4       ; 73         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; R5       ; 74         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; R6       ; 81         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -885,7 +882,7 @@ The pin-out file can be found in C:/GitRepository/arm-system-module/ControlUnit/
 ; U9       ; 86         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; U10      ; 87         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; U11      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
-; U12      ; 178        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; U12      ; 178        ; 8        ; RegWrite[1]                              ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; U13      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; U14      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; U15      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
@@ -910,9 +907,9 @@ The pin-out file can be found in C:/GitRepository/arm-system-module/ControlUnit/
 ; V8       ;            ; 1        ; VCCIO1                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; V9       ; 142        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; V10      ; 141        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; V11      ; 177        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; V11      ; 177        ; 8        ; ALUControl[0]                            ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; V12      ;            ; 8        ; VCCIO8                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; V13      ; 176        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; V13      ; 176        ; 8        ; MemWrite                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; V14      ; 175        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; V15      ;            ; 7        ; VCCIO7                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; V16      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
@@ -940,8 +937,8 @@ The pin-out file can be found in C:/GitRepository/arm-system-module/ControlUnit/
 ; W12      ; 162        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; W13      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; W14      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; W15      ; 203        ; 7        ; ALUControl[0]                            ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; W16      ; 204        ; 7        ; RegWrite[0]                              ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; W15      ; 203        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; W16      ; 204        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; W17      ; 217        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; W18      ;            ; 7        ; VCCIO7                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; W19      ; 234        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -963,11 +960,11 @@ The pin-out file can be found in C:/GitRepository/arm-system-module/ControlUnit/
 ; Y9       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; Y10      ; 146        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; Y11      ; 156        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; Y12      ; 180        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; Y12      ; 180        ; 8        ; Funct[0]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; Y13      ; 193        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; Y14      ; 195        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; Y15      ; 196        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; Y16      ; 210        ; 7        ; ALUControl[1]                            ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; Y16      ; 210        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; Y17      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; Y18      ; 229        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; Y19      ;            ;          ; GNDA_PLL4                                ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -1024,7 +1021,7 @@ Note: User assignments will override these defaults. The user specified values a
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
-; |controlUnit               ; 74 (74)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 35   ; 0            ; 74 (74)      ; 0 (0)             ; 0 (0)            ; |controlUnit        ; work         ;
+; |controlUnit               ; 74 (74)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 32   ; 0            ; 74 (74)      ; 0 (0)             ; 0 (0)            ; |controlUnit        ; work         ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1039,9 +1036,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Rd[1]         ; Input    ; (0) 287 ps    ; (0) 287 ps    ; --                    ; --  ;
 ; Rd[2]         ; Input    ; (0) 299 ps    ; (0) 299 ps    ; --                    ; --  ;
 ; Rd[3]         ; Input    ; (0) 287 ps    ; (0) 287 ps    ; --                    ; --  ;
-; ALUFlags[0]   ; Input    ; (0) 287 ps    ; (0) 287 ps    ; --                    ; --  ;
-; ALUFlags[1]   ; Input    ; (0) 287 ps    ; (0) 287 ps    ; --                    ; --  ;
-; ALUFlags[3]   ; Input    ; (0) 299 ps    ; (0) 299 ps    ; --                    ; --  ;
 ; RegSrc[0]     ; Output   ; --            ; --            ; --                    ; --  ;
 ; RegSrc[1]     ; Output   ; --            ; --            ; --                    ; --  ;
 ; RegWrite[0]   ; Output   ; --            ; --            ; --                    ; --  ;
@@ -1054,21 +1048,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; MemWrite      ; Output   ; --            ; --            ; --                    ; --  ;
 ; MemtoReg      ; Output   ; --            ; --            ; --                    ; --  ;
 ; PCSrc         ; Output   ; --            ; --            ; --                    ; --  ;
-; Cond[3]       ; Input    ; (6) 4114 ps   ; (0) 287 ps    ; --                    ; --  ;
-; Cond[1]       ; Input    ; (6) 4114 ps   ; (0) 287 ps    ; --                    ; --  ;
+; Cond[3]       ; Input    ; (0) 287 ps    ; (6) 4114 ps   ; --                    ; --  ;
+; Cond[1]       ; Input    ; (0) 299 ps    ; (6) 4075 ps   ; --                    ; --  ;
 ; Cond[2]       ; Input    ; (0) 287 ps    ; (6) 4114 ps   ; --                    ; --  ;
-; ALUFlags[2]   ; Input    ; (6) 4075 ps   ; (0) 299 ps    ; --                    ; --  ;
-; Cond[0]       ; Input    ; (0) 287 ps    ; (6) 4114 ps   ; --                    ; --  ;
-; Op[2]         ; Input    ; (0) 287 ps    ; (6) 4114 ps   ; --                    ; --  ;
+; ALUFlags      ; Input    ; (0) 287 ps    ; (6) 4114 ps   ; --                    ; --  ;
+; Cond[0]       ; Input    ; (6) 4075 ps   ; (0) 299 ps    ; --                    ; --  ;
+; Op[2]         ; Input    ; (0) 299 ps    ; (6) 4075 ps   ; --                    ; --  ;
 ; Op[1]         ; Input    ; (6) 4114 ps   ; (0) 287 ps    ; --                    ; --  ;
 ; Funct[5]      ; Input    ; (0) 287 ps    ; (6) 4114 ps   ; --                    ; --  ;
-; Op[0]         ; Input    ; (0) 287 ps    ; (6) 4114 ps   ; --                    ; --  ;
+; Op[0]         ; Input    ; (6) 4114 ps   ; (0) 287 ps    ; --                    ; --  ;
 ; reset         ; Input    ; (0) 299 ps    ; (0) 299 ps    ; --                    ; --  ;
 ; Funct[1]      ; Input    ; (0) 287 ps    ; (6) 4114 ps   ; --                    ; --  ;
 ; Funct[2]      ; Input    ; (0) 287 ps    ; (6) 4114 ps   ; --                    ; --  ;
-; Funct[3]      ; Input    ; (0) 287 ps    ; (6) 4114 ps   ; --                    ; --  ;
+; Funct[3]      ; Input    ; (6) 4114 ps   ; (0) 287 ps    ; --                    ; --  ;
 ; Funct[4]      ; Input    ; (6) 4114 ps   ; (0) 287 ps    ; --                    ; --  ;
-; Funct[0]      ; Input    ; (0) 299 ps    ; (6) 4075 ps   ; --                    ; --  ;
+; Funct[0]      ; Input    ; (0) 287 ps    ; (6) 4114 ps   ; --                    ; --  ;
 +---------------+----------+---------------+---------------+-----------------------+-----+
 
 
@@ -1082,41 +1076,38 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Rd[1]               ;                   ;         ;
 ; Rd[2]               ;                   ;         ;
 ; Rd[3]               ;                   ;         ;
-; ALUFlags[0]         ;                   ;         ;
-; ALUFlags[1]         ;                   ;         ;
-; ALUFlags[3]         ;                   ;         ;
 ; Cond[3]             ;                   ;         ;
-;      - Mux4~0       ; 0                 ; 6       ;
-;      - Mux3~0       ; 0                 ; 6       ;
-;      - Mux16~0      ; 1                 ; 0       ;
-;      - Mux16~1      ; 1                 ; 0       ;
-;      - Mux18~0      ; 1                 ; 0       ;
-;      - Selector9~0  ; 1                 ; 0       ;
+;      - Mux4~0       ; 1                 ; 6       ;
+;      - Mux3~0       ; 1                 ; 6       ;
+;      - Mux16~0      ; 0                 ; 0       ;
+;      - Mux16~1      ; 0                 ; 0       ;
+;      - Mux18~0      ; 0                 ; 0       ;
+;      - Selector9~0  ; 0                 ; 0       ;
 ; Cond[1]             ;                   ;         ;
-;      - Mux4~0       ; 0                 ; 6       ;
-;      - Mux16~0      ; 1                 ; 0       ;
-;      - Mux16~1      ; 1                 ; 0       ;
-;      - Mux18~0      ; 1                 ; 0       ;
-;      - Selector9~0  ; 1                 ; 0       ;
+;      - Mux4~0       ; 1                 ; 6       ;
+;      - Mux16~0      ; 0                 ; 0       ;
+;      - Mux16~1      ; 0                 ; 0       ;
+;      - Mux18~0      ; 0                 ; 0       ;
+;      - Selector9~0  ; 0                 ; 0       ;
 ; Cond[2]             ;                   ;         ;
 ;      - Mux4~0       ; 1                 ; 6       ;
 ;      - Mux16~0      ; 0                 ; 0       ;
 ;      - Mux16~1      ; 0                 ; 0       ;
 ;      - Mux18~0      ; 0                 ; 0       ;
 ;      - Selector9~0  ; 0                 ; 0       ;
-; ALUFlags[2]         ;                   ;         ;
-;      - Mux3~0       ; 0                 ; 6       ;
-;      - Mux16~2      ; 1                 ; 0       ;
-;      - Mux10~2      ; 0                 ; 6       ;
-;      - Mux16~3      ; 1                 ; 0       ;
-; Cond[0]             ;                   ;         ;
+; ALUFlags            ;                   ;         ;
 ;      - Mux3~0       ; 1                 ; 6       ;
-;      - Mux16~0      ; 0                 ; 0       ;
 ;      - Mux16~2      ; 0                 ; 0       ;
-;      - Mux18~0      ; 0                 ; 0       ;
-;      - Selector9~0  ; 0                 ; 0       ;
 ;      - Mux10~2      ; 1                 ; 6       ;
 ;      - Mux16~3      ; 0                 ; 0       ;
+; Cond[0]             ;                   ;         ;
+;      - Mux3~0       ; 0                 ; 6       ;
+;      - Mux16~0      ; 1                 ; 0       ;
+;      - Mux16~2      ; 1                 ; 0       ;
+;      - Mux18~0      ; 1                 ; 0       ;
+;      - Selector9~0  ; 1                 ; 0       ;
+;      - Mux10~2      ; 0                 ; 6       ;
+;      - Mux16~3      ; 1                 ; 0       ;
 ; Op[2]               ;                   ;         ;
 ;      - Mux7~0       ; 1                 ; 6       ;
 ;      - Mux24~3      ; 0                 ; 0       ;
@@ -1155,37 +1146,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Mux24~7      ; 0                 ; 0       ;
 ;      - Mux24~9      ; 0                 ; 0       ;
 ; Op[0]               ;                   ;         ;
-;      - Mux7~1       ; 1                 ; 6       ;
-;      - Mux24~2      ; 0                 ; 0       ;
-;      - Mux14~0      ; 1                 ; 6       ;
-;      - Mux24~4      ; 0                 ; 0       ;
-;      - Mux15~2      ; 1                 ; 6       ;
-;      - Mux13~1      ; 1                 ; 6       ;
-;      - Mux12~0      ; 1                 ; 6       ;
-;      - Mux20~0      ; 0                 ; 0       ;
-;      - Mux10~1      ; 1                 ; 6       ;
-;      - Mux10~4      ; 1                 ; 6       ;
-;      - Mux3~2       ; 1                 ; 6       ;
-;      - Mux8~2       ; 1                 ; 6       ;
-;      - Mux1~3       ; 0                 ; 0       ;
-;      - Mux6~0       ; 1                 ; 6       ;
-;      - Mux24~5      ; 0                 ; 0       ;
-;      - Mux24~6      ; 0                 ; 0       ;
-;      - Mux24~7      ; 0                 ; 0       ;
-;      - Mux24~9      ; 0                 ; 0       ;
-;      - Mux1~6       ; 0                 ; 0       ;
-;      - Mux0~4       ; 0                 ; 0       ;
+;      - Mux7~1       ; 0                 ; 6       ;
+;      - Mux24~2      ; 1                 ; 0       ;
+;      - Mux14~0      ; 0                 ; 6       ;
+;      - Mux24~4      ; 1                 ; 0       ;
+;      - Mux15~2      ; 0                 ; 6       ;
+;      - Mux13~1      ; 0                 ; 6       ;
+;      - Mux12~0      ; 0                 ; 6       ;
+;      - Mux20~0      ; 1                 ; 0       ;
+;      - Mux10~1      ; 0                 ; 6       ;
+;      - Mux10~4      ; 0                 ; 6       ;
+;      - Mux3~2       ; 0                 ; 6       ;
+;      - Mux8~2       ; 0                 ; 6       ;
+;      - Mux1~3       ; 1                 ; 0       ;
+;      - Mux6~0       ; 0                 ; 6       ;
+;      - Mux24~5      ; 1                 ; 0       ;
+;      - Mux24~6      ; 1                 ; 0       ;
+;      - Mux24~7      ; 1                 ; 0       ;
+;      - Mux24~9      ; 1                 ; 0       ;
+;      - Mux1~6       ; 1                 ; 0       ;
+;      - Mux0~4       ; 1                 ; 0       ;
 ; reset               ;                   ;         ;
-;      - Mux24~3      ; 0                 ; 0       ;
-;      - Mux17~0      ; 0                 ; 0       ;
-;      - Mux19~2      ; 0                 ; 0       ;
-;      - Mux18~1      ; 0                 ; 0       ;
-;      - Mux1~3       ; 0                 ; 0       ;
-;      - Mux1~4       ; 0                 ; 0       ;
-;      - Mux16~4      ; 0                 ; 0       ;
-;      - Mux0~3       ; 0                 ; 0       ;
-;      - Mux24~6      ; 0                 ; 0       ;
-;      - Mux24~8      ; 0                 ; 0       ;
+;      - Mux24~3      ; 1                 ; 0       ;
+;      - Mux17~0      ; 1                 ; 0       ;
+;      - Mux19~2      ; 1                 ; 0       ;
+;      - Mux18~1      ; 1                 ; 0       ;
+;      - Mux1~3       ; 1                 ; 0       ;
+;      - Mux1~4       ; 1                 ; 0       ;
+;      - Mux16~4      ; 1                 ; 0       ;
+;      - Mux0~3       ; 1                 ; 0       ;
+;      - Mux24~6      ; 1                 ; 0       ;
+;      - Mux24~8      ; 1                 ; 0       ;
 ; Funct[1]            ;                   ;         ;
 ;      - WideOr3~0    ; 0                 ; 0       ;
 ;      - WideOr2~0    ; 0                 ; 0       ;
@@ -1210,20 +1201,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Mux3~1       ; 1                 ; 6       ;
 ;      - Mux8~0       ; 1                 ; 6       ;
 ; Funct[3]            ;                   ;         ;
-;      - WideOr3~0    ; 0                 ; 0       ;
-;      - WideOr2~0    ; 0                 ; 0       ;
-;      - Mux15~1      ; 1                 ; 6       ;
-;      - Mux23~0      ; 0                 ; 0       ;
-;      - Mux19~0      ; 0                 ; 0       ;
-;      - Mux19~1      ; 0                 ; 0       ;
-;      - Mux20~1      ; 0                 ; 0       ;
-;      - Mux10~0      ; 1                 ; 6       ;
-;      - Mux10~3      ; 1                 ; 6       ;
-;      - Mux3~1       ; 1                 ; 6       ;
-;      - Selector19~0 ; 0                 ; 0       ;
-;      - Mux23~1      ; 0                 ; 0       ;
-;      - Mux8~0       ; 1                 ; 6       ;
-;      - Mux8~1       ; 1                 ; 6       ;
+;      - WideOr3~0    ; 1                 ; 0       ;
+;      - WideOr2~0    ; 1                 ; 0       ;
+;      - Mux15~1      ; 0                 ; 6       ;
+;      - Mux23~0      ; 1                 ; 0       ;
+;      - Mux19~0      ; 1                 ; 0       ;
+;      - Mux19~1      ; 1                 ; 0       ;
+;      - Mux20~1      ; 1                 ; 0       ;
+;      - Mux10~0      ; 0                 ; 6       ;
+;      - Mux10~3      ; 0                 ; 6       ;
+;      - Mux3~1       ; 0                 ; 6       ;
+;      - Selector19~0 ; 1                 ; 0       ;
+;      - Mux23~1      ; 1                 ; 0       ;
+;      - Mux8~0       ; 0                 ; 6       ;
+;      - Mux8~1       ; 0                 ; 6       ;
 ; Funct[4]            ;                   ;         ;
 ;      - WideOr3~0    ; 1                 ; 0       ;
 ;      - WideOr2~0    ; 1                 ; 0       ;
@@ -1249,14 +1240,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; Name    ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +---------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Mux0~4  ; LCCOMB_X44_Y35_N10 ; 1       ; Latch enable ; no     ; --                   ; --               ; --                        ;
-; Mux17~0 ; LCCOMB_X44_Y35_N22 ; 1       ; Latch enable ; no     ; --                   ; --               ; --                        ;
-; Mux19~3 ; LCCOMB_X42_Y35_N14 ; 2       ; Latch enable ; yes    ; Global Clock         ; GCLK10           ; --                        ;
-; Mux1~6  ; LCCOMB_X43_Y35_N26 ; 1       ; Latch enable ; no     ; --                   ; --               ; --                        ;
-; Mux20~3 ; LCCOMB_X41_Y35_N0  ; 2       ; Latch enable ; yes    ; Global Clock         ; GCLK9            ; --                        ;
-; Mux23~2 ; LCCOMB_X42_Y35_N4  ; 2       ; Latch enable ; yes    ; Global Clock         ; GCLK8            ; --                        ;
-; Mux24~3 ; LCCOMB_X43_Y35_N4  ; 2       ; Latch enable ; yes    ; Global Clock         ; GCLK11           ; --                        ;
-; Mux24~8 ; LCCOMB_X44_Y35_N14 ; 1       ; Latch enable ; no     ; --                   ; --               ; --                        ;
+; Mux0~4  ; LCCOMB_X29_Y21_N22 ; 1       ; Latch enable ; no     ; --                   ; --               ; --                        ;
+; Mux17~0 ; LCCOMB_X29_Y21_N0  ; 1       ; Latch enable ; no     ; --                   ; --               ; --                        ;
+; Mux19~3 ; LCCOMB_X31_Y21_N0  ; 2       ; Latch enable ; yes    ; Global Clock         ; GCLK8            ; --                        ;
+; Mux1~6  ; LCCOMB_X30_Y21_N28 ; 1       ; Latch enable ; no     ; --                   ; --               ; --                        ;
+; Mux20~3 ; LCCOMB_X31_Y24_N0  ; 2       ; Latch enable ; yes    ; Global Clock         ; GCLK11           ; --                        ;
+; Mux23~2 ; LCCOMB_X31_Y21_N22 ; 2       ; Latch enable ; yes    ; Global Clock         ; GCLK10           ; --                        ;
+; Mux24~3 ; LCCOMB_X30_Y21_N22 ; 2       ; Latch enable ; yes    ; Global Clock         ; GCLK9            ; --                        ;
+; Mux24~8 ; LCCOMB_X29_Y21_N18 ; 1       ; Latch enable ; no     ; --                   ; --               ; --                        ;
 +---------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1265,10 +1256,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------+--------------------+---------+----------------------+------------------+---------------------------+
 ; Name    ; Location           ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +---------+--------------------+---------+----------------------+------------------+---------------------------+
-; Mux19~3 ; LCCOMB_X42_Y35_N14 ; 2       ; Global Clock         ; GCLK10           ; --                        ;
-; Mux20~3 ; LCCOMB_X41_Y35_N0  ; 2       ; Global Clock         ; GCLK9            ; --                        ;
-; Mux23~2 ; LCCOMB_X42_Y35_N4  ; 2       ; Global Clock         ; GCLK8            ; --                        ;
-; Mux24~3 ; LCCOMB_X43_Y35_N4  ; 2       ; Global Clock         ; GCLK11           ; --                        ;
+; Mux19~3 ; LCCOMB_X31_Y21_N0  ; 2       ; Global Clock         ; GCLK8            ; --                        ;
+; Mux20~3 ; LCCOMB_X31_Y24_N0  ; 2       ; Global Clock         ; GCLK11           ; --                        ;
+; Mux23~2 ; LCCOMB_X31_Y21_N22 ; 2       ; Global Clock         ; GCLK10           ; --                        ;
+; Mux24~3 ; LCCOMB_X30_Y21_N22 ; 2       ; Global Clock         ; GCLK9            ; --                        ;
 +---------+--------------------+---------+----------------------+------------------+---------------------------+
 
 
@@ -1293,7 +1284,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Cond[3]             ; 6         ;
 ; Cond[2]             ; 5         ;
 ; Cond[1]             ; 5         ;
-; ALUFlags[2]         ; 4         ;
+; ALUFlags            ; 4         ;
 ; Mux18~0             ; 4         ;
 ; Mux16~0             ; 4         ;
 ; Funct[0]            ; 3         ;
@@ -1335,14 +1326,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------+------------------------+
 ; Interconnect Resource Type ; Usage                  ;
 +----------------------------+------------------------+
-; Block interconnects        ; 127 / 94,460 ( < 1 % ) ;
-; C16 interconnects          ; 2 / 3,315 ( < 1 % )    ;
-; C4 interconnects           ; 90 / 60,840 ( < 1 % )  ;
-; Direct links               ; 21 / 94,460 ( < 1 % )  ;
+; Block interconnects        ; 131 / 94,460 ( < 1 % ) ;
+; C16 interconnects          ; 32 / 3,315 ( < 1 % )   ;
+; C4 interconnects           ; 106 / 60,840 ( < 1 % ) ;
+; Direct links               ; 19 / 94,460 ( < 1 % )  ;
 ; Global clocks              ; 4 / 16 ( 25 % )        ;
 ; Local interconnects        ; 42 / 33,216 ( < 1 % )  ;
-; R24 interconnects          ; 6 / 3,091 ( < 1 % )    ;
-; R4 interconnects           ; 63 / 81,294 ( < 1 % )  ;
+; R24 interconnects          ; 13 / 3,091 ( < 1 % )   ;
+; R4 interconnects           ; 55 / 81,294 ( < 1 % )  ;
 +----------------------------+------------------------+
 
 
@@ -1483,7 +1474,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Dec 04 06:21:40 2018
+    Info: Processing started: Tue Dec 04 06:31:18 2018
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off controlUnit -c controlUnit
 Info: Selected device EP2C35F672C6 for design "controlUnit"
 Info: Low junction temperature is 0 degrees C
@@ -1497,15 +1488,12 @@ Info: Fitter converted 3 user pins into dedicated programming pins
     Info: Pin ~ASDO~ is reserved at location E3
     Info: Pin ~nCSO~ is reserved at location D3
     Info: Pin ~LVDS150p/nCEO~ is reserved at location AE24
-Critical Warning: No exact pin location assignment(s) for 35 pins of 35 total pins
+Critical Warning: No exact pin location assignment(s) for 32 pins of 32 total pins
     Info: Pin clk not assigned to an exact location on the device
     Info: Pin Rd[0] not assigned to an exact location on the device
     Info: Pin Rd[1] not assigned to an exact location on the device
     Info: Pin Rd[2] not assigned to an exact location on the device
     Info: Pin Rd[3] not assigned to an exact location on the device
-    Info: Pin ALUFlags[0] not assigned to an exact location on the device
-    Info: Pin ALUFlags[1] not assigned to an exact location on the device
-    Info: Pin ALUFlags[3] not assigned to an exact location on the device
     Info: Pin RegSrc[0] not assigned to an exact location on the device
     Info: Pin RegSrc[1] not assigned to an exact location on the device
     Info: Pin RegWrite[0] not assigned to an exact location on the device
@@ -1521,7 +1509,7 @@ Critical Warning: No exact pin location assignment(s) for 35 pins of 35 total pi
     Info: Pin Cond[3] not assigned to an exact location on the device
     Info: Pin Cond[1] not assigned to an exact location on the device
     Info: Pin Cond[2] not assigned to an exact location on the device
-    Info: Pin ALUFlags[2] not assigned to an exact location on the device
+    Info: Pin ALUFlags not assigned to an exact location on the device
     Info: Pin Cond[0] not assigned to an exact location on the device
     Info: Pin Op[2] not assigned to an exact location on the device
     Info: Pin Op[1] not assigned to an exact location on the device
@@ -1553,7 +1541,7 @@ Extra Info: Finished moving registers into I/O cells, Multiplier Blocks, and RAM
 Info: Finished register packing
     Extra Info: No registers were packed into other blocks
 Info: Statistics of I/O pins that need to be placed that use the same VCCIO and VREF, before I/O pin placement
-    Info: Number of I/O pins in group: 35 (unused VREF, 3.3V VCCIO, 23 input, 12 output, 0 bidirectional)
+    Info: Number of I/O pins in group: 32 (unused VREF, 3.3V VCCIO, 20 input, 12 output, 0 bidirectional)
         Info: I/O standards used: 3.3-V LVTTL.
 Info: I/O bank details before I/O pin placement
     Info: Statistics of I/O banks
@@ -1565,7 +1553,7 @@ Info: I/O bank details before I/O pin placement
         Info: I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  58 pins available
         Info: I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  58 pins available
         Info: I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  56 pins available
-Info: Fitter preparation operations ending: elapsed time is 00:00:01
+Info: Fitter preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement preparation operations beginning
 Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement operations beginning
@@ -1573,7 +1561,7 @@ Info: Fitter placement was successful
 Info: Fitter placement operations ending: elapsed time is 00:00:00
 Info: Fitter routing operations beginning
 Info: Average interconnect usage is 0% of the available device resources
-    Info: Peak interconnect usage is 0% of the available device resources in the region that extends from location X33_Y24 to location X43_Y36
+    Info: Peak interconnect usage is 1% of the available device resources in the region that extends from location X22_Y24 to location X32_Y36
 Info: Fitter routing operations ending: elapsed time is 00:00:00
 Info: The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info: Optimizations that may affect the design's routability were skipped
@@ -1596,8 +1584,8 @@ Info: Delay annotation completed successfully
 Warning: The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info: Quartus II Fitter was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 311 megabytes
-    Info: Processing ended: Tue Dec 04 06:21:44 2018
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Processing ended: Tue Dec 04 06:31:21 2018
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:05
 
 

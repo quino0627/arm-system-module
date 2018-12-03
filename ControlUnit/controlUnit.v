@@ -4,7 +4,7 @@ module controlUnit(
 	input [2:0] Op,
 	input [5:0] Funct,
 	input [3:0] Rd,
-	input [3:0] ALUFlags,
+	input ALUFlags,
     output reg [1:0] RegSrc,
     output reg [1:0] RegWrite,
     output reg [1:0] ImmSrc,
@@ -49,7 +49,7 @@ begin
 				end
 				4'b0000://ADDEQ
 				begin
-					if(ALUFlags[2]==1)
+					if(ALUFlags==1)
 					begin
 						ALUSrc = 1'b0;
 						ALUControl = 2'b00;
@@ -65,7 +65,7 @@ begin
 				end
 				4'b0001://ADDNE
 				begin
-					if(ALUFlags[2]==0)
+					if(ALUFlags==0)
 					begin
 						ALUSrc = 1'b0;
 						ALUControl = 2'b00;
@@ -94,7 +94,7 @@ begin
 				end
 				4'b0000://ADDiEQ
 				begin
-					if(ALUFlags[2]==1)
+					if(ALUFlags==1)
 					begin
 						ALUSrc = 1'b1;
 						ALUControl = 2'b00;
@@ -110,7 +110,7 @@ begin
 				end
 				4'b0001://ADDiNE
 				begin
-					if(ALUFlags[2]==0)
+					if(ALUFlags==0)
 					begin
 						ALUSrc = 1'b1;
 						ALUControl = 2'b00;
@@ -139,7 +139,7 @@ begin
 				end
 				4'b0000://SUBEQ
 				begin
-					if(ALUFlags[2]==1)
+					if(ALUFlags==1)
 					begin
 						ALUSrc = 1'b1;
 						ALUControl = 2'b01;
@@ -155,7 +155,7 @@ begin
 				end
 				4'b0001://SUBNE
 				begin
-					if(ALUFlags[2]==0)
+					if(ALUFlags==0)
 					begin
 						ALUSrc = 1'b1;
 						ALUControl = 2'b01;
@@ -184,7 +184,7 @@ begin
 				end
 				4'b0000://SUBiEQ
 				begin
-					if(ALUFlags[2]==1)
+					if(ALUFlags==1)
 					begin
 						ALUSrc = 1'b1;
 						ALUControl = 2'b01;
@@ -200,7 +200,7 @@ begin
 				end
 				4'b0001://SUBiNE
 				begin
-					if(ALUFlags[2]==0)
+					if(ALUFlags==0)
 					begin
 						ALUSrc = 1'b1;
 						ALUControl = 2'b01;
@@ -230,7 +230,7 @@ begin
 				end
 				4'b0000://CMPEQ
 				begin
-					if(ALUFlags[2]==1)
+					if(ALUFlags==1)
 					begin
 						ALUSrc = 1'b0;
 						ALUControl = 2'b11;
@@ -247,7 +247,7 @@ begin
 				end
 				4'b0001://CMPNE
 				begin
-					if(ALUFlags[2]==0)
+					if(ALUFlags==0)
 					begin
 						ALUSrc = 1'b0;
 						ALUControl = 2'b11;
@@ -277,7 +277,7 @@ begin
 				end
 				4'b0000://CMPiEQ
 				begin
-					if(ALUFlags[2]==1)
+					if(ALUFlags==1)
 					begin
 						ALUSrc = 1'b1;
 						ALUControl = 2'b11;
@@ -294,7 +294,7 @@ begin
 				end
 				4'b0001://CMPiNE
 				begin
-					if(ALUFlags[2]==0)
+					if(ALUFlags==0)
 					begin
 						ALUSrc = 1'b1;
 						ALUControl = 2'b11;
@@ -324,7 +324,7 @@ begin
 				end
 				4'b0000://MOVEQ
 				begin
-					if(ALUFlags[2]==1)
+					if(ALUFlags==1)
 					begin
 						ALUSrc = 1'b0;
 						ALUControl = 2'b10;
@@ -339,7 +339,7 @@ begin
 				end
 				4'b0001://MOVNE
 				begin
-					if(ALUFlags[2]==0)
+					if(ALUFlags==0)
 					begin
 						ALUSrc = 1'b0;
 						ALUControl = 2'b10;
@@ -367,7 +367,7 @@ begin
 				end
 				4'b0000://MOViEQ
 				begin
-					if(ALUFlags[2]==1)
+					if(ALUFlags==1)
 					begin
 						ALUSrc = 1'b1;
 						ALUControl = 2'b00;
@@ -382,7 +382,7 @@ begin
 				end
 				4'b0001://MOViNE
 				begin
-					if(ALUFlags[2]==0)
+					if(ALUFlags==0)
 					begin
 						ALUSrc = 1'b1;
 						ALUControl = 2'b00;
@@ -419,7 +419,7 @@ begin
 				end
 				4'b0000://STREQ
 				begin
-					if(ALUFlags[2]==1)
+					if(ALUFlags==1)
 					begin
 						PCSrc = 1'b0;
 						MemtoReg = 1'b0;
@@ -438,7 +438,7 @@ begin
 				end
 				4'b0001://STRNE
 				begin
-					if(ALUFlags[2]==0)
+					if(ALUFlags==0)
 					begin
 						PCSrc = 1'b0;
 						MemtoReg = 1'b0;
@@ -473,7 +473,7 @@ begin
 				end
 				4'b0000://STRiEQ
 				begin
-					if(ALUFlags[2]==1)
+					if(ALUFlags==1)
 					begin
 						PCSrc = 1'b0;
 						MemtoReg = 1'b0;
@@ -492,7 +492,7 @@ begin
 				end
 				4'b0001://STRiNE
 				begin
-					if(ALUFlags[2]==0)
+					if(ALUFlags==0)
 					begin
 						PCSrc = 1'b0;
 						MemtoReg = 1'b0;
@@ -527,7 +527,7 @@ begin
 				end
 				4'b0000://LDREQ
 				begin
-					if(ALUFlags[2]==1)
+					if(ALUFlags==1)
 					begin
 						PCSrc = 1'b0;
 						MemtoReg = 1'b1;
@@ -546,7 +546,7 @@ begin
 				end
 				4'b0001://LDRNE
 				begin
-					if(ALUFlags[2]==0)
+					if(ALUFlags==0)
 					begin
 						PCSrc = 1'b0;
 						MemtoReg = 1'b1;
@@ -581,7 +581,7 @@ begin
 				end
 				4'b0000://LDRiEQ
 				begin
-					if(ALUFlags[2]==1)
+					if(ALUFlags==1)
 					begin
 						PCSrc = 1'b0;
 						MemtoReg = 1'b1;
@@ -600,7 +600,7 @@ begin
 				end
 				4'b0001://LDRiNE
 				begin
-					if(ALUFlags[2]==0)
+					if(ALUFlags==0)
 					begin
 						PCSrc = 1'b0;
 						MemtoReg = 1'b1;
@@ -641,7 +641,7 @@ begin
 				end
 				4'b0000://BEQ
 				begin	
-					if(ALUFlags[2]==1)
+					if(ALUFlags==1)
 					begin
 						PCSrc = 1'b1;
 						MemtoReg = 1'b0;
@@ -660,7 +660,7 @@ begin
 				end
 				4'b0001://BNE
 				begin
-					if(ALUFlags[2]==0)
+					if(ALUFlags==0)
 					begin
 						PCSrc = 1'b1;
 						MemtoReg = 1'b0;
@@ -695,7 +695,7 @@ begin
 				end
 				4'b0000://BLEQ
 				begin
-					if(ALUFlags[2]==1)
+					if(ALUFlags==1)
 					begin
 						PCSrc = 1'b1;
 						MemtoReg = 1'b0;
@@ -714,7 +714,7 @@ begin
 				end
 				4'b0001://BLNE
 				begin
-					if(ALUFlags[2]==0)
+					if(ALUFlags==0)
 					begin
 						PCSrc = 1'b1;
 						MemtoReg = 1'b0;

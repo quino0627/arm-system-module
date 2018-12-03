@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for ALU
-Fri Nov 30 05:50:37 2018
+Tue Dec 04 06:29:49 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -34,14 +34,14 @@ applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Timing Analyzer Summary                                                                                                             ;
-+------------------------------+-------+---------------+-------------+---------+---------------+------------+----------+--------------+
-; Type                         ; Slack ; Required Time ; Actual Time ; From    ; To            ; From Clock ; To Clock ; Failed Paths ;
-+------------------------------+-------+---------------+-------------+---------+---------------+------------+----------+--------------+
-; Worst-case tpd               ; N/A   ; None          ; 15.930 ns   ; srcB[1] ; ALUResult[29] ; --         ; --       ; 0            ;
-; Total number of failed paths ;       ;               ;             ;         ;               ;            ;          ; 0            ;
-+------------------------------+-------+---------------+-------------+---------+---------------+------------+----------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                        ;
++------------------------------+-------+---------------+-------------+---------+----------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time ; From    ; To       ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+-------------+---------+----------+------------+----------+--------------+
+; Worst-case tpd               ; N/A   ; None          ; 16.578 ns   ; SrcA[3] ; ALUFlags ; --         ; --       ; 0            ;
+; Total number of failed paths ;       ;               ;             ;         ;          ;            ;          ; 0            ;
++------------------------------+-------+---------------+-------------+---------+----------+------------+----------+--------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -89,213 +89,213 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; tpd                                                                                                                                             ;
-+-----------------------------------------+-----------------------------------------------------+-----------------+---------------+---------------+
-; Slack                                   ; Required P2P Time                                   ; Actual P2P Time ; From          ; To            ;
-+-----------------------------------------+-----------------------------------------------------+-----------------+---------------+---------------+
-; N/A                                     ; None                                                ; 15.930 ns       ; srcB[1]       ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 15.611 ns       ; srcB[1]       ; ALUResult[28] ;
-; N/A                                     ; None                                                ; 15.556 ns       ; srcB[2]       ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 15.554 ns       ; srcB[1]       ; ALUResult[31] ;
-; N/A                                     ; None                                                ; 15.503 ns       ; srcB[1]       ; ALUResult[22] ;
-; N/A                                     ; None                                                ; 15.461 ns       ; ALUControl[0] ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 15.425 ns       ; srcB[1]       ; ALUResult[25] ;
-; N/A                                     ; None                                                ; 15.237 ns       ; srcB[2]       ; ALUResult[28] ;
-; N/A                                     ; None                                                ; 15.229 ns       ; srcB[1]       ; ALUResult[17] ;
-; N/A                                     ; None                                                ; 15.215 ns       ; srcB[4]       ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 15.210 ns       ; srcB[1]       ; ALUResult[26] ;
-; N/A                                     ; None                                                ; 15.180 ns       ; srcB[2]       ; ALUResult[31] ;
-; N/A                                     ; None                                                ; 15.157 ns       ; srcB[3]       ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 15.149 ns       ; srcB[1]       ; ALUResult[27] ;
-; N/A                                     ; None                                                ; 15.142 ns       ; ALUControl[0] ; ALUResult[28] ;
-; N/A                                     ; None                                                ; 15.139 ns       ; srcB[1]       ; ALUResult[24] ;
-; N/A                                     ; None                                                ; 15.129 ns       ; srcB[2]       ; ALUResult[22] ;
-; N/A                                     ; None                                                ; 15.085 ns       ; ALUControl[0] ; ALUResult[31] ;
-; N/A                                     ; None                                                ; 15.073 ns       ; srcB[1]       ; ALUResult[23] ;
-; N/A                                     ; None                                                ; 15.051 ns       ; srcB[2]       ; ALUResult[25] ;
-; N/A                                     ; None                                                ; 15.049 ns       ; srcB[7]       ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 15.038 ns       ; srcB[1]       ; ALUResult[15] ;
-; N/A                                     ; None                                                ; 15.034 ns       ; ALUControl[0] ; ALUResult[22] ;
-; N/A                                     ; None                                                ; 15.001 ns       ; srcA[1]       ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 14.971 ns       ; srcB[15]      ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 14.966 ns       ; srcB[9]       ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 14.956 ns       ; ALUControl[0] ; ALUResult[25] ;
-; N/A                                     ; None                                                ; 14.896 ns       ; srcB[4]       ; ALUResult[28] ;
-; N/A                                     ; None                                                ; 14.855 ns       ; srcB[2]       ; ALUResult[17] ;
-; N/A                                     ; None                                                ; 14.853 ns       ; srcB[1]       ; ALUResult[30] ;
-; N/A                                     ; None                                                ; 14.839 ns       ; srcB[4]       ; ALUResult[31] ;
-; N/A                                     ; None                                                ; 14.838 ns       ; srcB[3]       ; ALUResult[28] ;
-; N/A                                     ; None                                                ; 14.836 ns       ; srcB[2]       ; ALUResult[26] ;
-; N/A                                     ; None                                                ; 14.832 ns       ; srcB[1]       ; ALUResult[20] ;
-; N/A                                     ; None                                                ; 14.788 ns       ; srcB[4]       ; ALUResult[22] ;
-; N/A                                     ; None                                                ; 14.781 ns       ; srcB[3]       ; ALUResult[31] ;
-; N/A                                     ; None                                                ; 14.781 ns       ; srcA[2]       ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 14.775 ns       ; srcB[13]      ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 14.775 ns       ; srcB[2]       ; ALUResult[27] ;
-; N/A                                     ; None                                                ; 14.765 ns       ; srcB[2]       ; ALUResult[24] ;
-; N/A                                     ; None                                                ; 14.760 ns       ; srcB[5]       ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 14.760 ns       ; ALUControl[0] ; ALUResult[17] ;
-; N/A                                     ; None                                                ; 14.741 ns       ; ALUControl[0] ; ALUResult[26] ;
-; N/A                                     ; None                                                ; 14.730 ns       ; srcB[7]       ; ALUResult[28] ;
-; N/A                                     ; None                                                ; 14.730 ns       ; srcB[3]       ; ALUResult[22] ;
-; N/A                                     ; None                                                ; 14.719 ns       ; srcB[1]       ; ALUResult[16] ;
-; N/A                                     ; None                                                ; 14.710 ns       ; srcB[4]       ; ALUResult[25] ;
-; N/A                                     ; None                                                ; 14.702 ns       ; srcB[11]      ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 14.699 ns       ; srcB[2]       ; ALUResult[23] ;
-; N/A                                     ; None                                                ; 14.697 ns       ; srcB[10]      ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 14.683 ns       ; srcB[6]       ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 14.682 ns       ; srcA[1]       ; ALUResult[28] ;
-; N/A                                     ; None                                                ; 14.680 ns       ; ALUControl[0] ; ALUResult[27] ;
-; N/A                                     ; None                                                ; 14.673 ns       ; srcB[7]       ; ALUResult[31] ;
-; N/A                                     ; None                                                ; 14.670 ns       ; ALUControl[0] ; ALUResult[24] ;
-; N/A                                     ; None                                                ; 14.664 ns       ; srcB[2]       ; ALUResult[15] ;
-; N/A                                     ; None                                                ; 14.652 ns       ; srcB[15]      ; ALUResult[28] ;
-; N/A                                     ; None                                                ; 14.652 ns       ; srcB[3]       ; ALUResult[25] ;
-; N/A                                     ; None                                                ; 14.647 ns       ; srcB[9]       ; ALUResult[28] ;
-; N/A                                     ; None                                                ; 14.625 ns       ; srcA[1]       ; ALUResult[31] ;
-; N/A                                     ; None                                                ; 14.622 ns       ; srcB[7]       ; ALUResult[22] ;
-; N/A                                     ; None                                                ; 14.622 ns       ; srcB[1]       ; ALUResult[19] ;
-; N/A                                     ; None                                                ; 14.613 ns       ; srcA[0]       ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 14.604 ns       ; ALUControl[0] ; ALUResult[23] ;
-; N/A                                     ; None                                                ; 14.601 ns       ; srcB[18]      ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 14.595 ns       ; srcB[15]      ; ALUResult[31] ;
-; N/A                                     ; None                                                ; 14.590 ns       ; srcB[9]       ; ALUResult[31] ;
-; N/A                                     ; None                                                ; 14.574 ns       ; srcA[1]       ; ALUResult[22] ;
-; N/A                                     ; None                                                ; 14.569 ns       ; ALUControl[0] ; ALUResult[15] ;
-; N/A                                     ; None                                                ; 14.544 ns       ; srcB[7]       ; ALUResult[25] ;
-; N/A                                     ; None                                                ; 14.544 ns       ; srcB[15]      ; ALUResult[22] ;
-; N/A                                     ; None                                                ; 14.544 ns       ; srcB[1]       ; ALUResult[18] ;
-; N/A                                     ; None                                                ; 14.539 ns       ; srcB[9]       ; ALUResult[22] ;
-; N/A                                     ; None                                                ; 14.529 ns       ; srcA[3]       ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 14.515 ns       ; srcB[12]      ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 14.514 ns       ; srcB[4]       ; ALUResult[17] ;
-; N/A                                     ; None                                                ; 14.513 ns       ; srcB[16]      ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 14.499 ns       ; srcB[1]       ; ALUResult[12] ;
-; N/A                                     ; None                                                ; 14.496 ns       ; srcA[1]       ; ALUResult[25] ;
-; N/A                                     ; None                                                ; 14.495 ns       ; srcB[4]       ; ALUResult[26] ;
-; N/A                                     ; None                                                ; 14.479 ns       ; srcB[2]       ; ALUResult[30] ;
-; N/A                                     ; None                                                ; 14.466 ns       ; srcB[15]      ; ALUResult[25] ;
-; N/A                                     ; None                                                ; 14.462 ns       ; srcA[2]       ; ALUResult[28] ;
-; N/A                                     ; None                                                ; 14.461 ns       ; srcB[9]       ; ALUResult[25] ;
-; N/A                                     ; None                                                ; 14.459 ns       ; srcA[7]       ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 14.458 ns       ; srcB[2]       ; ALUResult[20] ;
-; N/A                                     ; None                                                ; 14.456 ns       ; srcB[13]      ; ALUResult[28] ;
-; N/A                                     ; None                                                ; 14.456 ns       ; srcB[3]       ; ALUResult[17] ;
-; N/A                                     ; None                                                ; 14.454 ns       ; srcB[1]       ; ALUResult[11] ;
-; N/A                                     ; None                                                ; 14.441 ns       ; srcB[5]       ; ALUResult[28] ;
-; N/A                                     ; None                                                ; 14.437 ns       ; srcB[3]       ; ALUResult[26] ;
-; N/A                                     ; None                                                ; 14.434 ns       ; srcB[4]       ; ALUResult[27] ;
-; N/A                                     ; None                                                ; 14.424 ns       ; srcB[4]       ; ALUResult[24] ;
-; N/A                                     ; None                                                ; 14.413 ns       ; srcB[8]       ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 14.405 ns       ; srcA[2]       ; ALUResult[31] ;
-; N/A                                     ; None                                                ; 14.399 ns       ; srcB[13]      ; ALUResult[31] ;
-; N/A                                     ; None                                                ; 14.384 ns       ; srcB[5]       ; ALUResult[31] ;
-; N/A                                     ; None                                                ; 14.384 ns       ; ALUControl[0] ; ALUResult[30] ;
-; N/A                                     ; None                                                ; 14.383 ns       ; srcB[11]      ; ALUResult[28] ;
-; N/A                                     ; None                                                ; 14.382 ns       ; srcB[22]      ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 14.378 ns       ; srcB[10]      ; ALUResult[28] ;
-; N/A                                     ; None                                                ; 14.376 ns       ; srcB[3]       ; ALUResult[27] ;
-; N/A                                     ; None                                                ; 14.373 ns       ; srcB[1]       ; ALUResult[10] ;
-; N/A                                     ; None                                                ; 14.372 ns       ; srcB[14]      ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 14.366 ns       ; srcB[3]       ; ALUResult[24] ;
-; N/A                                     ; None                                                ; 14.364 ns       ; srcB[6]       ; ALUResult[28] ;
-; N/A                                     ; None                                                ; 14.363 ns       ; ALUControl[0] ; ALUResult[20] ;
-; N/A                                     ; None                                                ; 14.358 ns       ; srcB[4]       ; ALUResult[23] ;
-; N/A                                     ; None                                                ; 14.354 ns       ; srcA[2]       ; ALUResult[22] ;
-; N/A                                     ; None                                                ; 14.348 ns       ; srcB[13]      ; ALUResult[22] ;
-; N/A                                     ; None                                                ; 14.348 ns       ; srcB[7]       ; ALUResult[17] ;
-; N/A                                     ; None                                                ; 14.345 ns       ; srcB[2]       ; ALUResult[16] ;
-; N/A                                     ; None                                                ; 14.333 ns       ; srcB[5]       ; ALUResult[22] ;
-; N/A                                     ; None                                                ; 14.329 ns       ; srcB[7]       ; ALUResult[26] ;
-; N/A                                     ; None                                                ; 14.326 ns       ; srcB[11]      ; ALUResult[31] ;
-; N/A                                     ; None                                                ; 14.323 ns       ; srcB[4]       ; ALUResult[15] ;
-; N/A                                     ; None                                                ; 14.321 ns       ; srcB[10]      ; ALUResult[31] ;
-; N/A                                     ; None                                                ; 14.307 ns       ; srcB[6]       ; ALUResult[31] ;
-; N/A                                     ; None                                                ; 14.300 ns       ; srcB[3]       ; ALUResult[23] ;
-; N/A                                     ; None                                                ; 14.300 ns       ; srcA[1]       ; ALUResult[17] ;
-; N/A                                     ; None                                                ; 14.299 ns       ; srcA[12]      ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 14.294 ns       ; srcA[0]       ; ALUResult[28] ;
-; N/A                                     ; None                                                ; 14.282 ns       ; srcB[18]      ; ALUResult[28] ;
-; N/A                                     ; None                                                ; 14.281 ns       ; srcA[1]       ; ALUResult[26] ;
-; N/A                                     ; None                                                ; 14.276 ns       ; srcA[2]       ; ALUResult[25] ;
-; N/A                                     ; None                                                ; 14.275 ns       ; srcB[11]      ; ALUResult[22] ;
-; N/A                                     ; None                                                ; 14.270 ns       ; srcB[13]      ; ALUResult[25] ;
-; N/A                                     ; None                                                ; 14.270 ns       ; srcB[10]      ; ALUResult[22] ;
-; N/A                                     ; None                                                ; 14.270 ns       ; srcB[15]      ; ALUResult[17] ;
-; N/A                                     ; None                                                ; 14.268 ns       ; srcB[7]       ; ALUResult[27] ;
-; N/A                                     ; None                                                ; 14.265 ns       ; srcB[9]       ; ALUResult[17] ;
-; N/A                                     ; None                                                ; 14.265 ns       ; srcB[3]       ; ALUResult[15] ;
-; N/A                                     ; None                                                ; 14.258 ns       ; srcB[7]       ; ALUResult[24] ;
-; N/A                                     ; None                                                ; 14.256 ns       ; srcB[6]       ; ALUResult[22] ;
-; N/A                                     ; None                                                ; 14.255 ns       ; srcB[5]       ; ALUResult[25] ;
-; N/A                                     ; None                                                ; 14.251 ns       ; srcB[15]      ; ALUResult[26] ;
-; N/A                                     ; None                                                ; 14.250 ns       ; ALUControl[0] ; ALUResult[16] ;
-; N/A                                     ; None                                                ; 14.248 ns       ; srcB[2]       ; ALUResult[19] ;
-; N/A                                     ; None                                                ; 14.246 ns       ; srcB[9]       ; ALUResult[26] ;
-; N/A                                     ; None                                                ; 14.237 ns       ; srcA[0]       ; ALUResult[31] ;
-; N/A                                     ; None                                                ; 14.225 ns       ; srcB[18]      ; ALUResult[31] ;
-; N/A                                     ; None                                                ; 14.220 ns       ; srcA[1]       ; ALUResult[27] ;
-; N/A                                     ; None                                                ; 14.213 ns       ; srcB[19]      ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 14.211 ns       ; srcB[1]       ; ALUResult[21] ;
-; N/A                                     ; None                                                ; 14.210 ns       ; srcA[3]       ; ALUResult[28] ;
-; N/A                                     ; None                                                ; 14.210 ns       ; srcA[1]       ; ALUResult[24] ;
-; N/A                                     ; None                                                ; 14.202 ns       ; srcA[5]       ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 14.197 ns       ; srcB[11]      ; ALUResult[25] ;
-; N/A                                     ; None                                                ; 14.196 ns       ; srcB[12]      ; ALUResult[28] ;
-; N/A                                     ; None                                                ; 14.194 ns       ; srcB[16]      ; ALUResult[28] ;
-; N/A                                     ; None                                                ; 14.192 ns       ; srcB[10]      ; ALUResult[25] ;
-; N/A                                     ; None                                                ; 14.192 ns       ; srcB[7]       ; ALUResult[23] ;
-; N/A                                     ; None                                                ; 14.190 ns       ; srcB[15]      ; ALUResult[27] ;
-; N/A                                     ; None                                                ; 14.186 ns       ; srcA[0]       ; ALUResult[22] ;
-; N/A                                     ; None                                                ; 14.185 ns       ; srcB[9]       ; ALUResult[27] ;
-; N/A                                     ; None                                                ; 14.180 ns       ; srcB[15]      ; ALUResult[24] ;
-; N/A                                     ; None                                                ; 14.178 ns       ; srcB[6]       ; ALUResult[25] ;
-; N/A                                     ; None                                                ; 14.175 ns       ; srcB[9]       ; ALUResult[24] ;
-; N/A                                     ; None                                                ; 14.174 ns       ; srcB[18]      ; ALUResult[22] ;
-; N/A                                     ; None                                                ; 14.170 ns       ; srcB[2]       ; ALUResult[18] ;
-; N/A                                     ; None                                                ; 14.167 ns       ; srcA[6]       ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 14.157 ns       ; srcB[7]       ; ALUResult[15] ;
-; N/A                                     ; None                                                ; 14.153 ns       ; srcA[3]       ; ALUResult[31] ;
-; N/A                                     ; None                                                ; 14.153 ns       ; ALUControl[0] ; ALUResult[19] ;
-; N/A                                     ; None                                                ; 14.144 ns       ; srcA[1]       ; ALUResult[23] ;
-; N/A                                     ; None                                                ; 14.141 ns       ; srcA[4]       ; ALUResult[29] ;
-; N/A                                     ; None                                                ; 14.140 ns       ; srcA[7]       ; ALUResult[28] ;
-; N/A                                     ; None                                                ; 14.139 ns       ; srcB[12]      ; ALUResult[31] ;
-; N/A                                     ; None                                                ; 14.138 ns       ; srcB[4]       ; ALUResult[30] ;
-; N/A                                     ; None                                                ; 14.137 ns       ; srcB[16]      ; ALUResult[31] ;
-; N/A                                     ; None                                                ; 14.125 ns       ; srcB[2]       ; ALUResult[12] ;
-; N/A                                     ; None                                                ; 14.117 ns       ; srcB[4]       ; ALUResult[20] ;
-; N/A                                     ; None                                                ; 14.114 ns       ; srcB[15]      ; ALUResult[23] ;
-; N/A                                     ; None                                                ; 14.109 ns       ; srcB[9]       ; ALUResult[23] ;
-; N/A                                     ; None                                                ; 14.109 ns       ; srcA[1]       ; ALUResult[15] ;
-; N/A                                     ; None                                                ; 14.108 ns       ; srcA[0]       ; ALUResult[25] ;
-; N/A                                     ; None                                                ; 14.102 ns       ; srcA[3]       ; ALUResult[22] ;
-; N/A                                     ; None                                                ; 14.096 ns       ; srcB[18]      ; ALUResult[25] ;
-; N/A                                     ; None                                                ; 14.094 ns       ; srcB[8]       ; ALUResult[28] ;
-; N/A                                     ; None                                                ; 14.088 ns       ; srcB[12]      ; ALUResult[22] ;
-; N/A                                     ; None                                                ; 14.086 ns       ; srcB[16]      ; ALUResult[22] ;
-; N/A                                     ; None                                                ; 14.083 ns       ; srcA[7]       ; ALUResult[31] ;
-; N/A                                     ; None                                                ; 14.080 ns       ; srcB[3]       ; ALUResult[30] ;
-; N/A                                     ; None                                                ; 14.080 ns       ; srcA[2]       ; ALUResult[17] ;
-; N/A                                     ; None                                                ; 14.080 ns       ; srcB[2]       ; ALUResult[11] ;
-; N/A                                     ; None                                                ; 14.075 ns       ; ALUControl[0] ; ALUResult[18] ;
-; N/A                                     ; None                                                ; 14.074 ns       ; srcB[13]      ; ALUResult[17] ;
-; N/A                                     ; None                                                ; 14.074 ns       ; srcB[9]       ; ALUResult[15] ;
-; N/A                                     ; None                                                ; 14.071 ns       ; srcB[1]       ; ALUResult[14] ;
-; N/A                                     ; None                                                ; 14.063 ns       ; srcB[22]      ; ALUResult[28] ;
-; N/A                                     ; None                                                ; 14.061 ns       ; srcA[2]       ; ALUResult[26] ;
-; N/A                                     ; None                                                ; 14.059 ns       ; srcB[3]       ; ALUResult[20] ;
-; N/A                                     ; None                                                ; 14.059 ns       ; srcB[5]       ; ALUResult[17] ;
-; N/A                                     ; None                                                ; 14.055 ns       ; srcB[13]      ; ALUResult[26] ;
-; N/A                                     ; None                                                ; 14.053 ns       ; srcB[14]      ; ALUResult[28] ;
-; N/A                                     ; None                                                ; 14.040 ns       ; srcB[5]       ; ALUResult[26] ;
-; N/A                                     ; None                                                ; 14.037 ns       ; srcB[8]       ; ALUResult[31] ;
-; N/A                                     ; None                                                ; 14.032 ns       ; srcA[7]       ; ALUResult[22] ;
-; N/A                                     ; None                                                ; 14.030 ns       ; ALUControl[0] ; ALUResult[12] ;
-; N/A                                     ; None                                                ; 14.024 ns       ; srcA[3]       ; ALUResult[25] ;
-; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                 ;               ;               ;
-+-----------------------------------------+-----------------------------------------------------+-----------------+---------------+---------------+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; tpd                                                                                                                                        ;
++-----------------------------------------+-----------------------------------------------------+-----------------+----------+---------------+
+; Slack                                   ; Required P2P Time                                   ; Actual P2P Time ; From     ; To            ;
++-----------------------------------------+-----------------------------------------------------+-----------------+----------+---------------+
+; N/A                                     ; None                                                ; 16.578 ns       ; SrcA[3]  ; ALUFlags      ;
+; N/A                                     ; None                                                ; 16.504 ns       ; SrcA[5]  ; ALUFlags      ;
+; N/A                                     ; None                                                ; 16.501 ns       ; SrcA[1]  ; ALUFlags      ;
+; N/A                                     ; None                                                ; 16.448 ns       ; SrcB[1]  ; ALUFlags      ;
+; N/A                                     ; None                                                ; 16.432 ns       ; SrcA[4]  ; ALUFlags      ;
+; N/A                                     ; None                                                ; 16.400 ns       ; SrcB[2]  ; ALUFlags      ;
+; N/A                                     ; None                                                ; 16.334 ns       ; SrcB[10] ; ALUFlags      ;
+; N/A                                     ; None                                                ; 16.270 ns       ; SrcA[7]  ; ALUFlags      ;
+; N/A                                     ; None                                                ; 16.261 ns       ; SrcB[4]  ; ALUFlags      ;
+; N/A                                     ; None                                                ; 16.153 ns       ; SrcB[3]  ; ALUFlags      ;
+; N/A                                     ; None                                                ; 16.140 ns       ; SrcA[6]  ; ALUFlags      ;
+; N/A                                     ; None                                                ; 16.133 ns       ; SrcA[2]  ; ALUFlags      ;
+; N/A                                     ; None                                                ; 16.119 ns       ; SrcB[11] ; ALUFlags      ;
+; N/A                                     ; None                                                ; 16.103 ns       ; SrcB[9]  ; ALUFlags      ;
+; N/A                                     ; None                                                ; 16.099 ns       ; SrcA[3]  ; ALUResult[28] ;
+; N/A                                     ; None                                                ; 15.979 ns       ; SrcB[7]  ; ALUFlags      ;
+; N/A                                     ; None                                                ; 15.970 ns       ; SrcA[9]  ; ALUFlags      ;
+; N/A                                     ; None                                                ; 15.967 ns       ; SrcB[3]  ; ALUResult[28] ;
+; N/A                                     ; None                                                ; 15.946 ns       ; SrcA[12] ; ALUFlags      ;
+; N/A                                     ; None                                                ; 15.937 ns       ; SrcB[5]  ; ALUFlags      ;
+; N/A                                     ; None                                                ; 15.928 ns       ; SrcA[3]  ; ALUResult[29] ;
+; N/A                                     ; None                                                ; 15.892 ns       ; SrcA[3]  ; ALUResult[25] ;
+; N/A                                     ; None                                                ; 15.881 ns       ; SrcB[6]  ; ALUFlags      ;
+; N/A                                     ; None                                                ; 15.850 ns       ; SrcA[11] ; ALUFlags      ;
+; N/A                                     ; None                                                ; 15.827 ns       ; SrcA[8]  ; ALUFlags      ;
+; N/A                                     ; None                                                ; 15.823 ns       ; SrcB[8]  ; ALUFlags      ;
+; N/A                                     ; None                                                ; 15.817 ns       ; SrcA[3]  ; ALUResult[30] ;
+; N/A                                     ; None                                                ; 15.816 ns       ; SrcA[7]  ; ALUResult[28] ;
+; N/A                                     ; None                                                ; 15.805 ns       ; SrcA[5]  ; ALUResult[28] ;
+; N/A                                     ; None                                                ; 15.803 ns       ; SrcA[4]  ; ALUResult[28] ;
+; N/A                                     ; None                                                ; 15.796 ns       ; SrcB[3]  ; ALUResult[29] ;
+; N/A                                     ; None                                                ; 15.789 ns       ; SrcB[1]  ; ALUResult[28] ;
+; N/A                                     ; None                                                ; 15.781 ns       ; SrcA[9]  ; ALUResult[28] ;
+; N/A                                     ; None                                                ; 15.775 ns       ; SrcA[1]  ; ALUResult[28] ;
+; N/A                                     ; None                                                ; 15.760 ns       ; SrcB[3]  ; ALUResult[25] ;
+; N/A                                     ; None                                                ; 15.707 ns       ; SrcB[2]  ; ALUResult[28] ;
+; N/A                                     ; None                                                ; 15.685 ns       ; SrcB[3]  ; ALUResult[30] ;
+; N/A                                     ; None                                                ; 15.677 ns       ; SrcA[2]  ; ALUResult[28] ;
+; N/A                                     ; None                                                ; 15.651 ns       ; SrcA[3]  ; ALUResult[19] ;
+; N/A                                     ; None                                                ; 15.645 ns       ; SrcA[7]  ; ALUResult[29] ;
+; N/A                                     ; None                                                ; 15.634 ns       ; SrcA[5]  ; ALUResult[29] ;
+; N/A                                     ; None                                                ; 15.632 ns       ; SrcA[4]  ; ALUResult[29] ;
+; N/A                                     ; None                                                ; 15.624 ns       ; SrcA[3]  ; ALUResult[20] ;
+; N/A                                     ; None                                                ; 15.618 ns       ; SrcB[1]  ; ALUResult[29] ;
+; N/A                                     ; None                                                ; 15.610 ns       ; SrcA[9]  ; ALUResult[29] ;
+; N/A                                     ; None                                                ; 15.609 ns       ; SrcA[7]  ; ALUResult[25] ;
+; N/A                                     ; None                                                ; 15.604 ns       ; SrcA[1]  ; ALUResult[29] ;
+; N/A                                     ; None                                                ; 15.598 ns       ; SrcA[5]  ; ALUResult[25] ;
+; N/A                                     ; None                                                ; 15.596 ns       ; SrcA[4]  ; ALUResult[25] ;
+; N/A                                     ; None                                                ; 15.595 ns       ; SrcB[10] ; ALUResult[28] ;
+; N/A                                     ; None                                                ; 15.591 ns       ; SrcA[3]  ; ALUResult[23] ;
+; N/A                                     ; None                                                ; 15.582 ns       ; SrcB[1]  ; ALUResult[25] ;
+; N/A                                     ; None                                                ; 15.574 ns       ; SrcA[9]  ; ALUResult[25] ;
+; N/A                                     ; None                                                ; 15.573 ns       ; SrcA[13] ; ALUFlags      ;
+; N/A                                     ; None                                                ; 15.568 ns       ; SrcA[1]  ; ALUResult[25] ;
+; N/A                                     ; None                                                ; 15.545 ns       ; SrcB[11] ; ALUResult[28] ;
+; N/A                                     ; None                                                ; 15.536 ns       ; SrcB[2]  ; ALUResult[29] ;
+; N/A                                     ; None                                                ; 15.534 ns       ; SrcA[7]  ; ALUResult[30] ;
+; N/A                                     ; None                                                ; 15.532 ns       ; SrcB[4]  ; ALUResult[28] ;
+; N/A                                     ; None                                                ; 15.523 ns       ; SrcA[5]  ; ALUResult[30] ;
+; N/A                                     ; None                                                ; 15.521 ns       ; SrcA[4]  ; ALUResult[30] ;
+; N/A                                     ; None                                                ; 15.520 ns       ; SrcA[15] ; ALUFlags      ;
+; N/A                                     ; None                                                ; 15.519 ns       ; SrcB[3]  ; ALUResult[19] ;
+; N/A                                     ; None                                                ; 15.511 ns       ; SrcA[12] ; ALUResult[28] ;
+; N/A                                     ; None                                                ; 15.507 ns       ; SrcB[1]  ; ALUResult[30] ;
+; N/A                                     ; None                                                ; 15.506 ns       ; SrcA[2]  ; ALUResult[29] ;
+; N/A                                     ; None                                                ; 15.501 ns       ; SrcA[10] ; ALUFlags      ;
+; N/A                                     ; None                                                ; 15.500 ns       ; SrcB[2]  ; ALUResult[25] ;
+; N/A                                     ; None                                                ; 15.499 ns       ; SrcA[9]  ; ALUResult[30] ;
+; N/A                                     ; None                                                ; 15.493 ns       ; SrcA[1]  ; ALUResult[30] ;
+; N/A                                     ; None                                                ; 15.492 ns       ; SrcB[3]  ; ALUResult[20] ;
+; N/A                                     ; None                                                ; 15.472 ns       ; SrcB[5]  ; ALUResult[28] ;
+; N/A                                     ; None                                                ; 15.470 ns       ; SrcA[2]  ; ALUResult[25] ;
+; N/A                                     ; None                                                ; 15.463 ns       ; SrcA[8]  ; ALUResult[28] ;
+; N/A                                     ; None                                                ; 15.459 ns       ; SrcB[3]  ; ALUResult[23] ;
+; N/A                                     ; None                                                ; 15.454 ns       ; SrcB[15] ; ALUFlags      ;
+; N/A                                     ; None                                                ; 15.436 ns       ; SrcA[14] ; ALUFlags      ;
+; N/A                                     ; None                                                ; 15.425 ns       ; SrcB[2]  ; ALUResult[30] ;
+; N/A                                     ; None                                                ; 15.424 ns       ; SrcB[10] ; ALUResult[29] ;
+; N/A                                     ; None                                                ; 15.417 ns       ; SrcA[3]  ; ALUResult[24] ;
+; N/A                                     ; None                                                ; 15.414 ns       ; SrcB[9]  ; ALUResult[28] ;
+; N/A                                     ; None                                                ; 15.412 ns       ; SrcA[3]  ; ALUResult[18] ;
+; N/A                                     ; None                                                ; 15.407 ns       ; SrcA[6]  ; ALUResult[28] ;
+; N/A                                     ; None                                                ; 15.396 ns       ; SrcA[3]  ; ALUResult[31] ;
+; N/A                                     ; None                                                ; 15.395 ns       ; SrcA[2]  ; ALUResult[30] ;
+; N/A                                     ; None                                                ; 15.388 ns       ; SrcB[10] ; ALUResult[25] ;
+; N/A                                     ; None                                                ; 15.374 ns       ; SrcB[11] ; ALUResult[29] ;
+; N/A                                     ; None                                                ; 15.368 ns       ; SrcA[7]  ; ALUResult[19] ;
+; N/A                                     ; None                                                ; 15.363 ns       ; SrcB[6]  ; ALUResult[28] ;
+; N/A                                     ; None                                                ; 15.361 ns       ; SrcB[4]  ; ALUResult[29] ;
+; N/A                                     ; None                                                ; 15.357 ns       ; SrcA[5]  ; ALUResult[19] ;
+; N/A                                     ; None                                                ; 15.355 ns       ; SrcA[4]  ; ALUResult[19] ;
+; N/A                                     ; None                                                ; 15.341 ns       ; SrcA[7]  ; ALUResult[20] ;
+; N/A                                     ; None                                                ; 15.341 ns       ; SrcB[1]  ; ALUResult[19] ;
+; N/A                                     ; None                                                ; 15.340 ns       ; SrcA[12] ; ALUResult[29] ;
+; N/A                                     ; None                                                ; 15.338 ns       ; SrcB[11] ; ALUResult[25] ;
+; N/A                                     ; None                                                ; 15.333 ns       ; SrcA[9]  ; ALUResult[19] ;
+; N/A                                     ; None                                                ; 15.330 ns       ; SrcA[5]  ; ALUResult[20] ;
+; N/A                                     ; None                                                ; 15.328 ns       ; SrcA[11] ; ALUResult[28] ;
+; N/A                                     ; None                                                ; 15.328 ns       ; SrcA[4]  ; ALUResult[20] ;
+; N/A                                     ; None                                                ; 15.327 ns       ; SrcA[1]  ; ALUResult[19] ;
+; N/A                                     ; None                                                ; 15.325 ns       ; SrcB[4]  ; ALUResult[25] ;
+; N/A                                     ; None                                                ; 15.314 ns       ; SrcB[1]  ; ALUResult[20] ;
+; N/A                                     ; None                                                ; 15.313 ns       ; SrcB[10] ; ALUResult[30] ;
+; N/A                                     ; None                                                ; 15.308 ns       ; SrcA[7]  ; ALUResult[23] ;
+; N/A                                     ; None                                                ; 15.306 ns       ; SrcA[9]  ; ALUResult[20] ;
+; N/A                                     ; None                                                ; 15.304 ns       ; SrcA[12] ; ALUResult[25] ;
+; N/A                                     ; None                                                ; 15.301 ns       ; SrcB[5]  ; ALUResult[29] ;
+; N/A                                     ; None                                                ; 15.300 ns       ; SrcA[1]  ; ALUResult[20] ;
+; N/A                                     ; None                                                ; 15.299 ns       ; SrcB[12] ; ALUFlags      ;
+; N/A                                     ; None                                                ; 15.297 ns       ; SrcA[5]  ; ALUResult[23] ;
+; N/A                                     ; None                                                ; 15.295 ns       ; SrcA[4]  ; ALUResult[23] ;
+; N/A                                     ; None                                                ; 15.292 ns       ; SrcA[8]  ; ALUResult[29] ;
+; N/A                                     ; None                                                ; 15.292 ns       ; SrcB[7]  ; ALUResult[28] ;
+; N/A                                     ; None                                                ; 15.285 ns       ; SrcB[3]  ; ALUResult[24] ;
+; N/A                                     ; None                                                ; 15.281 ns       ; SrcB[1]  ; ALUResult[23] ;
+; N/A                                     ; None                                                ; 15.280 ns       ; SrcB[3]  ; ALUResult[18] ;
+; N/A                                     ; None                                                ; 15.273 ns       ; SrcA[9]  ; ALUResult[23] ;
+; N/A                                     ; None                                                ; 15.267 ns       ; SrcA[1]  ; ALUResult[23] ;
+; N/A                                     ; None                                                ; 15.265 ns       ; SrcB[5]  ; ALUResult[25] ;
+; N/A                                     ; None                                                ; 15.264 ns       ; SrcB[3]  ; ALUResult[31] ;
+; N/A                                     ; None                                                ; 15.263 ns       ; SrcB[11] ; ALUResult[30] ;
+; N/A                                     ; None                                                ; 15.259 ns       ; SrcB[2]  ; ALUResult[19] ;
+; N/A                                     ; None                                                ; 15.256 ns       ; SrcA[8]  ; ALUResult[25] ;
+; N/A                                     ; None                                                ; 15.250 ns       ; SrcB[4]  ; ALUResult[30] ;
+; N/A                                     ; None                                                ; 15.243 ns       ; SrcB[9]  ; ALUResult[29] ;
+; N/A                                     ; None                                                ; 15.239 ns       ; SrcB[13] ; ALUFlags      ;
+; N/A                                     ; None                                                ; 15.236 ns       ; SrcA[6]  ; ALUResult[29] ;
+; N/A                                     ; None                                                ; 15.235 ns       ; SrcA[3]  ; ALUResult[27] ;
+; N/A                                     ; None                                                ; 15.232 ns       ; SrcB[2]  ; ALUResult[20] ;
+; N/A                                     ; None                                                ; 15.229 ns       ; SrcA[12] ; ALUResult[30] ;
+; N/A                                     ; None                                                ; 15.229 ns       ; SrcA[2]  ; ALUResult[19] ;
+; N/A                                     ; None                                                ; 15.207 ns       ; SrcB[9]  ; ALUResult[25] ;
+; N/A                                     ; None                                                ; 15.202 ns       ; SrcA[2]  ; ALUResult[20] ;
+; N/A                                     ; None                                                ; 15.200 ns       ; SrcB[18] ; ALUFlags      ;
+; N/A                                     ; None                                                ; 15.200 ns       ; SrcA[6]  ; ALUResult[25] ;
+; N/A                                     ; None                                                ; 15.199 ns       ; SrcB[2]  ; ALUResult[23] ;
+; N/A                                     ; None                                                ; 15.192 ns       ; SrcB[6]  ; ALUResult[29] ;
+; N/A                                     ; None                                                ; 15.190 ns       ; SrcB[5]  ; ALUResult[30] ;
+; N/A                                     ; None                                                ; 15.181 ns       ; SrcA[16] ; ALUFlags      ;
+; N/A                                     ; None                                                ; 15.181 ns       ; SrcA[8]  ; ALUResult[30] ;
+; N/A                                     ; None                                                ; 15.177 ns       ; SrcA[3]  ; ALUResult[13] ;
+; N/A                                     ; None                                                ; 15.172 ns       ; SrcB[14] ; ALUFlags      ;
+; N/A                                     ; None                                                ; 15.169 ns       ; SrcA[2]  ; ALUResult[23] ;
+; N/A                                     ; None                                                ; 15.157 ns       ; SrcA[11] ; ALUResult[29] ;
+; N/A                                     ; None                                                ; 15.156 ns       ; SrcB[6]  ; ALUResult[25] ;
+; N/A                                     ; None                                                ; 15.147 ns       ; SrcB[10] ; ALUResult[19] ;
+; N/A                                     ; None                                                ; 15.134 ns       ; SrcA[7]  ; ALUResult[24] ;
+; N/A                                     ; None                                                ; 15.132 ns       ; SrcB[9]  ; ALUResult[30] ;
+; N/A                                     ; None                                                ; 15.129 ns       ; SrcA[7]  ; ALUResult[18] ;
+; N/A                                     ; None                                                ; 15.125 ns       ; SrcA[6]  ; ALUResult[30] ;
+; N/A                                     ; None                                                ; 15.123 ns       ; SrcA[5]  ; ALUResult[24] ;
+; N/A                                     ; None                                                ; 15.121 ns       ; SrcB[7]  ; ALUResult[29] ;
+; N/A                                     ; None                                                ; 15.121 ns       ; SrcA[11] ; ALUResult[25] ;
+; N/A                                     ; None                                                ; 15.121 ns       ; SrcA[4]  ; ALUResult[24] ;
+; N/A                                     ; None                                                ; 15.120 ns       ; SrcB[10] ; ALUResult[20] ;
+; N/A                                     ; None                                                ; 15.118 ns       ; SrcA[5]  ; ALUResult[18] ;
+; N/A                                     ; None                                                ; 15.116 ns       ; SrcA[4]  ; ALUResult[18] ;
+; N/A                                     ; None                                                ; 15.113 ns       ; SrcA[7]  ; ALUResult[31] ;
+; N/A                                     ; None                                                ; 15.107 ns       ; SrcB[1]  ; ALUResult[24] ;
+; N/A                                     ; None                                                ; 15.103 ns       ; SrcB[3]  ; ALUResult[27] ;
+; N/A                                     ; None                                                ; 15.102 ns       ; SrcA[5]  ; ALUResult[31] ;
+; N/A                                     ; None                                                ; 15.102 ns       ; SrcB[1]  ; ALUResult[18] ;
+; N/A                                     ; None                                                ; 15.100 ns       ; SrcA[4]  ; ALUResult[31] ;
+; N/A                                     ; None                                                ; 15.099 ns       ; SrcB[18] ; ALUResult[28] ;
+; N/A                                     ; None                                                ; 15.099 ns       ; SrcA[9]  ; ALUResult[24] ;
+; N/A                                     ; None                                                ; 15.097 ns       ; SrcB[8]  ; ALUResult[28] ;
+; N/A                                     ; None                                                ; 15.097 ns       ; SrcB[11] ; ALUResult[19] ;
+; N/A                                     ; None                                                ; 15.094 ns       ; SrcA[9]  ; ALUResult[18] ;
+; N/A                                     ; None                                                ; 15.093 ns       ; SrcA[1]  ; ALUResult[24] ;
+; N/A                                     ; None                                                ; 15.088 ns       ; SrcA[1]  ; ALUResult[18] ;
+; N/A                                     ; None                                                ; 15.087 ns       ; SrcB[10] ; ALUResult[23] ;
+; N/A                                     ; None                                                ; 15.086 ns       ; SrcB[1]  ; ALUResult[31] ;
+; N/A                                     ; None                                                ; 15.085 ns       ; SrcB[7]  ; ALUResult[25] ;
+; N/A                                     ; None                                                ; 15.084 ns       ; SrcB[4]  ; ALUResult[19] ;
+; N/A                                     ; None                                                ; 15.081 ns       ; SrcB[6]  ; ALUResult[30] ;
+; N/A                                     ; None                                                ; 15.078 ns       ; SrcA[9]  ; ALUResult[31] ;
+; N/A                                     ; None                                                ; 15.072 ns       ; SrcA[1]  ; ALUResult[31] ;
+; N/A                                     ; None                                                ; 15.070 ns       ; SrcB[11] ; ALUResult[20] ;
+; N/A                                     ; None                                                ; 15.069 ns       ; SrcA[3]  ; ALUResult[10] ;
+; N/A                                     ; None                                                ; 15.063 ns       ; SrcA[12] ; ALUResult[19] ;
+; N/A                                     ; None                                                ; 15.057 ns       ; SrcB[4]  ; ALUResult[20] ;
+; N/A                                     ; None                                                ; 15.056 ns       ; SrcA[5]  ; ALUResult[13] ;
+; N/A                                     ; None                                                ; 15.053 ns       ; SrcA[1]  ; ALUResult[13] ;
+; N/A                                     ; None                                                ; 15.048 ns       ; SrcA[3]  ; ALUResult[21] ;
+; N/A                                     ; None                                                ; 15.046 ns       ; SrcA[11] ; ALUResult[30] ;
+; N/A                                     ; None                                                ; 15.045 ns       ; SrcB[3]  ; ALUResult[13] ;
+; N/A                                     ; None                                                ; 15.044 ns       ; SrcA[15] ; ALUResult[28] ;
+; N/A                                     ; None                                                ; 15.037 ns       ; SrcB[11] ; ALUResult[23] ;
+; N/A                                     ; None                                                ; 15.036 ns       ; SrcA[12] ; ALUResult[20] ;
+; N/A                                     ; None                                                ; 15.025 ns       ; SrcB[2]  ; ALUResult[24] ;
+; N/A                                     ; None                                                ; 15.024 ns       ; SrcB[4]  ; ALUResult[23] ;
+; N/A                                     ; None                                                ; 15.024 ns       ; SrcB[5]  ; ALUResult[19] ;
+; N/A                                     ; None                                                ; 15.020 ns       ; SrcB[2]  ; ALUResult[18] ;
+; N/A                                     ; None                                                ; 15.020 ns       ; SrcA[3]  ; ALUResult[15] ;
+; N/A                                     ; None                                                ; 15.019 ns       ; SrcB[22] ; ALUFlags      ;
+; N/A                                     ; None                                                ; 15.015 ns       ; SrcA[8]  ; ALUResult[19] ;
+; N/A                                     ; None                                                ; 15.013 ns       ; SrcA[3]  ; ALUResult[26] ;
+; N/A                                     ; None                                                ; 15.010 ns       ; SrcB[7]  ; ALUResult[30] ;
+; N/A                                     ; None                                                ; 15.004 ns       ; SrcB[2]  ; ALUResult[31] ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                 ;          ;               ;
++-----------------------------------------+-----------------------------------------------------+-----------------+----------+---------------+
 
 
 +--------------------------+
@@ -304,47 +304,33 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II Classic Timing Analyzer
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Fri Nov 30 05:50:37 2018
+    Info: Processing started: Tue Dec 04 06:29:49 2018
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off ALU -c ALU --timing_analysis_only
-Info: Longest tpd from source pin "srcB[1]" to destination pin "ALUResult[29]" is 15.930 ns
-    Info: 1: + IC(0.000 ns) + CELL(0.860 ns) = 0.860 ns; Loc. = PIN_D5; Fanout = 2; PIN Node = 'srcB[1]'
-    Info: 2: + IC(5.525 ns) + CELL(0.420 ns) = 6.805 ns; Loc. = LCCOMB_X18_Y34_N26; Fanout = 2; COMB Node = 'condinvb[1]~1'
-    Info: 3: + IC(0.646 ns) + CELL(0.414 ns) = 7.865 ns; Loc. = LCCOMB_X19_Y34_N20; Fanout = 2; COMB Node = 'Add0~8'
-    Info: 4: + IC(0.000 ns) + CELL(0.071 ns) = 7.936 ns; Loc. = LCCOMB_X19_Y34_N22; Fanout = 2; COMB Node = 'Add0~12'
-    Info: 5: + IC(0.000 ns) + CELL(0.071 ns) = 8.007 ns; Loc. = LCCOMB_X19_Y34_N24; Fanout = 2; COMB Node = 'Add0~16'
-    Info: 6: + IC(0.000 ns) + CELL(0.071 ns) = 8.078 ns; Loc. = LCCOMB_X19_Y34_N26; Fanout = 2; COMB Node = 'Add0~20'
-    Info: 7: + IC(0.000 ns) + CELL(0.071 ns) = 8.149 ns; Loc. = LCCOMB_X19_Y34_N28; Fanout = 2; COMB Node = 'Add0~24'
-    Info: 8: + IC(0.000 ns) + CELL(0.146 ns) = 8.295 ns; Loc. = LCCOMB_X19_Y34_N30; Fanout = 2; COMB Node = 'Add0~28'
-    Info: 9: + IC(0.000 ns) + CELL(0.071 ns) = 8.366 ns; Loc. = LCCOMB_X19_Y33_N0; Fanout = 2; COMB Node = 'Add0~32'
-    Info: 10: + IC(0.000 ns) + CELL(0.071 ns) = 8.437 ns; Loc. = LCCOMB_X19_Y33_N2; Fanout = 2; COMB Node = 'Add0~36'
-    Info: 11: + IC(0.000 ns) + CELL(0.071 ns) = 8.508 ns; Loc. = LCCOMB_X19_Y33_N4; Fanout = 2; COMB Node = 'Add0~40'
-    Info: 12: + IC(0.000 ns) + CELL(0.071 ns) = 8.579 ns; Loc. = LCCOMB_X19_Y33_N6; Fanout = 2; COMB Node = 'Add0~44'
-    Info: 13: + IC(0.000 ns) + CELL(0.071 ns) = 8.650 ns; Loc. = LCCOMB_X19_Y33_N8; Fanout = 2; COMB Node = 'Add0~48'
-    Info: 14: + IC(0.000 ns) + CELL(0.071 ns) = 8.721 ns; Loc. = LCCOMB_X19_Y33_N10; Fanout = 2; COMB Node = 'Add0~52'
-    Info: 15: + IC(0.000 ns) + CELL(0.071 ns) = 8.792 ns; Loc. = LCCOMB_X19_Y33_N12; Fanout = 2; COMB Node = 'Add0~56'
-    Info: 16: + IC(0.000 ns) + CELL(0.159 ns) = 8.951 ns; Loc. = LCCOMB_X19_Y33_N14; Fanout = 2; COMB Node = 'Add0~60'
-    Info: 17: + IC(0.000 ns) + CELL(0.071 ns) = 9.022 ns; Loc. = LCCOMB_X19_Y33_N16; Fanout = 2; COMB Node = 'Add0~64'
-    Info: 18: + IC(0.000 ns) + CELL(0.071 ns) = 9.093 ns; Loc. = LCCOMB_X19_Y33_N18; Fanout = 2; COMB Node = 'Add0~68'
-    Info: 19: + IC(0.000 ns) + CELL(0.071 ns) = 9.164 ns; Loc. = LCCOMB_X19_Y33_N20; Fanout = 2; COMB Node = 'Add0~72'
-    Info: 20: + IC(0.000 ns) + CELL(0.071 ns) = 9.235 ns; Loc. = LCCOMB_X19_Y33_N22; Fanout = 2; COMB Node = 'Add0~76'
-    Info: 21: + IC(0.000 ns) + CELL(0.071 ns) = 9.306 ns; Loc. = LCCOMB_X19_Y33_N24; Fanout = 2; COMB Node = 'Add0~80'
-    Info: 22: + IC(0.000 ns) + CELL(0.071 ns) = 9.377 ns; Loc. = LCCOMB_X19_Y33_N26; Fanout = 2; COMB Node = 'Add0~84'
-    Info: 23: + IC(0.000 ns) + CELL(0.071 ns) = 9.448 ns; Loc. = LCCOMB_X19_Y33_N28; Fanout = 2; COMB Node = 'Add0~88'
-    Info: 24: + IC(0.000 ns) + CELL(0.146 ns) = 9.594 ns; Loc. = LCCOMB_X19_Y33_N30; Fanout = 2; COMB Node = 'Add0~92'
-    Info: 25: + IC(0.000 ns) + CELL(0.071 ns) = 9.665 ns; Loc. = LCCOMB_X19_Y32_N0; Fanout = 2; COMB Node = 'Add0~96'
-    Info: 26: + IC(0.000 ns) + CELL(0.071 ns) = 9.736 ns; Loc. = LCCOMB_X19_Y32_N2; Fanout = 2; COMB Node = 'Add0~100'
-    Info: 27: + IC(0.000 ns) + CELL(0.071 ns) = 9.807 ns; Loc. = LCCOMB_X19_Y32_N4; Fanout = 2; COMB Node = 'Add0~104'
-    Info: 28: + IC(0.000 ns) + CELL(0.071 ns) = 9.878 ns; Loc. = LCCOMB_X19_Y32_N6; Fanout = 2; COMB Node = 'Add0~108'
-    Info: 29: + IC(0.000 ns) + CELL(0.071 ns) = 9.949 ns; Loc. = LCCOMB_X19_Y32_N8; Fanout = 2; COMB Node = 'Add0~112'
-    Info: 30: + IC(0.000 ns) + CELL(0.071 ns) = 10.020 ns; Loc. = LCCOMB_X19_Y32_N10; Fanout = 2; COMB Node = 'Add0~116'
-    Info: 31: + IC(0.000 ns) + CELL(0.410 ns) = 10.430 ns; Loc. = LCCOMB_X19_Y32_N12; Fanout = 1; COMB Node = 'Add0~119'
-    Info: 32: + IC(0.454 ns) + CELL(0.438 ns) = 11.322 ns; Loc. = LCCOMB_X20_Y32_N20; Fanout = 1; COMB Node = 'Add0~121'
-    Info: 33: + IC(1.820 ns) + CELL(2.788 ns) = 15.930 ns; Loc. = PIN_C15; Fanout = 0; PIN Node = 'ALUResult[29]'
-    Info: Total cell delay = 7.485 ns ( 46.99 % )
-    Info: Total interconnect delay = 8.445 ns ( 53.01 % )
+Info: Longest tpd from source pin "SrcA[3]" to destination pin "ALUFlags" is 16.578 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.840 ns) = 0.840 ns; Loc. = PIN_C7; Fanout = 4; PIN Node = 'SrcA[3]'
+    Info: 2: + IC(5.716 ns) + CELL(0.393 ns) = 6.949 ns; Loc. = LCCOMB_X21_Y27_N6; Fanout = 2; COMB Node = 'Add1~7'
+    Info: 3: + IC(0.000 ns) + CELL(0.071 ns) = 7.020 ns; Loc. = LCCOMB_X21_Y27_N8; Fanout = 2; COMB Node = 'Add1~9'
+    Info: 4: + IC(0.000 ns) + CELL(0.071 ns) = 7.091 ns; Loc. = LCCOMB_X21_Y27_N10; Fanout = 2; COMB Node = 'Add1~11'
+    Info: 5: + IC(0.000 ns) + CELL(0.071 ns) = 7.162 ns; Loc. = LCCOMB_X21_Y27_N12; Fanout = 2; COMB Node = 'Add1~13'
+    Info: 6: + IC(0.000 ns) + CELL(0.159 ns) = 7.321 ns; Loc. = LCCOMB_X21_Y27_N14; Fanout = 2; COMB Node = 'Add1~15'
+    Info: 7: + IC(0.000 ns) + CELL(0.071 ns) = 7.392 ns; Loc. = LCCOMB_X21_Y27_N16; Fanout = 2; COMB Node = 'Add1~17'
+    Info: 8: + IC(0.000 ns) + CELL(0.071 ns) = 7.463 ns; Loc. = LCCOMB_X21_Y27_N18; Fanout = 2; COMB Node = 'Add1~19'
+    Info: 9: + IC(0.000 ns) + CELL(0.071 ns) = 7.534 ns; Loc. = LCCOMB_X21_Y27_N20; Fanout = 2; COMB Node = 'Add1~21'
+    Info: 10: + IC(0.000 ns) + CELL(0.071 ns) = 7.605 ns; Loc. = LCCOMB_X21_Y27_N22; Fanout = 2; COMB Node = 'Add1~23'
+    Info: 11: + IC(0.000 ns) + CELL(0.071 ns) = 7.676 ns; Loc. = LCCOMB_X21_Y27_N24; Fanout = 2; COMB Node = 'Add1~25'
+    Info: 12: + IC(0.000 ns) + CELL(0.071 ns) = 7.747 ns; Loc. = LCCOMB_X21_Y27_N26; Fanout = 2; COMB Node = 'Add1~27'
+    Info: 13: + IC(0.000 ns) + CELL(0.071 ns) = 7.818 ns; Loc. = LCCOMB_X21_Y27_N28; Fanout = 2; COMB Node = 'Add1~29'
+    Info: 14: + IC(0.000 ns) + CELL(0.146 ns) = 7.964 ns; Loc. = LCCOMB_X21_Y27_N30; Fanout = 2; COMB Node = 'Add1~31'
+    Info: 15: + IC(0.000 ns) + CELL(0.410 ns) = 8.374 ns; Loc. = LCCOMB_X21_Y26_N0; Fanout = 2; COMB Node = 'Add1~32'
+    Info: 16: + IC(1.436 ns) + CELL(0.371 ns) = 10.181 ns; Loc. = LCCOMB_X23_Y27_N6; Fanout = 1; COMB Node = 'ALUFlags~6'
+    Info: 17: + IC(0.974 ns) + CELL(0.150 ns) = 11.305 ns; Loc. = LCCOMB_X22_Y28_N24; Fanout = 1; COMB Node = 'ALUFlags~7'
+    Info: 18: + IC(0.251 ns) + CELL(0.275 ns) = 11.831 ns; Loc. = LCCOMB_X22_Y28_N20; Fanout = 1; COMB Node = 'ALUFlags~10'
+    Info: 19: + IC(1.959 ns) + CELL(2.788 ns) = 16.578 ns; Loc. = PIN_C15; Fanout = 0; PIN Node = 'ALUFlags'
+    Info: Total cell delay = 6.242 ns ( 37.65 % )
+    Info: Total interconnect delay = 10.336 ns ( 62.35 % )
 Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 196 megabytes
-    Info: Processing ended: Fri Nov 30 05:50:37 2018
+    Info: Processing ended: Tue Dec 04 06:29:49 2018
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 

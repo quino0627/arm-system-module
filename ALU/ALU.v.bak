@@ -1,0 +1,32 @@
+module ALU(
+	input [31:0] srcA,
+	input [31:0] srcB,
+	input [1:0] ALUControl,
+	output reg [31:0] ALUResult,
+	output reg ALUFlags
+	);
+	
+	wire [31:0] condinvb; 
+	wire [32:0] sum;
+	wire Neg, Zero, Carry, oVerflow;
+	
+	assign condinvb = ALUControl[0] ? ~srcB:srcB;
+	assign sum = srcA + condinvb + ALUControl[0];
+	//2의 보수
+	
+	always @(*)
+	
+		casex(ALUControl)
+			2'b0x: ALUResult = sum; //ADD, SUB
+			// 2'b10: ALUResult = srcA & srcB; //AND
+			// 2'b11: ALUResult = srcA | srcB; //OR
+			2'b10 : ALUResult = srcB + 0; // equal 
+			2'b11:
+			begin
+				assign Zero = (ALUResult == 32'b0);
+			end
+			default: ALUResult = 2'bx;
+		endcase
+
+	
+endmodule

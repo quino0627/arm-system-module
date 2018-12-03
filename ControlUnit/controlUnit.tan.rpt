@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for controlUnit
-Tue Dec 04 06:21:47 2018
+Tue Dec 04 06:31:24 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -37,16 +37,16 @@ applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Timing Analyzer Summary                                                                                                                               ;
-+------------------------------+-------+---------------+-------------+---------------------+---------------------+------------+----------+--------------+
-; Type                         ; Slack ; Required Time ; Actual Time ; From                ; To                  ; From Clock ; To Clock ; Failed Paths ;
-+------------------------------+-------+---------------+-------------+---------------------+---------------------+------------+----------+--------------+
-; Worst-case tsu               ; N/A   ; None          ; 7.820 ns    ; Cond[1]             ; MemWrite$latch      ; --         ; Op[1]    ; 0            ;
-; Worst-case tco               ; N/A   ; None          ; 13.547 ns   ; ALUControl[1]$latch ; ALUControl[1]       ; Cond[2]    ; --       ; 0            ;
-; Worst-case th                ; N/A   ; None          ; 3.997 ns    ; Op[2]               ; ALUControl[1]$latch ; --         ; Cond[2]  ; 0            ;
-; Total number of failed paths ;       ;               ;             ;                     ;                     ;            ;          ; 0            ;
-+------------------------------+-------+---------------+-------------+---------------------+---------------------+------------+----------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                           ;
++------------------------------+-------+---------------+-------------+-----------------+---------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time ; From            ; To                  ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+-------------+-----------------+---------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 6.546 ns    ; Cond[2]         ; PCSrc$latch         ; --         ; reset    ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 14.061 ns   ; ImmSrc[1]$latch ; ImmSrc[1]           ; Cond[1]    ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 4.246 ns    ; Op[1]           ; ALUControl[1]$latch ; --         ; Cond[1]  ; 0            ;
+; Total number of failed paths ;       ;               ;             ;                 ;                     ;            ;          ; 0            ;
++------------------------------+-------+---------------+-------------+-----------------+---------------------+------------+----------+--------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -88,20 +88,20 @@ applicable agreement for further details.
 +-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
 ; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
 +-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Op[2]           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
 ; reset           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; Funct[4]        ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; Funct[3]        ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; Funct[2]        ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; Funct[1]        ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; Funct[5]        ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; Op[1]           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; Op[0]           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; ALUFlags        ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
 ; Cond[3]         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
 ; Cond[1]         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
-; Cond[0]         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
 ; Cond[2]         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
-; ALUFlags[2]     ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
-; Op[1]           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
-; Funct[5]        ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
-; Op[0]           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
-; Funct[3]        ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
-; Funct[1]        ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
-; Funct[4]        ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
-; Funct[2]        ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
-; Op[2]           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; Cond[0]         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
 ; Funct[0]        ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
 +-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
 
@@ -117,588 +117,588 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; tsu                                                                                                                                                          ;
-+-----------------------------------------+-----------------------------------------------------+------------+-------------+---------------------+-------------+
-; Slack                                   ; Required tsu                                        ; Actual tsu ; From        ; To                  ; To Clock    ;
-+-----------------------------------------+-----------------------------------------------------+------------+-------------+---------------------+-------------+
-; N/A                                     ; None                                                ; 7.820 ns   ; Cond[1]     ; MemWrite$latch      ; Op[1]       ;
-; N/A                                     ; None                                                ; 7.731 ns   ; Cond[1]     ; MemWrite$latch      ; Op[2]       ;
-; N/A                                     ; None                                                ; 7.612 ns   ; Cond[2]     ; MemWrite$latch      ; Op[1]       ;
-; N/A                                     ; None                                                ; 7.533 ns   ; Cond[1]     ; MemWrite$latch      ; Op[0]       ;
-; N/A                                     ; None                                                ; 7.523 ns   ; Cond[2]     ; MemWrite$latch      ; Op[2]       ;
-; N/A                                     ; None                                                ; 7.500 ns   ; Cond[3]     ; MemWrite$latch      ; Op[1]       ;
-; N/A                                     ; None                                                ; 7.411 ns   ; Cond[3]     ; MemWrite$latch      ; Op[2]       ;
-; N/A                                     ; None                                                ; 7.407 ns   ; ALUFlags[2] ; MemWrite$latch      ; Op[1]       ;
-; N/A                                     ; None                                                ; 7.325 ns   ; Cond[2]     ; MemWrite$latch      ; Op[0]       ;
-; N/A                                     ; None                                                ; 7.318 ns   ; ALUFlags[2] ; MemWrite$latch      ; Op[2]       ;
-; N/A                                     ; None                                                ; 7.213 ns   ; Cond[3]     ; MemWrite$latch      ; Op[0]       ;
-; N/A                                     ; None                                                ; 7.145 ns   ; Cond[1]     ; MemtoReg$latch      ; Op[2]       ;
-; N/A                                     ; None                                                ; 7.120 ns   ; ALUFlags[2] ; MemWrite$latch      ; Op[0]       ;
-; N/A                                     ; None                                                ; 7.042 ns   ; Cond[1]     ; MemtoReg$latch      ; Op[1]       ;
-; N/A                                     ; None                                                ; 6.974 ns   ; Cond[1]     ; PCSrc$latch         ; reset       ;
-; N/A                                     ; None                                                ; 6.937 ns   ; Cond[2]     ; MemtoReg$latch      ; Op[2]       ;
-; N/A                                     ; None                                                ; 6.899 ns   ; Cond[1]     ; MemtoReg$latch      ; Op[0]       ;
-; N/A                                     ; None                                                ; 6.885 ns   ; Cond[0]     ; MemWrite$latch      ; Op[1]       ;
-; N/A                                     ; None                                                ; 6.834 ns   ; Cond[2]     ; MemtoReg$latch      ; Op[1]       ;
-; N/A                                     ; None                                                ; 6.825 ns   ; Cond[3]     ; MemtoReg$latch      ; Op[2]       ;
-; N/A                                     ; None                                                ; 6.805 ns   ; Cond[1]     ; PCSrc$latch         ; Op[2]       ;
-; N/A                                     ; None                                                ; 6.796 ns   ; Cond[0]     ; MemWrite$latch      ; Op[2]       ;
-; N/A                                     ; None                                                ; 6.789 ns   ; Cond[1]     ; RegSrc[1]$latch     ; reset       ;
-; N/A                                     ; None                                                ; 6.766 ns   ; Cond[2]     ; PCSrc$latch         ; reset       ;
-; N/A                                     ; None                                                ; 6.732 ns   ; ALUFlags[2] ; MemtoReg$latch      ; Op[2]       ;
-; N/A                                     ; None                                                ; 6.726 ns   ; Cond[1]     ; PCSrc$latch         ; Op[0]       ;
-; N/A                                     ; None                                                ; 6.722 ns   ; Cond[3]     ; MemtoReg$latch      ; Op[1]       ;
-; N/A                                     ; None                                                ; 6.702 ns   ; Cond[1]     ; PCSrc$latch         ; Op[1]       ;
-; N/A                                     ; None                                                ; 6.691 ns   ; Cond[2]     ; MemtoReg$latch      ; Op[0]       ;
-; N/A                                     ; None                                                ; 6.654 ns   ; Cond[3]     ; PCSrc$latch         ; reset       ;
-; N/A                                     ; None                                                ; 6.629 ns   ; ALUFlags[2] ; MemtoReg$latch      ; Op[1]       ;
-; N/A                                     ; None                                                ; 6.619 ns   ; Cond[1]     ; RegSrc[1]$latch     ; Op[2]       ;
-; N/A                                     ; None                                                ; 6.598 ns   ; Cond[0]     ; MemWrite$latch      ; Op[0]       ;
-; N/A                                     ; None                                                ; 6.597 ns   ; Cond[2]     ; PCSrc$latch         ; Op[2]       ;
-; N/A                                     ; None                                                ; 6.581 ns   ; Cond[2]     ; RegSrc[1]$latch     ; reset       ;
-; N/A                                     ; None                                                ; 6.579 ns   ; Cond[3]     ; MemtoReg$latch      ; Op[0]       ;
-; N/A                                     ; None                                                ; 6.561 ns   ; ALUFlags[2] ; PCSrc$latch         ; reset       ;
-; N/A                                     ; None                                                ; 6.518 ns   ; Cond[2]     ; PCSrc$latch         ; Op[0]       ;
-; N/A                                     ; None                                                ; 6.516 ns   ; Cond[1]     ; RegSrc[1]$latch     ; Op[1]       ;
-; N/A                                     ; None                                                ; 6.494 ns   ; Cond[2]     ; PCSrc$latch         ; Op[1]       ;
-; N/A                                     ; None                                                ; 6.486 ns   ; ALUFlags[2] ; MemtoReg$latch      ; Op[0]       ;
-; N/A                                     ; None                                                ; 6.485 ns   ; Cond[3]     ; PCSrc$latch         ; Op[2]       ;
-; N/A                                     ; None                                                ; 6.469 ns   ; Cond[3]     ; RegSrc[1]$latch     ; reset       ;
-; N/A                                     ; None                                                ; 6.459 ns   ; Funct[0]    ; MemWrite$latch      ; Op[1]       ;
-; N/A                                     ; None                                                ; 6.433 ns   ; Cond[1]     ; PCSrc$latch         ; Funct[5]    ;
-; N/A                                     ; None                                                ; 6.411 ns   ; Cond[2]     ; RegSrc[1]$latch     ; Op[2]       ;
-; N/A                                     ; None                                                ; 6.406 ns   ; Cond[3]     ; PCSrc$latch         ; Op[0]       ;
-; N/A                                     ; None                                                ; 6.392 ns   ; ALUFlags[2] ; PCSrc$latch         ; Op[2]       ;
-; N/A                                     ; None                                                ; 6.382 ns   ; Cond[3]     ; PCSrc$latch         ; Op[1]       ;
-; N/A                                     ; None                                                ; 6.376 ns   ; ALUFlags[2] ; RegSrc[1]$latch     ; reset       ;
-; N/A                                     ; None                                                ; 6.370 ns   ; Funct[0]    ; MemWrite$latch      ; Op[2]       ;
-; N/A                                     ; None                                                ; 6.333 ns   ; Cond[1]     ; RegSrc[1]$latch     ; Op[0]       ;
-; N/A                                     ; None                                                ; 6.313 ns   ; ALUFlags[2] ; PCSrc$latch         ; Op[0]       ;
-; N/A                                     ; None                                                ; 6.308 ns   ; Cond[2]     ; RegSrc[1]$latch     ; Op[1]       ;
-; N/A                                     ; None                                                ; 6.299 ns   ; Cond[3]     ; RegSrc[1]$latch     ; Op[2]       ;
-; N/A                                     ; None                                                ; 6.289 ns   ; ALUFlags[2] ; PCSrc$latch         ; Op[1]       ;
-; N/A                                     ; None                                                ; 6.225 ns   ; Cond[2]     ; PCSrc$latch         ; Funct[5]    ;
-; N/A                                     ; None                                                ; 6.210 ns   ; Cond[0]     ; MemtoReg$latch      ; Op[2]       ;
-; N/A                                     ; None                                                ; 6.206 ns   ; ALUFlags[2] ; RegSrc[1]$latch     ; Op[2]       ;
-; N/A                                     ; None                                                ; 6.196 ns   ; Cond[3]     ; RegSrc[1]$latch     ; Op[1]       ;
-; N/A                                     ; None                                                ; 6.172 ns   ; Funct[0]    ; MemWrite$latch      ; Op[0]       ;
-; N/A                                     ; None                                                ; 6.125 ns   ; Cond[2]     ; RegSrc[1]$latch     ; Op[0]       ;
-; N/A                                     ; None                                                ; 6.113 ns   ; Cond[3]     ; PCSrc$latch         ; Funct[5]    ;
-; N/A                                     ; None                                                ; 6.107 ns   ; Cond[0]     ; MemtoReg$latch      ; Op[1]       ;
-; N/A                                     ; None                                                ; 6.103 ns   ; ALUFlags[2] ; RegSrc[1]$latch     ; Op[1]       ;
-; N/A                                     ; None                                                ; 6.082 ns   ; Cond[1]     ; RegSrc[1]$latch     ; Funct[5]    ;
-; N/A                                     ; None                                                ; 6.039 ns   ; Cond[0]     ; PCSrc$latch         ; reset       ;
-; N/A                                     ; None                                                ; 6.020 ns   ; ALUFlags[2] ; PCSrc$latch         ; Funct[5]    ;
-; N/A                                     ; None                                                ; 6.018 ns   ; Cond[1]     ; RegSrc[1]$latch     ; Cond[0]     ;
-; N/A                                     ; None                                                ; 6.013 ns   ; Cond[3]     ; RegSrc[1]$latch     ; Op[0]       ;
-; N/A                                     ; None                                                ; 5.964 ns   ; Cond[0]     ; MemtoReg$latch      ; Op[0]       ;
-; N/A                                     ; None                                                ; 5.944 ns   ; Op[0]       ; MemWrite$latch      ; Op[1]       ;
-; N/A                                     ; None                                                ; 5.942 ns   ; Cond[1]     ; MemWrite$latch      ; Funct[5]    ;
-; N/A                                     ; None                                                ; 5.942 ns   ; Cond[1]     ; PCSrc$latch         ; Cond[0]     ;
-; N/A                                     ; None                                                ; 5.920 ns   ; ALUFlags[2] ; RegSrc[1]$latch     ; Op[0]       ;
-; N/A                                     ; None                                                ; 5.874 ns   ; Cond[2]     ; RegSrc[1]$latch     ; Funct[5]    ;
-; N/A                                     ; None                                                ; 5.872 ns   ; Cond[1]     ; RegSrc[1]$latch     ; Cond[3]     ;
-; N/A                                     ; None                                                ; 5.870 ns   ; Cond[0]     ; PCSrc$latch         ; Op[2]       ;
-; N/A                                     ; None                                                ; 5.855 ns   ; Op[0]       ; MemWrite$latch      ; Op[2]       ;
-; N/A                                     ; None                                                ; 5.854 ns   ; Cond[0]     ; RegSrc[1]$latch     ; reset       ;
-; N/A                                     ; None                                                ; 5.838 ns   ; Cond[1]     ; MemtoReg$latch      ; reset       ;
-; N/A                                     ; None                                                ; 5.810 ns   ; Cond[2]     ; RegSrc[1]$latch     ; Cond[0]     ;
-; N/A                                     ; None                                                ; 5.808 ns   ; Funct[0]    ; MemtoReg$latch      ; Op[2]       ;
-; N/A                                     ; None                                                ; 5.791 ns   ; Cond[0]     ; PCSrc$latch         ; Op[0]       ;
-; N/A                                     ; None                                                ; 5.767 ns   ; Cond[0]     ; PCSrc$latch         ; Op[1]       ;
-; N/A                                     ; None                                                ; 5.762 ns   ; Cond[3]     ; RegSrc[1]$latch     ; Funct[5]    ;
-; N/A                                     ; None                                                ; 5.752 ns   ; Cond[1]     ; PCSrc$latch         ; Cond[1]     ;
-; N/A                                     ; None                                                ; 5.734 ns   ; Cond[2]     ; MemWrite$latch      ; Funct[5]    ;
-; N/A                                     ; None                                                ; 5.734 ns   ; Cond[2]     ; PCSrc$latch         ; Cond[0]     ;
-; N/A                                     ; None                                                ; 5.714 ns   ; Cond[1]     ; RegSrc[1]$latch     ; Cond[1]     ;
-; N/A                                     ; None                                                ; 5.705 ns   ; Funct[0]    ; MemtoReg$latch      ; Op[1]       ;
-; N/A                                     ; None                                                ; 5.698 ns   ; Cond[3]     ; RegSrc[1]$latch     ; Cond[0]     ;
-; N/A                                     ; None                                                ; 5.684 ns   ; Cond[0]     ; RegSrc[1]$latch     ; Op[2]       ;
-; N/A                                     ; None                                                ; 5.669 ns   ; ALUFlags[2] ; RegSrc[1]$latch     ; Funct[5]    ;
-; N/A                                     ; None                                                ; 5.665 ns   ; Cond[1]     ; RegSrc[1]$latch     ; Funct[3]    ;
-; N/A                                     ; None                                                ; 5.664 ns   ; Cond[2]     ; RegSrc[1]$latch     ; Cond[3]     ;
-; N/A                                     ; None                                                ; 5.657 ns   ; Op[0]       ; MemWrite$latch      ; Op[0]       ;
-; N/A                                     ; None                                                ; 5.655 ns   ; Cond[1]     ; RegSrc[1]$latch     ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 5.653 ns   ; Cond[1]     ; PCSrc$latch         ; Cond[3]     ;
-; N/A                                     ; None                                                ; 5.630 ns   ; Cond[2]     ; MemtoReg$latch      ; reset       ;
-; N/A                                     ; None                                                ; 5.622 ns   ; Cond[3]     ; MemWrite$latch      ; Funct[5]    ;
-; N/A                                     ; None                                                ; 5.622 ns   ; Cond[3]     ; PCSrc$latch         ; Cond[0]     ;
-; N/A                                     ; None                                                ; 5.613 ns   ; Cond[1]     ; PCSrc$latch         ; Cond[2]     ;
-; N/A                                     ; None                                                ; 5.608 ns   ; Cond[1]     ; RegSrc[1]$latch     ; Cond[2]     ;
-; N/A                                     ; None                                                ; 5.606 ns   ; Cond[1]     ; MemWrite$latch      ; reset       ;
-; N/A                                     ; None                                                ; 5.605 ns   ; ALUFlags[2] ; RegSrc[1]$latch     ; Cond[0]     ;
-; N/A                                     ; None                                                ; 5.581 ns   ; Cond[0]     ; RegSrc[1]$latch     ; Op[1]       ;
-; N/A                                     ; None                                                ; 5.562 ns   ; Funct[0]    ; MemtoReg$latch      ; Op[0]       ;
-; N/A                                     ; None                                                ; 5.552 ns   ; Cond[3]     ; RegSrc[1]$latch     ; Cond[3]     ;
-; N/A                                     ; None                                                ; 5.544 ns   ; Cond[2]     ; PCSrc$latch         ; Cond[1]     ;
-; N/A                                     ; None                                                ; 5.529 ns   ; ALUFlags[2] ; MemWrite$latch      ; Funct[5]    ;
-; N/A                                     ; None                                                ; 5.529 ns   ; ALUFlags[2] ; PCSrc$latch         ; Cond[0]     ;
-; N/A                                     ; None                                                ; 5.518 ns   ; Cond[3]     ; MemtoReg$latch      ; reset       ;
-; N/A                                     ; None                                                ; 5.506 ns   ; Cond[2]     ; RegSrc[1]$latch     ; Cond[1]     ;
-; N/A                                     ; None                                                ; 5.498 ns   ; Cond[0]     ; PCSrc$latch         ; Funct[5]    ;
-; N/A                                     ; None                                                ; 5.478 ns   ; Cond[1]     ; MemWrite$latch      ; Cond[0]     ;
-; N/A                                     ; None                                                ; 5.459 ns   ; ALUFlags[2] ; RegSrc[1]$latch     ; Cond[3]     ;
-; N/A                                     ; None                                                ; 5.457 ns   ; Cond[2]     ; RegSrc[1]$latch     ; Funct[3]    ;
-; N/A                                     ; None                                                ; 5.447 ns   ; Cond[2]     ; RegSrc[1]$latch     ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 5.445 ns   ; Cond[2]     ; PCSrc$latch         ; Cond[3]     ;
-; N/A                                     ; None                                                ; 5.436 ns   ; Cond[1]     ; PCSrc$latch         ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 5.432 ns   ; Cond[3]     ; PCSrc$latch         ; Cond[1]     ;
-; N/A                                     ; None                                                ; 5.428 ns   ; Funct[0]    ; RegSrc[1]$latch     ; reset       ;
-; N/A                                     ; None                                                ; 5.427 ns   ; Cond[1]     ; ALUSrc$latch        ; Op[2]       ;
-; N/A                                     ; None                                                ; 5.425 ns   ; ALUFlags[2] ; MemtoReg$latch      ; reset       ;
-; N/A                                     ; None                                                ; 5.416 ns   ; Cond[1]     ; ALUControl[0]$latch ; Funct[3]    ;
-; N/A                                     ; None                                                ; 5.405 ns   ; Cond[2]     ; PCSrc$latch         ; Cond[2]     ;
-; N/A                                     ; None                                                ; 5.400 ns   ; Cond[2]     ; RegSrc[1]$latch     ; Cond[2]     ;
-; N/A                                     ; None                                                ; 5.398 ns   ; Cond[2]     ; MemWrite$latch      ; reset       ;
-; N/A                                     ; None                                                ; 5.398 ns   ; Cond[0]     ; RegSrc[1]$latch     ; Op[0]       ;
-; N/A                                     ; None                                                ; 5.394 ns   ; Cond[3]     ; RegSrc[1]$latch     ; Cond[1]     ;
-; N/A                                     ; None                                                ; 5.385 ns   ; Cond[1]     ; RegSrc[1]$latch     ; Funct[4]    ;
-; N/A                                     ; None                                                ; 5.362 ns   ; Cond[1]     ; MemtoReg$latch      ; Funct[5]    ;
-; N/A                                     ; None                                                ; 5.345 ns   ; Cond[3]     ; RegSrc[1]$latch     ; Funct[3]    ;
-; N/A                                     ; None                                                ; 5.339 ns   ; ALUFlags[2] ; PCSrc$latch         ; Cond[1]     ;
-; N/A                                     ; None                                                ; 5.335 ns   ; Cond[3]     ; RegSrc[1]$latch     ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 5.333 ns   ; Cond[3]     ; PCSrc$latch         ; Cond[3]     ;
-; N/A                                     ; None                                                ; 5.324 ns   ; Cond[1]     ; RegSrc[1]$latch     ; Funct[2]    ;
-; N/A                                     ; None                                                ; 5.314 ns   ; Cond[1]     ; ALUSrc$latch        ; reset       ;
-; N/A                                     ; None                                                ; 5.301 ns   ; ALUFlags[2] ; RegSrc[1]$latch     ; Cond[1]     ;
-; N/A                                     ; None                                                ; 5.297 ns   ; Cond[1]     ; ALUControl[0]$latch ; Funct[4]    ;
-; N/A                                     ; None                                                ; 5.293 ns   ; Cond[3]     ; PCSrc$latch         ; Cond[2]     ;
-; N/A                                     ; None                                                ; 5.288 ns   ; Cond[1]     ; MemWrite$latch      ; Cond[1]     ;
-; N/A                                     ; None                                                ; 5.288 ns   ; Cond[3]     ; RegSrc[1]$latch     ; Cond[2]     ;
-; N/A                                     ; None                                                ; 5.286 ns   ; Cond[3]     ; MemWrite$latch      ; reset       ;
-; N/A                                     ; None                                                ; 5.270 ns   ; Cond[2]     ; MemWrite$latch      ; Cond[0]     ;
-; N/A                                     ; None                                                ; 5.265 ns   ; Op[0]       ; MemtoReg$latch      ; Op[2]       ;
-; N/A                                     ; None                                                ; 5.258 ns   ; Funct[0]    ; RegSrc[1]$latch     ; Op[2]       ;
-; N/A                                     ; None                                                ; 5.257 ns   ; Cond[1]     ; RegSrc[1]$latch     ; Funct[1]    ;
-; N/A                                     ; None                                                ; 5.252 ns   ; ALUFlags[2] ; RegSrc[1]$latch     ; Funct[3]    ;
-; N/A                                     ; None                                                ; 5.242 ns   ; ALUFlags[2] ; RegSrc[1]$latch     ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 5.240 ns   ; ALUFlags[2] ; PCSrc$latch         ; Cond[3]     ;
-; N/A                                     ; None                                                ; 5.228 ns   ; Cond[2]     ; PCSrc$latch         ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 5.219 ns   ; Cond[2]     ; ALUSrc$latch        ; Op[2]       ;
-; N/A                                     ; None                                                ; 5.208 ns   ; Cond[2]     ; ALUControl[0]$latch ; Funct[3]    ;
-; N/A                                     ; None                                                ; 5.200 ns   ; ALUFlags[2] ; PCSrc$latch         ; Cond[2]     ;
-; N/A                                     ; None                                                ; 5.195 ns   ; ALUFlags[2] ; RegSrc[1]$latch     ; Cond[2]     ;
-; N/A                                     ; None                                                ; 5.193 ns   ; ALUFlags[2] ; MemWrite$latch      ; reset       ;
-; N/A                                     ; None                                                ; 5.177 ns   ; Cond[2]     ; RegSrc[1]$latch     ; Funct[4]    ;
-; N/A                                     ; None                                                ; 5.167 ns   ; Cond[1]     ; MemWrite$latch      ; Cond[3]     ;
-; N/A                                     ; None                                                ; 5.162 ns   ; Op[0]       ; MemtoReg$latch      ; Op[1]       ;
-; N/A                                     ; None                                                ; 5.158 ns   ; Cond[3]     ; MemWrite$latch      ; Cond[0]     ;
-; N/A                                     ; None                                                ; 5.155 ns   ; Funct[0]    ; RegSrc[1]$latch     ; Op[1]       ;
-; N/A                                     ; None                                                ; 5.154 ns   ; Cond[2]     ; MemtoReg$latch      ; Funct[5]    ;
-; N/A                                     ; None                                                ; 5.149 ns   ; Cond[1]     ; MemWrite$latch      ; Cond[2]     ;
-; N/A                                     ; None                                                ; 5.147 ns   ; Cond[0]     ; RegSrc[1]$latch     ; Funct[5]    ;
-; N/A                                     ; None                                                ; 5.135 ns   ; Funct[5]    ; ALUSrc$latch        ; Op[2]       ;
-; N/A                                     ; None                                                ; 5.116 ns   ; Cond[2]     ; RegSrc[1]$latch     ; Funct[2]    ;
-; N/A                                     ; None                                                ; 5.116 ns   ; Cond[3]     ; PCSrc$latch         ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 5.115 ns   ; Cond[1]     ; ALUControl[0]$latch ; Funct[2]    ;
-; N/A                                     ; None                                                ; 5.114 ns   ; Cond[1]     ; RegSrc[0]$latch     ; Op[2]       ;
-; N/A                                     ; None                                                ; 5.107 ns   ; Cond[3]     ; ALUSrc$latch        ; Op[2]       ;
-; N/A                                     ; None                                                ; 5.106 ns   ; Cond[2]     ; ALUSrc$latch        ; reset       ;
-; N/A                                     ; None                                                ; 5.096 ns   ; Cond[3]     ; ALUControl[0]$latch ; Funct[3]    ;
-; N/A                                     ; None                                                ; 5.089 ns   ; Cond[2]     ; ALUControl[0]$latch ; Funct[4]    ;
-; N/A                                     ; None                                                ; 5.083 ns   ; Cond[0]     ; RegSrc[1]$latch     ; Cond[0]     ;
-; N/A                                     ; None                                                ; 5.080 ns   ; Cond[2]     ; MemWrite$latch      ; Cond[1]     ;
-; N/A                                     ; None                                                ; 5.065 ns   ; ALUFlags[2] ; MemWrite$latch      ; Cond[0]     ;
-; N/A                                     ; None                                                ; 5.065 ns   ; Cond[3]     ; RegSrc[1]$latch     ; Funct[4]    ;
-; N/A                                     ; None                                                ; 5.064 ns   ; Funct[1]    ; ALUSrc$latch        ; Op[2]       ;
-; N/A                                     ; None                                                ; 5.049 ns   ; Cond[2]     ; RegSrc[1]$latch     ; Funct[1]    ;
-; N/A                                     ; None                                                ; 5.042 ns   ; Cond[3]     ; MemtoReg$latch      ; Funct[5]    ;
-; N/A                                     ; None                                                ; 5.023 ns   ; ALUFlags[2] ; PCSrc$latch         ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 5.022 ns   ; Funct[5]    ; ALUSrc$latch        ; reset       ;
-; N/A                                     ; None                                                ; 5.019 ns   ; Op[0]       ; MemtoReg$latch      ; Op[0]       ;
-; N/A                                     ; None                                                ; 5.014 ns   ; ALUFlags[2] ; ALUSrc$latch        ; Op[2]       ;
-; N/A                                     ; None                                                ; 5.007 ns   ; Cond[0]     ; MemWrite$latch      ; Funct[5]    ;
-; N/A                                     ; None                                                ; 5.007 ns   ; Cond[0]     ; PCSrc$latch         ; Cond[0]     ;
-; N/A                                     ; None                                                ; 5.004 ns   ; Cond[3]     ; RegSrc[1]$latch     ; Funct[2]    ;
-; N/A                                     ; None                                                ; 5.003 ns   ; ALUFlags[2] ; ALUControl[0]$latch ; Funct[3]    ;
-; N/A                                     ; None                                                ; 5.001 ns   ; Cond[1]     ; RegSrc[0]$latch     ; reset       ;
-; N/A                                     ; None                                                ; 5.000 ns   ; Cond[1]     ; ALUSrc$latch        ; Op[1]       ;
-; N/A                                     ; None                                                ; 4.994 ns   ; Cond[3]     ; ALUSrc$latch        ; reset       ;
-; N/A                                     ; None                                                ; 4.977 ns   ; Cond[3]     ; ALUControl[0]$latch ; Funct[4]    ;
-; N/A                                     ; None                                                ; 4.972 ns   ; Funct[0]    ; RegSrc[1]$latch     ; Op[0]       ;
-; N/A                                     ; None                                                ; 4.972 ns   ; ALUFlags[2] ; RegSrc[1]$latch     ; Funct[4]    ;
-; N/A                                     ; None                                                ; 4.968 ns   ; Cond[3]     ; MemWrite$latch      ; Cond[1]     ;
-; N/A                                     ; None                                                ; 4.959 ns   ; Cond[2]     ; MemWrite$latch      ; Cond[3]     ;
-; N/A                                     ; None                                                ; 4.951 ns   ; Funct[1]    ; ALUSrc$latch        ; reset       ;
-; N/A                                     ; None                                                ; 4.949 ns   ; ALUFlags[2] ; MemtoReg$latch      ; Funct[5]    ;
-; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;             ;                     ;             ;
-+-----------------------------------------+-----------------------------------------------------+------------+-------------+---------------------+-------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                                                                ;
++-----------------------------------------+-----------------------------------------------------+------------+----------+-----------------+----------+
+; Slack                                   ; Required tsu                                        ; Actual tsu ; From     ; To              ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+----------+-----------------+----------+
+; N/A                                     ; None                                                ; 6.546 ns   ; Cond[2]  ; PCSrc$latch     ; reset    ;
+; N/A                                     ; None                                                ; 6.439 ns   ; Cond[2]  ; RegSrc[1]$latch ; reset    ;
+; N/A                                     ; None                                                ; 6.431 ns   ; Cond[2]  ; MemWrite$latch  ; Op[1]    ;
+; N/A                                     ; None                                                ; 6.351 ns   ; Cond[1]  ; PCSrc$latch     ; reset    ;
+; N/A                                     ; None                                                ; 6.263 ns   ; ALUFlags ; PCSrc$latch     ; reset    ;
+; N/A                                     ; None                                                ; 6.244 ns   ; Cond[1]  ; RegSrc[1]$latch ; reset    ;
+; N/A                                     ; None                                                ; 6.236 ns   ; Cond[1]  ; MemWrite$latch  ; Op[1]    ;
+; N/A                                     ; None                                                ; 6.217 ns   ; Cond[0]  ; PCSrc$latch     ; reset    ;
+; N/A                                     ; None                                                ; 6.186 ns   ; Cond[3]  ; PCSrc$latch     ; reset    ;
+; N/A                                     ; None                                                ; 6.156 ns   ; ALUFlags ; RegSrc[1]$latch ; reset    ;
+; N/A                                     ; None                                                ; 6.148 ns   ; ALUFlags ; MemWrite$latch  ; Op[1]    ;
+; N/A                                     ; None                                                ; 6.140 ns   ; Cond[2]  ; MemtoReg$latch  ; Op[1]    ;
+; N/A                                     ; None                                                ; 6.113 ns   ; Cond[2]  ; MemWrite$latch  ; Op[0]    ;
+; N/A                                     ; None                                                ; 6.110 ns   ; Cond[0]  ; RegSrc[1]$latch ; reset    ;
+; N/A                                     ; None                                                ; 6.102 ns   ; Cond[0]  ; MemWrite$latch  ; Op[1]    ;
+; N/A                                     ; None                                                ; 6.079 ns   ; Cond[3]  ; RegSrc[1]$latch ; reset    ;
+; N/A                                     ; None                                                ; 6.072 ns   ; Cond[2]  ; MemWrite$latch  ; Op[2]    ;
+; N/A                                     ; None                                                ; 6.071 ns   ; Cond[2]  ; PCSrc$latch     ; Funct[5] ;
+; N/A                                     ; None                                                ; 6.071 ns   ; Cond[3]  ; MemWrite$latch  ; Op[1]    ;
+; N/A                                     ; None                                                ; 6.045 ns   ; Cond[2]  ; MemtoReg$latch  ; Op[2]    ;
+; N/A                                     ; None                                                ; 5.996 ns   ; Cond[2]  ; MemtoReg$latch  ; Op[0]    ;
+; N/A                                     ; None                                                ; 5.945 ns   ; Cond[1]  ; MemtoReg$latch  ; Op[1]    ;
+; N/A                                     ; None                                                ; 5.918 ns   ; Cond[1]  ; MemWrite$latch  ; Op[0]    ;
+; N/A                                     ; None                                                ; 5.912 ns   ; Cond[2]  ; PCSrc$latch     ; Op[1]    ;
+; N/A                                     ; None                                                ; 5.882 ns   ; Cond[2]  ; PCSrc$latch     ; Op[2]    ;
+; N/A                                     ; None                                                ; 5.878 ns   ; Cond[2]  ; PCSrc$latch     ; Op[0]    ;
+; N/A                                     ; None                                                ; 5.877 ns   ; Cond[1]  ; MemWrite$latch  ; Op[2]    ;
+; N/A                                     ; None                                                ; 5.876 ns   ; Cond[1]  ; PCSrc$latch     ; Funct[5] ;
+; N/A                                     ; None                                                ; 5.857 ns   ; ALUFlags ; MemtoReg$latch  ; Op[1]    ;
+; N/A                                     ; None                                                ; 5.850 ns   ; Cond[1]  ; MemtoReg$latch  ; Op[2]    ;
+; N/A                                     ; None                                                ; 5.830 ns   ; ALUFlags ; MemWrite$latch  ; Op[0]    ;
+; N/A                                     ; None                                                ; 5.816 ns   ; Cond[2]  ; RegSrc[1]$latch ; ALUFlags ;
+; N/A                                     ; None                                                ; 5.811 ns   ; Cond[0]  ; MemtoReg$latch  ; Op[1]    ;
+; N/A                                     ; None                                                ; 5.801 ns   ; Cond[1]  ; MemtoReg$latch  ; Op[0]    ;
+; N/A                                     ; None                                                ; 5.789 ns   ; ALUFlags ; MemWrite$latch  ; Op[2]    ;
+; N/A                                     ; None                                                ; 5.788 ns   ; ALUFlags ; PCSrc$latch     ; Funct[5] ;
+; N/A                                     ; None                                                ; 5.784 ns   ; Cond[0]  ; MemWrite$latch  ; Op[0]    ;
+; N/A                                     ; None                                                ; 5.780 ns   ; Cond[3]  ; MemtoReg$latch  ; Op[1]    ;
+; N/A                                     ; None                                                ; 5.762 ns   ; ALUFlags ; MemtoReg$latch  ; Op[2]    ;
+; N/A                                     ; None                                                ; 5.753 ns   ; Cond[3]  ; MemWrite$latch  ; Op[0]    ;
+; N/A                                     ; None                                                ; 5.743 ns   ; Cond[0]  ; MemWrite$latch  ; Op[2]    ;
+; N/A                                     ; None                                                ; 5.742 ns   ; Cond[0]  ; PCSrc$latch     ; Funct[5] ;
+; N/A                                     ; None                                                ; 5.719 ns   ; Cond[2]  ; RegSrc[1]$latch ; Funct[5] ;
+; N/A                                     ; None                                                ; 5.717 ns   ; Cond[1]  ; PCSrc$latch     ; Op[1]    ;
+; N/A                                     ; None                                                ; 5.716 ns   ; Cond[0]  ; MemtoReg$latch  ; Op[2]    ;
+; N/A                                     ; None                                                ; 5.713 ns   ; ALUFlags ; MemtoReg$latch  ; Op[0]    ;
+; N/A                                     ; None                                                ; 5.712 ns   ; Cond[3]  ; MemWrite$latch  ; Op[2]    ;
+; N/A                                     ; None                                                ; 5.711 ns   ; Cond[3]  ; PCSrc$latch     ; Funct[5] ;
+; N/A                                     ; None                                                ; 5.687 ns   ; Cond[1]  ; PCSrc$latch     ; Op[2]    ;
+; N/A                                     ; None                                                ; 5.685 ns   ; Cond[3]  ; MemtoReg$latch  ; Op[2]    ;
+; N/A                                     ; None                                                ; 5.683 ns   ; Cond[1]  ; PCSrc$latch     ; Op[0]    ;
+; N/A                                     ; None                                                ; 5.667 ns   ; Cond[0]  ; MemtoReg$latch  ; Op[0]    ;
+; N/A                                     ; None                                                ; 5.643 ns   ; Cond[2]  ; RegSrc[1]$latch ; Op[0]    ;
+; N/A                                     ; None                                                ; 5.636 ns   ; Cond[3]  ; MemtoReg$latch  ; Op[0]    ;
+; N/A                                     ; None                                                ; 5.629 ns   ; ALUFlags ; PCSrc$latch     ; Op[1]    ;
+; N/A                                     ; None                                                ; 5.621 ns   ; Cond[1]  ; RegSrc[1]$latch ; ALUFlags ;
+; N/A                                     ; None                                                ; 5.608 ns   ; Funct[4] ; ALUSrc$latch    ; Op[2]    ;
+; N/A                                     ; None                                                ; 5.599 ns   ; ALUFlags ; PCSrc$latch     ; Op[2]    ;
+; N/A                                     ; None                                                ; 5.595 ns   ; ALUFlags ; PCSrc$latch     ; Op[0]    ;
+; N/A                                     ; None                                                ; 5.588 ns   ; Funct[5] ; ALUSrc$latch    ; Op[2]    ;
+; N/A                                     ; None                                                ; 5.583 ns   ; Cond[0]  ; PCSrc$latch     ; Op[1]    ;
+; N/A                                     ; None                                                ; 5.573 ns   ; Funct[1] ; ALUSrc$latch    ; Op[2]    ;
+; N/A                                     ; None                                                ; 5.553 ns   ; Cond[0]  ; PCSrc$latch     ; Op[2]    ;
+; N/A                                     ; None                                                ; 5.552 ns   ; Cond[3]  ; PCSrc$latch     ; Op[1]    ;
+; N/A                                     ; None                                                ; 5.549 ns   ; Cond[0]  ; PCSrc$latch     ; Op[0]    ;
+; N/A                                     ; None                                                ; 5.540 ns   ; Op[0]    ; RegSrc[1]$latch ; reset    ;
+; N/A                                     ; None                                                ; 5.533 ns   ; ALUFlags ; RegSrc[1]$latch ; ALUFlags ;
+; N/A                                     ; None                                                ; 5.532 ns   ; Op[0]    ; MemWrite$latch  ; Op[1]    ;
+; N/A                                     ; None                                                ; 5.524 ns   ; Cond[1]  ; RegSrc[1]$latch ; Funct[5] ;
+; N/A                                     ; None                                                ; 5.522 ns   ; Cond[3]  ; PCSrc$latch     ; Op[2]    ;
+; N/A                                     ; None                                                ; 5.518 ns   ; Cond[3]  ; PCSrc$latch     ; Op[0]    ;
+; N/A                                     ; None                                                ; 5.487 ns   ; Cond[0]  ; RegSrc[1]$latch ; ALUFlags ;
+; N/A                                     ; None                                                ; 5.468 ns   ; Funct[4] ; ALUSrc$latch    ; reset    ;
+; N/A                                     ; None                                                ; 5.456 ns   ; Cond[3]  ; RegSrc[1]$latch ; ALUFlags ;
+; N/A                                     ; None                                                ; 5.448 ns   ; Cond[1]  ; RegSrc[1]$latch ; Op[0]    ;
+; N/A                                     ; None                                                ; 5.448 ns   ; Funct[5] ; ALUSrc$latch    ; reset    ;
+; N/A                                     ; None                                                ; 5.436 ns   ; ALUFlags ; RegSrc[1]$latch ; Funct[5] ;
+; N/A                                     ; None                                                ; 5.436 ns   ; Funct[3] ; ALUSrc$latch    ; Op[2]    ;
+; N/A                                     ; None                                                ; 5.433 ns   ; Funct[1] ; ALUSrc$latch    ; reset    ;
+; N/A                                     ; None                                                ; 5.413 ns   ; Cond[2]  ; RegSrc[1]$latch ; Op[1]    ;
+; N/A                                     ; None                                                ; 5.390 ns   ; Cond[0]  ; RegSrc[1]$latch ; Funct[5] ;
+; N/A                                     ; None                                                ; 5.360 ns   ; ALUFlags ; RegSrc[1]$latch ; Op[0]    ;
+; N/A                                     ; None                                                ; 5.359 ns   ; Cond[3]  ; RegSrc[1]$latch ; Funct[5] ;
+; N/A                                     ; None                                                ; 5.352 ns   ; Cond[2]  ; MemtoReg$latch  ; reset    ;
+; N/A                                     ; None                                                ; 5.351 ns   ; Funct[0] ; RegSrc[1]$latch ; reset    ;
+; N/A                                     ; None                                                ; 5.348 ns   ; Cond[2]  ; PCSrc$latch     ; Cond[3]  ;
+; N/A                                     ; None                                                ; 5.343 ns   ; Funct[0] ; MemWrite$latch  ; Op[1]    ;
+; N/A                                     ; None                                                ; 5.319 ns   ; Cond[2]  ; RegSrc[1]$latch ; Op[2]    ;
+; N/A                                     ; None                                                ; 5.314 ns   ; Cond[0]  ; RegSrc[1]$latch ; Op[0]    ;
+; N/A                                     ; None                                                ; 5.296 ns   ; Funct[3] ; ALUSrc$latch    ; reset    ;
+; N/A                                     ; None                                                ; 5.294 ns   ; Cond[2]  ; RegSrc[1]$latch ; Cond[3]  ;
+; N/A                                     ; None                                                ; 5.283 ns   ; Cond[3]  ; RegSrc[1]$latch ; Op[0]    ;
+; N/A                                     ; None                                                ; 5.258 ns   ; Cond[2]  ; RegSrc[1]$latch ; Funct[1] ;
+; N/A                                     ; None                                                ; 5.253 ns   ; Op[2]    ; PCSrc$latch     ; reset    ;
+; N/A                                     ; None                                                ; 5.248 ns   ; Op[0]    ; MemtoReg$latch  ; Op[1]    ;
+; N/A                                     ; None                                                ; 5.230 ns   ; Cond[2]  ; RegSrc[1]$latch ; Cond[0]  ;
+; N/A                                     ; None                                                ; 5.218 ns   ; Cond[1]  ; RegSrc[1]$latch ; Op[1]    ;
+; N/A                                     ; None                                                ; 5.214 ns   ; Op[0]    ; MemWrite$latch  ; Op[0]    ;
+; N/A                                     ; None                                                ; 5.177 ns   ; Cond[2]  ; RegSrc[1]$latch ; Funct[2] ;
+; N/A                                     ; None                                                ; 5.173 ns   ; Op[0]    ; MemWrite$latch  ; Op[2]    ;
+; N/A                                     ; None                                                ; 5.157 ns   ; Cond[1]  ; MemtoReg$latch  ; reset    ;
+; N/A                                     ; None                                                ; 5.153 ns   ; Cond[1]  ; PCSrc$latch     ; Cond[3]  ;
+; N/A                                     ; None                                                ; 5.153 ns   ; Op[0]    ; MemtoReg$latch  ; Op[2]    ;
+; N/A                                     ; None                                                ; 5.130 ns   ; ALUFlags ; RegSrc[1]$latch ; Op[1]    ;
+; N/A                                     ; None                                                ; 5.124 ns   ; Cond[1]  ; RegSrc[1]$latch ; Op[2]    ;
+; N/A                                     ; None                                                ; 5.118 ns   ; Cond[2]  ; MemtoReg$latch  ; Funct[5] ;
+; N/A                                     ; None                                                ; 5.104 ns   ; Op[0]    ; MemtoReg$latch  ; Op[0]    ;
+; N/A                                     ; None                                                ; 5.101 ns   ; Cond[2]  ; RegSrc[1]$latch ; Funct[4] ;
+; N/A                                     ; None                                                ; 5.099 ns   ; Cond[1]  ; RegSrc[1]$latch ; Cond[3]  ;
+; N/A                                     ; None                                                ; 5.084 ns   ; Cond[0]  ; RegSrc[1]$latch ; Op[1]    ;
+; N/A                                     ; None                                                ; 5.082 ns   ; Funct[4] ; ALUSrc$latch    ; Funct[5] ;
+; N/A                                     ; None                                                ; 5.070 ns   ; Cond[2]  ; PCSrc$latch     ; Cond[2]  ;
+; N/A                                     ; None                                                ; 5.069 ns   ; ALUFlags ; MemtoReg$latch  ; reset    ;
+; N/A                                     ; None                                                ; 5.068 ns   ; Cond[2]  ; PCSrc$latch     ; ALUFlags ;
+; N/A                                     ; None                                                ; 5.065 ns   ; ALUFlags ; PCSrc$latch     ; Cond[3]  ;
+; N/A                                     ; None                                                ; 5.063 ns   ; Cond[1]  ; RegSrc[1]$latch ; Funct[1] ;
+; N/A                                     ; None                                                ; 5.062 ns   ; Funct[5] ; ALUSrc$latch    ; Funct[5] ;
+; N/A                                     ; None                                                ; 5.055 ns   ; Op[0]    ; PCSrc$latch     ; reset    ;
+; N/A                                     ; None                                                ; 5.053 ns   ; Cond[3]  ; RegSrc[1]$latch ; Op[1]    ;
+; N/A                                     ; None                                                ; 5.052 ns   ; Funct[0] ; MemtoReg$latch  ; Op[1]    ;
+; N/A                                     ; None                                                ; 5.047 ns   ; Funct[1] ; ALUSrc$latch    ; Funct[5] ;
+; N/A                                     ; None                                                ; 5.040 ns   ; Cond[2]  ; RegSrc[1]$latch ; Cond[2]  ;
+; N/A                                     ; None                                                ; 5.036 ns   ; ALUFlags ; RegSrc[1]$latch ; Op[2]    ;
+; N/A                                     ; None                                                ; 5.035 ns   ; Cond[1]  ; RegSrc[1]$latch ; Cond[0]  ;
+; N/A                                     ; None                                                ; 5.025 ns   ; Funct[0] ; MemWrite$latch  ; Op[0]    ;
+; N/A                                     ; None                                                ; 5.023 ns   ; Cond[0]  ; MemtoReg$latch  ; reset    ;
+; N/A                                     ; None                                                ; 5.019 ns   ; Cond[0]  ; PCSrc$latch     ; Cond[3]  ;
+; N/A                                     ; None                                                ; 5.011 ns   ; ALUFlags ; RegSrc[1]$latch ; Cond[3]  ;
+; N/A                                     ; None                                                ; 4.992 ns   ; Cond[3]  ; MemtoReg$latch  ; reset    ;
+; N/A                                     ; None                                                ; 4.990 ns   ; Cond[0]  ; RegSrc[1]$latch ; Op[2]    ;
+; N/A                                     ; None                                                ; 4.988 ns   ; Cond[3]  ; PCSrc$latch     ; Cond[3]  ;
+; N/A                                     ; None                                                ; 4.984 ns   ; Funct[0] ; MemWrite$latch  ; Op[2]    ;
+; N/A                                     ; None                                                ; 4.982 ns   ; Cond[1]  ; RegSrc[1]$latch ; Funct[2] ;
+; N/A                                     ; None                                                ; 4.975 ns   ; ALUFlags ; RegSrc[1]$latch ; Funct[1] ;
+; N/A                                     ; None                                                ; 4.965 ns   ; Cond[0]  ; RegSrc[1]$latch ; Cond[3]  ;
+; N/A                                     ; None                                                ; 4.960 ns   ; Cond[2]  ; PCSrc$latch     ; Cond[0]  ;
+; N/A                                     ; None                                                ; 4.959 ns   ; Cond[3]  ; RegSrc[1]$latch ; Op[2]    ;
+; N/A                                     ; None                                                ; 4.957 ns   ; Funct[0] ; MemtoReg$latch  ; Op[2]    ;
+; N/A                                     ; None                                                ; 4.952 ns   ; Cond[2]  ; RegSrc[1]$latch ; Funct[3] ;
+; N/A                                     ; None                                                ; 4.947 ns   ; ALUFlags ; RegSrc[1]$latch ; Cond[0]  ;
+; N/A                                     ; None                                                ; 4.934 ns   ; Cond[3]  ; RegSrc[1]$latch ; Cond[3]  ;
+; N/A                                     ; None                                                ; 4.929 ns   ; Cond[0]  ; RegSrc[1]$latch ; Funct[1] ;
+; N/A                                     ; None                                                ; 4.923 ns   ; Cond[1]  ; MemtoReg$latch  ; Funct[5] ;
+; N/A                                     ; None                                                ; 4.917 ns   ; Op[0]    ; RegSrc[1]$latch ; ALUFlags ;
+; N/A                                     ; None                                                ; 4.910 ns   ; Funct[3] ; ALUSrc$latch    ; Funct[5] ;
+; N/A                                     ; None                                                ; 4.908 ns   ; Funct[0] ; MemtoReg$latch  ; Op[0]    ;
+; N/A                                     ; None                                                ; 4.906 ns   ; Cond[1]  ; RegSrc[1]$latch ; Funct[4] ;
+; N/A                                     ; None                                                ; 4.901 ns   ; Cond[0]  ; RegSrc[1]$latch ; Cond[0]  ;
+; N/A                                     ; None                                                ; 4.901 ns   ; Op[1]    ; PCSrc$latch     ; reset    ;
+; N/A                                     ; None                                                ; 4.898 ns   ; Cond[3]  ; RegSrc[1]$latch ; Funct[1] ;
+; N/A                                     ; None                                                ; 4.894 ns   ; ALUFlags ; RegSrc[1]$latch ; Funct[2] ;
+; N/A                                     ; None                                                ; 4.875 ns   ; Cond[1]  ; PCSrc$latch     ; Cond[2]  ;
+; N/A                                     ; None                                                ; 4.873 ns   ; Cond[1]  ; PCSrc$latch     ; ALUFlags ;
+; N/A                                     ; None                                                ; 4.873 ns   ; Funct[4] ; ALUSrc$latch    ; Op[1]    ;
+; N/A                                     ; None                                                ; 4.870 ns   ; Cond[3]  ; RegSrc[1]$latch ; Cond[0]  ;
+; N/A                                     ; None                                                ; 4.853 ns   ; Funct[5] ; ALUSrc$latch    ; Op[1]    ;
+; N/A                                     ; None                                                ; 4.848 ns   ; Cond[0]  ; RegSrc[1]$latch ; Funct[2] ;
+; N/A                                     ; None                                                ; 4.845 ns   ; Cond[1]  ; RegSrc[1]$latch ; Cond[2]  ;
+; N/A                                     ; None                                                ; 4.838 ns   ; Funct[1] ; ALUSrc$latch    ; Op[1]    ;
+; N/A                                     ; None                                                ; 4.835 ns   ; ALUFlags ; MemtoReg$latch  ; Funct[5] ;
+; N/A                                     ; None                                                ; 4.831 ns   ; Funct[4] ; ALUSrc$latch    ; Op[0]    ;
+; N/A                                     ; None                                                ; 4.820 ns   ; Op[0]    ; RegSrc[1]$latch ; Funct[5] ;
+; N/A                                     ; None                                                ; 4.818 ns   ; ALUFlags ; RegSrc[1]$latch ; Funct[4] ;
+; N/A                                     ; None                                                ; 4.817 ns   ; Cond[3]  ; RegSrc[1]$latch ; Funct[2] ;
+; N/A                                     ; None                                                ; 4.811 ns   ; Funct[5] ; ALUSrc$latch    ; Op[0]    ;
+; N/A                                     ; None                                                ; 4.796 ns   ; Funct[1] ; ALUSrc$latch    ; Op[0]    ;
+; N/A                                     ; None                                                ; 4.789 ns   ; Cond[0]  ; MemtoReg$latch  ; Funct[5] ;
+; N/A                                     ; None                                                ; 4.787 ns   ; ALUFlags ; PCSrc$latch     ; Cond[2]  ;
+; N/A                                     ; None                                                ; 4.785 ns   ; ALUFlags ; PCSrc$latch     ; ALUFlags ;
+; N/A                                     ; None                                                ; 4.778 ns   ; Op[2]    ; PCSrc$latch     ; Funct[5] ;
+; N/A                                     ; None                                                ; 4.772 ns   ; Cond[0]  ; RegSrc[1]$latch ; Funct[4] ;
+; N/A                                     ; None                                                ; 4.765 ns   ; Cond[1]  ; PCSrc$latch     ; Cond[0]  ;
+; N/A                                     ; None                                                ; 4.759 ns   ; Cond[2]  ; RegSrc[1]$latch ; Cond[1]  ;
+; N/A                                     ; None                                                ; 4.758 ns   ; Cond[3]  ; MemtoReg$latch  ; Funct[5] ;
+; N/A                                     ; None                                                ; 4.757 ns   ; Cond[1]  ; RegSrc[1]$latch ; Funct[3] ;
+; N/A                                     ; None                                                ; 4.757 ns   ; ALUFlags ; RegSrc[1]$latch ; Cond[2]  ;
+; N/A                                     ; None                                                ; 4.744 ns   ; Op[0]    ; RegSrc[1]$latch ; Op[0]    ;
+; N/A                                     ; None                                                ; 4.741 ns   ; Cond[0]  ; PCSrc$latch     ; Cond[2]  ;
+; N/A                                     ; None                                                ; 4.741 ns   ; Cond[3]  ; RegSrc[1]$latch ; Funct[4] ;
+; N/A                                     ; None                                                ; 4.739 ns   ; Cond[0]  ; PCSrc$latch     ; ALUFlags ;
+; N/A                                     ; None                                                ; 4.728 ns   ; Funct[0] ; RegSrc[1]$latch ; ALUFlags ;
+; N/A                                     ; None                                                ; 4.724 ns   ; Funct[4] ; ALUSrc$latch    ; ALUFlags ;
+; N/A                                     ; None                                                ; 4.711 ns   ; Cond[0]  ; RegSrc[1]$latch ; Cond[2]  ;
+; N/A                                     ; None                                                ; 4.710 ns   ; Cond[3]  ; PCSrc$latch     ; Cond[2]  ;
+; N/A                                     ; None                                                ; 4.708 ns   ; Cond[3]  ; PCSrc$latch     ; ALUFlags ;
+; N/A                                     ; None                                                ; 4.704 ns   ; Funct[5] ; ALUSrc$latch    ; ALUFlags ;
+; N/A                                     ; None                                                ; 4.701 ns   ; Op[0]    ; ALUSrc$latch    ; Op[2]    ;
+; N/A                                     ; None                                                ; 4.701 ns   ; Funct[3] ; ALUSrc$latch    ; Op[1]    ;
+; N/A                                     ; None                                                ; 4.689 ns   ; Funct[1] ; ALUSrc$latch    ; ALUFlags ;
+; N/A                                     ; None                                                ; 4.680 ns   ; Cond[3]  ; RegSrc[1]$latch ; Cond[2]  ;
+; N/A                                     ; None                                                ; 4.677 ns   ; ALUFlags ; PCSrc$latch     ; Cond[0]  ;
+; N/A                                     ; None                                                ; 4.669 ns   ; ALUFlags ; RegSrc[1]$latch ; Funct[3] ;
+; N/A                                     ; None                                                ; 4.659 ns   ; Funct[3] ; ALUSrc$latch    ; Op[0]    ;
+; N/A                                     ; None                                                ; 4.645 ns   ; Cond[2]  ; PCSrc$latch     ; Cond[1]  ;
+; N/A                                     ; None                                                ; 4.631 ns   ; Funct[0] ; RegSrc[1]$latch ; Funct[5] ;
+; N/A                                     ; None                                                ; 4.631 ns   ; Cond[0]  ; PCSrc$latch     ; Cond[0]  ;
+; N/A                                     ; None                                                ; 4.623 ns   ; Cond[0]  ; RegSrc[1]$latch ; Funct[3] ;
+; N/A                                     ; None                                                ; 4.619 ns   ; Op[2]    ; PCSrc$latch     ; Op[1]    ;
+; N/A                                     ; None                                                ; 4.600 ns   ; Cond[3]  ; PCSrc$latch     ; Cond[0]  ;
+; N/A                                     ; None                                                ; 4.598 ns   ; Cond[2]  ; MemWrite$latch  ; Funct[5] ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;          ;                 ;          ;
++-----------------------------------------+-----------------------------------------------------+------------+----------+-----------------+----------+
 
 
-+---------------------------------------------------------------------------------------+
-; tco                                                                                   ;
-+-------+--------------+------------+---------------------+---------------+-------------+
-; Slack ; Required tco ; Actual tco ; From                ; To            ; From Clock  ;
-+-------+--------------+------------+---------------------+---------------+-------------+
-; N/A   ; None         ; 13.547 ns  ; ALUControl[1]$latch ; ALUControl[1] ; Cond[2]     ;
-; N/A   ; None         ; 13.542 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; Cond[2]     ;
-; N/A   ; None         ; 13.452 ns  ; ALUControl[1]$latch ; ALUControl[1] ; Cond[1]     ;
-; N/A   ; None         ; 13.447 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; Cond[1]     ;
-; N/A   ; None         ; 13.389 ns  ; ALUControl[1]$latch ; ALUControl[1] ; ALUFlags[2] ;
-; N/A   ; None         ; 13.384 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; ALUFlags[2] ;
-; N/A   ; None         ; 13.345 ns  ; ALUControl[1]$latch ; ALUControl[1] ; Cond[0]     ;
-; N/A   ; None         ; 13.340 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; Cond[0]     ;
-; N/A   ; None         ; 13.295 ns  ; ALUControl[1]$latch ; ALUControl[1] ; Cond[3]     ;
-; N/A   ; None         ; 13.290 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; Cond[3]     ;
-; N/A   ; None         ; 12.580 ns  ; ALUControl[1]$latch ; ALUControl[1] ; Op[0]       ;
-; N/A   ; None         ; 12.575 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; Op[0]       ;
-; N/A   ; None         ; 12.550 ns  ; ALUControl[1]$latch ; ALUControl[1] ; Op[1]       ;
-; N/A   ; None         ; 12.447 ns  ; ALUControl[1]$latch ; ALUControl[1] ; Op[2]       ;
-; N/A   ; None         ; 12.439 ns  ; ALUControl[1]$latch ; ALUControl[1] ; Funct[5]    ;
-; N/A   ; None         ; 12.436 ns  ; ALUControl[0]$latch ; ALUControl[0] ; Cond[2]     ;
-; N/A   ; None         ; 12.434 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; Funct[5]    ;
-; N/A   ; None         ; 12.379 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; Cond[2]     ;
-; N/A   ; None         ; 12.341 ns  ; ALUControl[0]$latch ; ALUControl[0] ; Cond[1]     ;
-; N/A   ; None         ; 12.316 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; Op[1]       ;
-; N/A   ; None         ; 12.284 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; Cond[1]     ;
-; N/A   ; None         ; 12.278 ns  ; ALUControl[0]$latch ; ALUControl[0] ; ALUFlags[2] ;
-; N/A   ; None         ; 12.234 ns  ; ALUControl[0]$latch ; ALUControl[0] ; Cond[0]     ;
-; N/A   ; None         ; 12.221 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; ALUFlags[2] ;
-; N/A   ; None         ; 12.184 ns  ; ALUControl[0]$latch ; ALUControl[0] ; Cond[3]     ;
-; N/A   ; None         ; 12.177 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; Cond[0]     ;
-; N/A   ; None         ; 12.127 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; Cond[3]     ;
-; N/A   ; None         ; 12.118 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; Funct[1]    ;
-; N/A   ; None         ; 12.035 ns  ; ALUControl[1]$latch ; ALUControl[1] ; reset       ;
-; N/A   ; None         ; 12.030 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; reset       ;
-; N/A   ; None         ; 11.982 ns  ; ALUControl[1]$latch ; ALUControl[1] ; Funct[1]    ;
-; N/A   ; None         ; 11.959 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; Op[2]       ;
-; N/A   ; None         ; 11.868 ns  ; ALUControl[1]$latch ; ALUControl[1] ; Funct[3]    ;
-; N/A   ; None         ; 11.863 ns  ; ALUControl[1]$latch ; ALUControl[1] ; Funct[4]    ;
-; N/A   ; None         ; 11.651 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; Funct[2]    ;
-; N/A   ; None         ; 11.621 ns  ; ALUControl[1]$latch ; ALUControl[1] ; Funct[2]    ;
-; N/A   ; None         ; 11.610 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; Funct[4]    ;
-; N/A   ; None         ; 11.576 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; Funct[1]    ;
-; N/A   ; None         ; 11.501 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; Funct[2]    ;
-; N/A   ; None         ; 11.469 ns  ; ALUControl[0]$latch ; ALUControl[0] ; Op[0]       ;
-; N/A   ; None         ; 11.439 ns  ; ALUControl[0]$latch ; ALUControl[0] ; Op[1]       ;
-; N/A   ; None         ; 11.438 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; Funct[4]    ;
-; N/A   ; None         ; 11.412 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; Op[0]       ;
-; N/A   ; None         ; 11.410 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; Cond[2]     ;
-; N/A   ; None         ; 11.377 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; Op[1]       ;
-; N/A   ; None         ; 11.350 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; Funct[3]    ;
-; N/A   ; None         ; 11.336 ns  ; ALUControl[0]$latch ; ALUControl[0] ; Op[2]       ;
-; N/A   ; None         ; 11.328 ns  ; ALUControl[0]$latch ; ALUControl[0] ; Funct[5]    ;
-; N/A   ; None         ; 11.315 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; Cond[1]     ;
-; N/A   ; None         ; 11.274 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; Op[2]       ;
-; N/A   ; None         ; 11.271 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; Funct[5]    ;
-; N/A   ; None         ; 11.252 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; ALUFlags[2] ;
-; N/A   ; None         ; 11.208 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; Cond[0]     ;
-; N/A   ; None         ; 11.161 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; Funct[3]    ;
-; N/A   ; None         ; 11.158 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; Cond[3]     ;
-; N/A   ; None         ; 11.095 ns  ; ImmSrc[1]$latch     ; ImmSrc[1]     ; Cond[2]     ;
-; N/A   ; None         ; 11.015 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; Funct[1]    ;
-; N/A   ; None         ; 11.000 ns  ; ImmSrc[1]$latch     ; ImmSrc[1]     ; Cond[1]     ;
-; N/A   ; None         ; 10.939 ns  ; RegWrite[1]$latch   ; RegWrite[1]   ; Cond[2]     ;
-; N/A   ; None         ; 10.937 ns  ; ImmSrc[1]$latch     ; ImmSrc[1]     ; ALUFlags[2] ;
-; N/A   ; None         ; 10.924 ns  ; ALUControl[0]$latch ; ALUControl[0] ; reset       ;
-; N/A   ; None         ; 10.893 ns  ; ImmSrc[1]$latch     ; ImmSrc[1]     ; Cond[0]     ;
-; N/A   ; None         ; 10.871 ns  ; ALUControl[0]$latch ; ALUControl[0] ; Funct[1]    ;
-; N/A   ; None         ; 10.867 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; reset       ;
-; N/A   ; None         ; 10.844 ns  ; RegWrite[1]$latch   ; RegWrite[1]   ; Cond[1]     ;
-; N/A   ; None         ; 10.843 ns  ; ImmSrc[1]$latch     ; ImmSrc[1]     ; Cond[3]     ;
-; N/A   ; None         ; 10.828 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; Funct[4]    ;
-; N/A   ; None         ; 10.781 ns  ; RegWrite[1]$latch   ; RegWrite[1]   ; ALUFlags[2] ;
-; N/A   ; None         ; 10.757 ns  ; ALUControl[0]$latch ; ALUControl[0] ; Funct[3]    ;
-; N/A   ; None         ; 10.752 ns  ; ALUControl[0]$latch ; ALUControl[0] ; Funct[4]    ;
-; N/A   ; None         ; 10.737 ns  ; RegWrite[1]$latch   ; RegWrite[1]   ; Cond[0]     ;
-; N/A   ; None         ; 10.687 ns  ; RegWrite[1]$latch   ; RegWrite[1]   ; Cond[3]     ;
-; N/A   ; None         ; 10.611 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; Op[0]       ;
-; N/A   ; None         ; 10.599 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; Funct[3]    ;
-; N/A   ; None         ; 10.510 ns  ; ALUControl[0]$latch ; ALUControl[0] ; Funct[2]    ;
-; N/A   ; None         ; 10.456 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; Funct[5]    ;
-; N/A   ; None         ; 10.448 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; Funct[2]    ;
-; N/A   ; None         ; 10.329 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; Op[1]       ;
-; N/A   ; None         ; 10.290 ns  ; ALUSrc$latch        ; ALUSrc        ; Funct[1]    ;
-; N/A   ; None         ; 10.215 ns  ; ALUSrc$latch        ; ALUSrc        ; Funct[2]    ;
-; N/A   ; None         ; 10.152 ns  ; ALUSrc$latch        ; ALUSrc        ; Funct[4]    ;
-; N/A   ; None         ; 10.128 ns  ; ImmSrc[1]$latch     ; ImmSrc[1]     ; Op[0]       ;
-; N/A   ; None         ; 10.124 ns  ; ALUSrc$latch        ; ALUSrc        ; Cond[2]     ;
-; N/A   ; None         ; 10.029 ns  ; ALUSrc$latch        ; ALUSrc        ; Cond[1]     ;
-; N/A   ; None         ; 10.015 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; reset       ;
-; N/A   ; None         ; 9.987 ns   ; ImmSrc[1]$latch     ; ImmSrc[1]     ; Funct[5]    ;
-; N/A   ; None         ; 9.972 ns   ; RegWrite[1]$latch   ; RegWrite[1]   ; Op[0]       ;
-; N/A   ; None         ; 9.966 ns   ; ALUSrc$latch        ; ALUSrc        ; ALUFlags[2] ;
-; N/A   ; None         ; 9.937 ns   ; RegWrite[1]$latch   ; RegWrite[1]   ; Op[1]       ;
-; N/A   ; None         ; 9.922 ns   ; ALUSrc$latch        ; ALUSrc        ; Cond[0]     ;
-; N/A   ; None         ; 9.902 ns   ; RegSrc[0]$latch     ; RegSrc[0]     ; Op[2]       ;
-; N/A   ; None         ; 9.875 ns   ; ALUSrc$latch        ; ALUSrc        ; Funct[3]    ;
-; N/A   ; None         ; 9.872 ns   ; ALUSrc$latch        ; ALUSrc        ; Cond[3]     ;
-; N/A   ; None         ; 9.869 ns   ; ImmSrc[1]$latch     ; ImmSrc[1]     ; Op[1]       ;
-; N/A   ; None         ; 9.834 ns   ; RegWrite[1]$latch   ; RegWrite[1]   ; Op[2]       ;
-; N/A   ; None         ; 9.831 ns   ; RegWrite[1]$latch   ; RegWrite[1]   ; Funct[5]    ;
-; N/A   ; None         ; 9.671 ns   ; ImmSrc[1]$latch     ; ImmSrc[1]     ; Funct[1]    ;
-; N/A   ; None         ; 9.628 ns   ; MemtoReg$latch      ; MemtoReg      ; ALUFlags[2] ;
-; N/A   ; None         ; 9.583 ns   ; ImmSrc[1]$latch     ; ImmSrc[1]     ; reset       ;
-; N/A   ; None         ; 9.575 ns   ; RegWrite[1]$latch   ; RegWrite[1]   ; Funct[1]    ;
-; N/A   ; None         ; 9.512 ns   ; ImmSrc[1]$latch     ; ImmSrc[1]     ; Op[2]       ;
-; N/A   ; None         ; 9.427 ns   ; RegWrite[1]$latch   ; RegWrite[1]   ; reset       ;
-; N/A   ; None         ; 9.388 ns   ; RegWrite[1]$latch   ; RegWrite[1]   ; Funct[4]    ;
-; N/A   ; None         ; 9.386 ns   ; MemtoReg$latch      ; MemtoReg      ; Cond[2]     ;
-; N/A   ; None         ; 9.368 ns   ; MemtoReg$latch      ; MemtoReg      ; Cond[3]     ;
-; N/A   ; None         ; 9.325 ns   ; ALUSrc$latch        ; ALUSrc        ; Op[0]       ;
-; N/A   ; None         ; 9.293 ns   ; MemtoReg$latch      ; MemtoReg      ; Cond[0]     ;
-; N/A   ; None         ; 9.278 ns   ; MemtoReg$latch      ; MemtoReg      ; Cond[1]     ;
-; N/A   ; None         ; 9.240 ns   ; MemWrite$latch      ; MemWrite      ; Funct[0]    ;
-; N/A   ; None         ; 9.230 ns   ; MemtoReg$latch      ; MemtoReg      ; Funct[0]    ;
-; N/A   ; None         ; 9.204 ns   ; ImmSrc[1]$latch     ; ImmSrc[1]     ; Funct[2]    ;
-; N/A   ; None         ; 9.170 ns   ; ALUSrc$latch        ; ALUSrc        ; Funct[5]    ;
-; N/A   ; None         ; 9.163 ns   ; ImmSrc[1]$latch     ; ImmSrc[1]     ; Funct[4]    ;
-; N/A   ; None         ; 9.159 ns   ; RegWrite[1]$latch   ; RegWrite[1]   ; Funct[3]    ;
-; N/A   ; None         ; 9.122 ns   ; MemtoReg$latch      ; MemtoReg      ; reset       ;
-; N/A   ; None         ; 9.043 ns   ; ALUSrc$latch        ; ALUSrc        ; Op[1]       ;
-; N/A   ; None         ; 9.027 ns   ; MemWrite$latch      ; MemWrite      ; Cond[2]     ;
-; N/A   ; None         ; 9.008 ns   ; RegWrite[1]$latch   ; RegWrite[1]   ; Funct[2]    ;
-; N/A   ; None         ; 8.932 ns   ; MemWrite$latch      ; MemWrite      ; Cond[1]     ;
-; N/A   ; None         ; 8.903 ns   ; ImmSrc[1]$latch     ; ImmSrc[1]     ; Funct[3]    ;
-; N/A   ; None         ; 8.869 ns   ; MemWrite$latch      ; MemWrite      ; ALUFlags[2] ;
-; N/A   ; None         ; 8.840 ns   ; MemWrite$latch      ; MemWrite      ; Op[1]       ;
-; N/A   ; None         ; 8.825 ns   ; MemWrite$latch      ; MemWrite      ; Cond[0]     ;
-; N/A   ; None         ; 8.775 ns   ; MemWrite$latch      ; MemWrite      ; Cond[3]     ;
-; N/A   ; None         ; 8.737 ns   ; MemWrite$latch      ; MemWrite      ; Op[2]       ;
-; N/A   ; None         ; 8.729 ns   ; ALUSrc$latch        ; ALUSrc        ; reset       ;
-; N/A   ; None         ; 8.724 ns   ; MemtoReg$latch      ; MemtoReg      ; Op[1]       ;
-; N/A   ; None         ; 8.616 ns   ; ALUSrc$latch        ; ALUSrc        ; Op[2]       ;
-; N/A   ; None         ; 8.565 ns   ; PCSrc$latch         ; PCSrc         ; Cond[2]     ;
-; N/A   ; None         ; 8.517 ns   ; MemtoReg$latch      ; MemtoReg      ; Op[2]       ;
-; N/A   ; None         ; 8.470 ns   ; PCSrc$latch         ; PCSrc         ; Cond[1]     ;
-; N/A   ; None         ; 8.407 ns   ; PCSrc$latch         ; PCSrc         ; ALUFlags[2] ;
-; N/A   ; None         ; 8.403 ns   ; MemWrite$latch      ; MemWrite      ; reset       ;
-; N/A   ; None         ; 8.363 ns   ; PCSrc$latch         ; PCSrc         ; Cond[0]     ;
-; N/A   ; None         ; 8.313 ns   ; PCSrc$latch         ; PCSrc         ; Cond[3]     ;
-; N/A   ; None         ; 8.312 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; Funct[1]    ;
-; N/A   ; None         ; 8.237 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; Funct[2]    ;
-; N/A   ; None         ; 8.174 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; Funct[4]    ;
-; N/A   ; None         ; 8.130 ns   ; PCSrc$latch         ; PCSrc         ; Op[1]       ;
-; N/A   ; None         ; 8.027 ns   ; PCSrc$latch         ; PCSrc         ; Op[2]       ;
-; N/A   ; None         ; 8.013 ns   ; MemWrite$latch      ; MemWrite      ; Op[0]       ;
-; N/A   ; None         ; 8.008 ns   ; MemtoReg$latch      ; MemtoReg      ; Funct[5]    ;
-; N/A   ; None         ; 7.916 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; Cond[2]     ;
-; N/A   ; None         ; 7.897 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; Funct[3]    ;
-; N/A   ; None         ; 7.884 ns   ; MemtoReg$latch      ; MemtoReg      ; Op[0]       ;
-; N/A   ; None         ; 7.874 ns   ; MemWrite$latch      ; MemWrite      ; Funct[5]    ;
-; N/A   ; None         ; 7.821 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; Cond[1]     ;
-; N/A   ; None         ; 7.817 ns   ; PCSrc$latch         ; PCSrc         ; reset       ;
-; N/A   ; None         ; 7.758 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; ALUFlags[2] ;
-; N/A   ; None         ; 7.714 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; Cond[0]     ;
-; N/A   ; None         ; 7.664 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; Cond[3]     ;
-; N/A   ; None         ; 7.410 ns   ; PCSrc$latch         ; PCSrc         ; Funct[5]    ;
-; N/A   ; None         ; 7.331 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; Funct[5]    ;
-; N/A   ; None         ; 7.223 ns   ; PCSrc$latch         ; PCSrc         ; Op[0]       ;
-; N/A   ; None         ; 7.080 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; Op[0]       ;
-; N/A   ; None         ; 6.897 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; Op[1]       ;
-; N/A   ; None         ; 6.794 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; Op[2]       ;
-; N/A   ; None         ; 6.624 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; reset       ;
-+-------+--------------+------------+---------------------+---------------+-------------+
++--------------------------------------------------------------------------------------+
+; tco                                                                                  ;
++-------+--------------+------------+---------------------+---------------+------------+
+; Slack ; Required tco ; Actual tco ; From                ; To            ; From Clock ;
++-------+--------------+------------+---------------------+---------------+------------+
+; N/A   ; None         ; 14.061 ns  ; ImmSrc[1]$latch     ; ImmSrc[1]     ; Cond[1]    ;
+; N/A   ; None         ; 13.887 ns  ; ImmSrc[1]$latch     ; ImmSrc[1]     ; Cond[0]    ;
+; N/A   ; None         ; 13.762 ns  ; ImmSrc[1]$latch     ; ImmSrc[1]     ; Cond[2]    ;
+; N/A   ; None         ; 13.682 ns  ; RegWrite[1]$latch   ; RegWrite[1]   ; Cond[1]    ;
+; N/A   ; None         ; 13.531 ns  ; ImmSrc[1]$latch     ; ImmSrc[1]     ; Cond[3]    ;
+; N/A   ; None         ; 13.508 ns  ; RegWrite[1]$latch   ; RegWrite[1]   ; Cond[0]    ;
+; N/A   ; None         ; 13.405 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; Cond[1]    ;
+; N/A   ; None         ; 13.383 ns  ; RegWrite[1]$latch   ; RegWrite[1]   ; Cond[2]    ;
+; N/A   ; None         ; 13.296 ns  ; ALUControl[1]$latch ; ALUControl[1] ; Cond[1]    ;
+; N/A   ; None         ; 13.231 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; Cond[0]    ;
+; N/A   ; None         ; 13.152 ns  ; RegWrite[1]$latch   ; RegWrite[1]   ; Cond[3]    ;
+; N/A   ; None         ; 13.122 ns  ; ALUControl[1]$latch ; ALUControl[1] ; Cond[0]    ;
+; N/A   ; None         ; 13.106 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; Cond[2]    ;
+; N/A   ; None         ; 12.997 ns  ; ALUControl[1]$latch ; ALUControl[1] ; Cond[2]    ;
+; N/A   ; None         ; 12.875 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; Cond[3]    ;
+; N/A   ; None         ; 12.826 ns  ; ImmSrc[1]$latch     ; ImmSrc[1]     ; ALUFlags   ;
+; N/A   ; None         ; 12.766 ns  ; ALUControl[1]$latch ; ALUControl[1] ; Cond[3]    ;
+; N/A   ; None         ; 12.740 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; Cond[1]    ;
+; N/A   ; None         ; 12.698 ns  ; ImmSrc[1]$latch     ; ImmSrc[1]     ; Op[1]      ;
+; N/A   ; None         ; 12.635 ns  ; ALUSrc$latch        ; ALUSrc        ; Cond[1]    ;
+; N/A   ; None         ; 12.566 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; Cond[0]    ;
+; N/A   ; None         ; 12.524 ns  ; ImmSrc[1]$latch     ; ImmSrc[1]     ; Funct[5]   ;
+; N/A   ; None         ; 12.461 ns  ; ALUSrc$latch        ; ALUSrc        ; Cond[0]    ;
+; N/A   ; None         ; 12.452 ns  ; ALUControl[0]$latch ; ALUControl[0] ; Cond[1]    ;
+; N/A   ; None         ; 12.447 ns  ; RegWrite[1]$latch   ; RegWrite[1]   ; ALUFlags   ;
+; N/A   ; None         ; 12.441 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; Cond[2]    ;
+; N/A   ; None         ; 12.437 ns  ; ImmSrc[1]$latch     ; ImmSrc[1]     ; Op[0]      ;
+; N/A   ; None         ; 12.383 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; Cond[1]    ;
+; N/A   ; None         ; 12.336 ns  ; ALUSrc$latch        ; ALUSrc        ; Cond[2]    ;
+; N/A   ; None         ; 12.319 ns  ; RegWrite[1]$latch   ; RegWrite[1]   ; Op[1]      ;
+; N/A   ; None         ; 12.278 ns  ; ALUControl[0]$latch ; ALUControl[0] ; Cond[0]    ;
+; N/A   ; None         ; 12.223 ns  ; ImmSrc[1]$latch     ; ImmSrc[1]     ; Op[2]      ;
+; N/A   ; None         ; 12.210 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; Cond[3]    ;
+; N/A   ; None         ; 12.209 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; Cond[0]    ;
+; N/A   ; None         ; 12.170 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; ALUFlags   ;
+; N/A   ; None         ; 12.153 ns  ; ALUControl[0]$latch ; ALUControl[0] ; Cond[2]    ;
+; N/A   ; None         ; 12.145 ns  ; RegWrite[1]$latch   ; RegWrite[1]   ; Funct[5]   ;
+; N/A   ; None         ; 12.137 ns  ; ImmSrc[1]$latch     ; ImmSrc[1]     ; Funct[1]   ;
+; N/A   ; None         ; 12.119 ns  ; RegWrite[1]$latch   ; RegWrite[1]   ; Op[2]      ;
+; N/A   ; None         ; 12.105 ns  ; ALUSrc$latch        ; ALUSrc        ; Cond[3]    ;
+; N/A   ; None         ; 12.092 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; Funct[3]   ;
+; N/A   ; None         ; 12.084 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; Cond[2]    ;
+; N/A   ; None         ; 12.061 ns  ; ALUControl[1]$latch ; ALUControl[1] ; ALUFlags   ;
+; N/A   ; None         ; 12.058 ns  ; RegWrite[1]$latch   ; RegWrite[1]   ; Op[0]      ;
+; N/A   ; None         ; 12.042 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; Op[1]      ;
+; N/A   ; None         ; 12.007 ns  ; ImmSrc[1]$latch     ; ImmSrc[1]     ; Funct[4]   ;
+; N/A   ; None         ; 11.999 ns  ; ImmSrc[1]$latch     ; ImmSrc[1]     ; reset      ;
+; N/A   ; None         ; 11.987 ns  ; ALUSrc$latch        ; ALUSrc        ; Funct[3]   ;
+; N/A   ; None         ; 11.954 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; Funct[1]   ;
+; N/A   ; None         ; 11.943 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; Funct[4]   ;
+; N/A   ; None         ; 11.933 ns  ; ALUControl[1]$latch ; ALUControl[1] ; Op[1]      ;
+; N/A   ; None         ; 11.922 ns  ; ALUControl[0]$latch ; ALUControl[0] ; Cond[3]    ;
+; N/A   ; None         ; 11.905 ns  ; MemWrite$latch      ; MemWrite      ; Cond[1]    ;
+; N/A   ; None         ; 11.868 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; Funct[5]   ;
+; N/A   ; None         ; 11.867 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; Funct[2]   ;
+; N/A   ; None         ; 11.858 ns  ; ImmSrc[1]$latch     ; ImmSrc[1]     ; Funct[3]   ;
+; N/A   ; None         ; 11.853 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; Cond[3]    ;
+; N/A   ; None         ; 11.849 ns  ; ALUSrc$latch        ; ALUSrc        ; Funct[1]   ;
+; N/A   ; None         ; 11.838 ns  ; ALUSrc$latch        ; ALUSrc        ; Funct[4]   ;
+; N/A   ; None         ; 11.819 ns  ; RegWrite[1]$latch   ; RegWrite[1]   ; Funct[4]   ;
+; N/A   ; None         ; 11.781 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; Op[0]      ;
+; N/A   ; None         ; 11.762 ns  ; ALUSrc$latch        ; ALUSrc        ; Funct[2]   ;
+; N/A   ; None         ; 11.759 ns  ; ALUControl[1]$latch ; ALUControl[1] ; Funct[5]   ;
+; N/A   ; None         ; 11.742 ns  ; ALUControl[1]$latch ; ALUControl[1] ; Op[2]      ;
+; N/A   ; None         ; 11.731 ns  ; MemWrite$latch      ; MemWrite      ; Cond[0]    ;
+; N/A   ; None         ; 11.672 ns  ; ALUControl[1]$latch ; ALUControl[1] ; Op[0]      ;
+; N/A   ; None         ; 11.664 ns  ; RegWrite[1]$latch   ; RegWrite[1]   ; Funct[3]   ;
+; N/A   ; None         ; 11.634 ns  ; ImmSrc[1]$latch     ; ImmSrc[1]     ; Funct[2]   ;
+; N/A   ; None         ; 11.620 ns  ; RegWrite[1]$latch   ; RegWrite[1]   ; reset      ;
+; N/A   ; None         ; 11.606 ns  ; MemWrite$latch      ; MemWrite      ; Cond[2]    ;
+; N/A   ; None         ; 11.567 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; Op[2]      ;
+; N/A   ; None         ; 11.505 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; ALUFlags   ;
+; N/A   ; None         ; 11.500 ns  ; ALUControl[1]$latch ; ALUControl[1] ; Funct[3]   ;
+; N/A   ; None         ; 11.481 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; Funct[1]   ;
+; N/A   ; None         ; 11.438 ns  ; RegWrite[1]$latch   ; RegWrite[1]   ; Funct[1]   ;
+; N/A   ; None         ; 11.400 ns  ; ALUSrc$latch        ; ALUSrc        ; ALUFlags   ;
+; N/A   ; None         ; 11.398 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; Op[0]      ;
+; N/A   ; None         ; 11.375 ns  ; MemWrite$latch      ; MemWrite      ; Cond[3]    ;
+; N/A   ; None         ; 11.356 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; Op[1]      ;
+; N/A   ; None         ; 11.351 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; Funct[4]   ;
+; N/A   ; None         ; 11.343 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; reset      ;
+; N/A   ; None         ; 11.293 ns  ; ALUSrc$latch        ; ALUSrc        ; Op[0]      ;
+; N/A   ; None         ; 11.251 ns  ; ALUSrc$latch        ; ALUSrc        ; Op[1]      ;
+; N/A   ; None         ; 11.234 ns  ; ALUControl[1]$latch ; ALUControl[1] ; reset      ;
+; N/A   ; None         ; 11.217 ns  ; ALUControl[0]$latch ; ALUControl[0] ; ALUFlags   ;
+; N/A   ; None         ; 11.214 ns  ; RegWrite[1]$latch   ; RegWrite[1]   ; Funct[2]   ;
+; N/A   ; None         ; 11.202 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; Funct[3]   ;
+; N/A   ; None         ; 11.181 ns  ; ALUControl[1]$latch ; ALUControl[1] ; Funct[4]   ;
+; N/A   ; None         ; 11.148 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; ALUFlags   ;
+; N/A   ; None         ; 11.147 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; Funct[5]   ;
+; N/A   ; None         ; 11.123 ns  ; MemtoReg$latch      ; MemtoReg      ; Cond[1]    ;
+; N/A   ; None         ; 11.089 ns  ; ALUControl[0]$latch ; ALUControl[0] ; Op[1]      ;
+; N/A   ; None         ; 11.084 ns  ; ALUControl[1]$latch ; ALUControl[1] ; Funct[1]   ;
+; N/A   ; None         ; 11.083 ns  ; PCSrc$latch         ; PCSrc         ; Cond[1]    ;
+; N/A   ; None         ; 11.042 ns  ; ALUSrc$latch        ; ALUSrc        ; Funct[5]   ;
+; N/A   ; None         ; 11.020 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; Op[1]      ;
+; N/A   ; None         ; 10.998 ns  ; MemtoReg$latch      ; MemtoReg      ; Cond[0]    ;
+; N/A   ; None         ; 10.978 ns  ; ImmSrc[0]$latch     ; ImmSrc[0]     ; Funct[2]   ;
+; N/A   ; None         ; 10.915 ns  ; ALUControl[0]$latch ; ALUControl[0] ; Funct[5]   ;
+; N/A   ; None         ; 10.909 ns  ; PCSrc$latch         ; PCSrc         ; Cond[0]    ;
+; N/A   ; None         ; 10.898 ns  ; ALUControl[0]$latch ; ALUControl[0] ; Op[2]      ;
+; N/A   ; None         ; 10.846 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; Funct[5]   ;
+; N/A   ; None         ; 10.837 ns  ; ALUControl[1]$latch ; ALUControl[1] ; Funct[2]   ;
+; N/A   ; None         ; 10.828 ns  ; ALUControl[0]$latch ; ALUControl[0] ; Op[0]      ;
+; N/A   ; None         ; 10.824 ns  ; MemtoReg$latch      ; MemtoReg      ; Cond[2]    ;
+; N/A   ; None         ; 10.820 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; Op[2]      ;
+; N/A   ; None         ; 10.784 ns  ; PCSrc$latch         ; PCSrc         ; Cond[2]    ;
+; N/A   ; None         ; 10.761 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; reset      ;
+; N/A   ; None         ; 10.759 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; Op[0]      ;
+; N/A   ; None         ; 10.670 ns  ; MemWrite$latch      ; MemWrite      ; ALUFlags   ;
+; N/A   ; None         ; 10.656 ns  ; ALUControl[0]$latch ; ALUControl[0] ; Funct[3]   ;
+; N/A   ; None         ; 10.656 ns  ; ALUSrc$latch        ; ALUSrc        ; reset      ;
+; N/A   ; None         ; 10.621 ns  ; RegSrc[0]$latch     ; RegSrc[0]     ; Op[2]      ;
+; N/A   ; None         ; 10.593 ns  ; MemtoReg$latch      ; MemtoReg      ; Cond[3]    ;
+; N/A   ; None         ; 10.585 ns  ; MemtoReg$latch      ; MemtoReg      ; ALUFlags   ;
+; N/A   ; None         ; 10.558 ns  ; MemWrite$latch      ; MemWrite      ; Op[2]      ;
+; N/A   ; None         ; 10.553 ns  ; PCSrc$latch         ; PCSrc         ; Cond[3]    ;
+; N/A   ; None         ; 10.520 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; Funct[4]   ;
+; N/A   ; None         ; 10.516 ns  ; ALUSrc$latch        ; ALUSrc        ; Op[2]      ;
+; N/A   ; None         ; 10.464 ns  ; MemWrite$latch      ; MemWrite      ; Op[1]      ;
+; N/A   ; None         ; 10.413 ns  ; MemtoReg$latch      ; MemtoReg      ; Op[2]      ;
+; N/A   ; None         ; 10.390 ns  ; ALUControl[0]$latch ; ALUControl[0] ; reset      ;
+; N/A   ; None         ; 10.365 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; Funct[3]   ;
+; N/A   ; None         ; 10.343 ns  ; PCSrc$latch         ; PCSrc         ; Op[2]      ;
+; N/A   ; None         ; 10.337 ns  ; ALUControl[0]$latch ; ALUControl[0] ; Funct[4]   ;
+; N/A   ; None         ; 10.321 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; reset      ;
+; N/A   ; None         ; 10.319 ns  ; MemtoReg$latch      ; MemtoReg      ; Op[1]      ;
+; N/A   ; None         ; 10.290 ns  ; MemWrite$latch      ; MemWrite      ; Funct[0]   ;
+; N/A   ; None         ; 10.249 ns  ; PCSrc$latch         ; PCSrc         ; Op[1]      ;
+; N/A   ; None         ; 10.240 ns  ; ALUControl[0]$latch ; ALUControl[0] ; Funct[1]   ;
+; N/A   ; None         ; 10.179 ns  ; MemtoReg$latch      ; MemtoReg      ; reset      ;
+; N/A   ; None         ; 10.139 ns  ; RegWrite[0]$latch   ; RegWrite[0]   ; Funct[1]   ;
+; N/A   ; None         ; 10.056 ns  ; MemtoReg$latch      ; MemtoReg      ; Funct[0]   ;
+; N/A   ; None         ; 9.993 ns   ; ALUControl[0]$latch ; ALUControl[0] ; Funct[2]   ;
+; N/A   ; None         ; 9.915 ns   ; RegWrite[0]$latch   ; RegWrite[0]   ; Funct[2]   ;
+; N/A   ; None         ; 9.857 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; Cond[1]    ;
+; N/A   ; None         ; 9.848 ns   ; PCSrc$latch         ; PCSrc         ; ALUFlags   ;
+; N/A   ; None         ; 9.769 ns   ; MemWrite$latch      ; MemWrite      ; reset      ;
+; N/A   ; None         ; 9.716 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; Funct[4]   ;
+; N/A   ; None         ; 9.683 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; Cond[0]    ;
+; N/A   ; None         ; 9.609 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; Funct[3]   ;
+; N/A   ; None         ; 9.558 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; Cond[2]    ;
+; N/A   ; None         ; 9.458 ns   ; MemWrite$latch      ; MemWrite      ; Op[0]      ;
+; N/A   ; None         ; 9.403 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; Funct[2]   ;
+; N/A   ; None         ; 9.348 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; Funct[1]   ;
+; N/A   ; None         ; 9.327 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; Cond[3]    ;
+; N/A   ; None         ; 9.269 ns   ; MemWrite$latch      ; MemWrite      ; Funct[5]   ;
+; N/A   ; None         ; 9.223 ns   ; PCSrc$latch         ; PCSrc         ; reset      ;
+; N/A   ; None         ; 9.147 ns   ; MemtoReg$latch      ; MemtoReg      ; Op[0]      ;
+; N/A   ; None         ; 9.119 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; Op[2]      ;
+; N/A   ; None         ; 9.101 ns   ; PCSrc$latch         ; PCSrc         ; Op[0]      ;
+; N/A   ; None         ; 9.025 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; Op[1]      ;
+; N/A   ; None         ; 8.857 ns   ; MemtoReg$latch      ; MemtoReg      ; Funct[5]   ;
+; N/A   ; None         ; 8.845 ns   ; PCSrc$latch         ; PCSrc         ; Funct[5]   ;
+; N/A   ; None         ; 8.795 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; Op[0]      ;
+; N/A   ; None         ; 8.719 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; Funct[5]   ;
+; N/A   ; None         ; 8.622 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; ALUFlags   ;
+; N/A   ; None         ; 7.999 ns   ; RegSrc[1]$latch     ; RegSrc[1]     ; reset      ;
++-------+--------------+------------+---------------------+---------------+------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; th                                                                                                                                                      ;
-+-----------------------------------------+-----------------------------------------------------+-----------+---------+---------------------+-------------+
-; Minimum Slack                           ; Required th                                         ; Actual th ; From    ; To                  ; To Clock    ;
-+-----------------------------------------+-----------------------------------------------------+-----------+---------+---------------------+-------------+
-; N/A                                     ; None                                                ; 3.997 ns  ; Op[2]   ; ALUControl[1]$latch ; Cond[2]     ;
-; N/A                                     ; None                                                ; 3.902 ns  ; Op[2]   ; ALUControl[1]$latch ; Cond[1]     ;
-; N/A                                     ; None                                                ; 3.894 ns  ; Op[1]   ; ALUControl[1]$latch ; Cond[2]     ;
-; N/A                                     ; None                                                ; 3.839 ns  ; Op[2]   ; ALUControl[1]$latch ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 3.799 ns  ; Op[1]   ; ALUControl[1]$latch ; Cond[1]     ;
-; N/A                                     ; None                                                ; 3.795 ns  ; Op[2]   ; ALUControl[1]$latch ; Cond[0]     ;
-; N/A                                     ; None                                                ; 3.745 ns  ; Op[2]   ; ALUControl[1]$latch ; Cond[3]     ;
-; N/A                                     ; None                                                ; 3.736 ns  ; Op[1]   ; ALUControl[1]$latch ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 3.692 ns  ; Op[1]   ; ALUControl[1]$latch ; Cond[0]     ;
-; N/A                                     ; None                                                ; 3.642 ns  ; Op[1]   ; ALUControl[1]$latch ; Cond[3]     ;
-; N/A                                     ; None                                                ; 3.604 ns  ; Op[2]   ; RegWrite[0]$latch   ; Cond[2]     ;
-; N/A                                     ; None                                                ; 3.509 ns  ; Op[2]   ; RegWrite[0]$latch   ; Cond[1]     ;
-; N/A                                     ; None                                                ; 3.501 ns  ; Op[1]   ; RegWrite[0]$latch   ; Cond[2]     ;
-; N/A                                     ; None                                                ; 3.446 ns  ; Op[2]   ; RegWrite[0]$latch   ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 3.406 ns  ; Op[1]   ; RegWrite[0]$latch   ; Cond[1]     ;
-; N/A                                     ; None                                                ; 3.402 ns  ; Op[2]   ; RegWrite[0]$latch   ; Cond[0]     ;
-; N/A                                     ; None                                                ; 3.352 ns  ; Op[2]   ; RegWrite[0]$latch   ; Cond[3]     ;
-; N/A                                     ; None                                                ; 3.343 ns  ; Op[1]   ; RegWrite[0]$latch   ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 3.319 ns  ; Cond[3] ; ALUControl[1]$latch ; Cond[2]     ;
-; N/A                                     ; None                                                ; 3.299 ns  ; Op[1]   ; RegWrite[0]$latch   ; Cond[0]     ;
-; N/A                                     ; None                                                ; 3.249 ns  ; Op[1]   ; RegWrite[0]$latch   ; Cond[3]     ;
-; N/A                                     ; None                                                ; 3.224 ns  ; Cond[3] ; ALUControl[1]$latch ; Cond[1]     ;
-; N/A                                     ; None                                                ; 3.161 ns  ; Cond[1] ; ALUControl[1]$latch ; Cond[2]     ;
-; N/A                                     ; None                                                ; 3.161 ns  ; Cond[3] ; ALUControl[1]$latch ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 3.146 ns  ; Cond[0] ; ALUControl[1]$latch ; Cond[2]     ;
-; N/A                                     ; None                                                ; 3.117 ns  ; Cond[3] ; ALUControl[1]$latch ; Cond[0]     ;
-; N/A                                     ; None                                                ; 3.067 ns  ; Cond[3] ; ALUControl[1]$latch ; Cond[3]     ;
-; N/A                                     ; None                                                ; 3.066 ns  ; Cond[1] ; ALUControl[1]$latch ; Cond[1]     ;
-; N/A                                     ; None                                                ; 3.055 ns  ; Cond[2] ; ALUControl[1]$latch ; Cond[2]     ;
-; N/A                                     ; None                                                ; 3.051 ns  ; Cond[0] ; ALUControl[1]$latch ; Cond[1]     ;
-; N/A                                     ; None                                                ; 3.042 ns  ; Op[2]   ; ALUControl[0]$latch ; Cond[2]     ;
-; N/A                                     ; None                                                ; 3.030 ns  ; Op[2]   ; ALUControl[1]$latch ; Op[0]       ;
-; N/A                                     ; None                                                ; 3.003 ns  ; Cond[1] ; ALUControl[1]$latch ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 3.000 ns  ; Op[2]   ; ALUControl[1]$latch ; Op[1]       ;
-; N/A                                     ; None                                                ; 2.988 ns  ; Cond[0] ; ALUControl[1]$latch ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 2.960 ns  ; Cond[2] ; ALUControl[1]$latch ; Cond[1]     ;
-; N/A                                     ; None                                                ; 2.959 ns  ; Cond[1] ; ALUControl[1]$latch ; Cond[0]     ;
-; N/A                                     ; None                                                ; 2.947 ns  ; Op[2]   ; ALUControl[0]$latch ; Cond[1]     ;
-; N/A                                     ; None                                                ; 2.944 ns  ; Cond[0] ; ALUControl[1]$latch ; Cond[0]     ;
-; N/A                                     ; None                                                ; 2.939 ns  ; Op[1]   ; ALUControl[0]$latch ; Cond[2]     ;
-; N/A                                     ; None                                                ; 2.927 ns  ; Op[1]   ; ALUControl[1]$latch ; Op[0]       ;
-; N/A                                     ; None                                                ; 2.909 ns  ; Cond[1] ; ALUControl[1]$latch ; Cond[3]     ;
-; N/A                                     ; None                                                ; 2.897 ns  ; Op[2]   ; ALUControl[1]$latch ; Op[2]       ;
-; N/A                                     ; None                                                ; 2.897 ns  ; Op[1]   ; ALUControl[1]$latch ; Op[1]       ;
-; N/A                                     ; None                                                ; 2.897 ns  ; Cond[2] ; ALUControl[1]$latch ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 2.894 ns  ; Cond[0] ; ALUControl[1]$latch ; Cond[3]     ;
-; N/A                                     ; None                                                ; 2.889 ns  ; Op[2]   ; ALUControl[1]$latch ; Funct[5]    ;
-; N/A                                     ; None                                                ; 2.884 ns  ; Op[2]   ; ALUControl[0]$latch ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 2.853 ns  ; Cond[2] ; ALUControl[1]$latch ; Cond[0]     ;
-; N/A                                     ; None                                                ; 2.844 ns  ; Op[1]   ; ALUControl[0]$latch ; Cond[1]     ;
-; N/A                                     ; None                                                ; 2.840 ns  ; Op[2]   ; ALUControl[0]$latch ; Cond[0]     ;
-; N/A                                     ; None                                                ; 2.803 ns  ; Cond[2] ; ALUControl[1]$latch ; Cond[3]     ;
-; N/A                                     ; None                                                ; 2.794 ns  ; Op[1]   ; ALUControl[1]$latch ; Op[2]       ;
-; N/A                                     ; None                                                ; 2.790 ns  ; Op[2]   ; ALUControl[0]$latch ; Cond[3]     ;
-; N/A                                     ; None                                                ; 2.786 ns  ; Op[1]   ; ALUControl[1]$latch ; Funct[5]    ;
-; N/A                                     ; None                                                ; 2.781 ns  ; Op[1]   ; ALUControl[0]$latch ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 2.737 ns  ; Op[1]   ; ALUControl[0]$latch ; Cond[0]     ;
-; N/A                                     ; None                                                ; 2.687 ns  ; Op[1]   ; ALUControl[0]$latch ; Cond[3]     ;
-; N/A                                     ; None                                                ; 2.637 ns  ; Op[2]   ; RegWrite[0]$latch   ; Op[0]       ;
-; N/A                                     ; None                                                ; 2.602 ns  ; Op[2]   ; RegWrite[0]$latch   ; Op[1]       ;
-; N/A                                     ; None                                                ; 2.534 ns  ; Op[1]   ; RegWrite[0]$latch   ; Op[0]       ;
-; N/A                                     ; None                                                ; 2.504 ns  ; Op[2]   ; MemtoReg$latch      ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 2.499 ns  ; Op[2]   ; RegWrite[0]$latch   ; Op[2]       ;
-; N/A                                     ; None                                                ; 2.499 ns  ; Op[1]   ; RegWrite[0]$latch   ; Op[1]       ;
-; N/A                                     ; None                                                ; 2.496 ns  ; Op[2]   ; RegWrite[0]$latch   ; Funct[5]    ;
-; N/A                                     ; None                                                ; 2.485 ns  ; Op[2]   ; ALUControl[1]$latch ; reset       ;
-; N/A                                     ; None                                                ; 2.432 ns  ; Op[2]   ; ALUControl[1]$latch ; Funct[1]    ;
-; N/A                                     ; None                                                ; 2.401 ns  ; Op[1]   ; MemtoReg$latch      ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 2.396 ns  ; Op[1]   ; RegWrite[0]$latch   ; Op[2]       ;
-; N/A                                     ; None                                                ; 2.393 ns  ; Op[1]   ; RegWrite[0]$latch   ; Funct[5]    ;
-; N/A                                     ; None                                                ; 2.382 ns  ; Op[1]   ; ALUControl[1]$latch ; reset       ;
-; N/A                                     ; None                                                ; 2.352 ns  ; Cond[3] ; ALUControl[1]$latch ; Op[0]       ;
-; N/A                                     ; None                                                ; 2.329 ns  ; Op[1]   ; ALUControl[1]$latch ; Funct[1]    ;
-; N/A                                     ; None                                                ; 2.322 ns  ; Cond[3] ; ALUControl[1]$latch ; Op[1]       ;
-; N/A                                     ; None                                                ; 2.318 ns  ; Op[2]   ; ALUControl[1]$latch ; Funct[3]    ;
-; N/A                                     ; None                                                ; 2.313 ns  ; Op[2]   ; ALUControl[1]$latch ; Funct[4]    ;
-; N/A                                     ; None                                                ; 2.262 ns  ; Op[2]   ; MemtoReg$latch      ; Cond[2]     ;
-; N/A                                     ; None                                                ; 2.244 ns  ; Op[2]   ; MemtoReg$latch      ; Cond[3]     ;
-; N/A                                     ; None                                                ; 2.240 ns  ; Op[2]   ; RegWrite[0]$latch   ; Funct[1]    ;
-; N/A                                     ; None                                                ; 2.219 ns  ; Cond[3] ; ALUControl[1]$latch ; Op[2]       ;
-; N/A                                     ; None                                                ; 2.215 ns  ; Op[1]   ; ALUControl[1]$latch ; Funct[3]    ;
-; N/A                                     ; None                                                ; 2.211 ns  ; Cond[3] ; ALUControl[1]$latch ; Funct[5]    ;
-; N/A                                     ; None                                                ; 2.210 ns  ; Op[1]   ; ALUControl[1]$latch ; Funct[4]    ;
-; N/A                                     ; None                                                ; 2.194 ns  ; Cond[1] ; ALUControl[1]$latch ; Op[0]       ;
-; N/A                                     ; None                                                ; 2.179 ns  ; Cond[0] ; ALUControl[1]$latch ; Op[0]       ;
-; N/A                                     ; None                                                ; 2.172 ns  ; Cond[3] ; ALUSrc$latch        ; Funct[1]    ;
-; N/A                                     ; None                                                ; 2.169 ns  ; Op[2]   ; MemtoReg$latch      ; Cond[0]     ;
-; N/A                                     ; None                                                ; 2.164 ns  ; Cond[1] ; ALUControl[1]$latch ; Op[1]       ;
-; N/A                                     ; None                                                ; 2.159 ns  ; Op[1]   ; MemtoReg$latch      ; Cond[2]     ;
-; N/A                                     ; None                                                ; 2.154 ns  ; Op[2]   ; MemtoReg$latch      ; Cond[1]     ;
-; N/A                                     ; None                                                ; 2.149 ns  ; Cond[0] ; ALUControl[1]$latch ; Op[1]       ;
-; N/A                                     ; None                                                ; 2.141 ns  ; Op[1]   ; MemtoReg$latch      ; Cond[3]     ;
-; N/A                                     ; None                                                ; 2.137 ns  ; Op[1]   ; RegWrite[0]$latch   ; Funct[1]    ;
-; N/A                                     ; None                                                ; 2.106 ns  ; Op[2]   ; MemtoReg$latch      ; Funct[0]    ;
-; N/A                                     ; None                                                ; 2.097 ns  ; Cond[3] ; ALUSrc$latch        ; Funct[2]    ;
-; N/A                                     ; None                                                ; 2.092 ns  ; Op[2]   ; RegWrite[0]$latch   ; reset       ;
-; N/A                                     ; None                                                ; 2.088 ns  ; Cond[2] ; ALUControl[1]$latch ; Op[0]       ;
-; N/A                                     ; None                                                ; 2.075 ns  ; Op[2]   ; ALUControl[0]$latch ; Op[0]       ;
-; N/A                                     ; None                                                ; 2.071 ns  ; Op[2]   ; ALUControl[1]$latch ; Funct[2]    ;
-; N/A                                     ; None                                                ; 2.066 ns  ; Op[1]   ; MemtoReg$latch      ; Cond[0]     ;
-; N/A                                     ; None                                                ; 2.061 ns  ; Cond[1] ; ALUControl[1]$latch ; Op[2]       ;
-; N/A                                     ; None                                                ; 2.058 ns  ; Cond[2] ; ALUControl[1]$latch ; Op[1]       ;
-; N/A                                     ; None                                                ; 2.053 ns  ; Op[2]   ; RegWrite[0]$latch   ; Funct[4]    ;
-; N/A                                     ; None                                                ; 2.053 ns  ; Cond[1] ; ALUControl[1]$latch ; Funct[5]    ;
-; N/A                                     ; None                                                ; 2.051 ns  ; Op[1]   ; MemtoReg$latch      ; Cond[1]     ;
-; N/A                                     ; None                                                ; 2.046 ns  ; Cond[0] ; ALUControl[1]$latch ; Op[2]       ;
-; N/A                                     ; None                                                ; 2.045 ns  ; Op[2]   ; ALUControl[0]$latch ; Op[1]       ;
-; N/A                                     ; None                                                ; 2.038 ns  ; Cond[0] ; ALUControl[1]$latch ; Funct[5]    ;
-; N/A                                     ; None                                                ; 2.034 ns  ; Cond[3] ; ALUSrc$latch        ; Funct[4]    ;
-; N/A                                     ; None                                                ; 2.015 ns  ; Cond[1] ; ALUSrc$latch        ; Funct[1]    ;
-; N/A                                     ; None                                                ; 2.006 ns  ; Cond[3] ; ALUSrc$latch        ; Cond[2]     ;
-; N/A                                     ; None                                                ; 2.003 ns  ; Op[1]   ; MemtoReg$latch      ; Funct[0]    ;
-; N/A                                     ; None                                                ; 1.998 ns  ; Op[2]   ; MemtoReg$latch      ; reset       ;
-; N/A                                     ; None                                                ; 1.989 ns  ; Op[1]   ; RegWrite[0]$latch   ; reset       ;
-; N/A                                     ; None                                                ; 1.972 ns  ; Op[1]   ; ALUControl[0]$latch ; Op[0]       ;
-; N/A                                     ; None                                                ; 1.968 ns  ; Op[1]   ; ALUControl[1]$latch ; Funct[2]    ;
-; N/A                                     ; None                                                ; 1.955 ns  ; Cond[2] ; ALUControl[1]$latch ; Op[2]       ;
-; N/A                                     ; None                                                ; 1.950 ns  ; Op[1]   ; RegWrite[0]$latch   ; Funct[4]    ;
-; N/A                                     ; None                                                ; 1.947 ns  ; Cond[2] ; ALUControl[1]$latch ; Funct[5]    ;
-; N/A                                     ; None                                                ; 1.942 ns  ; Op[2]   ; ALUControl[0]$latch ; Op[2]       ;
-; N/A                                     ; None                                                ; 1.942 ns  ; Op[1]   ; ALUControl[0]$latch ; Op[1]       ;
-; N/A                                     ; None                                                ; 1.940 ns  ; Cond[1] ; ALUSrc$latch        ; Funct[2]    ;
-; N/A                                     ; None                                                ; 1.934 ns  ; Op[2]   ; ALUControl[0]$latch ; Funct[5]    ;
-; N/A                                     ; None                                                ; 1.920 ns  ; Cond[2] ; ALUSrc$latch        ; Funct[1]    ;
-; N/A                                     ; None                                                ; 1.911 ns  ; Cond[3] ; ALUSrc$latch        ; Cond[1]     ;
-; N/A                                     ; None                                                ; 1.895 ns  ; Op[1]   ; MemtoReg$latch      ; reset       ;
-; N/A                                     ; None                                                ; 1.877 ns  ; Cond[1] ; ALUSrc$latch        ; Funct[4]    ;
-; N/A                                     ; None                                                ; 1.849 ns  ; Cond[1] ; ALUSrc$latch        ; Cond[2]     ;
-; N/A                                     ; None                                                ; 1.848 ns  ; Cond[3] ; ALUSrc$latch        ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 1.845 ns  ; Cond[2] ; ALUSrc$latch        ; Funct[2]    ;
-; N/A                                     ; None                                                ; 1.839 ns  ; Op[1]   ; ALUControl[0]$latch ; Op[2]       ;
-; N/A                                     ; None                                                ; 1.831 ns  ; Op[1]   ; ALUControl[0]$latch ; Funct[5]    ;
-; N/A                                     ; None                                                ; 1.824 ns  ; Op[2]   ; RegWrite[0]$latch   ; Funct[3]    ;
-; N/A                                     ; None                                                ; 1.807 ns  ; Cond[3] ; ALUControl[1]$latch ; reset       ;
-; N/A                                     ; None                                                ; 1.804 ns  ; Cond[3] ; ALUSrc$latch        ; Cond[0]     ;
-; N/A                                     ; None                                                ; 1.782 ns  ; Cond[2] ; ALUSrc$latch        ; Funct[4]    ;
-; N/A                                     ; None                                                ; 1.757 ns  ; Cond[3] ; ALUSrc$latch        ; Funct[3]    ;
-; N/A                                     ; None                                                ; 1.754 ns  ; Cond[2] ; ALUSrc$latch        ; Cond[2]     ;
-; N/A                                     ; None                                                ; 1.754 ns  ; Cond[1] ; ALUSrc$latch        ; Cond[1]     ;
-; N/A                                     ; None                                                ; 1.754 ns  ; Cond[3] ; ALUSrc$latch        ; Cond[3]     ;
-; N/A                                     ; None                                                ; 1.754 ns  ; Cond[3] ; ALUControl[1]$latch ; Funct[1]    ;
-; N/A                                     ; None                                                ; 1.721 ns  ; Op[1]   ; RegWrite[0]$latch   ; Funct[3]    ;
-; N/A                                     ; None                                                ; 1.691 ns  ; Cond[1] ; ALUSrc$latch        ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 1.681 ns  ; Op[2]   ; MemWrite$latch      ; Funct[0]    ;
-; N/A                                     ; None                                                ; 1.673 ns  ; Op[2]   ; RegWrite[0]$latch   ; Funct[2]    ;
-; N/A                                     ; None                                                ; 1.659 ns  ; Cond[2] ; ALUSrc$latch        ; Cond[1]     ;
-; N/A                                     ; None                                                ; 1.649 ns  ; Cond[1] ; ALUControl[1]$latch ; reset       ;
-; N/A                                     ; None                                                ; 1.647 ns  ; Cond[1] ; ALUSrc$latch        ; Cond[0]     ;
-; N/A                                     ; None                                                ; 1.640 ns  ; Cond[3] ; ALUControl[1]$latch ; Funct[3]    ;
-; N/A                                     ; None                                                ; 1.635 ns  ; Cond[3] ; ALUControl[1]$latch ; Funct[4]    ;
-; N/A                                     ; None                                                ; 1.634 ns  ; Cond[0] ; ALUControl[1]$latch ; reset       ;
-; N/A                                     ; None                                                ; 1.600 ns  ; Op[2]   ; MemtoReg$latch      ; Op[1]       ;
-; N/A                                     ; None                                                ; 1.600 ns  ; Cond[1] ; ALUSrc$latch        ; Funct[3]    ;
-; N/A                                     ; None                                                ; 1.597 ns  ; Cond[1] ; ALUSrc$latch        ; Cond[3]     ;
-; N/A                                     ; None                                                ; 1.596 ns  ; Cond[2] ; ALUSrc$latch        ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 1.596 ns  ; Cond[1] ; ALUControl[1]$latch ; Funct[1]    ;
-; N/A                                     ; None                                                ; 1.581 ns  ; Cond[0] ; ALUControl[1]$latch ; Funct[1]    ;
-; N/A                                     ; None                                                ; 1.578 ns  ; Op[1]   ; MemWrite$latch      ; Funct[0]    ;
-; N/A                                     ; None                                                ; 1.570 ns  ; Op[1]   ; RegWrite[0]$latch   ; Funct[2]    ;
-; N/A                                     ; None                                                ; 1.552 ns  ; Cond[2] ; ALUSrc$latch        ; Cond[0]     ;
-; N/A                                     ; None                                                ; 1.543 ns  ; Cond[2] ; ALUControl[1]$latch ; reset       ;
-; N/A                                     ; None                                                ; 1.530 ns  ; Op[2]   ; ALUControl[0]$latch ; reset       ;
-; N/A                                     ; None                                                ; 1.505 ns  ; Cond[2] ; ALUSrc$latch        ; Funct[3]    ;
-; N/A                                     ; None                                                ; 1.502 ns  ; Cond[2] ; ALUSrc$latch        ; Cond[3]     ;
-; N/A                                     ; None                                                ; 1.497 ns  ; Op[1]   ; MemtoReg$latch      ; Op[1]       ;
-; N/A                                     ; None                                                ; 1.490 ns  ; Cond[2] ; ALUControl[1]$latch ; Funct[1]    ;
-; N/A                                     ; None                                                ; 1.482 ns  ; Cond[1] ; ALUControl[1]$latch ; Funct[3]    ;
-; N/A                                     ; None                                                ; 1.477 ns  ; Op[2]   ; ALUControl[0]$latch ; Funct[1]    ;
-; N/A                                     ; None                                                ; 1.477 ns  ; Cond[1] ; ALUControl[1]$latch ; Funct[4]    ;
-; N/A                                     ; None                                                ; 1.468 ns  ; Op[2]   ; MemWrite$latch      ; Cond[2]     ;
-; N/A                                     ; None                                                ; 1.467 ns  ; Cond[0] ; ALUControl[1]$latch ; Funct[3]    ;
-; N/A                                     ; None                                                ; 1.462 ns  ; Cond[0] ; ALUControl[1]$latch ; Funct[4]    ;
-; N/A                                     ; None                                                ; 1.427 ns  ; Op[1]   ; ALUControl[0]$latch ; reset       ;
-; N/A                                     ; None                                                ; 1.393 ns  ; Op[2]   ; MemtoReg$latch      ; Op[2]       ;
-; N/A                                     ; None                                                ; 1.393 ns  ; Cond[3] ; ALUControl[1]$latch ; Funct[2]    ;
-; N/A                                     ; None                                                ; 1.381 ns  ; Op[2]   ; ALUSrc$latch        ; Funct[1]    ;
-; N/A                                     ; None                                                ; 1.376 ns  ; Cond[2] ; ALUControl[1]$latch ; Funct[3]    ;
-; N/A                                     ; None                                                ; 1.374 ns  ; Op[1]   ; ALUControl[0]$latch ; Funct[1]    ;
-; N/A                                     ; None                                                ; 1.373 ns  ; Op[2]   ; MemWrite$latch      ; Cond[1]     ;
-; N/A                                     ; None                                                ; 1.371 ns  ; Cond[2] ; ALUControl[1]$latch ; Funct[4]    ;
-; N/A                                     ; None                                                ; 1.365 ns  ; Op[1]   ; MemWrite$latch      ; Cond[2]     ;
-; N/A                                     ; None                                                ; 1.363 ns  ; Op[2]   ; ALUControl[0]$latch ; Funct[3]    ;
-; N/A                                     ; None                                                ; 1.358 ns  ; Op[2]   ; ALUControl[0]$latch ; Funct[4]    ;
-; N/A                                     ; None                                                ; 1.310 ns  ; Op[2]   ; MemWrite$latch      ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 1.306 ns  ; Op[2]   ; ALUSrc$latch        ; Funct[2]    ;
-; N/A                                     ; None                                                ; 1.290 ns  ; Op[1]   ; MemtoReg$latch      ; Op[2]       ;
-; N/A                                     ; None                                                ; 1.281 ns  ; Op[2]   ; MemWrite$latch      ; Op[1]       ;
-; N/A                                     ; None                                                ; 1.278 ns  ; Op[1]   ; ALUSrc$latch        ; Funct[1]    ;
-; N/A                                     ; None                                                ; 1.270 ns  ; Op[1]   ; MemWrite$latch      ; Cond[1]     ;
-; N/A                                     ; None                                                ; 1.266 ns  ; Op[2]   ; MemWrite$latch      ; Cond[0]     ;
-; N/A                                     ; None                                                ; 1.260 ns  ; Op[1]   ; ALUControl[0]$latch ; Funct[3]    ;
-; N/A                                     ; None                                                ; 1.255 ns  ; Op[1]   ; ALUControl[0]$latch ; Funct[4]    ;
-; N/A                                     ; None                                                ; 1.243 ns  ; Op[2]   ; ALUSrc$latch        ; Funct[4]    ;
-; N/A                                     ; None                                                ; 1.235 ns  ; Cond[1] ; ALUControl[1]$latch ; Funct[2]    ;
-; N/A                                     ; None                                                ; 1.220 ns  ; Cond[0] ; ALUControl[1]$latch ; Funct[2]    ;
-; N/A                                     ; None                                                ; 1.216 ns  ; Op[2]   ; MemWrite$latch      ; Cond[3]     ;
-; N/A                                     ; None                                                ; 1.215 ns  ; Op[2]   ; ALUSrc$latch        ; Cond[2]     ;
-; N/A                                     ; None                                                ; 1.213 ns  ; Op[2]   ; RegSrc[1]$latch     ; Funct[1]    ;
-; N/A                                     ; None                                                ; 1.207 ns  ; Op[1]   ; MemWrite$latch      ; ALUFlags[2] ;
-; N/A                                     ; None                                                ; 1.207 ns  ; Cond[3] ; ALUSrc$latch        ; Op[0]       ;
-; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;           ;         ;                     ;             ;
-+-----------------------------------------+-----------------------------------------------------+-----------+---------+---------------------+-------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                                                                    ;
++-----------------------------------------+-----------------------------------------------------+-----------+----------+---------------------+----------+
+; Minimum Slack                           ; Required th                                         ; Actual th ; From     ; To                  ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+-----------+----------+---------------------+----------+
+; N/A                                     ; None                                                ; 4.246 ns  ; Op[1]    ; ALUControl[1]$latch ; Cond[1]  ;
+; N/A                                     ; None                                                ; 4.152 ns  ; Op[2]    ; ALUControl[1]$latch ; Cond[1]  ;
+; N/A                                     ; None                                                ; 4.072 ns  ; Op[1]    ; ALUControl[1]$latch ; Cond[0]  ;
+; N/A                                     ; None                                                ; 3.978 ns  ; Op[2]    ; ALUControl[1]$latch ; Cond[0]  ;
+; N/A                                     ; None                                                ; 3.947 ns  ; Op[1]    ; ALUControl[1]$latch ; Cond[2]  ;
+; N/A                                     ; None                                                ; 3.853 ns  ; Op[2]    ; ALUControl[1]$latch ; Cond[2]  ;
+; N/A                                     ; None                                                ; 3.842 ns  ; Op[1]    ; RegWrite[0]$latch   ; Cond[1]  ;
+; N/A                                     ; None                                                ; 3.748 ns  ; Op[2]    ; RegWrite[0]$latch   ; Cond[1]  ;
+; N/A                                     ; None                                                ; 3.718 ns  ; Cond[3]  ; ALUControl[1]$latch ; Cond[1]  ;
+; N/A                                     ; None                                                ; 3.716 ns  ; Op[1]    ; ALUControl[1]$latch ; Cond[3]  ;
+; N/A                                     ; None                                                ; 3.668 ns  ; Op[1]    ; RegWrite[0]$latch   ; Cond[0]  ;
+; N/A                                     ; None                                                ; 3.622 ns  ; Op[2]    ; ALUControl[1]$latch ; Cond[3]  ;
+; N/A                                     ; None                                                ; 3.582 ns  ; Op[1]    ; ALUControl[0]$latch ; Cond[1]  ;
+; N/A                                     ; None                                                ; 3.574 ns  ; Op[2]    ; RegWrite[0]$latch   ; Cond[0]  ;
+; N/A                                     ; None                                                ; 3.544 ns  ; Cond[3]  ; ALUControl[1]$latch ; Cond[0]  ;
+; N/A                                     ; None                                                ; 3.543 ns  ; Op[1]    ; RegWrite[0]$latch   ; Cond[2]  ;
+; N/A                                     ; None                                                ; 3.488 ns  ; Op[2]    ; ALUControl[0]$latch ; Cond[1]  ;
+; N/A                                     ; None                                                ; 3.464 ns  ; Cond[2]  ; ALUControl[1]$latch ; Cond[1]  ;
+; N/A                                     ; None                                                ; 3.449 ns  ; Op[2]    ; RegWrite[0]$latch   ; Cond[2]  ;
+; N/A                                     ; None                                                ; 3.419 ns  ; Cond[3]  ; ALUControl[1]$latch ; Cond[2]  ;
+; N/A                                     ; None                                                ; 3.408 ns  ; Op[1]    ; ALUControl[0]$latch ; Cond[0]  ;
+; N/A                                     ; None                                                ; 3.316 ns  ; Op[1]    ; MemWrite$latch      ; Cond[1]  ;
+; N/A                                     ; None                                                ; 3.314 ns  ; Op[2]    ; ALUControl[0]$latch ; Cond[0]  ;
+; N/A                                     ; None                                                ; 3.312 ns  ; Op[1]    ; RegWrite[0]$latch   ; Cond[3]  ;
+; N/A                                     ; None                                                ; 3.290 ns  ; Cond[2]  ; ALUControl[1]$latch ; Cond[0]  ;
+; N/A                                     ; None                                                ; 3.283 ns  ; Op[1]    ; ALUControl[0]$latch ; Cond[2]  ;
+; N/A                                     ; None                                                ; 3.222 ns  ; Op[2]    ; MemWrite$latch      ; Cond[1]  ;
+; N/A                                     ; None                                                ; 3.218 ns  ; Op[2]    ; RegWrite[0]$latch   ; Cond[3]  ;
+; N/A                                     ; None                                                ; 3.189 ns  ; Op[2]    ; ALUControl[0]$latch ; Cond[2]  ;
+; N/A                                     ; None                                                ; 3.188 ns  ; Cond[3]  ; ALUControl[1]$latch ; Cond[3]  ;
+; N/A                                     ; None                                                ; 3.183 ns  ; Cond[1]  ; ALUControl[1]$latch ; Cond[1]  ;
+; N/A                                     ; None                                                ; 3.179 ns  ; Cond[0]  ; ALUControl[1]$latch ; Cond[1]  ;
+; N/A                                     ; None                                                ; 3.165 ns  ; Cond[2]  ; ALUControl[1]$latch ; Cond[2]  ;
+; N/A                                     ; None                                                ; 3.142 ns  ; Op[1]    ; MemWrite$latch      ; Cond[0]  ;
+; N/A                                     ; None                                                ; 3.052 ns  ; Op[1]    ; ALUControl[0]$latch ; Cond[3]  ;
+; N/A                                     ; None                                                ; 3.048 ns  ; Op[2]    ; MemWrite$latch      ; Cond[0]  ;
+; N/A                                     ; None                                                ; 3.017 ns  ; Op[1]    ; MemWrite$latch      ; Cond[2]  ;
+; N/A                                     ; None                                                ; 3.011 ns  ; Op[1]    ; ALUControl[1]$latch ; ALUFlags ;
+; N/A                                     ; None                                                ; 3.009 ns  ; Cond[1]  ; ALUControl[1]$latch ; Cond[0]  ;
+; N/A                                     ; None                                                ; 3.005 ns  ; Cond[0]  ; ALUControl[1]$latch ; Cond[0]  ;
+; N/A                                     ; None                                                ; 2.958 ns  ; Op[2]    ; ALUControl[0]$latch ; Cond[3]  ;
+; N/A                                     ; None                                                ; 2.934 ns  ; Cond[2]  ; ALUControl[1]$latch ; Cond[3]  ;
+; N/A                                     ; None                                                ; 2.923 ns  ; Op[2]    ; MemWrite$latch      ; Cond[2]  ;
+; N/A                                     ; None                                                ; 2.917 ns  ; Op[2]    ; ALUControl[1]$latch ; ALUFlags ;
+; N/A                                     ; None                                                ; 2.884 ns  ; Cond[1]  ; ALUControl[1]$latch ; Cond[2]  ;
+; N/A                                     ; None                                                ; 2.883 ns  ; Op[1]    ; ALUControl[1]$latch ; Op[1]    ;
+; N/A                                     ; None                                                ; 2.880 ns  ; Cond[0]  ; ALUControl[1]$latch ; Cond[2]  ;
+; N/A                                     ; None                                                ; 2.789 ns  ; Op[2]    ; ALUControl[1]$latch ; Op[1]    ;
+; N/A                                     ; None                                                ; 2.786 ns  ; Op[1]    ; MemWrite$latch      ; Cond[3]  ;
+; N/A                                     ; None                                                ; 2.709 ns  ; Op[1]    ; ALUControl[1]$latch ; Funct[5] ;
+; N/A                                     ; None                                                ; 2.692 ns  ; Op[1]    ; ALUControl[1]$latch ; Op[2]    ;
+; N/A                                     ; None                                                ; 2.692 ns  ; Op[2]    ; MemWrite$latch      ; Cond[3]  ;
+; N/A                                     ; None                                                ; 2.653 ns  ; Cond[1]  ; ALUControl[1]$latch ; Cond[3]  ;
+; N/A                                     ; None                                                ; 2.649 ns  ; Cond[0]  ; ALUControl[1]$latch ; Cond[3]  ;
+; N/A                                     ; None                                                ; 2.622 ns  ; Op[1]    ; ALUControl[1]$latch ; Op[0]    ;
+; N/A                                     ; None                                                ; 2.615 ns  ; Op[2]    ; ALUControl[1]$latch ; Funct[5] ;
+; N/A                                     ; None                                                ; 2.607 ns  ; Op[1]    ; RegWrite[0]$latch   ; ALUFlags ;
+; N/A                                     ; None                                                ; 2.598 ns  ; Op[2]    ; ALUControl[1]$latch ; Op[2]    ;
+; N/A                                     ; None                                                ; 2.553 ns  ; Cond[3]  ; ALUSrc$latch        ; Cond[1]  ;
+; N/A                                     ; None                                                ; 2.528 ns  ; Op[2]    ; ALUControl[1]$latch ; Op[0]    ;
+; N/A                                     ; None                                                ; 2.513 ns  ; Op[2]    ; RegWrite[0]$latch   ; ALUFlags ;
+; N/A                                     ; None                                                ; 2.483 ns  ; Cond[3]  ; ALUControl[1]$latch ; ALUFlags ;
+; N/A                                     ; None                                                ; 2.479 ns  ; Op[1]    ; RegWrite[0]$latch   ; Op[1]    ;
+; N/A                                     ; None                                                ; 2.450 ns  ; Op[1]    ; ALUControl[1]$latch ; Funct[3] ;
+; N/A                                     ; None                                                ; 2.385 ns  ; Op[2]    ; RegWrite[0]$latch   ; Op[1]    ;
+; N/A                                     ; None                                                ; 2.379 ns  ; Cond[3]  ; ALUSrc$latch        ; Cond[0]  ;
+; N/A                                     ; None                                                ; 2.356 ns  ; Op[2]    ; ALUControl[1]$latch ; Funct[3] ;
+; N/A                                     ; None                                                ; 2.355 ns  ; Cond[3]  ; ALUControl[1]$latch ; Op[1]    ;
+; N/A                                     ; None                                                ; 2.347 ns  ; Op[1]    ; ALUControl[0]$latch ; ALUFlags ;
+; N/A                                     ; None                                                ; 2.322 ns  ; Cond[2]  ; ALUSrc$latch        ; Cond[1]  ;
+; N/A                                     ; None                                                ; 2.305 ns  ; Op[1]    ; RegWrite[0]$latch   ; Funct[5] ;
+; N/A                                     ; None                                                ; 2.286 ns  ; Op[1]    ; MemtoReg$latch      ; Cond[1]  ;
+; N/A                                     ; None                                                ; 2.279 ns  ; Op[1]    ; RegWrite[0]$latch   ; Op[2]    ;
+; N/A                                     ; None                                                ; 2.254 ns  ; Cond[3]  ; ALUSrc$latch        ; Cond[2]  ;
+; N/A                                     ; None                                                ; 2.253 ns  ; Op[2]    ; ALUControl[0]$latch ; ALUFlags ;
+; N/A                                     ; None                                                ; 2.229 ns  ; Cond[2]  ; ALUControl[1]$latch ; ALUFlags ;
+; N/A                                     ; None                                                ; 2.219 ns  ; Op[1]    ; ALUControl[0]$latch ; Op[1]    ;
+; N/A                                     ; None                                                ; 2.218 ns  ; Op[1]    ; RegWrite[0]$latch   ; Op[0]    ;
+; N/A                                     ; None                                                ; 2.211 ns  ; Op[2]    ; RegWrite[0]$latch   ; Funct[5] ;
+; N/A                                     ; None                                                ; 2.192 ns  ; Op[2]    ; MemtoReg$latch      ; Cond[1]  ;
+; N/A                                     ; None                                                ; 2.185 ns  ; Op[2]    ; RegWrite[0]$latch   ; Op[2]    ;
+; N/A                                     ; None                                                ; 2.184 ns  ; Op[1]    ; ALUControl[1]$latch ; reset    ;
+; N/A                                     ; None                                                ; 2.181 ns  ; Cond[3]  ; ALUControl[1]$latch ; Funct[5] ;
+; N/A                                     ; None                                                ; 2.164 ns  ; Cond[3]  ; ALUControl[1]$latch ; Op[2]    ;
+; N/A                                     ; None                                                ; 2.161 ns  ; Op[1]    ; MemtoReg$latch      ; Cond[0]  ;
+; N/A                                     ; None                                                ; 2.148 ns  ; Cond[2]  ; ALUSrc$latch        ; Cond[0]  ;
+; N/A                                     ; None                                                ; 2.131 ns  ; Op[1]    ; ALUControl[1]$latch ; Funct[4] ;
+; N/A                                     ; None                                                ; 2.125 ns  ; Op[2]    ; ALUControl[0]$latch ; Op[1]    ;
+; N/A                                     ; None                                                ; 2.124 ns  ; Op[2]    ; RegWrite[0]$latch   ; Op[0]    ;
+; N/A                                     ; None                                                ; 2.101 ns  ; Cond[2]  ; ALUControl[1]$latch ; Op[1]    ;
+; N/A                                     ; None                                                ; 2.094 ns  ; Cond[3]  ; ALUControl[1]$latch ; Op[0]    ;
+; N/A                                     ; None                                                ; 2.090 ns  ; Op[2]    ; ALUControl[1]$latch ; reset    ;
+; N/A                                     ; None                                                ; 2.081 ns  ; Op[1]    ; MemWrite$latch      ; ALUFlags ;
+; N/A                                     ; None                                                ; 2.067 ns  ; Op[2]    ; MemtoReg$latch      ; Cond[0]  ;
+; N/A                                     ; None                                                ; 2.057 ns  ; Op[1]    ; ALUSrc$latch        ; Cond[1]  ;
+; N/A                                     ; None                                                ; 2.045 ns  ; Op[1]    ; ALUControl[0]$latch ; Funct[5] ;
+; N/A                                     ; None                                                ; 2.037 ns  ; Op[2]    ; ALUControl[1]$latch ; Funct[4] ;
+; N/A                                     ; None                                                ; 2.034 ns  ; Op[1]    ; ALUControl[1]$latch ; Funct[1] ;
+; N/A                                     ; None                                                ; 2.028 ns  ; Op[1]    ; ALUControl[0]$latch ; Op[2]    ;
+; N/A                                     ; None                                                ; 2.023 ns  ; Cond[2]  ; ALUSrc$latch        ; Cond[2]  ;
+; N/A                                     ; None                                                ; 2.023 ns  ; Cond[1]  ; ALUSrc$latch        ; Cond[1]  ;
+; N/A                                     ; None                                                ; 2.023 ns  ; Cond[3]  ; ALUSrc$latch        ; Cond[3]  ;
+; N/A                                     ; None                                                ; 1.987 ns  ; Op[1]    ; MemtoReg$latch      ; Cond[2]  ;
+; N/A                                     ; None                                                ; 1.987 ns  ; Op[2]    ; MemWrite$latch      ; ALUFlags ;
+; N/A                                     ; None                                                ; 1.979 ns  ; Op[1]    ; RegWrite[0]$latch   ; Funct[4] ;
+; N/A                                     ; None                                                ; 1.969 ns  ; Op[1]    ; MemWrite$latch      ; Op[2]    ;
+; N/A                                     ; None                                                ; 1.963 ns  ; Op[2]    ; ALUSrc$latch        ; Cond[1]  ;
+; N/A                                     ; None                                                ; 1.958 ns  ; Op[1]    ; ALUControl[0]$latch ; Op[0]    ;
+; N/A                                     ; None                                                ; 1.951 ns  ; Op[2]    ; ALUControl[0]$latch ; Funct[5] ;
+; N/A                                     ; None                                                ; 1.948 ns  ; Cond[1]  ; ALUControl[1]$latch ; ALUFlags ;
+; N/A                                     ; None                                                ; 1.944 ns  ; Cond[0]  ; ALUControl[1]$latch ; ALUFlags ;
+; N/A                                     ; None                                                ; 1.940 ns  ; Op[2]    ; ALUControl[1]$latch ; Funct[1] ;
+; N/A                                     ; None                                                ; 1.934 ns  ; Op[2]    ; ALUControl[0]$latch ; Op[2]    ;
+; N/A                                     ; None                                                ; 1.927 ns  ; Cond[2]  ; ALUControl[1]$latch ; Funct[5] ;
+; N/A                                     ; None                                                ; 1.922 ns  ; Cond[3]  ; ALUControl[1]$latch ; Funct[3] ;
+; N/A                                     ; None                                                ; 1.910 ns  ; Cond[2]  ; ALUControl[1]$latch ; Op[2]    ;
+; N/A                                     ; None                                                ; 1.905 ns  ; Cond[3]  ; ALUSrc$latch        ; Funct[3] ;
+; N/A                                     ; None                                                ; 1.893 ns  ; Op[2]    ; MemtoReg$latch      ; Cond[2]  ;
+; N/A                                     ; None                                                ; 1.885 ns  ; Op[2]    ; RegWrite[0]$latch   ; Funct[4] ;
+; N/A                                     ; None                                                ; 1.883 ns  ; Op[1]    ; ALUSrc$latch        ; Cond[0]  ;
+; N/A                                     ; None                                                ; 1.875 ns  ; Op[1]    ; MemWrite$latch      ; Op[1]    ;
+; N/A                                     ; None                                                ; 1.875 ns  ; Op[2]    ; MemWrite$latch      ; Op[2]    ;
+; N/A                                     ; None                                                ; 1.864 ns  ; Op[2]    ; ALUControl[0]$latch ; Op[0]    ;
+; N/A                                     ; None                                                ; 1.849 ns  ; Cond[1]  ; ALUSrc$latch        ; Cond[0]  ;
+; N/A                                     ; None                                                ; 1.840 ns  ; Cond[2]  ; ALUControl[1]$latch ; Op[0]    ;
+; N/A                                     ; None                                                ; 1.824 ns  ; Op[1]    ; RegWrite[0]$latch   ; Funct[3] ;
+; N/A                                     ; None                                                ; 1.820 ns  ; Cond[1]  ; ALUControl[1]$latch ; Op[1]    ;
+; N/A                                     ; None                                                ; 1.816 ns  ; Cond[0]  ; ALUControl[1]$latch ; Op[1]    ;
+; N/A                                     ; None                                                ; 1.792 ns  ; Cond[2]  ; ALUSrc$latch        ; Cond[3]  ;
+; N/A                                     ; None                                                ; 1.789 ns  ; Op[2]    ; ALUSrc$latch        ; Cond[0]  ;
+; N/A                                     ; None                                                ; 1.787 ns  ; Op[1]    ; ALUControl[1]$latch ; Funct[2] ;
+; N/A                                     ; None                                                ; 1.786 ns  ; Op[1]    ; ALUControl[0]$latch ; Funct[3] ;
+; N/A                                     ; None                                                ; 1.781 ns  ; Op[2]    ; MemWrite$latch      ; Op[1]    ;
+; N/A                                     ; None                                                ; 1.780 ns  ; Op[1]    ; RegWrite[0]$latch   ; reset    ;
+; N/A                                     ; None                                                ; 1.767 ns  ; Cond[3]  ; ALUSrc$latch        ; Funct[1] ;
+; N/A                                     ; None                                                ; 1.758 ns  ; Op[1]    ; ALUSrc$latch        ; Cond[2]  ;
+; N/A                                     ; None                                                ; 1.756 ns  ; Cond[3]  ; ALUSrc$latch        ; Funct[4] ;
+; N/A                                     ; None                                                ; 1.756 ns  ; Op[1]    ; MemtoReg$latch      ; Cond[3]  ;
+; N/A                                     ; None                                                ; 1.748 ns  ; Op[1]    ; MemtoReg$latch      ; ALUFlags ;
+; N/A                                     ; None                                                ; 1.730 ns  ; Op[2]    ; RegWrite[0]$latch   ; Funct[3] ;
+; N/A                                     ; None                                                ; 1.724 ns  ; Cond[1]  ; ALUSrc$latch        ; Cond[2]  ;
+; N/A                                     ; None                                                ; 1.718 ns  ; Funct[5] ; ImmSrc[0]$latch     ; Cond[1]  ;
+; N/A                                     ; None                                                ; 1.701 ns  ; Op[1]    ; MemWrite$latch      ; Funct[0] ;
+; N/A                                     ; None                                                ; 1.693 ns  ; Op[2]    ; ALUControl[1]$latch ; Funct[2] ;
+; N/A                                     ; None                                                ; 1.692 ns  ; Op[2]    ; ALUControl[0]$latch ; Funct[3] ;
+; N/A                                     ; None                                                ; 1.686 ns  ; Op[2]    ; RegWrite[0]$latch   ; reset    ;
+; N/A                                     ; None                                                ; 1.680 ns  ; Cond[3]  ; ALUSrc$latch        ; Funct[2] ;
+; N/A                                     ; None                                                ; 1.674 ns  ; Cond[2]  ; ALUSrc$latch        ; Funct[3] ;
+; N/A                                     ; None                                                ; 1.668 ns  ; Cond[2]  ; ALUControl[1]$latch ; Funct[3] ;
+; N/A                                     ; None                                                ; 1.664 ns  ; Op[2]    ; ALUSrc$latch        ; Cond[2]  ;
+; N/A                                     ; None                                                ; 1.662 ns  ; Op[2]    ; MemtoReg$latch      ; Cond[3]  ;
+; N/A                                     ; None                                                ; 1.656 ns  ; Cond[3]  ; ALUControl[1]$latch ; reset    ;
+; N/A                                     ; None                                                ; 1.654 ns  ; Op[2]    ; MemtoReg$latch      ; ALUFlags ;
+; N/A                                     ; None                                                ; 1.646 ns  ; Cond[1]  ; ALUControl[1]$latch ; Funct[5] ;
+; N/A                                     ; None                                                ; 1.642 ns  ; Cond[0]  ; ALUControl[1]$latch ; Funct[5] ;
+; N/A                                     ; None                                                ; 1.629 ns  ; Cond[1]  ; ALUControl[1]$latch ; Op[2]    ;
+; N/A                                     ; None                                                ; 1.625 ns  ; Cond[0]  ; ALUControl[1]$latch ; Op[2]    ;
+; N/A                                     ; None                                                ; 1.607 ns  ; Op[2]    ; MemWrite$latch      ; Funct[0] ;
+; N/A                                     ; None                                                ; 1.603 ns  ; Cond[3]  ; ALUControl[1]$latch ; Funct[4] ;
+; N/A                                     ; None                                                ; 1.598 ns  ; Op[1]    ; RegWrite[0]$latch   ; Funct[1] ;
+; N/A                                     ; None                                                ; 1.576 ns  ; Op[1]    ; MemtoReg$latch      ; Op[2]    ;
+; N/A                                     ; None                                                ; 1.559 ns  ; Cond[1]  ; ALUControl[1]$latch ; Op[0]    ;
+; N/A                                     ; None                                                ; 1.555 ns  ; Cond[0]  ; ALUControl[1]$latch ; Op[0]    ;
+; N/A                                     ; None                                                ; 1.544 ns  ; Funct[5] ; ImmSrc[0]$latch     ; Cond[0]  ;
+; N/A                                     ; None                                                ; 1.536 ns  ; Cond[2]  ; ALUSrc$latch        ; Funct[1] ;
+; N/A                                     ; None                                                ; 1.527 ns  ; Op[1]    ; ALUSrc$latch        ; Cond[3]  ;
+; N/A                                     ; None                                                ; 1.525 ns  ; Cond[2]  ; ALUSrc$latch        ; Funct[4] ;
+; N/A                                     ; None                                                ; 1.520 ns  ; Op[1]    ; ALUControl[0]$latch ; reset    ;
+; N/A                                     ; None                                                ; 1.506 ns  ; Cond[3]  ; ALUControl[1]$latch ; Funct[1] ;
+; N/A                                     ; None                                                ; 1.504 ns  ; Op[2]    ; RegWrite[0]$latch   ; Funct[1] ;
+; N/A                                     ; None                                                ; 1.493 ns  ; Cond[1]  ; ALUSrc$latch        ; Cond[3]  ;
+; N/A                                     ; None                                                ; 1.482 ns  ; Op[1]    ; MemtoReg$latch      ; Op[1]    ;
+; N/A                                     ; None                                                ; 1.482 ns  ; Op[2]    ; MemtoReg$latch      ; Op[2]    ;
+; N/A                                     ; None                                                ; 1.467 ns  ; Op[1]    ; ALUControl[0]$latch ; Funct[4] ;
+; N/A                                     ; None                                                ; 1.449 ns  ; Cond[2]  ; ALUSrc$latch        ; Funct[2] ;
+; N/A                                     ; None                                                ; 1.449 ns  ; Op[0]    ; ALUControl[1]$latch ; Cond[1]  ;
+; N/A                                     ; None                                                ; 1.433 ns  ; Op[2]    ; ALUSrc$latch        ; Cond[3]  ;
+; N/A                                     ; None                                                ; 1.426 ns  ; Op[2]    ; ALUControl[0]$latch ; reset    ;
+; N/A                                     ; None                                                ; 1.419 ns  ; Funct[5] ; ImmSrc[0]$latch     ; Cond[2]  ;
+; N/A                                     ; None                                                ; 1.411 ns  ; Op[1]    ; ImmSrc[0]$latch     ; Cond[1]  ;
+; N/A                                     ; None                                                ; 1.409 ns  ; Op[1]    ; ALUSrc$latch        ; Funct[3] ;
+; N/A                                     ; None                                                ; 1.402 ns  ; Cond[2]  ; ALUControl[1]$latch ; reset    ;
+; N/A                                     ; None                                                ; 1.388 ns  ; Op[2]    ; MemtoReg$latch      ; Op[1]    ;
+; N/A                                     ; None                                                ; 1.387 ns  ; Cond[1]  ; ALUControl[1]$latch ; Funct[3] ;
+; N/A                                     ; None                                                ; 1.383 ns  ; Cond[0]  ; ALUControl[1]$latch ; Funct[3] ;
+; N/A                                     ; None                                                ; 1.377 ns  ; Funct[5] ; ImmSrc[1]$latch     ; Cond[1]  ;
+; N/A                                     ; None                                                ; 1.375 ns  ; Cond[1]  ; ALUSrc$latch        ; Funct[3] ;
+; N/A                                     ; None                                                ; 1.374 ns  ; Op[1]    ; RegWrite[0]$latch   ; Funct[2] ;
+; N/A                                     ; None                                                ; 1.373 ns  ; Op[2]    ; ALUControl[0]$latch ; Funct[4] ;
+; N/A                                     ; None                                                ; 1.370 ns  ; Op[1]    ; ALUControl[0]$latch ; Funct[1] ;
+; N/A                                     ; None                                                ; 1.349 ns  ; Cond[2]  ; ALUControl[1]$latch ; Funct[4] ;
+; N/A                                     ; None                                                ; 1.342 ns  ; Op[1]    ; MemtoReg$latch      ; reset    ;
+; N/A                                     ; None                                                ; 1.318 ns  ; Cond[3]  ; ALUSrc$latch        ; ALUFlags ;
+; N/A                                     ; None                                                ; 1.315 ns  ; Op[2]    ; ALUSrc$latch        ; Funct[3] ;
+; N/A                                     ; None                                                ; 1.295 ns  ; Op[0]    ; RegWrite[1]$latch   ; Cond[1]  ;
+; N/A                                     ; None                                                ; 1.280 ns  ; Op[2]    ; RegWrite[0]$latch   ; Funct[2] ;
+; N/A                                     ; None                                                ; 1.276 ns  ; Op[2]    ; ALUControl[0]$latch ; Funct[1] ;
+; N/A                                     ; None                                                ; 1.275 ns  ; Op[0]    ; ALUControl[1]$latch ; Cond[0]  ;
+; N/A                                     ; None                                                ; 1.271 ns  ; Op[1]    ; ALUSrc$latch        ; Funct[1] ;
+; N/A                                     ; None                                                ; 1.260 ns  ; Op[1]    ; ALUSrc$latch        ; Funct[4] ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;           ;          ;                     ;          ;
++-----------------------------------------+-----------------------------------------------------+-----------+----------+---------------------+----------+
 
 
 +--------------------------+
@@ -707,7 +707,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II Classic Timing Analyzer
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Dec 04 06:21:47 2018
+    Info: Processing started: Tue Dec 04 06:31:24 2018
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off controlUnit -c controlUnit --timing_analysis_only
 Warning: Timing Analysis is analyzing one or more combinational loops as latches
     Warning: Node "RegSrc[0]$latch" is a latch
@@ -723,20 +723,20 @@ Warning: Timing Analysis is analyzing one or more combinational loops as latches
     Warning: Node "MemtoReg$latch" is a latch
     Warning: Node "PCSrc$latch" is a latch
 Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "Op[2]" is a latch enable. Will not compute fmax for this pin.
     Info: Assuming node "reset" is a latch enable. Will not compute fmax for this pin.
+    Info: Assuming node "Funct[4]" is a latch enable. Will not compute fmax for this pin.
+    Info: Assuming node "Funct[3]" is a latch enable. Will not compute fmax for this pin.
+    Info: Assuming node "Funct[2]" is a latch enable. Will not compute fmax for this pin.
+    Info: Assuming node "Funct[1]" is a latch enable. Will not compute fmax for this pin.
+    Info: Assuming node "Funct[5]" is a latch enable. Will not compute fmax for this pin.
+    Info: Assuming node "Op[1]" is a latch enable. Will not compute fmax for this pin.
+    Info: Assuming node "Op[0]" is a latch enable. Will not compute fmax for this pin.
+    Info: Assuming node "ALUFlags" is a latch enable. Will not compute fmax for this pin.
     Info: Assuming node "Cond[3]" is a latch enable. Will not compute fmax for this pin.
     Info: Assuming node "Cond[1]" is a latch enable. Will not compute fmax for this pin.
-    Info: Assuming node "Cond[0]" is a latch enable. Will not compute fmax for this pin.
     Info: Assuming node "Cond[2]" is a latch enable. Will not compute fmax for this pin.
-    Info: Assuming node "ALUFlags[2]" is a latch enable. Will not compute fmax for this pin.
-    Info: Assuming node "Op[1]" is a latch enable. Will not compute fmax for this pin.
-    Info: Assuming node "Funct[5]" is a latch enable. Will not compute fmax for this pin.
-    Info: Assuming node "Op[0]" is a latch enable. Will not compute fmax for this pin.
-    Info: Assuming node "Funct[3]" is a latch enable. Will not compute fmax for this pin.
-    Info: Assuming node "Funct[1]" is a latch enable. Will not compute fmax for this pin.
-    Info: Assuming node "Funct[4]" is a latch enable. Will not compute fmax for this pin.
-    Info: Assuming node "Funct[2]" is a latch enable. Will not compute fmax for this pin.
-    Info: Assuming node "Op[2]" is a latch enable. Will not compute fmax for this pin.
+    Info: Assuming node "Cond[0]" is a latch enable. Will not compute fmax for this pin.
     Info: Assuming node "Funct[0]" is a latch enable. Will not compute fmax for this pin.
 Warning: Found 39 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
     Info: Detected gated clock "Mux0~4" as buffer
@@ -778,62 +778,63 @@ Warning: Found 39 node(s) in clock paths which may be acting as ripple and/or ga
     Info: Detected gated clock "Mux16~0" as buffer
     Info: Detected gated clock "Mux24~2" as buffer
     Info: Detected gated clock "WideOr3~0" as buffer
-Info: tsu for register "MemWrite$latch" (data pin = "Cond[1]", clock pin = "Op[1]") is 7.820 ns
-    Info: + Longest pin to register delay is 9.386 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.840 ns) = 0.840 ns; Loc. = PIN_C17; Fanout = 5; CLK Node = 'Cond[1]'
-        Info: 2: + IC(5.124 ns) + CELL(0.413 ns) = 6.377 ns; Loc. = LCCOMB_X45_Y35_N18; Fanout = 1; COMB Node = 'Mux4~0'
-        Info: 3: + IC(0.263 ns) + CELL(0.420 ns) = 7.060 ns; Loc. = LCCOMB_X45_Y35_N12; Fanout = 7; COMB Node = 'Mux3~0'
-        Info: 4: + IC(0.793 ns) + CELL(0.150 ns) = 8.003 ns; Loc. = LCCOMB_X44_Y35_N4; Fanout = 2; COMB Node = 'Mux14~0'
-        Info: 5: + IC(1.112 ns) + CELL(0.271 ns) = 9.386 ns; Loc. = LCCOMB_X43_Y35_N2; Fanout = 1; REG Node = 'MemWrite$latch'
-        Info: Total cell delay = 2.094 ns ( 22.31 % )
-        Info: Total interconnect delay = 7.292 ns ( 77.69 % )
-    Info: + Micro setup delay of destination is 0.836 ns
-    Info: - Shortest clock path from clock "Op[1]" to destination register is 2.402 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.810 ns) = 0.810 ns; Loc. = PIN_G16; Fanout = 11; CLK Node = 'Op[1]'
-        Info: 2: + IC(1.047 ns) + CELL(0.150 ns) = 2.007 ns; Loc. = LCCOMB_X43_Y35_N26; Fanout = 1; COMB Node = 'Mux1~6'
-        Info: 3: + IC(0.245 ns) + CELL(0.150 ns) = 2.402 ns; Loc. = LCCOMB_X43_Y35_N2; Fanout = 1; REG Node = 'MemWrite$latch'
-        Info: Total cell delay = 1.110 ns ( 46.21 % )
-        Info: Total interconnect delay = 1.292 ns ( 53.79 % )
-Info: tco from clock "Cond[2]" to destination pin "ALUControl[1]" through register "ALUControl[1]$latch" is 13.547 ns
-    Info: + Longest clock path from clock "Cond[2]" to source register is 7.615 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.840 ns) = 0.840 ns; Loc. = PIN_D17; Fanout = 5; CLK Node = 'Cond[2]'
-        Info: 2: + IC(1.042 ns) + CELL(0.398 ns) = 2.280 ns; Loc. = LCCOMB_X45_Y35_N8; Fanout = 3; COMB Node = 'Mux16~1'
-        Info: 3: + IC(0.263 ns) + CELL(0.271 ns) = 2.814 ns; Loc. = LCCOMB_X45_Y35_N24; Fanout = 8; COMB Node = 'Mux16~2'
-        Info: 4: + IC(0.694 ns) + CELL(0.420 ns) = 3.928 ns; Loc. = LCCOMB_X42_Y35_N10; Fanout = 3; COMB Node = 'Mux19~2'
-        Info: 5: + IC(0.273 ns) + CELL(0.410 ns) = 4.611 ns; Loc. = LCCOMB_X42_Y35_N4; Fanout = 1; COMB Node = 'Mux23~2'
-        Info: 6: + IC(1.386 ns) + CELL(0.000 ns) = 5.997 ns; Loc. = CLKCTRL_G8; Fanout = 2; COMB Node = 'Mux23~2clkctrl'
-        Info: 7: + IC(1.343 ns) + CELL(0.275 ns) = 7.615 ns; Loc. = LCCOMB_X46_Y35_N12; Fanout = 1; REG Node = 'ALUControl[1]$latch'
-        Info: Total cell delay = 2.614 ns ( 34.33 % )
-        Info: Total interconnect delay = 5.001 ns ( 65.67 % )
+Info: tsu for register "PCSrc$latch" (data pin = "Cond[2]", clock pin = "reset") is 6.546 ns
+    Info: + Longest pin to register delay is 9.589 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.870 ns) = 0.870 ns; Loc. = PIN_J11; Fanout = 5; CLK Node = 'Cond[2]'
+        Info: 2: + IC(5.542 ns) + CELL(0.393 ns) = 6.805 ns; Loc. = LCCOMB_X28_Y21_N22; Fanout = 1; COMB Node = 'Mux4~0'
+        Info: 3: + IC(0.255 ns) + CELL(0.150 ns) = 7.210 ns; Loc. = LCCOMB_X28_Y21_N2; Fanout = 7; COMB Node = 'Mux3~0'
+        Info: 4: + IC(0.683 ns) + CELL(0.150 ns) = 8.043 ns; Loc. = LCCOMB_X30_Y21_N10; Fanout = 3; COMB Node = 'Mux7~0'
+        Info: 5: + IC(0.257 ns) + CELL(0.150 ns) = 8.450 ns; Loc. = LCCOMB_X30_Y21_N12; Fanout = 3; COMB Node = 'Mux7~1'
+        Info: 6: + IC(0.701 ns) + CELL(0.438 ns) = 9.589 ns; Loc. = LCCOMB_X32_Y21_N12; Fanout = 1; REG Node = 'PCSrc$latch'
+        Info: Total cell delay = 2.151 ns ( 22.43 % )
+        Info: Total interconnect delay = 7.438 ns ( 77.57 % )
+    Info: + Micro setup delay of destination is 0.674 ns
+    Info: - Shortest clock path from clock "reset" to destination register is 3.717 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.822 ns) = 0.822 ns; Loc. = PIN_N20; Fanout = 10; CLK Node = 'reset'
+        Info: 2: + IC(1.814 ns) + CELL(0.150 ns) = 2.786 ns; Loc. = LCCOMB_X29_Y21_N18; Fanout = 1; COMB Node = 'Mux24~8'
+        Info: 3: + IC(0.656 ns) + CELL(0.275 ns) = 3.717 ns; Loc. = LCCOMB_X32_Y21_N12; Fanout = 1; REG Node = 'PCSrc$latch'
+        Info: Total cell delay = 1.247 ns ( 33.55 % )
+        Info: Total interconnect delay = 2.470 ns ( 66.45 % )
+Info: tco from clock "Cond[1]" to destination pin "ImmSrc[1]" through register "ImmSrc[1]$latch" is 14.061 ns
+    Info: + Longest clock path from clock "Cond[1]" to source register is 9.008 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.842 ns) = 0.842 ns; Loc. = PIN_R3; Fanout = 5; CLK Node = 'Cond[1]'
+        Info: 2: + IC(1.897 ns) + CELL(0.275 ns) = 3.014 ns; Loc. = LCCOMB_X28_Y21_N18; Fanout = 3; COMB Node = 'Mux16~1'
+        Info: 3: + IC(0.271 ns) + CELL(0.420 ns) = 3.705 ns; Loc. = LCCOMB_X28_Y21_N0; Fanout = 8; COMB Node = 'Mux16~2'
+        Info: 4: + IC(0.709 ns) + CELL(0.438 ns) = 4.852 ns; Loc. = LCCOMB_X31_Y21_N16; Fanout = 3; COMB Node = 'Mux19~2'
+        Info: 5: + IC(0.755 ns) + CELL(0.410 ns) = 6.017 ns; Loc. = LCCOMB_X31_Y24_N0; Fanout = 1; COMB Node = 'Mux20~3'
+        Info: 6: + IC(1.363 ns) + CELL(0.000 ns) = 7.380 ns; Loc. = CLKCTRL_G11; Fanout = 2; COMB Node = 'Mux20~3clkctrl'
+        Info: 7: + IC(1.353 ns) + CELL(0.275 ns) = 9.008 ns; Loc. = LCCOMB_X32_Y21_N10; Fanout = 1; REG Node = 'ImmSrc[1]$latch'
+        Info: Total cell delay = 2.660 ns ( 29.53 % )
+        Info: Total interconnect delay = 6.348 ns ( 70.47 % )
     Info: + Micro clock to output delay of source is 0.000 ns
-    Info: + Longest register to pin delay is 5.932 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCCOMB_X46_Y35_N12; Fanout = 1; REG Node = 'ALUControl[1]$latch'
-        Info: 2: + IC(3.174 ns) + CELL(2.758 ns) = 5.932 ns; Loc. = PIN_Y16; Fanout = 0; PIN Node = 'ALUControl[1]'
-        Info: Total cell delay = 2.758 ns ( 46.49 % )
-        Info: Total interconnect delay = 3.174 ns ( 53.51 % )
-Info: th for register "ALUControl[1]$latch" (data pin = "Op[2]", clock pin = "Cond[2]") is 3.997 ns
-    Info: + Longest clock path from clock "Cond[2]" to destination register is 7.615 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.840 ns) = 0.840 ns; Loc. = PIN_D17; Fanout = 5; CLK Node = 'Cond[2]'
-        Info: 2: + IC(1.042 ns) + CELL(0.398 ns) = 2.280 ns; Loc. = LCCOMB_X45_Y35_N8; Fanout = 3; COMB Node = 'Mux16~1'
-        Info: 3: + IC(0.263 ns) + CELL(0.271 ns) = 2.814 ns; Loc. = LCCOMB_X45_Y35_N24; Fanout = 8; COMB Node = 'Mux16~2'
-        Info: 4: + IC(0.694 ns) + CELL(0.420 ns) = 3.928 ns; Loc. = LCCOMB_X42_Y35_N10; Fanout = 3; COMB Node = 'Mux19~2'
-        Info: 5: + IC(0.273 ns) + CELL(0.410 ns) = 4.611 ns; Loc. = LCCOMB_X42_Y35_N4; Fanout = 1; COMB Node = 'Mux23~2'
-        Info: 6: + IC(1.386 ns) + CELL(0.000 ns) = 5.997 ns; Loc. = CLKCTRL_G8; Fanout = 2; COMB Node = 'Mux23~2clkctrl'
-        Info: 7: + IC(1.343 ns) + CELL(0.275 ns) = 7.615 ns; Loc. = LCCOMB_X46_Y35_N12; Fanout = 1; REG Node = 'ALUControl[1]$latch'
-        Info: Total cell delay = 2.614 ns ( 34.33 % )
-        Info: Total interconnect delay = 5.001 ns ( 65.67 % )
+    Info: + Longest register to pin delay is 5.053 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCCOMB_X32_Y21_N10; Fanout = 1; REG Node = 'ImmSrc[1]$latch'
+        Info: 2: + IC(2.255 ns) + CELL(2.798 ns) = 5.053 ns; Loc. = PIN_AD12; Fanout = 0; PIN Node = 'ImmSrc[1]'
+        Info: Total cell delay = 2.798 ns ( 55.37 % )
+        Info: Total interconnect delay = 2.255 ns ( 44.63 % )
+Info: th for register "ALUControl[1]$latch" (data pin = "Op[1]", clock pin = "Cond[1]") is 4.246 ns
+    Info: + Longest clock path from clock "Cond[1]" to destination register is 8.706 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.842 ns) = 0.842 ns; Loc. = PIN_R3; Fanout = 5; CLK Node = 'Cond[1]'
+        Info: 2: + IC(1.897 ns) + CELL(0.275 ns) = 3.014 ns; Loc. = LCCOMB_X28_Y21_N18; Fanout = 3; COMB Node = 'Mux16~1'
+        Info: 3: + IC(0.271 ns) + CELL(0.420 ns) = 3.705 ns; Loc. = LCCOMB_X28_Y21_N0; Fanout = 8; COMB Node = 'Mux16~2'
+        Info: 4: + IC(0.709 ns) + CELL(0.438 ns) = 4.852 ns; Loc. = LCCOMB_X31_Y21_N16; Fanout = 3; COMB Node = 'Mux19~2'
+        Info: 5: + IC(0.277 ns) + CELL(0.410 ns) = 5.539 ns; Loc. = LCCOMB_X31_Y21_N22; Fanout = 1; COMB Node = 'Mux23~2'
+        Info: 6: + IC(1.672 ns) + CELL(0.000 ns) = 7.211 ns; Loc. = CLKCTRL_G10; Fanout = 2; COMB Node = 'Mux23~2clkctrl'
+        Info: 7: + IC(1.345 ns) + CELL(0.150 ns) = 8.706 ns; Loc. = LCCOMB_X27_Y21_N16; Fanout = 1; REG Node = 'ALUControl[1]$latch'
+        Info: Total cell delay = 2.535 ns ( 29.12 % )
+        Info: Total interconnect delay = 6.171 ns ( 70.88 % )
     Info: + Micro hold delay of destination is 0.000 ns
-    Info: - Shortest pin to register delay is 3.618 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.830 ns) = 0.830 ns; Loc. = PIN_H16; Fanout = 10; CLK Node = 'Op[2]'
-        Info: 2: + IC(1.012 ns) + CELL(0.150 ns) = 1.992 ns; Loc. = LCCOMB_X44_Y35_N8; Fanout = 15; COMB Node = 'Mux15~0'
-        Info: 3: + IC(0.687 ns) + CELL(0.275 ns) = 2.954 ns; Loc. = LCCOMB_X46_Y35_N0; Fanout = 1; COMB Node = 'Mux8~2'
-        Info: 4: + IC(0.245 ns) + CELL(0.419 ns) = 3.618 ns; Loc. = LCCOMB_X46_Y35_N12; Fanout = 1; REG Node = 'ALUControl[1]$latch'
-        Info: Total cell delay = 1.674 ns ( 46.27 % )
-        Info: Total interconnect delay = 1.944 ns ( 53.73 % )
+    Info: - Shortest pin to register delay is 4.460 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.840 ns) = 0.840 ns; Loc. = PIN_C12; Fanout = 11; CLK Node = 'Op[1]'
+        Info: 2: + IC(1.554 ns) + CELL(0.275 ns) = 2.669 ns; Loc. = LCCOMB_X29_Y21_N20; Fanout = 15; COMB Node = 'Mux15~0'
+        Info: 3: + IC(0.709 ns) + CELL(0.419 ns) = 3.797 ns; Loc. = LCCOMB_X27_Y21_N22; Fanout = 1; COMB Node = 'Mux8~2'
+        Info: 4: + IC(0.244 ns) + CELL(0.419 ns) = 4.460 ns; Loc. = LCCOMB_X27_Y21_N16; Fanout = 1; REG Node = 'ALUControl[1]$latch'
+        Info: Total cell delay = 1.953 ns ( 43.79 % )
+        Info: Total interconnect delay = 2.507 ns ( 56.21 % )
 Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 15 warnings
     Info: Peak virtual memory: 196 megabytes
-    Info: Processing ended: Tue Dec 04 06:21:47 2018
-    Info: Elapsed time: 00:00:00
+    Info: Processing ended: Tue Dec 04 06:31:25 2018
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 
