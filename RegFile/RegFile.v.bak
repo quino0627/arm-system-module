@@ -28,14 +28,14 @@
          
          else 
          begin     
-         //01 BL
+         //10 BL
          //11 write
          //00 no write
             R[15] <= PCPlus8;    
-            if(RegWrite == 2'b01) begin // if RegWrite == 01, write data into reg
+            if(RegWrite == 2'b11) begin // if RegWrite == 01, write data into reg
                R[A3] <= WD3;
             end
-            else if(RegWrite == 2'b11) begin
+            else if(RegWrite == 2'b10) begin
                R[14] <= (PCPlus8 - 4); //PC = PC-4
             end
          end

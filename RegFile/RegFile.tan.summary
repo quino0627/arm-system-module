@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 8.580 ns
+Actual Time    : 8.807 ns
 From           : A3[1]
-To             : R[4][31]
+To             : R[10][30]
 From Clock     : --
 To Clock       : clk
 Failed Paths   : 0
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 14.552 ns
-From           : R[0][24]
-To             : RD1[24]
+Actual Time    : 14.531 ns
+From           : R[1][28]
+To             : RD1[28]
 From Clock     : clk
 To Clock       : --
 Failed Paths   : 0
@@ -25,7 +25,7 @@ Failed Paths   : 0
 Type           : Worst-case tpd
 Slack          : N/A
 Required Time  : None
-Actual Time    : 18.017 ns
+Actual Time    : 17.620 ns
 From           : A1[1]
 To             : RD1[29]
 From Clock     : --
@@ -35,9 +35,9 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : -3.537 ns
-From           : WD3[10]
-To             : R[0][10]
+Actual Time    : -3.428 ns
+From           : WD3[5]
+To             : R[5][5]
 From Clock     : --
 To Clock       : clk
 Failed Paths   : 0
