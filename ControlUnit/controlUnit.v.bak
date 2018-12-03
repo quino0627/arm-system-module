@@ -519,7 +519,7 @@ begin
 					PCSrc = 1'b0;
 					MemtoReg = 1'b1;
 					MemWrite = 1'b0;
-					ALUControl = 2'b00;
+					ALUContol = 2'b00;
 					ALUSrc = 1'b0;
 					ImmSrc = 2'b01;
 					RegWrite = 2'b00;
@@ -532,7 +532,7 @@ begin
 						PCSrc = 1'b0;
 						MemtoReg = 1'b1;
 						MemWrite = 1'b0;
-						ALUControl = 2'b00;
+						ALUContol = 2'b00;
 						ALUSrc = 1'b0;
 						ImmSrc = 2'b01;
 						RegWrite = 2'b00;
@@ -551,7 +551,7 @@ begin
 						PCSrc = 1'b0;
 						MemtoReg = 1'b1;
 						MemWrite = 1'b0;
-						ALUControl = 2'b00;
+						ALUContol = 2'b00;
 						ALUSrc = 1'b0;
 						ImmSrc = 2'b01;
 						RegWrite = 2'b00;
@@ -573,7 +573,7 @@ begin
 					PCSrc = 1'b0;
 					MemtoReg = 1'b1;
 					MemWrite = 1'b0;
-					ALUControl = 2'b00;
+					ALUContol = 2'b00;
 					ALUSrc = 1'b1;
 					ImmSrc = 2'b01;
 					RegWrite = 2'b00;
@@ -586,7 +586,7 @@ begin
 						PCSrc = 1'b0;
 						MemtoReg = 1'b1;
 						MemWrite = 1'b0;
-						ALUControl = 2'b00;
+						ALUContol = 2'b00;
 						ALUSrc = 1'b1;
 						ImmSrc = 2'b01;
 						RegWrite = 2'b00;
@@ -605,7 +605,7 @@ begin
 						PCSrc = 1'b0;
 						MemtoReg = 1'b1;
 						MemWrite = 1'b0;
-						ALUControl = 2'b00;
+						ALUContol = 2'b00;
 						ALUSrc = 1'b1;
 						ImmSrc = 2'b01;
 						RegWrite = 2'b00;

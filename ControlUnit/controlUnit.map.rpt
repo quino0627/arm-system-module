@@ -1,5 +1,5 @@
 Analysis & Synthesis report for controlUnit
-Mon Dec 03 00:59:18 2018
+Tue Dec 04 06:21:39 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -16,12 +16,7 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   8. User-Specified and Inferred Latches
   9. General Register Statistics
  10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: condlogic:cl|flopenr:flagreg1
- 12. Parameter Settings for User Entity Instance: condlogic:cl|flopenr:flagreg0
- 13. Port Connectivity Checks: "condlogic:cl"
- 14. Port Connectivity Checks: "decoder:dec"
- 15. Analysis & Synthesis Messages
- 16. Analysis & Synthesis Suppressed Messages
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -47,16 +42,16 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Dec 03 00:59:18 2018        ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 04 06:21:39 2018        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; controlUnit                                  ;
 ; Top-level Entity Name              ; controlUnit                                  ;
 ; Family                             ; Cyclone II                                   ;
-; Total logic elements               ; 32                                           ;
-;     Total combinational functions  ; 28                                           ;
-;     Dedicated logic registers      ; 4                                            ;
-; Total registers                    ; 4                                            ;
-; Total pins                         ; 38                                           ;
+; Total logic elements               ; 74                                           ;
+;     Total combinational functions  ; 74                                           ;
+;     Dedicated logic registers      ; 0                                            ;
+; Total registers                    ; 0                                            ;
+; Total pins                         ; 35                                           ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 0                                            ;
 ; Embedded Multiplier 9-bit elements ; 0                                            ;
@@ -163,69 +158,64 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+------------------------+--------------------------------------------------------------+
 
 
-+------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                      ;
-+---------------------------------------------+--------------------+
-; Resource                                    ; Usage              ;
-+---------------------------------------------+--------------------+
-; Estimated Total logic elements              ; 32                 ;
-;                                             ;                    ;
-; Total combinational functions               ; 28                 ;
-; Logic element usage by number of LUT inputs ;                    ;
-;     -- 4 input functions                    ; 11                 ;
-;     -- 3 input functions                    ; 11                 ;
-;     -- <=2 input functions                  ; 6                  ;
-;                                             ;                    ;
-; Logic elements by mode                      ;                    ;
-;     -- normal mode                          ; 28                 ;
-;     -- arithmetic mode                      ; 0                  ;
-;                                             ;                    ;
-; Total registers                             ; 4                  ;
-;     -- Dedicated logic registers            ; 4                  ;
-;     -- I/O registers                        ; 0                  ;
-;                                             ;                    ;
-; I/O pins                                    ; 38                 ;
-; Maximum fan-out node                        ; decoder:dec|Mux6~0 ;
-; Maximum fan-out                             ; 6                  ;
-; Total fan-out                               ; 116                ;
-; Average fan-out                             ; 1.66               ;
-+---------------------------------------------+--------------------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 74    ;
+;                                             ;       ;
+; Total combinational functions               ; 74    ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 49    ;
+;     -- 3 input functions                    ; 21    ;
+;     -- <=2 input functions                  ; 4     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 74    ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 35    ;
+; Maximum fan-out node                        ; Op[0] ;
+; Maximum fan-out                             ; 20    ;
+; Total fan-out                               ; 279   ;
+; Average fan-out                             ; 2.56  ;
++---------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                        ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+--------------+
-; |controlUnit               ; 28 (0)            ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 38   ; 0            ; |controlUnit                               ; work         ;
-;    |condlogic:cl|          ; 13 (7)            ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |controlUnit|condlogic:cl                  ;              ;
-;       |condcheck:cc|       ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |controlUnit|condlogic:cl|condcheck:cc     ; work         ;
-;       |flopenr:flagreg0|   ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |controlUnit|condlogic:cl|flopenr:flagreg0 ;              ;
-;       |flopenr:flagreg1|   ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |controlUnit|condlogic:cl|flopenr:flagreg1 ; work         ;
-;    |decoder:dec|           ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |controlUnit|decoder:dec                   ;              ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |controlUnit               ; 74 (74)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 35   ; 0            ; |controlUnit        ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                      ;
-+-----------------------------------------------------+---------------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal       ; Free of Timing Hazards ;
-+-----------------------------------------------------+---------------------------+------------------------+
-; decoder:dec|controls[8]                             ; decoder:dec|Mux6          ; yes                    ;
-; decoder:dec|controls[9]                             ; decoder:dec|Mux6          ; yes                    ;
-; decoder:dec|controls[3]                             ; decoder:dec|Mux6          ; yes                    ;
-; decoder:dec|controls[6]                             ; decoder:dec|Mux6          ; yes                    ;
-; decoder:dec|controls[7]                             ; decoder:dec|Mux6          ; yes                    ;
-; decoder:dec|controls[5]                             ; decoder:dec|Mux6          ; yes                    ;
-; decoder:dec|ALUControl[0]                           ; decoder:dec|Mux0          ; yes                    ;
-; decoder:dec|ALUControl[1]                           ; decoder:dec|ALUControl[1] ; yes                    ;
-; decoder:dec|controls[2]                             ; decoder:dec|Mux6          ; yes                    ;
-; decoder:dec|controls[4]                             ; decoder:dec|Mux6          ; yes                    ;
-; decoder:dec|controls[1]                             ; decoder:dec|Mux6          ; yes                    ;
-; decoder:dec|controls[0]                             ; decoder:dec|Mux6          ; yes                    ;
-; Number of user-specified and inferred latches = 12  ;                           ;                        ;
-+-----------------------------------------------------+---------------------------+------------------------+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; RegSrc[0]$latch                                     ; Mux24               ; yes                    ;
+; RegSrc[1]$latch                                     ; Mux17               ; yes                    ;
+; RegWrite[0]$latch                                   ; Mux19               ; yes                    ;
+; RegWrite[1]$latch                                   ; Mux19               ; yes                    ;
+; ImmSrc[0]$latch                                     ; Mux20               ; yes                    ;
+; ImmSrc[1]$latch                                     ; Mux20               ; yes                    ;
+; ALUSrc$latch                                        ; Mux24               ; yes                    ;
+; ALUControl[0]$latch                                 ; Mux23               ; yes                    ;
+; ALUControl[1]$latch                                 ; Mux23               ; yes                    ;
+; MemWrite$latch                                      ; Mux1                ; yes                    ;
+; MemtoReg$latch                                      ; Mux0                ; yes                    ;
+; PCSrc$latch                                         ; Mux24               ; yes                    ;
+; Number of user-specified and inferred latches = 12  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -234,63 +224,23 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 4     ;
+; Total registers                              ; 0     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 4     ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 4     ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |controlUnit|decoder:dec|Mux4 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
-
-
-+----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: condlogic:cl|flopenr:flagreg1 ;
-+----------------+-------+---------------------------------------------------+
-; Parameter Name ; Value ; Type                                              ;
-+----------------+-------+---------------------------------------------------+
-; WIDTH          ; 2     ; Signed Integer                                    ;
-+----------------+-------+---------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: condlogic:cl|flopenr:flagreg0 ;
-+----------------+-------+---------------------------------------------------+
-; Parameter Name ; Value ; Type                                              ;
-+----------------+-------+---------------------------------------------------+
-; WIDTH          ; 2     ; Signed Integer                                    ;
-+----------------+-------+---------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "condlogic:cl"                                                                                                                                  ;
-+---------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port    ; Type  ; Severity ; Details                                                                                                                                      ;
-+---------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; NoWrite ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; BLFlag  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+---------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "decoder:dec"                                                                           ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                             ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; NoWrite ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; BLFlag  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |controlUnit|Mux1          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +-------------------------------+
@@ -299,81 +249,88 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Mon Dec 03 00:59:17 2018
+    Info: Processing started: Tue Dec 04 06:21:38 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off controlUnit -c controlUnit
-Info: Found 5 design units, including 5 entities, in source file controlunit.v
+Info: Found 1 design units, including 1 entities, in source file controlunit.v
     Info: Found entity 1: controlUnit
-    Info: Found entity 2: condlogic
-    Info: Found entity 3: condcheck
-    Info: Found entity 4: decoder
-    Info: Found entity 5: flopenr
 Info: Elaborating entity "controlUnit" for the top level hierarchy
-Info: Elaborating entity "decoder" for hierarchy "decoder:dec"
-Warning (10270): Verilog HDL Case Statement warning at controlUnit.v(99): incomplete case statement has no default case item
-Warning (10240): Verilog HDL Always Construct warning at controlUnit.v(98): inferring latch(es) for variable "controls", which holds its previous value in one or more paths through the always construct
-Warning (10272): Verilog HDL Case Statement warning at controlUnit.v(127): case item expression covers a value already covered by a previous case item
-Warning (10240): Verilog HDL Always Construct warning at controlUnit.v(120): inferring latch(es) for variable "ALUControl", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "ALUControl[0]" at controlUnit.v(146)
-Info (10041): Inferred latch for "ALUControl[1]" at controlUnit.v(146)
-Info (10041): Inferred latch for "controls[0]" at controlUnit.v(98)
-Info (10041): Inferred latch for "controls[1]" at controlUnit.v(98)
-Info (10041): Inferred latch for "controls[2]" at controlUnit.v(98)
-Info (10041): Inferred latch for "controls[3]" at controlUnit.v(98)
-Info (10041): Inferred latch for "controls[4]" at controlUnit.v(98)
-Info (10041): Inferred latch for "controls[5]" at controlUnit.v(98)
-Info (10041): Inferred latch for "controls[6]" at controlUnit.v(98)
-Info (10041): Inferred latch for "controls[7]" at controlUnit.v(98)
-Info (10041): Inferred latch for "controls[8]" at controlUnit.v(98)
-Info (10041): Inferred latch for "controls[9]" at controlUnit.v(98)
-Info: Elaborating entity "condlogic" for hierarchy "condlogic:cl"
-Info: Elaborating entity "flopenr" for hierarchy "condlogic:cl|flopenr:flagreg1"
-Info: Elaborating entity "condcheck" for hierarchy "condlogic:cl|condcheck:cc"
-Warning: 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info: Duplicate LATCH primitives merged into single LATCH primitive
-    Info: Duplicate LATCH primitive "decoder:dec|controls[7]" merged with LATCH primitive "decoder:dec|controls[8]"
-    Info: Duplicate LATCH primitive "decoder:dec|controls[1]" merged with LATCH primitive "decoder:dec|controls[8]"
-    Info: Duplicate LATCH primitive "decoder:dec|controls[2]" merged with LATCH primitive "decoder:dec|controls[9]"
-    Info: Duplicate LATCH primitive "decoder:dec|controls[4]" merged with LATCH primitive "decoder:dec|controls[6]"
-Warning: Latch decoder:dec|controls[8] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Instr[27]
-Warning: Latch decoder:dec|controls[9] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Instr[26]
-Warning: Latch decoder:dec|controls[3] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Instr[27]
-Warning: Latch decoder:dec|controls[6] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Instr[26]
-Warning: Latch decoder:dec|controls[5] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Instr[26]
-Warning: Latch decoder:dec|ALUControl[0] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Instr[23]
-Warning: Latch decoder:dec|ALUControl[1] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Instr[24]
-Warning: Latch decoder:dec|controls[0] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Instr[26]
-Warning: Output pins are stuck at VCC or GND
-    Warning (13410): Pin "RegWrite[1]" is stuck at GND
-Info: Generated suppressed messages file C:/GitRepository/arm-system-module/ControlUnit/controlUnit.map.smsg
-Warning: Design contains 6 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "Instr[16]"
-    Warning (15610): No output dependent on input pin "Instr[17]"
-    Warning (15610): No output dependent on input pin "Instr[18]"
-    Warning (15610): No output dependent on input pin "Instr[19]"
-    Warning (15610): No output dependent on input pin "Instr[21]"
-    Warning (15610): No output dependent on input pin "Instr[22]"
-Info: Implemented 70 device resources after synthesis - the final resource count might be different
-    Info: Implemented 26 input pins
+Warning (10270): Verilog HDL Case Statement warning at controlUnit.v(41): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at controlUnit.v(86): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at controlUnit.v(131): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at controlUnit.v(176): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at controlUnit.v(221): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at controlUnit.v(269): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at controlUnit.v(316): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at controlUnit.v(359): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at controlUnit.v(38): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at controlUnit.v(408): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at controlUnit.v(462): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at controlUnit.v(516): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at controlUnit.v(570): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at controlUnit.v(630): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at controlUnit.v(684): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at controlUnit.v(627): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at controlUnit.v(21): inferring latch(es) for variable "RegSrc", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at controlUnit.v(21): inferring latch(es) for variable "ALUControl", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at controlUnit.v(21): inferring latch(es) for variable "PCSrc", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at controlUnit.v(21): inferring latch(es) for variable "MemtoReg", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at controlUnit.v(21): inferring latch(es) for variable "MemWrite", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at controlUnit.v(21): inferring latch(es) for variable "ALUSrc", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at controlUnit.v(21): inferring latch(es) for variable "ImmSrc", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at controlUnit.v(21): inferring latch(es) for variable "RegWrite", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "RegWrite[0]" at controlUnit.v(21)
+Info (10041): Inferred latch for "RegWrite[1]" at controlUnit.v(21)
+Info (10041): Inferred latch for "ImmSrc[0]" at controlUnit.v(21)
+Info (10041): Inferred latch for "ImmSrc[1]" at controlUnit.v(21)
+Info (10041): Inferred latch for "ALUSrc" at controlUnit.v(21)
+Info (10041): Inferred latch for "MemWrite" at controlUnit.v(21)
+Info (10041): Inferred latch for "MemtoReg" at controlUnit.v(21)
+Info (10041): Inferred latch for "PCSrc" at controlUnit.v(21)
+Info (10041): Inferred latch for "ALUControl[0]" at controlUnit.v(21)
+Info (10041): Inferred latch for "ALUControl[1]" at controlUnit.v(21)
+Info (10041): Inferred latch for "RegSrc[0]" at controlUnit.v(21)
+Info (10041): Inferred latch for "RegSrc[1]" at controlUnit.v(21)
+Warning: Latch RegSrc[0]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Op[0]
+Warning: Latch RegSrc[1]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Op[0]
+Warning: Latch RegWrite[0]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Op[0]
+Warning: Latch RegWrite[1]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Op[0]
+Warning: Latch ImmSrc[0]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Op[2]
+Warning: Latch ImmSrc[1]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Op[0]
+Warning: Latch ALUSrc$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Op[2]
+Warning: Latch ALUControl[0]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Funct[1]
+Warning: Latch ALUControl[1]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Funct[4]
+Warning: Latch MemWrite$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Funct[0]
+Warning: Latch MemtoReg$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Funct[0]
+Warning: Latch PCSrc$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Op[0]
+Warning: Design contains 8 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk"
+    Warning (15610): No output dependent on input pin "Rd[0]"
+    Warning (15610): No output dependent on input pin "Rd[1]"
+    Warning (15610): No output dependent on input pin "Rd[2]"
+    Warning (15610): No output dependent on input pin "Rd[3]"
+    Warning (15610): No output dependent on input pin "ALUFlags[0]"
+    Warning (15610): No output dependent on input pin "ALUFlags[1]"
+    Warning (15610): No output dependent on input pin "ALUFlags[3]"
+Info: Implemented 109 device resources after synthesis - the final resource count might be different
+    Info: Implemented 23 input pins
     Info: Implemented 12 output pins
-    Info: Implemented 32 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 30 warnings
-    Info: Peak virtual memory: 233 megabytes
-    Info: Processing ended: Mon Dec 03 00:59:18 2018
+    Info: Implemented 74 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 57 warnings
+    Info: Peak virtual memory: 230 megabytes
+    Info: Processing ended: Tue Dec 04 06:21:39 2018
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in C:/GitRepository/arm-system-module/ControlUnit/controlUnit.map.smsg.
 
 

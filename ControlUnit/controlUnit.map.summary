@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Mon Dec 03 00:59:18 2018
+Analysis & Synthesis Status : Successful - Tue Dec 04 06:21:39 2018
 Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
 Revision Name : controlUnit
 Top-level Entity Name : controlUnit
 Family : Cyclone II
-Total logic elements : 32
-    Total combinational functions : 28
-    Dedicated logic registers : 4
-Total registers : 4
-Total pins : 38
+Total logic elements : 74
+    Total combinational functions : 74
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 35
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
