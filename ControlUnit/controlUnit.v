@@ -1,164 +1,746 @@
-//controller
-module controlUnit(input clk,reset,
-                  input [31:12] Instr,
-                  input [3:0] ALUFlags,
-                  output [1:0] RegSrc,
-                  output [1:0]RegWrite,
-                  output [1:0] ImmSrc,
-                  output ALUSrc,
-                  output [1:0] ALUControl,
-                  output MemWrite, MemtoReg,
-                  output PCSrc);
-  
-  wire [1:0] FlagW;
-  wire PCS, RegW, MemW;
-  wire NoWrite;
-  wire BLFlag;
-  
-  decoder dec( .Op(Instr[27:26]), .Funct(Instr[25:20]), .Rd(Instr[15:12]), .FlagW(FlagW), .PCS(PCS), .RegW(RegW), .MemW(MemW), .MemtoReg(MemtoReg), .ALUSrc(ALUSrc), .ImmSrc(ImmSrc), .RegSrc(RegSrc), .ALUControl(ALUControl), .NoWrite(NoWrite), .BLFlag(BLFlag));
-  
-  condlogic cl( .clk(clk), .reset(reset), .Cond(Instr[31:28]), .ALUFlags(ALUFlags), .FlagW(FlagW), .PCS(PCS), .RegW(RegW), .MemW(MemW), .PCSrc(PCSrc), .RegWrite(RegWrite), .MemWrite(MemWrite) );
-  
-endmodule
-
-//condlogic
-// Code your design here
-module condlogic(input clk, reset,
-input  [3:0] Cond,
-input  [3:0] ALUFlags,
-input  [1:0] FlagW,
-input  PCS, RegW, MemW,
-input NoWrite,
-input BLFlag,
-output  PCSrc, MemWrite,
-output [1:0] RegWrite); // will be wires in tb
-	wire [1:0] FlagWrite;
-	wire [3:0] Flags;
-	//reg [3:0] Flags_r;
-	//assign Flags = Flags_r;
-	wire CondEx;
-  flopenr #(2) flagreg1( .clk(clk), .reset(reset), .en(FlagWrite[1]),.d(ALUFlags[3:2]), .q(Flags[3:2]) );
-  flopenr #(2) flagreg0( .clk(clk), .reset(reset), .en(FlagWrite[0]),.d(ALUFlags[1:0]), .q(Flags[1:0]) ); 
-// write controls are conditional
-  condcheck cc(.Cond(Cond), .Flags(Flags), .CondEx(CondEx) );
-assign FlagWrite = FlagW & {2{CondEx}};
-assign RegWrite[1] = BLFlag;
-assign RegWrite[0] = RegW & CondEx & !NoWrite;
-assign MemWrite = MemW & CondEx;
-assign PCSrc = PCS & CondEx;
-endmodule
-	
-//condcheck
-module condcheck(input  [3:0] Cond,
-		input [3:0] Flags,
-		output reg CondEx);
-		wire neg, zero, carry, overflow, ge;
-		assign {neg, zero, carry, overflow} = Flags;
-		assign ge = (neg == overflow);
-   always @(*)  begin
-	case(Cond)
-	4'b0000: CondEx = zero; // EQ
-	4'b0001: CondEx = ~zero; // NE
-	4'b0010: CondEx = carry; // CS
-	4'b0011: CondEx = ~carry; // CC
-	4'b0100: CondEx = neg; // MI
-	4'b0101: CondEx = ~neg; // PL
-	4'b0110: CondEx = overflow; // VS
-	4'b0111: CondEx = ~overflow; // VC
-	4'b1000: CondEx = carry & ~zero; // HI
-	4'b1001: CondEx = ~(carry & ~zero); // LS
-	4'b1010: CondEx = ge; // GE
-	4'b1011: CondEx = ~ge; // LT
-	4'b1100: CondEx = ~zero & ge; // GT
-	4'b1101: CondEx = ~(~zero & ge); // LE
-	4'b1110: CondEx = 1'b1; // Always
-	default: CondEx = 1'bx; // undefined
-	endcase
-   end
-endmodule
-
-//decoder
-module decoder(input  [1:0] Op,
-	input  [5:0] Funct,
-	input  [3:0] Rd,
-	output  [1:0] FlagW,
-	output  PCS, RegW, MemW,
-	output  MemtoReg, ALUSrc,
-	output  [1:0] ImmSrc, RegSrc,
-    output reg[1:0] ALUControl,
-    output reg  NoWrite,
-    output reg BLFlag
-    );
-	reg [9:0] controls;
-	wire Branch, ALUOp;
-  reg [1:0] FlagW_;
-  assign FlagW = FlagW_;
-		// Main Decoder
-  always @(*)  begin 
-  BLFlag = 1'b0;
-		case(Op)
-		// Data-processing immediate
-		2'b00: if (Funct[5]) controls = 10'b0000101001;
-		// Data-processing register
-		else controls = 10'b0000001001;
-		// LDR
-		2'b01: if (Funct[0]) controls = 10'b0001111000;
-		// STR
-		else controls = 10'b1001110100;
-		// B
-		2'b10: begin
-		controls = 10'b0110100010;
-		if(Funct[4]) BLFlag = 1'b1;
-		end
-		endcase
-  end
-	assign {RegSrc, ImmSrc, ALUSrc, MemtoReg,
-	RegW, MemW, Branch, ALUOp} = controls;
-
-// ALU Decoder
- always @(*)  begin
- NoWrite = 1'b1;
- if (ALUOp) begin // dp
-  	case(Funct[4:1])
-		4'b0100: ALUControl = 2'b00; // ADD
-		4'b0010: ALUControl = 2'b01; // SUB
-		//4'b0000: ALUControl = 2'b10; // AND
-		//4'b1100: ALUControl = 2'b11; // ORR
-		4'b0010:
+module ControlUnit(
+	input clk, reset,
+	input [3:0] Cond,
+	input [2:0] Op,
+	input [5:0] Funct,
+	input [3:0] Rd,
+	input [3:0] ALUFlags,
+    output [1:0] RegSrc,
+    output [1:0] RegWrite,
+    output [1:0] ImmSrc,
+    output ALUSrc,
+    output [1:0] ALUControl,
+    output MemWrite,
+	output MemtoReg,
+    output PCSrc);
+	//first check the OP
+	//then Funct
+	//then condcheck
+always @(*)
+begin
+	if(rst ==1'b1)
+	begin
+		RegSrc = 2'b00;
+		ALUControl = 2'b00;
+		PCSrc = 1'b0;
+		MemtoReg = 1'b0;
+		MemWrite = 1'b0;
+		ALUSrc = 1'b0;
+		ImmSrc = 2'b00;
+		RegWrite = 2'b00;
+	end
+	case (Op)
+		2'b00://ADD,SUB,CMP,MOV
 		begin
-			ALUControl = 2'b01; //CMP
-			NoWrite = 1'b1;
-		end
-		4'b1101://MOV
-		begin
-			if (Funct[5]==1)
+		PCSrc = 1'b0;
+		MemtoReg = 1'b0;
+		MemWrite = 1'b0;
+		casex(Funct)
+			6'b00100x://ADD
+			begin 
+				casex(Cond)//AL, EQ, NE
+				4'b1110://ADDAL
+				begin
+					ALUSrc = 1'b0;
+					ALUControl = 2'b00;
+					//IMMSRC DONTCARE
+					RegWrite = 2'b11; //REGWRITE 1bit?
+					RegSrc = 2'b00;
+				end
+				4'b0000://ADDEQ
+				begin
+					if(ALUFlags[2]==1)
+					begin
+						ALUSrc = 1'b0;
+						ALUControl = 2'b00;
+						//IMMSRC DONTCARE
+						RegWrite = 2'b11; //REGWRITE 1bit?
+						RegSrc = 2'b00;
+					end
+					else
+					begin
+						RegWrite = 1'b0;
+						//others, dont care
+					end
+				end
+				4'b0001://ADDNE
+				begin
+					if(ALUFlags[2]==0)
+					begin
+						ALUSrc = 1'b0;
+						ALUControl = 2'b00;
+						//IMMSRC DONTCARE
+						RegWrite = 2'b11; //REGWRITE 1bit?
+						RegSrc = 2'b00;
+					end
+					else
+					begin
+						RegWrite = 2'b00;
+						//others, dont care
+					end
+				end
+				endcase
+			end
+			6'b10100x://ADDi
+			begin 
+				casex(Cond)//AL, EQ, NE
+				4'b1110://ADDiAL
+				begin
+					ALUSrc = 1'b1;
+					ALUControl = 2'b00;
+					ImmSrc = 2'b00;
+					RegWrite = 2'b11; //REGWRITE 1bit?
+					RegSrc = 2'bx0; //REGSRC[1] is DC
+				end
+				4'b0000://ADDiEQ
+				begin
+					if(ALUFlags[2]==1)
+					begin
+						ALUSrc = 1'b1;
+						ALUControl = 2'b00;
+						ImmSrc = 2'b00;
+						RegWrite = 2'b11; //REGWRITE 1bit?
+						RegSrc = 2'bx0;
+					end
+					else
+					begin
+						RegWrite = 2'b00;
+						//others, dont care
+					end
+				end
+				4'b0001://ADDiNE
+				begin
+					if(ALUFlags[2]==0)
+					begin
+						ALUSrc = 1'b1;
+						ALUControl = 2'b00;
+						ImmSrc = 2'b00;
+						RegWrite = 2'b11; //REGWRITE 1bit?
+						RegSrc = 2'bx0;
+					end
+					else
+					begin
+						RegWrite = 2'b00;
+						//others, dont care
+					end
+				end
+				endcase
+			end
+			6'b00010x://SUB
 			begin
-			ALUControl = 2'b10;
+				casex(Cond)//AL, EQ, NE
+				4'b1110://SUBAL
+				begin
+					ALUSrc = 1'b0;
+					ALUControl = 2'b01;
+					//IMMSRC DONTCARE
+					RegWrite = 2'b11; //REGWRITE 1bit?
+					RegSrc = 2'b00;
+				end
+				4'b0000://SUBEQ
+				begin
+					if(ALUFlags[2]==1)
+					begin
+						ALUSrc = 1'b1;
+						ALUControl = 2'b01;
+						//IMMSRC DONTCARE
+						RegWrite = 2'b11; //REGWRITE 1bit?
+						RegSrc = 2'b00;
+					end
+					else
+					begin
+						RegWrite = 2'b00;
+						//others, dont care
+					end
+				end
+				4'b0001://SUBNE
+				begin
+					if(ALUFlags[2]==0)
+					begin
+						ALUSrc = 1'b1;
+						ALUControl = 2'b01;
+						//IMMSRC DONTCARE
+						RegWrite = 2'b11; //REGWRITE 1bit?
+						RegSrc = 2'b00;
+					end
+					else
+					begin
+						RegWrite = 2'b00;
+						//others, dont care
+					end
+				end
+				endcase
+			end
+			6'b10010x://SUBi
+			begin
+				casex(Cond)//AL, EQ, NE
+				4'b1110://SUBiAL
+				begin
+					ALUSrc = 1'b1;
+					ALUControl = 2'b01;
+					ImmSrc = 2'b00;
+					RegWrite = 2'b11; //REGWRITE 1bit?
+					RegSrc = 2'bx0;
+				end
+				4'b0000://SUBiEQ
+				begin
+					if(ALUFlags[2]==1)
+					begin
+						ALUSrc = 1'b1;
+						ALUControl = 2'b01;
+						ImmSrc = 2'b00;
+						RegWrite = 2'b11; //REGWRITE 1bit?
+						RegSrc = 2'bx0;
+					end
+					else
+					begin
+						RegWrite = 2'b00;
+						//others, dont care??
+					end
+				end
+				4'b0001://SUBiNE
+				begin
+					if(ALUFlags[2]==0)
+					begin
+						ALUSrc = 1'b1;
+						ALUControl = 2'b01;
+						ImmSrc = 2'b00;
+						RegWrite = 2'b11; //REGWRITE 1bit?
+						RegSrc = 2'bx0;
+					end
+					else
+					begin
+						RegWrite = 2'b00;
+						//others, dont care??
+					end
+				end
+				endcase
+			end
+			6'b01010x://CMP
+			begin
+				casex(Cond)//AL, EQ, NE
+				4'b1110://CMPAL
+				begin
+					ALUControl = 2'b11;
+					ALUSrc = 1'b0; //cmpi -> 1
+					//IMMSRC DONTCARE
+					RegWrite = 2'b00;
+					RegSrc = 2'b00; //CMPi -> DC
+
+				end
+				4'b0000://CMPEQ
+				begin
+					if(ALUFlags[2]==1)
+					begin
+						ALUSrc = 1'b0;
+						ALUControl = 2'b11;
+						//IMMSRC DONTCARE
+						RegWrite = 2'b00; 
+						RegSrc = 2'b00; //CMPi -> DC
+					end
+					else
+					begin
+						RegWrite = 2'b00;
+						ALUControl = 2'b00; // NOT TO update flags -> NOT 11
+						//others, dont care??
+					end
+				end
+				4'b0001://CMPNE
+				begin
+					if(ALUFlags[2]==0)
+					begin
+						ALUSrc = 1'b0;
+						ALUControl = 2'b11;
+						//IMMSRC DONTCARE
+						RegWrite = 2'b00; 
+						RegSrc = 2'b00; //CMPi -> DC
+					end
+					else
+					begin
+						RegWrite = 2'b00;
+						ALUControl = 2'b00; // NOT TO update flags -> NOT 11
+						//others, dont care??
+					end
+				end
+				endcase
+			end
+			6'b11010x://CMPi
+			begin
+				casex(Cond)//AL, EQ, NE
+				4'b1110://CMPiAL
+				begin
+					ALUSrc = 1'b1;
+					ALUControl = 2'b11;
+					ImmSrc = 2'b00;
+					RegWrite = 2'b00;
+					RegSrc = 2'x0;
+				end
+				4'b0000://CMPiEQ
+				begin
+					if(ALUFlags[2]==1)
+					begin
+						ALUSrc = 1'b1;
+						ALUControl = 2'b11;
+						ImmSrc = 2'b00;
+						RegWrite = 2'b00; 
+						RegSrc = 2'b00; //CMPi -> DC
+					end
+					else
+					begin
+						RegWrite = 2'b00;
+						ALUControl = 2'b00; // NOT TO update flags -> NOT 11
+						//others, dont care??
+					end
+				end
+				4'b0001://CMPiNE
+				begin
+					if(ALUFlags[2]==0)
+					begin
+						ALUSrc = 1'b1;
+						ALUControl = 2'b11;
+						ImmSrc = 2'b00;
+						RegWrite = 2'b00; 
+						RegSrc = 2'b00; //CMPi -> DC
+					end
+					else
+					begin
+						RegWrite = 2'b00;
+						ALUControl = 2'b00; // NOT TO update flags -> NOT 11
+						//others, dont care??
+					end
+				end
+				endcase
+			end
+			6'b01101x://MOV
+			begin
+				casex(Cond)//AL, EQ, NE
+				4'b1110://MOVAL
+				begin
+					ALUControl = 2'b10;
+					ALUSrc = 1'b0;
+					//IMMSRC DONTCARE
+					RegWrite = 2'b11;
+					RegSrc = 2'b00;
+				end
+				4'b0000://MOVEQ
+				begin
+					if(ALUFlags[2]==1)
+					begin
+						ALUSrc = 1'b0;
+						ALUControl = 2'b10;
+						RegWrite = 2'b11; 
+						RegSrc = 2'b00; 
+					end
+					else
+					begin
+						RegWrite = 2'b00; //not write on reg -->meaning instr is not execute
+						//others, dont care??
+					end
+				end
+				4'b0001://MOVNE
+				begin
+					if(ALUFlags[2]==0)
+					begin
+						ALUSrc = 1'b0;
+						ALUControl = 2'b10;
+						RegWrite = 2'b11; 
+						RegSrc = 2'b00; 
+					end
+					else
+					begin
+						RegWrite = 2'b00; //not write on reg -->meaning instr is not execute
+						//others, dont care??
+					end
+				end
+				endcase
+			end
+			6'b11101x://MOVi
+			begin
+				casex(Cond)//AL, EQ, NE
+				4'b1110://MOViAL
+				begin
+					ALUControl = 2'b10;
+					ALUSrc = 1'b1;
+					ImmSrc = 2'b00;
+					RegWrite = 2'b11;
+					RegSrc = 2'bx0;
+				end
+				4'b0000://MOViEQ
+				begin
+					if(ALUFlags[2]==1)
+					begin
+						ALUSrc = 1'b1;
+						ALUControl = 2'b00;
+						RegWrite = 2'b11; 
+						RegSrc = 2'bx0; 
+					end
+					else
+					begin
+						RegWrite = 2'b00; //not write on reg -->meaning instr is not execute
+						//others, dont care??
+					end
+				end
+				4'b0001://MOViNE
+				begin
+					if(ALUFlags[2]==0)
+					begin
+						ALUSrc = 1'b1;
+						ALUControl = 2'b00;
+						RegWrite = 2'b11; 
+						RegSrc = 2'bx0; 
+					end
+					else
+					begin
+						RegWrite = 2'b00; //not write on reg -->meaning instr is not execute
+						//others, dont care??
+					end
+				end
+				endcase
+			end
+		endcase
+		end
+
+		2'b01: //STR,LDR
+		begin
+		casex(Funct)
+			6'b0xxxx0://STR
+			begin
+				casex(Cond)//AL, EQ, NE
+				4'b1110://STRAL
+				begin
+					PCSrc = 1'b0;
+					MemtoReg = 1'b0;
+					MemWrite = 1'b1;
+					ALUContol = 2'b00;
+					ALUSrc = 1'b0;
+					ImmSrc = 2'b01;
+					RegWrite = 2'b00;
+					RegSrc = 2'b10;
+				end
+				4'b0000://STREQ
+				begin
+					if(ALUFlags[2]==1)
+					begin
+						PCSrc = 1'b0;
+						MemtoReg = 1'b0;
+						MemWrite = 1'b1;
+						ALUContol = 2'b00;
+						ALUSrc = 1'b0;
+						ImmSrc = 2'b01;
+						RegWrite = 2'b00;
+						RegSrc = 2'b10;
+					end
+					else
+					begin//How to not excute instruction?
+					//Maybe inverse 0 to 1 memwrite
+						MemWrite = 1'b0;
+					end
+				end
+				4'b0001://STRNE
+				begin
+					if(ALUFlags[2]==0)
+					begin
+						PCSrc = 1'b0;
+						MemtoReg = 1'b0;
+						MemWrite = 1'b1;
+						ALUContol = 2'b00;
+						ALUSrc = 1'b0;
+						ImmSrc = 2'b01;
+						RegWrite = 2'b00;
+						RegSrc = 2'b10;
+					end
+					else
+					begin//How to not excute instruction?
+					//Maybe inverse 0 to 1 memwrite
+						MemWrite = 1'b0;
+					end
+				end
+				endcase
+			end
+			6'b1xxxx0://STRi
+			begin
+				casex(Cond)//AL, EQ, NE
+				4'b1110://STRiAL
+				begin
+					PCSrc = 1'b0;
+					MemtoReg = 1'b0;
+					MemWrite = 1'b1;
+					ALUContol = 2'b00;
+					ALUSrc = 1'b1;
+					ImmSrc = 2'b01;
+					RegWrite = 2'b00;
+					RegSrc = 2'b10;
+				end
+				4'b0000://STRiEQ
+				begin
+					if(ALUFlags[2]==1)
+					begin
+						PCSrc = 1'b0;
+						MemtoReg = 1'b0;
+						MemWrite = 1'b1;
+						ALUContol = 2'b00;
+						ALUSrc = 1'b1;
+						ImmSrc = 2'b01;
+						RegWrite = 2'b00;
+						RegSrc = 2'b10;
+					end
+					else
+					begin//How to not excute instruction?
+					//Maybe inverse 0 to 1 memwrite
+						MemWrite = 1'b0;
+					end
+				end
+				4'b0001://STRiNE
+				begin
+					if(ALUFlags[2]==0)
+					begin
+						PCSrc = 1'b0;
+						MemtoReg = 1'b0;
+						MemWrite = 1'b1;
+						ALUContol = 2'b00;
+						ALUSrc = 1'b1;
+						ImmSrc = 2'b01;
+						RegWrite = 2'b00;
+						RegSrc = 2'b10;
+					end
+					else
+					begin//How to not excute instruction?
+					//Maybe inverse 0 to 1 memwrite
+						MemWrite = 1'b0;
+					end
+				end
+				endcase
+			end
+			6'b0xxxx1://LDR
+			begin
+				casex(Cond)//AL, EQ, NE
+				4'b1110://LDRAL
+				begin
+					PCSrc = 1'b0;
+					MemtoReg = 1'b1;
+					MemWrite = 1'b0;
+					ALUContol = 2'b00;
+					ALUSrc = 1'b0;
+					ImmSrc = 2'b01;
+					RegWrite = 2'b00;
+					RegSrc = 2'b00;
+				end
+				4'b0000://LDREQ
+				begin
+					if(ALUFlags[2]==1)
+					begin
+						PCSrc = 1'b0;
+						MemtoReg = 1'b1;
+						MemWrite = 1'b0;
+						ALUContol = 2'b00;
+						ALUSrc = 1'b0;
+						ImmSrc = 2'b01;
+						RegWrite = 2'b00;
+						RegSrc = 2'b00;
+					end
+					else
+					begin//How to not excute instruction?
+					//Maybe inverse 0 to 1 memtoreg
+						MemtoReg = 0'b;
+					end
+				end
+				4'b0001://LDRNE
+				begin
+					if(ALUFlags[2]==0)
+					begin
+						PCSrc = 1'b0;
+						MemtoReg = 1'b1;
+						MemWrite = 1'b0;
+						ALUContol = 2'b00;
+						ALUSrc = 1'b0;
+						ImmSrc = 2'b01;
+						RegWrite = 2'b00;
+						RegSrc = 2'b00;
+					end
+					else
+					begin//How to not excute instruction?
+					//Maybe inverse 0 to 1 memtoreg
+						MemtoReg = 0'b;
+					end
+				end
+				endcase
+			end
+			6'b1xxxx1://LDRi
+			begin
+				casex(Cond)//AL, EQ, NE
+				4'b1110://LDRiAL
+				begin
+					PCSrc = 1'b0;
+					MemtoReg = 1'b1;
+					MemWrite = 1'b0;
+					ALUContol = 2'b00;
+					ALUSrc = 1'b1;
+					ImmSrc = 2'b01;
+					RegWrite = 2'b00;
+					RegSrc = 2'b00;
+				end
+				4'b0000://LDRiEQ
+				begin
+					if(ALUFlags[2]==1)
+					begin
+						PCSrc = 1'b0;
+						MemtoReg = 1'b1;
+						MemWrite = 1'b0;
+						ALUContol = 2'b00;
+						ALUSrc = 1'b1;
+						ImmSrc = 2'b01;
+						RegWrite = 2'b00;
+						RegSrc = 2'b00;
+					end
+					else
+					begin//How to not excute instruction?
+					//Maybe inverse 0 to 1 memtoreg
+						MemtoReg = 0'b;
+					end
+				end
+				4'b0001://LDRiNE
+				begin
+					if(ALUFlags[2]==0)
+					begin
+						PCSrc = 1'b0;
+						MemtoReg = 1'b1;
+						MemWrite = 1'b0;
+						ALUContol = 2'b00;
+						ALUSrc = 1'b1;
+						ImmSrc = 2'b01;
+						RegWrite = 2'b00;
+						RegSrc = 2'b00;
+					end
+					else
+					begin//How to not excute instruction?
+					//Maybe inverse 0 to 1 memtoreg
+						MemtoReg = 0'b;
+					end
+				end
+				endcase
 			end
 		end
-		default: ALUControl = 2'bx; // unimplemented
-    endcase
-    FlagW_[1] = Funct[0];
-    FlagW_[0] = Funct[0] & (ALUControl == 2'b00 | ALUControl == 2'b01);
-    end 
-    else //not dp
-	begin
-        ALUControl = 2'b00; // add for non-DP instructions
-        FlagW_ = 2'b00; // don't update Flags
-	end
+
+		2'b10: //B,BL
+		begin
+			casex(Funct[5:4])
+			2'b10: //B
+			begin
+				casex(Cond)//AL, EQ, NE
+				4'b1110://BAL
+				begin
+					PCSrc = 1'b1;
+					MemtoReg = 1'b0;
+					MemWrite = 1'b0;
+					ALUContol = 2'b00;
+					ALUSrc = 1'b1;
+					ImmSrc = 2'b11;
+					RegWrite = 2'b00;
+					RegSrc = 2'bx1;
+				end
+				4'b0000://BEQ
+				begin	
+					if(ALUFlags[2]==1)
+					begin
+						PCSrc = 1'b1;
+						MemtoReg = 1'b0;
+						MemWrite = 1'b0;
+						ALUContol = 2'b00;
+						ALUSrc = 1'b1;
+						ImmSrc = 2'b11;
+						RegWrite = 2'b00;
+						RegSrc = 2'bx1;
+					end
+					else
+					begin//How to not excute instruction?
+					//Maybe inverse 1 to 0 pcsrc
+						PCSrc = 1'b0;
+					end
+				end
+				4'b0001://BNE
+				begin
+					if(ALUFlags[2]==0)
+					begin
+						PCSrc = 1'b1;
+						MemtoReg = 1'b0;
+						MemWrite = 1'b0;
+						ALUContol = 2'b00;
+						ALUSrc = 1'b1;
+						ImmSrc = 2'b11;
+						RegWrite = 2'b00;
+						RegSrc = 2'bx1;
+					end
+					else
+					begin//How to not excute instruction?
+					//Maybe inverse 1 to 0 pcsrc
+						PCSrc = 1'b0;
+					end
+				end
+				endcase
+			end
+			2'b11: //BL
+			begin
+				casex(Cond)//AL, EQ, NE
+				4'b1110://BLAL
+				begin
+					PCSrc = 1'b1;
+					MemtoReg = 1'b0;
+					MemWrite = 1'b0;
+					ALUContol = 2'b00;
+					ALUSrc = 1'b1;
+					ImmSrc = 2'b11;
+					RegWrite = 2'b10;
+					RegSrc = 2'bx1;
+				end
+				4'b0000://BLEQ
+				begin
+					if(ALUFlags[2]==1)
+					begin
+						PCSrc = 1'b1;
+						MemtoReg = 1'b0;
+						MemWrite = 1'b0;
+						ALUContol = 2'b00;
+						ALUSrc = 1'b1;
+						ImmSrc = 2'b11;
+						RegWrite = 2'b10;
+						RegSrc = 2'bx1;
+					end
+					else
+					begin//How to not excute instruction?
+					//Maybe inverse 1 to 0 pcsrc
+						PCSrc = 1'b0;
+					end
+				end
+				4'b0001://BLNE
+				begin
+					if(ALUFlags[2]==0)
+					begin
+						PCSrc = 1'b1;
+						MemtoReg = 1'b0;
+						MemWrite = 1'b0;
+						ALUContol = 2'b00;
+						ALUSrc = 1'b1;
+						ImmSrc = 2'b11;
+						RegWrite = 2'b10;
+						RegSrc = 2'bx1;
+					end
+					else
+					begin//How to not excute instruction?
+					//Maybe inverse 1 to 0 pcsrc
+						PCSrc = 1'b0;
+					end
+				end
+				endcase
+			end
+			endcase
+		end 
+		default:
+		begin
+
+		end 
+	endcase
+
 end
-// PC Logic
-assign PCS = ((Rd == 4'b1111) & RegW) | Branch;
-endmodule
 
 
-module flopenr #(parameter WIDTH = 8)
-  (input clk,reset,en,
-   input [WIDTH-1:0] d,
-   output reg [WIDTH -1:0] q);
-  always @(posedge clk, posedge reset)
-    begin
-    if (reset) q<=0;
-  else if (en) q<=d;
-    end
 endmodule

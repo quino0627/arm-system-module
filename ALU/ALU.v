@@ -20,14 +20,17 @@ module ALU(
 			2'b0x: ALUResult = sum; //ADD, SUB
 			// 2'b10: ALUResult = srcA & srcB; //AND
 			// 2'b11: ALUResult = srcA | srcB; //OR
-			2'b10 : ALUResult = srcB + 0 // equal 
+			2'b10 : ALUResult = srcB + 0; // equal 
+			2'b11:
+			begin
+				assign Neg = ALUResult[31];
+				assign Zero = (ALUResult == 32'b0);
+				assign Carry = (ALUControl[1] == 1'b0) & sum[32];
+				assign oVerflow = (ALUControl[1] == 1'b0) & ~(srcA[31]^srcB[31]^ALUControl[0]) & (srcA[31]^sum[31]);
+				assign ALUflags  = {Neg, Zero, Carry, oVerflow};
+			end
 			default: ALUResult = 2'bx;
 		endcase
 
-	assign Neg = ALUResult[31];
-	assign Zero = (ALUResult == 32'b0);
-	assign Carry = (ALUControl[1] == 1'b0) & sum[32];
-	assign oVerflow = (ALUControl[1] == 1'b0) & ~(srcA[31]^srcB[31]^ALUControl[0]) & (srcA[31]^sum[31]);
 	
-	assign ALUflags  = {Neg, Zero, Carry, oVerflow};
 endmodule
