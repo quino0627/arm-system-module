@@ -9,19 +9,24 @@ module ControlUnit(
     output reg [1:0] RegWrite,
     output reg [1:0] ImmSrc,
     output reg ALUSrc,
-    output reg [1:0] ALUControl,
+    output reg [2:0] ALUControl,
     output reg MemWrite,
 	output reg MemtoReg,
     output reg PCSrc);
 	//first check the OP
 	//then Funct
 	//then condcheck
+	initial
+	begin
+	ALUControl[2] = 0;
+	end
+
 always @(*)
 begin
 	if(reset ==1'b1)
 	begin
 		RegSrc = 2'b00;
-		ALUControl = 2'b00;
+		ALUControl[1:0] = 2'b00;
 		PCSrc = 1'b0;
 		MemtoReg = 1'b0;
 		MemWrite = 1'b0;
@@ -42,7 +47,7 @@ begin
 				4'b1110://ADDAL
 				begin
 					ALUSrc = 1'b0;
-					ALUControl = 2'b00;
+					ALUControl[1:0] = 2'b00;
 					//IMMSRC DONTCARE
 					RegWrite = 2'b11; //REGWRITE 1bit?
 					RegSrc = 2'b00;
@@ -52,14 +57,14 @@ begin
 					if(ALUFlags==1)
 					begin
 						ALUSrc = 1'b0;
-						ALUControl = 2'b00;
+						ALUControl[1:0] = 2'b00;
 						//IMMSRC DONTCARE
 						RegWrite = 2'b11; //REGWRITE 1bit?
 						RegSrc = 2'b00;
 					end
 					else
 					begin
-						RegWrite = 1'b0;
+						RegWrite = 2'b00;
 						//others, dont care
 					end
 				end
@@ -68,7 +73,7 @@ begin
 					if(ALUFlags==0)
 					begin
 						ALUSrc = 1'b0;
-						ALUControl = 2'b00;
+						ALUControl[1:0] = 2'b00;
 						//IMMSRC DONTCARE
 						RegWrite = 2'b11; //REGWRITE 1bit?
 						RegSrc = 2'b00;
@@ -80,6 +85,13 @@ begin
 					end
 				end
 				endcase
+				if(Funct[0]==1)
+				begin
+					ALUControl[2] = 1; //if this is 1, update flag
+				end
+				else begin
+					ALUControl[2] = 0;
+				end
 			end
 			6'b10100x://ADDi
 			begin 
@@ -87,7 +99,7 @@ begin
 				4'b1110://ADDiAL
 				begin
 					ALUSrc = 1'b1;
-					ALUControl = 2'b00;
+					ALUControl[1:0] = 2'b00;
 					ImmSrc = 2'b00;
 					RegWrite = 2'b11; //REGWRITE 1bit?
 					RegSrc = 2'bx0; //REGSRC[1] is DC
@@ -97,7 +109,7 @@ begin
 					if(ALUFlags==1)
 					begin
 						ALUSrc = 1'b1;
-						ALUControl = 2'b00;
+						ALUControl[1:0] = 2'b00;
 						ImmSrc = 2'b00;
 						RegWrite = 2'b11; //REGWRITE 1bit?
 						RegSrc = 2'bx0;
@@ -113,7 +125,7 @@ begin
 					if(ALUFlags==0)
 					begin
 						ALUSrc = 1'b1;
-						ALUControl = 2'b00;
+						ALUControl[1:0] = 2'b00;
 						ImmSrc = 2'b00;
 						RegWrite = 2'b11; //REGWRITE 1bit?
 						RegSrc = 2'bx0;
@@ -125,6 +137,13 @@ begin
 					end
 				end
 				endcase
+				if(Funct[0]==1)
+				begin
+					ALUControl[2] = 1; //if this is 1, update flag
+				end
+				else begin
+					ALUControl[2] = 0;
+				end
 			end
 			6'b00010x://SUB
 			begin
@@ -132,7 +151,7 @@ begin
 				4'b1110://SUBAL
 				begin
 					ALUSrc = 1'b0;
-					ALUControl = 2'b01;
+					ALUControl[1:0] = 2'b01;
 					//IMMSRC DONTCARE
 					RegWrite = 2'b11; //REGWRITE 1bit?
 					RegSrc = 2'b00;
@@ -142,7 +161,7 @@ begin
 					if(ALUFlags==1)
 					begin
 						ALUSrc = 1'b1;
-						ALUControl = 2'b01;
+						ALUControl[1:0] = 2'b01;
 						//IMMSRC DONTCARE
 						RegWrite = 2'b11; //REGWRITE 1bit?
 						RegSrc = 2'b00;
@@ -158,7 +177,7 @@ begin
 					if(ALUFlags==0)
 					begin
 						ALUSrc = 1'b1;
-						ALUControl = 2'b01;
+						ALUControl[1:0] = 2'b01;
 						//IMMSRC DONTCARE
 						RegWrite = 2'b11; //REGWRITE 1bit?
 						RegSrc = 2'b00;
@@ -170,6 +189,13 @@ begin
 					end
 				end
 				endcase
+				if(Funct[0]==1)
+				begin
+					ALUControl[2] = 1; //if this is 1, update flag
+				end
+				else begin
+					ALUControl[2] = 0;
+				end
 			end
 			6'b10010x://SUBi
 			begin
@@ -177,7 +203,7 @@ begin
 				4'b1110://SUBiAL
 				begin
 					ALUSrc = 1'b1;
-					ALUControl = 2'b01;
+					ALUControl[1:0] = 2'b01;
 					ImmSrc = 2'b00;
 					RegWrite = 2'b11; //REGWRITE 1bit?
 					RegSrc = 2'bx0;
@@ -187,7 +213,7 @@ begin
 					if(ALUFlags==1)
 					begin
 						ALUSrc = 1'b1;
-						ALUControl = 2'b01;
+						ALUControl[1:0] = 2'b01;
 						ImmSrc = 2'b00;
 						RegWrite = 2'b11; //REGWRITE 1bit?
 						RegSrc = 2'bx0;
@@ -203,7 +229,7 @@ begin
 					if(ALUFlags==0)
 					begin
 						ALUSrc = 1'b1;
-						ALUControl = 2'b01;
+						ALUControl[1:0] = 2'b01;
 						ImmSrc = 2'b00;
 						RegWrite = 2'b11; //REGWRITE 1bit?
 						RegSrc = 2'bx0;
@@ -215,13 +241,20 @@ begin
 					end
 				end
 				endcase
+				if(Funct[0]==1)
+				begin
+					ALUControl[2] = 1; //if this is 1, update flag
+				end
+				else begin
+					ALUControl[2] = 0;
+				end
 			end
 			6'b01010x://CMP
 			begin
 				casex(Cond)//AL, EQ, NE
 				4'b1110://CMPAL
 				begin
-					ALUControl = 2'b11;
+					ALUControl[1:0] = 2'b11;
 					ALUSrc = 1'b0; //cmpi -> 1
 					//IMMSRC DONTCARE
 					RegWrite = 2'b00;
@@ -233,7 +266,7 @@ begin
 					if(ALUFlags==1)
 					begin
 						ALUSrc = 1'b0;
-						ALUControl = 2'b11;
+						ALUControl[1:0] = 2'b11;
 						//IMMSRC DONTCARE
 						RegWrite = 2'b00; 
 						RegSrc = 2'b00; //CMPi -> DC
@@ -241,7 +274,7 @@ begin
 					else
 					begin
 						RegWrite = 2'b00;
-						ALUControl = 2'b00; // NOT TO update flags -> NOT 11
+						ALUControl[1:0] = 2'b00; // NOT TO update flags -> NOT 11
 						//others, dont care??
 					end
 				end
@@ -250,7 +283,7 @@ begin
 					if(ALUFlags==0)
 					begin
 						ALUSrc = 1'b0;
-						ALUControl = 2'b11;
+						ALUControl[1:0] = 2'b11;
 						//IMMSRC DONTCARE
 						RegWrite = 2'b00; 
 						RegSrc = 2'b00; //CMPi -> DC
@@ -258,7 +291,7 @@ begin
 					else
 					begin
 						RegWrite = 2'b00;
-						ALUControl = 2'b00; // NOT TO update flags -> NOT 11
+						ALUControl[1:0] = 2'b00; // NOT TO update flags -> NOT 11
 						//others, dont care??
 					end
 				end
@@ -270,7 +303,7 @@ begin
 				4'b1110://CMPiAL
 				begin
 					ALUSrc = 1'b1;
-					ALUControl = 2'b11;
+					ALUControl[1:0] = 2'b11;
 					ImmSrc = 2'b00;
 					RegWrite = 2'b00;
 					RegSrc = 2'b00;
@@ -280,7 +313,7 @@ begin
 					if(ALUFlags==1)
 					begin
 						ALUSrc = 1'b1;
-						ALUControl = 2'b11;
+						ALUControl[1:0] = 2'b11;
 						ImmSrc = 2'b00;
 						RegWrite = 2'b00; 
 						RegSrc = 2'b00; //CMPi -> DC
@@ -288,7 +321,7 @@ begin
 					else
 					begin
 						RegWrite = 2'b00;
-						ALUControl = 2'b00; // NOT TO update flags -> NOT 11
+						ALUControl[1:0] = 2'b00; // NOT TO update flags -> NOT 11
 						//others, dont care??
 					end
 				end
@@ -297,7 +330,7 @@ begin
 					if(ALUFlags==0)
 					begin
 						ALUSrc = 1'b1;
-						ALUControl = 2'b11;
+						ALUControl[1:0] = 2'b11;
 						ImmSrc = 2'b00;
 						RegWrite = 2'b00; 
 						RegSrc = 2'b00; //CMPi -> DC
@@ -305,7 +338,7 @@ begin
 					else
 					begin
 						RegWrite = 2'b00;
-						ALUControl = 2'b00; // NOT TO update flags -> NOT 11
+						ALUControl[1:0] = 2'b00; // NOT TO update flags -> NOT 11
 						//others, dont care??
 					end
 				end
@@ -316,7 +349,7 @@ begin
 				casex(Cond)//AL, EQ, NE
 				4'b1110://MOVAL
 				begin
-					ALUControl = 2'b10;
+					ALUControl[1:0] = 2'b10;
 					ALUSrc = 1'b0;
 					//IMMSRC DONTCARE
 					RegWrite = 2'b11;
@@ -327,7 +360,7 @@ begin
 					if(ALUFlags==1)
 					begin
 						ALUSrc = 1'b0;
-						ALUControl = 2'b10;
+						ALUControl[1:0] = 2'b10;
 						RegWrite = 2'b11; 
 						RegSrc = 2'b00; 
 					end
@@ -342,7 +375,7 @@ begin
 					if(ALUFlags==0)
 					begin
 						ALUSrc = 1'b0;
-						ALUControl = 2'b10;
+						ALUControl[1:0] = 2'b10;
 						RegWrite = 2'b11; 
 						RegSrc = 2'b00; 
 					end
@@ -359,7 +392,7 @@ begin
 				casex(Cond)//AL, EQ, NE
 				4'b1110://MOViAL
 				begin
-					ALUControl = 2'b10;
+					ALUControl[1:0] = 2'b10;
 					ALUSrc = 1'b1;
 					ImmSrc = 2'b00;
 					RegWrite = 2'b11;
@@ -370,7 +403,7 @@ begin
 					if(ALUFlags==1)
 					begin
 						ALUSrc = 1'b1;
-						ALUControl = 2'b00;
+						ALUControl[1:0] = 2'b00;
 						RegWrite = 2'b11; 
 						RegSrc = 2'bx0; 
 					end
@@ -385,7 +418,7 @@ begin
 					if(ALUFlags==0)
 					begin
 						ALUSrc = 1'b1;
-						ALUControl = 2'b00;
+						ALUControl[1:0] = 2'b00;
 						RegWrite = 2'b11; 
 						RegSrc = 2'bx0; 
 					end
@@ -411,7 +444,7 @@ begin
 					PCSrc = 1'b0;
 					MemtoReg = 1'b0;
 					MemWrite = 1'b1;
-					ALUControl = 2'b00;
+					ALUControl[1:0] = 2'b00;
 					ALUSrc = 1'b0;
 					ImmSrc = 2'b01;
 					RegWrite = 2'b00;
@@ -424,7 +457,7 @@ begin
 						PCSrc = 1'b0;
 						MemtoReg = 1'b0;
 						MemWrite = 1'b1;
-						ALUControl = 2'b00;
+						ALUControl[1:0] = 2'b00;
 						ALUSrc = 1'b0;
 						ImmSrc = 2'b01;
 						RegWrite = 2'b00;
@@ -443,7 +476,7 @@ begin
 						PCSrc = 1'b0;
 						MemtoReg = 1'b0;
 						MemWrite = 1'b1;
-						ALUControl = 2'b00;
+						ALUControl[1:0] = 2'b00;
 						ALUSrc = 1'b0;
 						ImmSrc = 2'b01;
 						RegWrite = 2'b00;
@@ -465,7 +498,7 @@ begin
 					PCSrc = 1'b0;
 					MemtoReg = 1'b0;
 					MemWrite = 1'b1;
-					ALUControl = 2'b00;
+					ALUControl[1:0] = 2'b00;
 					ALUSrc = 1'b1;
 					ImmSrc = 2'b01;
 					RegWrite = 2'b00;
@@ -478,7 +511,7 @@ begin
 						PCSrc = 1'b0;
 						MemtoReg = 1'b0;
 						MemWrite = 1'b1;
-						ALUControl = 2'b00;
+						ALUControl[1:0] = 2'b00;
 						ALUSrc = 1'b1;
 						ImmSrc = 2'b01;
 						RegWrite = 2'b00;
@@ -497,7 +530,7 @@ begin
 						PCSrc = 1'b0;
 						MemtoReg = 1'b0;
 						MemWrite = 1'b1;
-						ALUControl = 2'b00;
+						ALUControl[1:0] = 2'b00;
 						ALUSrc = 1'b1;
 						ImmSrc = 2'b01;
 						RegWrite = 2'b00;
@@ -519,7 +552,7 @@ begin
 					PCSrc = 1'b0;
 					MemtoReg = 1'b1;
 					MemWrite = 1'b0;
-					ALUControl = 2'b00;
+					ALUControl[1:0] = 2'b00;
 					ALUSrc = 1'b0;
 					ImmSrc = 2'b01;
 					RegWrite = 2'b00;
@@ -532,7 +565,7 @@ begin
 						PCSrc = 1'b0;
 						MemtoReg = 1'b1;
 						MemWrite = 1'b0;
-						ALUControl = 2'b00;
+						ALUControl[1:0] = 2'b00;
 						ALUSrc = 1'b0;
 						ImmSrc = 2'b01;
 						RegWrite = 2'b00;
@@ -551,7 +584,7 @@ begin
 						PCSrc = 1'b0;
 						MemtoReg = 1'b1;
 						MemWrite = 1'b0;
-						ALUControl = 2'b00;
+						ALUControl[1:0] = 2'b00;
 						ALUSrc = 1'b0;
 						ImmSrc = 2'b01;
 						RegWrite = 2'b00;
@@ -573,7 +606,7 @@ begin
 					PCSrc = 1'b0;
 					MemtoReg = 1'b1;
 					MemWrite = 1'b0;
-					ALUControl = 2'b00;
+					ALUControl[1:0] = 2'b00;
 					ALUSrc = 1'b1;
 					ImmSrc = 2'b01;
 					RegWrite = 2'b00;
@@ -586,7 +619,7 @@ begin
 						PCSrc = 1'b0;
 						MemtoReg = 1'b1;
 						MemWrite = 1'b0;
-						ALUControl = 2'b00;
+						ALUControl[1:0] = 2'b00;
 						ALUSrc = 1'b1;
 						ImmSrc = 2'b01;
 						RegWrite = 2'b00;
@@ -605,7 +638,7 @@ begin
 						PCSrc = 1'b0;
 						MemtoReg = 1'b1;
 						MemWrite = 1'b0;
-						ALUControl = 2'b00;
+						ALUControl[1:0] = 2'b00;
 						ALUSrc = 1'b1;
 						ImmSrc = 2'b01;
 						RegWrite = 2'b00;
@@ -633,7 +666,7 @@ begin
 					PCSrc = 1'b1;
 					MemtoReg = 1'b0;
 					MemWrite = 1'b0;
-					ALUControl = 2'b00;
+					ALUControl[1:0] = 2'b00;
 					ALUSrc = 1'b1;
 					ImmSrc = 2'b11;
 					RegWrite = 2'b00;
@@ -646,7 +679,7 @@ begin
 						PCSrc = 1'b1;
 						MemtoReg = 1'b0;
 						MemWrite = 1'b0;
-						ALUControl = 2'b00;
+						ALUControl[1:0] = 2'b00;
 						ALUSrc = 1'b1;
 						ImmSrc = 2'b11;
 						RegWrite = 2'b00;
@@ -665,7 +698,7 @@ begin
 						PCSrc = 1'b1;
 						MemtoReg = 1'b0;
 						MemWrite = 1'b0;
-						ALUControl = 2'b00;
+						ALUControl[1:0] = 2'b00;
 						ALUSrc = 1'b1;
 						ImmSrc = 2'b11;
 						RegWrite = 2'b00;
@@ -687,7 +720,7 @@ begin
 					PCSrc = 1'b1;
 					MemtoReg = 1'b0;
 					MemWrite = 1'b0;
-					ALUControl = 2'b00;
+					ALUControl[1:0] = 2'b00;
 					ALUSrc = 1'b1;
 					ImmSrc = 2'b11;
 					RegWrite = 2'b10;
@@ -700,7 +733,7 @@ begin
 						PCSrc = 1'b1;
 						MemtoReg = 1'b0;
 						MemWrite = 1'b0;
-						ALUControl = 2'b00;
+						ALUControl[1:0] = 2'b00;
 						ALUSrc = 1'b1;
 						ImmSrc = 2'b11;
 						RegWrite = 2'b10;
@@ -719,7 +752,7 @@ begin
 						PCSrc = 1'b1;
 						MemtoReg = 1'b0;
 						MemWrite = 1'b0;
-						ALUControl = 2'b00;
+						ALUControl[1:0] = 2'b00;
 						ALUSrc = 1'b1;
 						ImmSrc = 2'b11;
 						RegWrite = 2'b10;

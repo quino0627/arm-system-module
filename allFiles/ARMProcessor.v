@@ -18,18 +18,24 @@ module armreduced(
 
 	reg [31:0] PC;
 	wire [31:0] PC_next;
-	wire PCSrc, MemtoReg, MemWrite, ALUSrc, RegWrite;	//Control Unit output wire (1/2)
-	wire [1:0] ALUControl, ImmSrc, RegSrc;	//Control Unit output wire (2/2)
+	wire PCSrc, MemtoReg, MemWrite, ALUSrc;	
+	wire [1:0] RegWrite;//Control Unit output wire (1/2)
+	wire [2:0] ALUControl;
+	wire [1:0] ImmSrc, RegSrc;	//Control Unit output wire (2/2)
 	wire [4:0] RA1, RA2;	//Reg input wire
 	wire [31:0] PCPlus4, PCPlus8;	//Reg input wire
 	wire [31:0] ExtImm;	//Extend output wire
 	wire [31:0] RD1, RD2;	//Register File output wire
 	wire [31:0] SrcB; //ALU input wire
 	wire [31:0] ALUResult;	//ALU output wire (1/2)
-	wire [3:0] ALUFlags;	//ALU output wire (2/2)
+	wire ALUFlags;	//ALU output wire (2/2)
 	
 	wire [31:0] Result;
-
+	initial 
+	begin
+      PC = 0;
+	end
+   
 	//Instruction Decode. to control, reg..
 	ControlUnit controlunit(
 		//clk, reset?
@@ -100,7 +106,5 @@ module armreduced(
 		else
 			PC = PC_prime;
 	end
-	
-	assign pc = PC;
 	
 endmodule
