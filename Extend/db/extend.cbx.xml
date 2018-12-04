@@ -1,9 +1,5 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="extend">
-		<CBX_INST_ENTRY INSTANCE_NAME="|Extend|lpm_mux:Mux0" CBX_FILE_NAME="mux_umc.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|Extend|lpm_mux:Mux1" CBX_FILE_NAME="mux_umc.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|Extend|lpm_mux:Mux2" CBX_FILE_NAME="mux_umc.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|Extend|lpm_mux:Mux3" CBX_FILE_NAME="mux_umc.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

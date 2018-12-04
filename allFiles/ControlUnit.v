@@ -16,16 +16,15 @@ module ControlUnit(
 	//first check the OP
 	//then Funct
 	//then condcheck
-	initial
-	begin
-	ALUControl[2] = 0;
-	end
+	 
+
 
 always @(*)
 begin
 	if(reset ==1'b1)
 	begin
 		RegSrc = 2'b00;
+		ALUControl[2] = 0;
 		ALUControl[1:0] = 2'b00;
 		PCSrc = 1'b0;
 		MemtoReg = 1'b0;
@@ -670,7 +669,7 @@ begin
 					ALUSrc = 1'b1;
 					ImmSrc = 2'b11;
 					RegWrite = 2'b00;
-					RegSrc = 2'bx1;
+					RegSrc = 2'b11;
 				end
 				4'b0000://BEQ
 				begin	

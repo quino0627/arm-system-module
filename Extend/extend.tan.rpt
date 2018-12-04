@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for extend
-Thu Nov 29 05:49:12 2018
+Tue Dec 04 22:24:20 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -181,7 +181,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II Classic Timing Analyzer
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu Nov 29 05:49:12 2018
+    Info: Processing started: Tue Dec 04 22:24:19 2018
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off extend -c extend --timing_analysis_only
 Info: Longest tpd from source pin "Instr[12]" to destination pin "ExtImm[14]" is 13.397 ns
     Info: 1: + IC(0.000 ns) + CELL(0.850 ns) = 0.850 ns; Loc. = PIN_B10; Fanout = 1; PIN Node = 'Instr[12]'
@@ -191,8 +191,8 @@ Info: Longest tpd from source pin "Instr[12]" to destination pin "ExtImm[14]" is
     Info: Total interconnect delay = 9.356 ns ( 69.84 % )
 Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 195 megabytes
-    Info: Processing ended: Thu Nov 29 05:49:12 2018
-    Info: Elapsed time: 00:00:00
+    Info: Processing ended: Tue Dec 04 22:24:20 2018
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 

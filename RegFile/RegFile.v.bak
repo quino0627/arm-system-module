@@ -1,4 +1,4 @@
- module RegisterFile( //register file
+ module RegFile( //register file
    input clk,
    input reset,
 
