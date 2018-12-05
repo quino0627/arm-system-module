@@ -12,9 +12,8 @@ module ALU(
 	begin
 		case(ALUControl[1:0]) 
 		2'b00: begin
-			
-			ALUResult[30:0] = SrcA[30:0] + SrcB[30:0];
 			ALUResult[31]= SrcA[31] + SrcB[31];
+			ALUResult[30:0] = SrcA[30:0] + SrcB[30:0];
 			//ALUResult = SrcA + SrcB;
 			ALUFlags = 0;
 			end

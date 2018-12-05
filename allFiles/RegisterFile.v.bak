@@ -9,8 +9,8 @@
    input [1:0 ]RegWrite,   //write enable input (RE3)
    input [31:0] PCPlus8,   //PCPlus8, R15
 
-   output reg [31:0] RD1,   //data from reg addr A1
-   output reg [31:0] RD2   //data from reg addr A2
+   output [31:0] RD1,   //data from reg addr A1
+   output [31:0] RD2   //data from reg addr A2
    );
    
    reg[31:0] Rf[15:0]; 

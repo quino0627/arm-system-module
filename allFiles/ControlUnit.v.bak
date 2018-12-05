@@ -667,7 +667,7 @@ begin
 					MemWrite = 1'b0;
 					ALUControl[1:0] = 2'b00;
 					ALUSrc = 1'b1;
-					ImmSrc = 2'b10;
+					ImmSrc = 2'b11;
 					RegWrite = 2'b00;
 					RegSrc = 2'b11;
 				end
@@ -680,7 +680,7 @@ begin
 						MemWrite = 1'b0;
 						ALUControl[1:0] = 2'b00;
 						ALUSrc = 1'b1;
-						ImmSrc = 2'b10;
+						ImmSrc = 2'b11;
 						RegWrite = 2'b00;
 						RegSrc = 2'bx1;
 					end
@@ -699,7 +699,7 @@ begin
 						MemWrite = 1'b0;
 						ALUControl[1:0] = 2'b00;
 						ALUSrc = 1'b1;
-						ImmSrc = 2'b10;
+						ImmSrc = 2'b11;
 						RegWrite = 2'b00;
 						RegSrc = 2'bx1;
 					end
@@ -721,7 +721,7 @@ begin
 					MemWrite = 1'b0;
 					ALUControl[1:0] = 2'b00;
 					ALUSrc = 1'b1;
-					ImmSrc = 2'b10;
+					ImmSrc = 2'b11;
 					RegWrite = 2'b10;
 					RegSrc = 2'bx1;
 				end
@@ -734,7 +734,7 @@ begin
 						MemWrite = 1'b0;
 						ALUControl[1:0] = 2'b00;
 						ALUSrc = 1'b1;
-						ImmSrc = 2'b10;
+						ImmSrc = 2'b11;
 						RegWrite = 2'b10;
 						RegSrc = 2'bx1;
 					end
@@ -753,7 +753,7 @@ begin
 						MemWrite = 1'b0;
 						ALUControl[1:0] = 2'b00;
 						ALUSrc = 1'b1;
-						ImmSrc = 2'b10;
+						ImmSrc = 2'b11;
 						RegWrite = 2'b10;
 						RegSrc = 2'bx1;
 					end
