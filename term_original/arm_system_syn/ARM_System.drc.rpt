@@ -1,0 +1,266 @@
+Design Assistant report for ARM_System
+Sat Dec 18 02:29:00 2010
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Design Assistant Summary
+  3. Design Assistant Settings
+  4. Information only Violations
+  5. Design Assistant Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; Design Assistant Summary                                                ;
++-----------------------------------+-------------------------------------+
+; Design Assistant Status           ; Analyzed - Sat Dec 18 02:29:00 2010 ;
+; Revision Name                     ; ARM_System                          ;
+; Top-level Entity Name             ; ARM_System                          ;
+; Family                            ; Cyclone II                          ;
+; Total Critical Violations         ; 0                                   ;
+; Total High Violations             ; 0                                   ;
+; Total Medium Violations           ; 0                                   ;
+; Total Information only Violations ; 79                                  ;
+; - Rule T101                       ; 29                                  ;
+; - Rule T102                       ; 50                                  ;
++-----------------------------------+-------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Design Assistant Settings                                                                                                                                                                                                                                                                                  ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+----+
+; Option                                                                                                                                                                                                                                                                               ; Setting        ; To ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+----+
+; Design Assistant mode                                                                                                                                                                                                                                                                ; Post-Synthesis ;    ;
+; Threshold value for clock net not mapped to clock spines rule                                                                                                                                                                                                                        ; 25             ;    ;
+; Minimum number of clock port feed by gated clocks                                                                                                                                                                                                                                    ; 30             ;    ;
+; Minimum number of node fan-out                                                                                                                                                                                                                                                       ; 30             ;    ;
+; Maximum number of nodes to report                                                                                                                                                                                                                                                    ; 50             ;    ;
+; Rule C101: Gated clock should be implemented according to the Altera standard scheme                                                                                                                                                                                                 ; On             ;    ;
+; Rule C102: Logic cell should not be used to generate an inverted clock signal                                                                                                                                                                                                        ; On             ;    ;
+; Rule C103: Gated clock does not feed at least a pre-defined number of clock ports to effectively save power                                                                                                                                                                          ; On             ;    ;
+; Rule C104: Clock signal source should drive only clock input ports                                                                                                                                                                                                                   ; On             ;    ;
+; Rule C105: Clock signal should be a global signal (Rule applies during post-fitting analysis. This rule applies during both post-fitting analysis and post-synthesis analysis if the design targets a MAX 3000 or MAX 7000 device. For more information, see the Help for the rule.) ; On             ;    ;
+; Rule C106: Clock signal source should not drive registers triggered by different clock edges                                                                                                                                                                                         ; On             ;    ;
+; Rule R101: Combinational logic used as a reset signal should be synchronized                                                                                                                                                                                                         ; On             ;    ;
+; Rule R102: External reset signals should be synchronized using two cascaded registers                                                                                                                                                                                                ; On             ;    ;
+; Rule R103: External reset signal should be correctly synchronized                                                                                                                                                                                                                    ; On             ;    ;
+; Rule R104: The reset signal that is generated in one clock domain and used in another clock domain should be correctly synchronized                                                                                                                                                  ; On             ;    ;
+; Rule R105: The reset signal that is generated in one clock domain and used in another clock domain should be synchronized                                                                                                                                                            ; On             ;    ;
+; Rule T101: Nodes with more than the specified number of fan-outs                                                                                                                                                                                                                     ; On             ;    ;
+; Rule T102: Top nodes with the highest number of fan-outs                                                                                                                                                                                                                             ; On             ;    ;
+; Rule A101: Design should not contain combinational loops                                                                                                                                                                                                                             ; On             ;    ;
+; Rule A102: Register output should not drive its own control signal directly or through combinational logic                                                                                                                                                                           ; On             ;    ;
+; Rule A103: Design should not contain delay chains                                                                                                                                                                                                                                    ; On             ;    ;
+; Rule A104: Design should not contain ripple clock structures                                                                                                                                                                                                                         ; On             ;    ;
+; Rule A105: Pulses should not be implemented asynchronously                                                                                                                                                                                                                           ; On             ;    ;
+; Rule A106: Multiple pulses should not be generated in design                                                                                                                                                                                                                         ; On             ;    ;
+; Rule A107: Design should not contain SR latches                                                                                                                                                                                                                                      ; On             ;    ;
+; Rule A108: Design should not contain latches                                                                                                                                                                                                                                         ; On             ;    ;
+; Rule S101: Output enable and input of the same tri-state node should not be driven by same signal source                                                                                                                                                                             ; On             ;    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source                                                                                                                                                                ; On             ;    ;
+; Rule S103: More than one asynchronous port of a register should not be driven by the same signal source                                                                                                                                                                              ; On             ;    ;
+; Rule S104: Clock port and any other port of a register should not be driven by the same signal source                                                                                                                                                                                ; On             ;    ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains                                                                                                                                                                                        ; On             ;    ;
+; Rule D102: Multiple data bits that are transferred across asynchronous clock domains are synchronized, but not all bits may be aligned in the receiving clock domain                                                                                                                 ; On             ;    ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains                                                                                                                                                                              ; On             ;    ;
+; Rule M101: Data bits are not synchronized when transferred to the state machine of asynchronous clock domains                                                                                                                                                                        ; Off            ;    ;
+; Rule M102: No reset signal defined to initialize the state machine                                                                                                                                                                                                                   ; Off            ;    ;
+; Rule M103: State machine should not contain an unreachable state                                                                                                                                                                                                                     ; Off            ;    ;
+; Rule M104: State machine should not contain a deadlock state                                                                                                                                                                                                                         ; Off            ;    ;
+; Rule M105: State machine should not contain a dead transition                                                                                                                                                                                                                        ; Off            ;    ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+----+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Information only Violations                                                                                                                         ;
++------------------------------------------------------------------+------------------------------------------------------------------------+---------+
+; Rule name                                                        ; Name                                                                   ; Fan-Out ;
++------------------------------------------------------------------+------------------------------------------------------------------------+---------+
+; Rule T101: Nodes with more than the specified number of fan-outs ; reset_ff                                                               ; 95      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux0~0         ; 34      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[12] ; 37      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; ~GND                                                                   ; 64      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[2]  ; 39      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[3]  ; 39      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[4]  ; 44      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[5]  ; 40      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[6]  ; 37      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[7]  ; 38      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[8]  ; 37      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[9]  ; 36      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[10] ; 36      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[11] ; 36      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; Addr_Decoder:Decoder|Equal0~7                                          ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux29~0        ; 38      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux28~0        ; 36      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux27~0        ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux26~0        ; 34      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux25~0        ; 33      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux24~0        ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux23~0        ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux22~0        ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux21~0        ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux20~0        ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux19~0        ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxB|Mux31~0        ; 66      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; ALTPLL_clkgen:pll0|altpll:altpll_component|_clk0                       ; 156     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; ALTPLL_clkgen:pll0|altpll:altpll_component|_clk1                       ; 64      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ALTPLL_clkgen:pll0|altpll:altpll_component|_clk0                       ; 156     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; reset_ff                                                               ; 95      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxB|Mux31~0        ; 66      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ALTPLL_clkgen:pll0|altpll:altpll_component|_clk1                       ; 64      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ~GND                                                                   ; 64      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[4]  ; 44      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[5]  ; 40      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[2]  ; 39      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[3]  ; 39      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[7]  ; 38      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux29~0        ; 38      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[8]  ; 37      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[6]  ; 37      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[12] ; 37      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux28~0        ; 36      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[11] ; 36      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[10] ; 36      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[9]  ; 36      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux26~0        ; 34      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux0~0         ; 34      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux25~0        ; 33      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux23~0        ; 32      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux22~0        ; 32      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux21~0        ; 32      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux19~0        ; 32      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux20~0        ; 32      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux27~0        ; 32      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; Addr_Decoder:Decoder|Equal0~7                                          ; 32      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux24~0        ; 32      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; GPIO:uGPIO|LEDR_R[7]~15                                                ; 18      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; miniUART:UART|TxUnit:TxDev|tmpTRegE                                    ; 13      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; Addr_Decoder:Decoder|Equal2~7                                          ; 12      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; GPIO:uGPIO|HEX7_R~3                                                    ; 9       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; miniUART:UART|TxUnit:TxDev|BitCnt[3]                                   ; 9       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; miniUART:UART|TxUnit:TxDev|WideOr0~0                                   ; 9       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; GPIO:uGPIO|HEX7_R~4                                                    ; 9       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; GPIO:uGPIO|HEX7_R~0                                                    ; 9       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; GPIO:uGPIO|HEX7_R~6                                                    ; 9       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; GPIO:uGPIO|HEX7_R~5                                                    ; 9       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; miniUART:UART|TxUnit:TxDev|BitCnt[1]                                   ; 9       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; GPIO:uGPIO|HEX7_R~7                                                    ; 9       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; miniUART:UART|TxUnit:TxDev|BitCnt[0]                                   ; 9       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; miniUART:UART|TxUnit:TxDev|BitCnt[2]                                   ; 9       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; GPIO:uGPIO|HEX7_R~2                                                    ; 9       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; GPIO:uGPIO|LEDG_R[4]~19                                                ; 9       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; miniUART:UART|TxData[0]~0                                              ; 8       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; miniUART:UART|ClkUnit:ClkDiv|Cnt33[0]                                  ; 8       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; GPIO:uGPIO|HEX4_R[6]~4                                                 ; 7       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; GPIO:uGPIO|HEX5_R[5]~0                                                 ; 7       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; miniUART:UART|TxUnit:TxDev|TBuff[0]~0                                  ; 7       ;
++------------------------------------------------------------------+------------------------------------------------------------------------+---------+
+
+
++---------------------------+
+; Design Assistant Messages ;
++---------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Design Assistant
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Sat Dec 18 02:28:58 2010
+Info: Command: quartus_drc --read_settings_files=on --write_settings_files=off ARM_System -c ARM_System
+Info: Selected device EP2C35F672C6 for design "ARM_System"
+Info: Implemented PLL "ALTPLL_clkgen:pll0|altpll:altpll_component|pll" as Cyclone II PLL type
+    Info: Implementing clock multiplication of 1, clock division of 1, and phase shift of 0 degrees (0 ps) for ALTPLL_clkgen:pll0|altpll:altpll_component|_clk0 port
+    Info: Implementing clock multiplication of 1, clock division of 1, and phase shift of 90 degrees (9259 ps) for ALTPLL_clkgen:pll0|altpll:altpll_component|_clk1 port
+Info: (Information) Rule T101: Nodes with more than the specified number of fan-outs. (Value defined:30). Found 29 node(s) with highest fan-out.
+    Info: Node  "reset_ff"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux0~0"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[12]"
+    Info: Node  "~GND"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[2]"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[3]"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[4]"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[5]"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[6]"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[7]"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[8]"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[9]"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[10]"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[11]"
+    Info: Node  "Addr_Decoder:Decoder|Equal0~7"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux29~0"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux28~0"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux27~0"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux26~0"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux25~0"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux24~0"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux23~0"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux22~0"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux21~0"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux20~0"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux19~0"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxB|Mux31~0"
+    Info: Node  "ALTPLL_clkgen:pll0|altpll:altpll_component|_clk0"
+    Info: Node  "ALTPLL_clkgen:pll0|altpll:altpll_component|_clk1"
+Info: (Information) Rule T102: Top nodes with the highest number of fan-outs. (Value defined:50). Found 50 node(s) with highest fan-out.
+    Info: Node  "ALTPLL_clkgen:pll0|altpll:altpll_component|_clk0"
+    Info: Node  "reset_ff"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxB|Mux31~0"
+    Info: Node  "ALTPLL_clkgen:pll0|altpll:altpll_component|_clk1"
+    Info: Node  "~GND"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[4]"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[5]"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[2]"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[3]"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[7]"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux29~0"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[8]"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[6]"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[12]"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux28~0"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[11]"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[10]"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|register1:register15|regout[9]"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux26~0"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux0~0"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux25~0"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux23~0"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux22~0"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux21~0"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux19~0"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux20~0"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux27~0"
+    Info: Node  "Addr_Decoder:Decoder|Equal0~7"
+    Info: Node  "armreduced:arm_cpu|regfile:mainRegFile|mux16_32bit:muxA|Mux24~0"
+    Info: Node  "GPIO:uGPIO|LEDR_R[7]~15"
+    Info: Truncated list of Design Assistant messages to 30 messages. Go to sections under Design Assistant section of Compilation Report for complete lists of Design Assistant messages generated.
+Info: Design Assistant information: finished post-synthesis analysis of current design -- generated 79 information messages and 0 warning messages
+Info: Quartus II Design Assistant was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 194 megabytes
+    Info: Processing ended: Sat Dec 18 02:29:00 2010
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

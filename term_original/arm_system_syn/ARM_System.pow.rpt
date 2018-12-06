@@ -1,0 +1,561 @@
+PowerPlay Power Analyzer report for ARM_System
+Sat Nov 27 01:23:13 2010
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. PowerPlay Power Analyzer Summary
+  3. PowerPlay Power Analyzer Settings
+  4. Operating Conditions Used
+  5. Thermal Power Dissipation by Block
+  6. Thermal Power Dissipation by Block Type
+  7. Thermal Power Dissipation by Hierarchy
+  8. Core Dynamic Thermal Power Dissipation by Clock Domain
+  9. Current Drawn from Voltage Supplies Summary
+ 10. VCCIO Supply Current Drawn by I/O Bank
+ 11. VCCIO Supply Current Drawn by Voltage
+ 12. Confidence Metric Details
+ 13. Signal Activities
+ 14. PowerPlay Power Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------------+
+; PowerPlay Power Analyzer Summary                                                          ;
++----------------------------------------+--------------------------------------------------+
+; PowerPlay Power Analyzer Status        ; Successful - Sat Nov 27 01:23:12 2010            ;
+; Quartus II Version                     ; 9.1 Build 222 10/21/2009 SJ Web Edition          ;
+; Revision Name                          ; ARM_System                                       ;
+; Top-level Entity Name                  ; ARM_System                                       ;
+; Family                                 ; Cyclone II                                       ;
+; Device                                 ; EP2C35F672C6                                     ;
+; Power Models                           ; Final                                            ;
+; Total Thermal Power Dissipation        ; 180.77 mW                                        ;
+; Core Dynamic Thermal Power Dissipation ; 40.20 mW                                         ;
+; Core Static Thermal Power Dissipation  ; 80.16 mW                                         ;
+; I/O Thermal Power Dissipation          ; 60.41 mW                                         ;
+; Power Estimation Confidence            ; Low: user provided insufficient toggle rate data ;
++----------------------------------------+--------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; PowerPlay Power Analyzer Settings                                                                    ;
++----------------------------------------------------------------------------+---------+---------------+
+; Option                                                                     ; Setting ; Default Value ;
++----------------------------------------------------------------------------+---------+---------------+
+; Use smart compilation                                                      ; Off     ; Off           ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On      ; On            ;
+; Enable compact report table                                                ; Off     ; Off           ;
+; Default Power Toggle Rate                                                  ; 12.5%   ; 12.5%         ;
+; Default Power Input I/O Toggle Rate                                        ; 12.5%   ; 12.5%         ;
+; Use vectorless estimation                                                  ; On      ; On            ;
+; Use Input Files                                                            ; Off     ; Off           ;
+; Filter Glitches in VCD File Reader                                         ; On      ; On            ;
+; Power Analyzer Report Signal Activity                                      ; Off     ; Off           ;
+; Power Analyzer Report Power Dissipation                                    ; Off     ; Off           ;
+; Device Power Characteristics                                               ; TYPICAL ; TYPICAL       ;
+; Automatically Compute Junction Temperature                                 ; On      ; On            ;
+; Specified Junction Temperature                                             ; 25      ; 25            ;
+; Ambient Temperature                                                        ; 25      ; 25            ;
+; Use Custom Cooling Solution                                                ; Off     ; Off           ;
+; Board Temperature                                                          ; 25      ; 25            ;
++----------------------------------------------------------------------------+---------+---------------+
+
+
++-------------------------------------------------------------------------+
+; Operating Conditions Used                                               ;
++---------------------------------------------+---------------------------+
+; Setting                                     ; Value                     ;
++---------------------------------------------+---------------------------+
+; Device power characteristics                ; Typical                   ;
+;                                             ;                           ;
+; Voltages                                    ;                           ;
+;     VCCINT                                  ; 1.20 V                    ;
+;     3.3-V LVTTL I/O Standard                ; 3.3 V                     ;
+;                                             ;                           ;
+; Auto computed junction temperature          ; 26.1 degrees Celsius      ;
+;     Ambient temperature                     ; 25.0 degrees Celsius      ;
+;     Junction-to-Case thermal resistance     ; 3.10 degrees Celsius/Watt ;
+;     Case-to-Heat Sink thermal resistance    ; 0.10 degrees Celsius/Watt ;
+;     Heat Sink-to-Ambient thermal resistance ; 2.80 degrees Celsius/Watt ;
+;                                             ;                           ;
+; Board model used                            ; None                      ;
++---------------------------------------------+---------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Thermal Power Dissipation by Block                                                                                                           ;
++------------+------------+---------------------+-----------------------------+--------------------------------+-------------------------------+
+; Block Name ; Block Type ; Total Thermal Power ; Block Thermal Dynamic Power ; Block Thermal Static Power (1) ; Routing Thermal Dynamic Power ;
++------------+------------+---------------------+-----------------------------+--------------------------------+-------------------------------+
+(1) The "Thermal Power Dissipation by Block" Table has been hidden. To show this table, please select the "Write power dissipation by block to report file" option under "PowerPlay Power Analyzer Settings".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Thermal Power Dissipation by Block Type                                                                                                                                                                            ;
++---------------------+-----------------------------------+-----------------------------+--------------------------------+-------------------------------+-----------------------------------------------------------+
+; Block Type          ; Total Thermal Power by Block Type ; Block Thermal Dynamic Power ; Block Thermal Static Power (1) ; Routing Thermal Dynamic Power ; Block Average Toggle Rate (millions of transitions / sec) ;
++---------------------+-----------------------------------+-----------------------------+--------------------------------+-------------------------------+-----------------------------------------------------------+
+; PLL                 ; 8.77 mW                           ; 8.77 mW                     ; --                             ; 0.00 mW                       ;   36.000                                                  ;
+; I/O                 ; 30.99 mW                          ; 17.74 mW                    ; 13.09 mW                       ; 0.16 mW                       ;    4.050                                                  ;
+; M4K                 ; 4.78 mW                           ; 4.69 mW                     ; --                             ; 0.09 mW                       ;    1.688                                                  ;
+; Combinational cell  ; 9.92 mW                           ; 4.79 mW                     ; --                             ; 5.13 mW                       ;    3.177                                                  ;
+; Register cell       ; 10.48 mW                          ; 4.96 mW                     ; --                             ; 5.52 mW                       ;    2.834                                                  ;
+; Clock control block ; 6.10 mW                           ; 0.00 mW                     ; --                             ; 6.10 mW                       ;   37.125                                                  ;
++---------------------+-----------------------------------+-----------------------------+--------------------------------+-------------------------------+-----------------------------------------------------------+
+(1) The "Block Thermal Static Power" for all block types except Pins and the Voltage Regulator, if one exists, is part of the "Core Static Thermal Power Dissipation" value found on the PowerPlay Power Analyzer-->Summary report panel. The "Core Static Thermal Power Dissipation" also contains the thermal static power dissipated by the routing.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Thermal Power Dissipation by Hierarchy                                                                                                                                                                                                                                                                     ;
++---------------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+-------------------------------------------------------------------------------------------------------------+
+; Compilation Hierarchy Node                  ; Total Thermal Power by Hierarchy (1) ; Block Thermal Dynamic Power (1) ; Block Thermal Static Power (1)(2) ; Routing Thermal Dynamic Power (1) ; Full Hierarchy Name                                                                                         ;
++---------------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+-------------------------------------------------------------------------------------------------------------+
+; |ARM_System                                 ; 71.03 mW (31.50 mW)                  ; 40.93 mW (17.80 mW)             ; 13.09 mW (13.09 mW)               ; 17.01 mW (0.61 mW)                ; |ARM_System                                                                                                 ;
+;     |Addr_Decoder:Decoder                   ; 0.02 mW (0.02 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ARM_System|Addr_Decoder:Decoder                                                                            ;
+;     |ram2port_inst_data:Inst_Data_Mem       ; 4.78 mW (0.00 mW)                    ; 4.69 mW (0.00 mW)               ; --                                ; 0.09 mW (0.00 mW)                 ; |ARM_System|ram2port_inst_data:Inst_Data_Mem                                                                ;
+;         |altsyncram:altsyncram_component    ; 4.78 mW (0.00 mW)                    ; 4.69 mW (0.00 mW)               ; --                                ; 0.09 mW (0.00 mW)                 ; |ARM_System|ram2port_inst_data:Inst_Data_Mem|altsyncram:altsyncram_component                                ;
+;             |altsyncram_i9b2:auto_generated ; 4.78 mW (4.78 mW)                    ; 4.69 mW (4.69 mW)               ; --                                ; 0.09 mW (0.09 mW)                 ; |ARM_System|ram2port_inst_data:Inst_Data_Mem|altsyncram:altsyncram_component|altsyncram_i9b2:auto_generated ;
+;     |TimerCounter:Timer                     ; 0.28 mW (0.28 mW)                    ; 0.22 mW (0.22 mW)               ; --                                ; 0.06 mW (0.06 mW)                 ; |ARM_System|TimerCounter:Timer                                                                              ;
+;     |miniUART:UART                          ; 0.42 mW (0.03 mW)                    ; 0.33 mW (0.02 mW)               ; --                                ; 0.09 mW (0.00 mW)                 ; |ARM_System|miniUART:UART                                                                                   ;
+;         |ClkUnit:ClkDiv                     ; 0.10 mW (0.10 mW)                    ; 0.08 mW (0.08 mW)               ; --                                ; 0.02 mW (0.02 mW)                 ; |ARM_System|miniUART:UART|ClkUnit:ClkDiv                                                                    ;
+;         |RxUnit:RxDev                       ; 0.18 mW (0.18 mW)                    ; 0.14 mW (0.14 mW)               ; --                                ; 0.04 mW (0.04 mW)                 ; |ARM_System|miniUART:UART|RxUnit:RxDev                                                                      ;
+;         |TxUnit:TxDev                       ; 0.12 mW (0.12 mW)                    ; 0.09 mW (0.09 mW)               ; --                                ; 0.03 mW (0.03 mW)                 ; |ARM_System|miniUART:UART|TxUnit:TxDev                                                                      ;
+;     |arm:arm_cpu                            ; 17.80 mW (0.01 mW)                   ; 8.12 mW (0.00 mW)               ; --                                ; 9.68 mW (0.01 mW)                 ; |ARM_System|arm:arm_cpu                                                                                     ;
+;         |floprc:DE_REG0                     ; 0.06 mW (0.06 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.04 mW (0.04 mW)                 ; |ARM_System|arm:arm_cpu|floprc:DE_REG0                                                                      ;
+;         |floprc:DE_REG1                     ; 0.03 mW (0.03 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.02 mW (0.02 mW)                 ; |ARM_System|arm:arm_cpu|floprc:DE_REG1                                                                      ;
+;         |floprc:DE_REG2                     ; 0.02 mW (0.02 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ARM_System|arm:arm_cpu|floprc:DE_REG2                                                                      ;
+;         |floprc:DE_REG3                     ; 0.13 mW (0.13 mW)                    ; 0.02 mW (0.02 mW)               ; --                                ; 0.10 mW (0.10 mW)                 ; |ARM_System|arm:arm_cpu|floprc:DE_REG3                                                                      ;
+;         |floprc:DE_REG4                     ; 0.02 mW (0.02 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.02 mW (0.02 mW)                 ; |ARM_System|arm:arm_cpu|floprc:DE_REG4                                                                      ;
+;         |floprc:DE_REG5                     ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|floprc:DE_REG5                                                                      ;
+;         |floprc:DE_REG6                     ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ARM_System|arm:arm_cpu|floprc:DE_REG6                                                                      ;
+;         |floprc:DE_REG7                     ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|floprc:DE_REG7                                                                      ;
+;         |floprc:DE_REG9                     ; 0.01 mW (0.01 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|floprc:DE_REG9                                                                      ;
+;         |floprc:DE_REG10                    ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|floprc:DE_REG10                                                                     ;
+;         |floprc:DE_REG11                    ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|floprc:DE_REG11                                                                     ;
+;         |floprc:DE_REG12                    ; 0.01 mW (0.01 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ARM_System|arm:arm_cpu|floprc:DE_REG12                                                                     ;
+;         |floprc:DE_REG13                    ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|floprc:DE_REG13                                                                     ;
+;         |flopr:DE_REG14                     ; 0.24 mW (0.24 mW)                    ; 0.19 mW (0.19 mW)               ; --                                ; 0.05 mW (0.05 mW)                 ; |ARM_System|arm:arm_cpu|flopr:DE_REG14                                                                      ;
+;         |flopr:DE_REG15                     ; 0.24 mW (0.24 mW)                    ; 0.20 mW (0.20 mW)               ; --                                ; 0.04 mW (0.04 mW)                 ; |ARM_System|arm:arm_cpu|flopr:DE_REG15                                                                      ;
+;         |flopr:DE_REG16                     ; 0.07 mW (0.07 mW)                    ; 0.07 mW (0.07 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ARM_System|arm:arm_cpu|flopr:DE_REG16                                                                      ;
+;         |flopr:DE_REG17                     ; 0.19 mW (0.19 mW)                    ; 0.14 mW (0.14 mW)               ; --                                ; 0.05 mW (0.05 mW)                 ; |ARM_System|arm:arm_cpu|flopr:DE_REG17                                                                      ;
+;         |flopr:DE_REG27                     ; 0.14 mW (0.14 mW)                    ; 0.13 mW (0.13 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ARM_System|arm:arm_cpu|flopr:DE_REG27                                                                      ;
+;         |flopr:DE_REG28                     ; 0.31 mW (0.31 mW)                    ; 0.09 mW (0.09 mW)               ; --                                ; 0.22 mW (0.22 mW)                 ; |ARM_System|arm:arm_cpu|flopr:DE_REG28                                                                      ;
+;         |flopr:DE_REG29                     ; 0.02 mW (0.02 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ARM_System|arm:arm_cpu|flopr:DE_REG29                                                                      ;
+;         |flopr:DE_REG30                     ; 0.10 mW (0.10 mW)                    ; 0.08 mW (0.08 mW)               ; --                                ; 0.02 mW (0.02 mW)                 ; |ARM_System|arm:arm_cpu|flopr:DE_REG30                                                                      ;
+;         |floprc:DE_REG31                    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|floprc:DE_REG31                                                                     ;
+;         |floprc:DE_REG32                    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|floprc:DE_REG32                                                                     ;
+;         |floprc:DE_REG33                    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|floprc:DE_REG33                                                                     ;
+;         |floprc:DE_REG34                    ; 0.02 mW (0.02 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.02 mW (0.02 mW)                 ; |ARM_System|arm:arm_cpu|floprc:DE_REG34                                                                     ;
+;         |floprc:DE_REG35                    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|floprc:DE_REG35                                                                     ;
+;         |flopr:DE_REG36                     ; 0.03 mW (0.03 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.02 mW (0.02 mW)                 ; |ARM_System|arm:arm_cpu|flopr:DE_REG36                                                                      ;
+;         |floprc:DE_REG37                    ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|floprc:DE_REG37                                                                     ;
+;         |floprc:DE_REG38                    ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|floprc:DE_REG38                                                                     ;
+;         |floprc:DE_REG39                    ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|floprc:DE_REG39                                                                     ;
+;         |flopr:DE_REG40                     ; 0.12 mW (0.12 mW)                    ; 0.10 mW (0.10 mW)               ; --                                ; 0.02 mW (0.02 mW)                 ; |ARM_System|arm:arm_cpu|flopr:DE_REG40                                                                      ;
+;         |floprc:DE_REG41                    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|floprc:DE_REG41                                                                     ;
+;         |floprc:DE_REG42                    ; 0.02 mW (0.02 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.02 mW (0.02 mW)                 ; |ARM_System|arm:arm_cpu|floprc:DE_REG42                                                                     ;
+;         |flopr:DE_REG43                     ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|flopr:DE_REG43                                                                      ;
+;         |floprc:EM_REG0                     ; 0.03 mW (0.03 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.02 mW (0.02 mW)                 ; |ARM_System|arm:arm_cpu|floprc:EM_REG0                                                                      ;
+;         |floprc:EM_REG2                     ; 0.04 mW (0.04 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.03 mW (0.03 mW)                 ; |ARM_System|arm:arm_cpu|floprc:EM_REG2                                                                      ;
+;         |floprc:EM_REG3                     ; 0.05 mW (0.05 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.04 mW (0.04 mW)                 ; |ARM_System|arm:arm_cpu|floprc:EM_REG3                                                                      ;
+;         |floprc:EM_REG4                     ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|floprc:EM_REG4                                                                      ;
+;         |floprc:EM_REG5                     ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|floprc:EM_REG5                                                                      ;
+;         |floprc:EM_REG6                     ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|floprc:EM_REG6                                                                      ;
+;         |flopr:EM_REG7                      ; 0.02 mW (0.02 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ARM_System|arm:arm_cpu|flopr:EM_REG7                                                                       ;
+;         |flopr:EM_REG8                      ; 0.73 mW (0.73 mW)                    ; 0.25 mW (0.25 mW)               ; --                                ; 0.48 mW (0.48 mW)                 ; |ARM_System|arm:arm_cpu|flopr:EM_REG8                                                                       ;
+;         |flopr:EM_REG9                      ; 0.27 mW (0.27 mW)                    ; 0.18 mW (0.18 mW)               ; --                                ; 0.09 mW (0.09 mW)                 ; |ARM_System|arm:arm_cpu|flopr:EM_REG9                                                                       ;
+;         |flopr:EM_REG10                     ; 0.03 mW (0.03 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.02 mW (0.02 mW)                 ; |ARM_System|arm:arm_cpu|flopr:EM_REG10                                                                      ;
+;         |flopr:EM_REG11                     ; 0.24 mW (0.24 mW)                    ; 0.13 mW (0.13 mW)               ; --                                ; 0.11 mW (0.11 mW)                 ; |ARM_System|arm:arm_cpu|flopr:EM_REG11                                                                      ;
+;         |flopr:EM_REG12                     ; 0.28 mW (0.28 mW)                    ; 0.20 mW (0.20 mW)               ; --                                ; 0.08 mW (0.08 mW)                 ; |ARM_System|arm:arm_cpu|flopr:EM_REG12                                                                      ;
+;         |flopr:EM_REG13                     ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|flopr:EM_REG13                                                                      ;
+;         |floprc:EM_REG14                    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|floprc:EM_REG14                                                                     ;
+;         |floprc:EM_REG15                    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|floprc:EM_REG15                                                                     ;
+;         |flopr:EM_REG16                     ; 0.26 mW (0.26 mW)                    ; 0.13 mW (0.13 mW)               ; --                                ; 0.13 mW (0.13 mW)                 ; |ARM_System|arm:arm_cpu|flopr:EM_REG16                                                                      ;
+;         |floprc:EM_REG17                    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|floprc:EM_REG17                                                                     ;
+;         |floprc:EM_REG18                    ; 0.02 mW (0.02 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.02 mW (0.02 mW)                 ; |ARM_System|arm:arm_cpu|floprc:EM_REG18                                                                     ;
+;         |floprc:EM_REG21                    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|floprc:EM_REG21                                                                     ;
+;         |flopensc:FD_REG0                   ; 0.89 mW (0.89 mW)                    ; 0.09 mW (0.09 mW)               ; --                                ; 0.80 mW (0.80 mW)                 ; |ARM_System|arm:arm_cpu|flopensc:FD_REG0                                                                    ;
+;         |flopr:FLUSH                        ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|flopr:FLUSH                                                                         ;
+;         |flopr:MW_REG0                      ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ARM_System|arm:arm_cpu|flopr:MW_REG0                                                                       ;
+;         |flopr:MW_REG1                      ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ARM_System|arm:arm_cpu|flopr:MW_REG1                                                                       ;
+;         |flopr:MW_REG2                      ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|flopr:MW_REG2                                                                       ;
+;         |flopr:MW_REG3                      ; 0.04 mW (0.04 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.04 mW (0.04 mW)                 ; |ARM_System|arm:arm_cpu|flopr:MW_REG3                                                                       ;
+;         |flopr:MW_REG4                      ; 0.68 mW (0.68 mW)                    ; 0.13 mW (0.13 mW)               ; --                                ; 0.55 mW (0.55 mW)                 ; |ARM_System|arm:arm_cpu|flopr:MW_REG4                                                                       ;
+;         |flopr:MW_REG5                      ; 0.78 mW (0.78 mW)                    ; 0.16 mW (0.16 mW)               ; --                                ; 0.62 mW (0.62 mW)                 ; |ARM_System|arm:arm_cpu|flopr:MW_REG5                                                                       ;
+;         |flopr:MW_REG6                      ; 0.07 mW (0.07 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.06 mW (0.06 mW)                 ; |ARM_System|arm:arm_cpu|flopr:MW_REG6                                                                       ;
+;         |flopr:MW_REG7                      ; 0.14 mW (0.14 mW)                    ; 0.12 mW (0.12 mW)               ; --                                ; 0.02 mW (0.02 mW)                 ; |ARM_System|arm:arm_cpu|flopr:MW_REG7                                                                       ;
+;         |flopr:MW_REG8                      ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ARM_System|arm:arm_cpu|flopr:MW_REG8                                                                       ;
+;         |flopr:MW_REG9                      ; 0.02 mW (0.02 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ARM_System|arm:arm_cpu|flopr:MW_REG9                                                                       ;
+;         |flopr:MW_REG10                     ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|flopr:MW_REG10                                                                      ;
+;         |flopr:MW_REG11                     ; 0.13 mW (0.13 mW)                    ; 0.10 mW (0.10 mW)               ; --                                ; 0.03 mW (0.03 mW)                 ; |ARM_System|arm:arm_cpu|flopr:MW_REG11                                                                      ;
+;         |flopr:MW_REG12                     ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ARM_System|arm:arm_cpu|flopr:MW_REG12                                                                      ;
+;         |flopr:MW_REG13                     ; 0.02 mW (0.02 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.02 mW (0.02 mW)                 ; |ARM_System|arm:arm_cpu|flopr:MW_REG13                                                                      ;
+;         |flopr:MW_REG14                     ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|flopr:MW_REG14                                                                      ;
+;         |controller:cont                    ; 0.02 mW (0.00 mW)                    ; 0.01 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|controller:cont                                                                     ;
+;             |aludec:adec                    ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|controller:cont|aludec:adec                                                         ;
+;             |dp_instrdec:didec              ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|controller:cont|dp_instrdec:didec                                                   ;
+;             |maindec:mdec                   ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|controller:cont|maindec:mdec                                                        ;
+;         |exLogic:exlogic                    ; 4.75 mW (0.31 mW)                    ; 1.83 mW (0.09 mW)               ; --                                ; 2.92 mW (0.22 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic                                                                     ;
+;             |armalu:alu                     ; 0.80 mW (0.00 mW)                    ; 0.36 mW (0.00 mW)               ; --                                ; 0.44 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu                                                          ;
+;                 |mux2:cinmux                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|mux2:cinmux                                              ;
+;                 |mux2:rsltmux2              ; 0.35 mW (0.35 mW)                    ; 0.16 mW (0.16 mW)               ; --                                ; 0.19 mW (0.19 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|mux2:rsltmux2                                            ;
+;                 |mux2:srcamux               ; 0.12 mW (0.12 mW)                    ; 0.05 mW (0.05 mW)               ; --                                ; 0.08 mW (0.08 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|mux2:srcamux                                             ;
+;                 |mux2:srcbmux               ; 0.12 mW (0.12 mW)                    ; 0.05 mW (0.05 mW)               ; --                                ; 0.08 mW (0.08 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|mux2:srcbmux                                             ;
+;                 |fadder:sum0                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum0                                              ;
+;                 |fadder:sum1                ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum1                                              ;
+;                 |fadder:sum2                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum2                                              ;
+;                 |fadder:sum3                ; 0.01 mW (0.01 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum3                                              ;
+;                 |fadder:sum4                ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum4                                              ;
+;                 |fadder:sum5                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum5                                              ;
+;                 |fadder:sum6                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum6                                              ;
+;                 |fadder:sum7                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum7                                              ;
+;                 |fadder:sum8                ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum8                                              ;
+;                 |fadder:sum9                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum9                                              ;
+;                 |fadder:sum10               ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum10                                             ;
+;                 |fadder:sum11               ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum11                                             ;
+;                 |fadder:sum12               ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum12                                             ;
+;                 |fadder:sum13               ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum13                                             ;
+;                 |fadder:sum14               ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum14                                             ;
+;                 |fadder:sum15               ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum15                                             ;
+;                 |fadder:sum16               ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum16                                             ;
+;                 |fadder:sum17               ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum17                                             ;
+;                 |fadder:sum18               ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum18                                             ;
+;                 |fadder:sum19               ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum19                                             ;
+;                 |fadder:sum20               ; 0.02 mW (0.02 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum20                                             ;
+;                 |fadder:sum21               ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum21                                             ;
+;                 |fadder:sum22               ; 0.02 mW (0.02 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum22                                             ;
+;                 |fadder:sum23               ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum23                                             ;
+;                 |fadder:sum24               ; 0.01 mW (0.01 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum24                                             ;
+;                 |fadder:sum25               ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum25                                             ;
+;                 |fadder:sum26               ; 0.01 mW (0.01 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum26                                             ;
+;                 |fadder:sum27               ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum27                                             ;
+;                 |fadder:sum28               ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum28                                             ;
+;                 |fadder:sum29               ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum29                                             ;
+;                 |fadder:sum30               ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum30                                             ;
+;                 |fadder:sum31               ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|armalu:alu|fadder:sum31                                             ;
+;             |mux2:alusrcamux                ; 0.21 mW (0.21 mW)                    ; 0.07 mW (0.07 mW)               ; --                                ; 0.14 mW (0.14 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|mux2:alusrcamux                                                     ;
+;             |mux4:cpsrrsltmux               ; 0.09 mW (0.09 mW)                    ; 0.06 mW (0.06 mW)               ; --                                ; 0.03 mW (0.03 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|mux4:cpsrrsltmux                                                    ;
+;             |conditionunit:cu               ; 0.01 mW (0.01 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|conditionunit:cu                                                    ;
+;             |mux4:datarsltmux               ; 0.10 mW (0.10 mW)                    ; 0.06 mW (0.06 mW)               ; --                                ; 0.04 mW (0.04 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|mux4:datarsltmux                                                    ;
+;             |mux2:fwdmuxEM4b                ; 0.15 mW (0.15 mW)                    ; 0.07 mW (0.07 mW)               ; --                                ; 0.08 mW (0.08 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|mux2:fwdmuxEM4b                                                     ;
+;             |mux2:fwdmuxEMcpsrf             ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|mux2:fwdmuxEMcpsrf                                                  ;
+;             |mux2:fwdmuxEMspsrc             ; 0.15 mW (0.15 mW)                    ; 0.06 mW (0.06 mW)               ; --                                ; 0.09 mW (0.09 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|mux2:fwdmuxEMspsrc                                                  ;
+;             |mux2:fwdmuxEMspsrf             ; 0.01 mW (0.01 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|mux2:fwdmuxEMspsrf                                                  ;
+;             |shifter:shft                   ; 2.37 mW (0.81 mW)                    ; 0.93 mW (0.33 mW)               ; --                                ; 1.44 mW (0.48 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|shifter:shft                                                        ;
+;                 |mux2:rtamtmux              ; 0.05 mW (0.05 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.04 mW (0.04 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|shifter:shft|mux2:rtamtmux                                          ;
+;                 |mux2:rtsrcmux              ; 0.13 mW (0.13 mW)                    ; 0.04 mW (0.04 mW)               ; --                                ; 0.09 mW (0.09 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|shifter:shft|mux2:rtsrcmux                                          ;
+;                 |mux2:shamtmux              ; 0.20 mW (0.20 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.17 mW (0.17 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|shifter:shft|mux2:shamtmux                                          ;
+;                 |shter00:shter00            ; 0.38 mW (0.38 mW)                    ; 0.16 mW (0.16 mW)               ; --                                ; 0.22 mW (0.22 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|shifter:shft|shter00:shter00                                        ;
+;                 |shter01:shter01            ; 0.35 mW (0.35 mW)                    ; 0.15 mW (0.15 mW)               ; --                                ; 0.20 mW (0.20 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|shifter:shft|shter01:shter01                                        ;
+;                 |shter10:shter10            ; 0.03 mW (0.03 mW)                    ; 0.02 mW (0.02 mW)               ; --                                ; 0.02 mW (0.02 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|shifter:shft|shter10:shter10                                        ;
+;                 |shter11:shter11            ; 0.43 mW (0.43 mW)                    ; 0.21 mW (0.21 mW)               ; --                                ; 0.22 mW (0.22 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|shifter:shft|shter11:shter11                                        ;
+;             |mux2:shtsrcamux                ; 0.52 mW (0.52 mW)                    ; 0.11 mW (0.11 mW)               ; --                                ; 0.41 mW (0.41 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|mux2:shtsrcamux                                                     ;
+;             |mux2:wamux                     ; 0.01 mW (0.01 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|exLogic:exlogic|mux2:wamux                                                          ;
+;         |hazardunit:hzu                     ; 0.09 mW (0.09 mW)                    ; 0.06 mW (0.06 mW)               ; --                                ; 0.03 mW (0.03 mW)                 ; |ARM_System|arm:arm_cpu|hazardunit:hzu                                                                      ;
+;         |mux2:hzuoutmux3                    ; 0.01 mW (0.01 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|mux2:hzuoutmux3                                                                     ;
+;         |idLogic:idlogic                    ; 1.90 mW (0.00 mW)                    ; 1.39 mW (0.00 mW)               ; --                                ; 0.52 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|idLogic:idlogic                                                                     ;
+;             |mux2:fwdmuxD1d                 ; 0.56 mW (0.56 mW)                    ; 0.42 mW (0.42 mW)               ; --                                ; 0.15 mW (0.15 mW)                 ; |ARM_System|arm:arm_cpu|idLogic:idlogic|mux2:fwdmuxD1d                                                      ;
+;             |mux2:fwdmuxD2d                 ; 0.59 mW (0.59 mW)                    ; 0.42 mW (0.42 mW)               ; --                                ; 0.17 mW (0.17 mW)                 ; |ARM_System|arm:arm_cpu|idLogic:idlogic|mux2:fwdmuxD2d                                                      ;
+;             |mux2:fwdmuxD3d                 ; 0.15 mW (0.15 mW)                    ; 0.10 mW (0.10 mW)               ; --                                ; 0.05 mW (0.05 mW)                 ; |ARM_System|arm:arm_cpu|idLogic:idlogic|mux2:fwdmuxD3d                                                      ;
+;             |mux2:fwdmuxD4d                 ; 0.57 mW (0.57 mW)                    ; 0.42 mW (0.42 mW)               ; --                                ; 0.15 mW (0.15 mW)                 ; |ARM_System|arm:arm_cpu|idLogic:idlogic|mux2:fwdmuxD4d                                                      ;
+;             |mux2:fwdmuxDWcpsrc             ; 0.02 mW (0.02 mW)                    ; 0.02 mW (0.02 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|idLogic:idlogic|mux2:fwdmuxDWcpsrc                                                  ;
+;             |mux2:fwdmuxDWcpsrf             ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|idLogic:idlogic|mux2:fwdmuxDWcpsrf                                                  ;
+;             |mux2:fwdmuxDWspsrc             ; 0.01 mW (0.01 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|idLogic:idlogic|mux2:fwdmuxDWspsrc                                                  ;
+;             |mux2:irqmux1                   ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|idLogic:idlogic|mux2:irqmux1                                                        ;
+;             |mux2:irqmux2                   ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|idLogic:idlogic|mux2:irqmux2                                                        ;
+;         |ifLogic:iflogic                    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|ifLogic:iflogic                                                                     ;
+;             |mux2:pcbrmux3                  ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|ifLogic:iflogic|mux2:pcbrmux3                                                       ;
+;         |intr_request:intr_req              ; 0.02 mW (0.02 mW)                    ; 0.02 mW (0.02 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|intr_request:intr_req                                                               ;
+;         |maLogic:malogic                    ; 0.57 mW (0.01 mW)                    ; 0.25 mW (0.00 mW)               ; --                                ; 0.31 mW (0.01 mW)                 ; |ARM_System|arm:arm_cpu|maLogic:malogic                                                                     ;
+;             |mux4:binmux                    ; 0.01 mW (0.01 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|maLogic:malogic|mux4:binmux                                                         ;
+;             |mux2:rsltmux                   ; 0.29 mW (0.29 mW)                    ; 0.14 mW (0.14 mW)               ; --                                ; 0.15 mW (0.15 mW)                 ; |ARM_System|arm:arm_cpu|maLogic:malogic|mux2:rsltmux                                                        ;
+;             |mux2:stbytemux                 ; 0.25 mW (0.25 mW)                    ; 0.10 mW (0.10 mW)               ; --                                ; 0.16 mW (0.16 mW)                 ; |ARM_System|arm:arm_cpu|maLogic:malogic|mux2:stbytemux                                                      ;
+;         |regfile:rf                         ; 3.74 mW (0.54 mW)                    ; 1.79 mW (0.13 mW)               ; --                                ; 1.95 mW (0.41 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf                                                                          ;
+;             |flopen:R0                      ; 0.13 mW (0.13 mW)                    ; 0.07 mW (0.07 mW)               ; --                                ; 0.06 mW (0.06 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopen:R0                                                                ;
+;             |flopen:R1                      ; 0.13 mW (0.13 mW)                    ; 0.06 mW (0.06 mW)               ; --                                ; 0.07 mW (0.07 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopen:R1                                                                ;
+;             |flopen:R2                      ; 0.11 mW (0.11 mW)                    ; 0.05 mW (0.05 mW)               ; --                                ; 0.06 mW (0.06 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopen:R2                                                                ;
+;             |flopen:R3                      ; 0.12 mW (0.12 mW)                    ; 0.06 mW (0.06 mW)               ; --                                ; 0.06 mW (0.06 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopen:R3                                                                ;
+;             |flopen:R4                      ; 0.13 mW (0.13 mW)                    ; 0.07 mW (0.07 mW)               ; --                                ; 0.06 mW (0.06 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopen:R4                                                                ;
+;             |flopen:R5                      ; 0.11 mW (0.11 mW)                    ; 0.05 mW (0.05 mW)               ; --                                ; 0.07 mW (0.07 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopen:R5                                                                ;
+;             |flopen:R6                      ; 0.11 mW (0.11 mW)                    ; 0.05 mW (0.05 mW)               ; --                                ; 0.06 mW (0.06 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopen:R6                                                                ;
+;             |flopen:R7                      ; 0.12 mW (0.12 mW)                    ; 0.05 mW (0.05 mW)               ; --                                ; 0.07 mW (0.07 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopen:R7                                                                ;
+;             |flopen:R8                      ; 0.14 mW (0.14 mW)                    ; 0.07 mW (0.07 mW)               ; --                                ; 0.06 mW (0.06 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopen:R8                                                                ;
+;             |flopen:R9                      ; 0.12 mW (0.12 mW)                    ; 0.06 mW (0.06 mW)               ; --                                ; 0.06 mW (0.06 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopen:R9                                                                ;
+;             |flopen:R10                     ; 0.11 mW (0.11 mW)                    ; 0.06 mW (0.06 mW)               ; --                                ; 0.05 mW (0.05 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopen:R10                                                               ;
+;             |flopen:R11                     ; 0.13 mW (0.13 mW)                    ; 0.06 mW (0.06 mW)               ; --                                ; 0.07 mW (0.07 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopen:R11                                                               ;
+;             |flopen:R12                     ; 0.13 mW (0.13 mW)                    ; 0.07 mW (0.07 mW)               ; --                                ; 0.06 mW (0.06 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopen:R12                                                               ;
+;             |flopen:R13                     ; 0.07 mW (0.07 mW)                    ; 0.05 mW (0.05 mW)               ; --                                ; 0.02 mW (0.02 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopen:R13                                                               ;
+;             |flopen:R13_irq                 ; 0.05 mW (0.05 mW)                    ; 0.05 mW (0.05 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopen:R13_irq                                                           ;
+;             |flopen:R13_svc                 ; 0.04 mW (0.04 mW)                    ; 0.04 mW (0.04 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopen:R13_svc                                                           ;
+;             |flopen:R14                     ; 0.06 mW (0.06 mW)                    ; 0.05 mW (0.05 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopen:R14                                                               ;
+;             |flopen:R14_irq                 ; 0.05 mW (0.05 mW)                    ; 0.04 mW (0.04 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopen:R14_irq                                                           ;
+;             |flopen:R14_svc                 ; 0.05 mW (0.05 mW)                    ; 0.04 mW (0.04 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopen:R14_svc                                                           ;
+;             |flopenr:R15                    ; 0.59 mW (0.59 mW)                    ; 0.13 mW (0.13 mW)               ; --                                ; 0.46 mW (0.46 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopenr:R15                                                              ;
+;             |flopenr:SPSR_irq_FLAG          ; 0.02 mW (0.02 mW)                    ; 0.02 mW (0.02 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopenr:SPSR_irq_FLAG                                                    ;
+;             |flopenr:SPSR_irq_IBIT          ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopenr:SPSR_irq_IBIT                                                    ;
+;             |flopenr:SPSR_irq_MODE          ; 0.02 mW (0.02 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopenr:SPSR_irq_MODE                                                    ;
+;             |flopenr:SPSR_svc_FLAG          ; 0.01 mW (0.01 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopenr:SPSR_svc_FLAG                                                    ;
+;             |flopenr:SPSR_svc_IBIT          ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopenr:SPSR_svc_IBIT                                                    ;
+;             |flopenr:SPSR_svc_MODE          ; 0.01 mW (0.01 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|flopenr:SPSR_svc_MODE                                                    ;
+;             |decoder4_16:bregselector       ; 0.01 mW (0.01 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|decoder4_16:bregselector                                                 ;
+;             |decoder4_16:regselector        ; 0.09 mW (0.09 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.08 mW (0.08 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|decoder4_16:regselector                                                  ;
+;             |mux2:wdmux0                    ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|mux2:wdmux0                                                              ;
+;             |mux2:wdmux1                    ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|mux2:wdmux1                                                              ;
+;             |mux2:wdmux2                    ; 0.04 mW (0.04 mW)                    ; 0.04 mW (0.04 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|mux2:wdmux2                                                              ;
+;             |mux2:wdmux3                    ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|mux2:wdmux3                                                              ;
+;             |mux2:wdmux4                    ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|mux2:wdmux4                                                              ;
+;             |mux2:wdmux5                    ; 0.02 mW (0.02 mW)                    ; 0.02 mW (0.02 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|mux2:wdmux5                                                              ;
+;             |mux2:wdmux6                    ; 0.04 mW (0.04 mW)                    ; 0.04 mW (0.04 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|mux2:wdmux6                                                              ;
+;             |mux2:wdmux7                    ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|mux2:wdmux7                                                              ;
+;             |mux2:wdmux8                    ; 0.02 mW (0.02 mW)                    ; 0.02 mW (0.02 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|mux2:wdmux8                                                              ;
+;             |mux2:wdmux9                    ; 0.02 mW (0.02 mW)                    ; 0.02 mW (0.02 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|mux2:wdmux9                                                              ;
+;             |mux2:wdmux10                   ; 0.02 mW (0.02 mW)                    ; 0.02 mW (0.02 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|mux2:wdmux10                                                             ;
+;             |mux2:wdmux11                   ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|mux2:wdmux11                                                             ;
+;             |mux2:wdmux12                   ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|mux2:wdmux12                                                             ;
+;             |mux2:wdmux13                   ; 0.10 mW (0.10 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.07 mW (0.07 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|mux2:wdmux13                                                             ;
+;             |mux2:wdmux14                   ; 0.09 mW (0.09 mW)                    ; 0.02 mW (0.02 mW)               ; --                                ; 0.06 mW (0.06 mW)                 ; |ARM_System|arm:arm_cpu|regfile:rf|mux2:wdmux14                                                             ;
+;     |ALTPLL_clkgen:pll0                     ; 14.72 mW (0.00 mW)                   ; 8.77 mW (0.00 mW)               ; --                                ; 5.95 mW (0.00 mW)                 ; |ARM_System|ALTPLL_clkgen:pll0                                                                              ;
+;         |altpll:altpll_component            ; 14.72 mW (14.72 mW)                  ; 8.77 mW (8.77 mW)               ; --                                ; 5.95 mW (5.95 mW)                 ; |ARM_System|ALTPLL_clkgen:pll0|altpll:altpll_component                                                      ;
+;     |GPIO:uGPIO                             ; 1.51 mW (0.86 mW)                    ; 1.00 mW (0.35 mW)               ; --                                ; 0.51 mW (0.50 mW)                 ; |ARM_System|GPIO:uGPIO                                                                                      ;
+;         |key_detect:key1                    ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|GPIO:uGPIO|key_detect:key1                                                                      ;
+;         |key_detect:key2                    ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|GPIO:uGPIO|key_detect:key2                                                                      ;
+;         |key_detect:key3                    ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|GPIO:uGPIO|key_detect:key3                                                                      ;
+;         |key_detect:sw0                     ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|GPIO:uGPIO|key_detect:sw0                                                                       ;
+;         |key_detect:sw1                     ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|GPIO:uGPIO|key_detect:sw1                                                                       ;
+;         |key_detect:sw2                     ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|GPIO:uGPIO|key_detect:sw2                                                                       ;
+;         |key_detect:sw3                     ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|GPIO:uGPIO|key_detect:sw3                                                                       ;
+;         |key_detect:sw4                     ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|GPIO:uGPIO|key_detect:sw4                                                                       ;
+;         |key_detect:sw5                     ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|GPIO:uGPIO|key_detect:sw5                                                                       ;
+;         |key_detect:sw6                     ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|GPIO:uGPIO|key_detect:sw6                                                                       ;
+;         |key_detect:sw7                     ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|GPIO:uGPIO|key_detect:sw7                                                                       ;
+;         |key_detect:sw8                     ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|GPIO:uGPIO|key_detect:sw8                                                                       ;
+;         |key_detect:sw9                     ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|GPIO:uGPIO|key_detect:sw9                                                                       ;
+;         |key_detect:sw10                    ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|GPIO:uGPIO|key_detect:sw10                                                                      ;
+;         |key_detect:sw11                    ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|GPIO:uGPIO|key_detect:sw11                                                                      ;
+;         |key_detect:sw12                    ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|GPIO:uGPIO|key_detect:sw12                                                                      ;
+;         |key_detect:sw13                    ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|GPIO:uGPIO|key_detect:sw13                                                                      ;
+;         |key_detect:sw14                    ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|GPIO:uGPIO|key_detect:sw14                                                                      ;
+;         |key_detect:sw15                    ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|GPIO:uGPIO|key_detect:sw15                                                                      ;
+;         |key_detect:sw16                    ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|GPIO:uGPIO|key_detect:sw16                                                                      ;
+;         |key_detect:sw17                    ; 0.03 mW (0.03 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ARM_System|GPIO:uGPIO|key_detect:sw17                                                                      ;
++---------------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+-------------------------------------------------------------------------------------------------------------+
+(1) Value in parentheses is the power consumed at that level of hierarchy. Value not in parentheses is the power consumed at that level of hierarchy plus the power consumed by all levels of hierarchy below it.
+
+(2) The "Block Thermal Static Power" for all levels of hierarchy except the top-level hierarchy is part of the "Core Static Thermal Power Dissipation" value found on the PowerPlay Power Analyzer-->Summary report panel. The "Core Static Thermal Power Dissipation" also contains the thermal static power dissipated by the routing.
+
+
++-----------------------------------------------------------------------------------------------------+
+; Core Dynamic Thermal Power Dissipation by Clock Domain                                              ;
++--------------------------------------------------+-----------------------+--------------------------+
+; Clock Domain                                     ; Clock Frequency (MHz) ; Total Core Dynamic Power ;
++--------------------------------------------------+-----------------------+--------------------------+
+; ALTPLL_clkgen:pll0|altpll:altpll_component|_clk0 ; 27.00                 ; 33.69                    ;
+; ALTPLL_clkgen:pll0|altpll:altpll_component|_clk1 ; 27.00                 ; 6.51                     ;
+; CLOCK_27                                         ; 27.00                 ; 0.00                     ;
++--------------------------------------------------+-----------------------+--------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Current Drawn from Voltage Supplies Summary                                                                                        ;
++----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+; Voltage Supply ; Total Current Drawn (1) ; Dynamic Current Drawn (1) ; Static Current Drawn (1) ; Minimum Power Supply Current (2) ;
++----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+; VCCINT         ; 107.57 mA               ; 33.86 mA                  ; 73.70 mA                 ; 107.57 mA                        ;
+; VCCIO          ; 15.64 mA                ; 5.22 mA                   ; 10.42 mA                 ; 15.64 mA                         ;
++----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+(1) Currents reported in columns "Total Current Drawn", "Dynamic Current Drawn", and "Static Current Drawn" are sufficient for user operation of the device.  
+(2) Currents reported in column "Minimum Power Supply Current" are sufficient for  power-up, configuration, and user operation of the device.
+
+
++-----------------------------------------------------------------------------------------------+
+; VCCIO Supply Current Drawn by I/O Bank                                                        ;
++----------+---------------+---------------------+-----------------------+----------------------+
+; I/O Bank ; VCCIO Voltage ; Total Current Drawn ; Dynamic Current Drawn ; Static Current Drawn ;
++----------+---------------+---------------------+-----------------------+----------------------+
+; 1        ; 3.3V          ; 2.42 mA             ; 0.99 mA               ; 1.44 mA              ;
+; 2        ; 3.3V          ; 1.94 mA             ; 0.63 mA               ; 1.30 mA              ;
+; 3        ; 3.3V          ; 1.18 mA             ; 0.04 mA               ; 1.15 mA              ;
+; 4        ; 3.3V          ; 1.15 mA             ; 0.00 mA               ; 1.15 mA              ;
+; 5        ; 3.3V          ; 1.27 mA             ; 0.07 mA               ; 1.20 mA              ;
+; 6        ; 3.3V          ; 2.66 mA             ; 1.21 mA               ; 1.45 mA              ;
+; 7        ; 3.3V          ; 2.91 mA             ; 1.47 mA               ; 1.44 mA              ;
+; 8        ; 3.3V          ; 2.11 mA             ; 0.80 mA               ; 1.30 mA              ;
++----------+---------------+---------------------+-----------------------+----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; VCCIO Supply Current Drawn by Voltage                                                                                             ;
++---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+; VCCIO Voltage ; Total Current Drawn (1) ; Dynamic Current Drawn (1) ; Static Current Drawn (1) ; Minimum Power Supply Current (2) ;
++---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+; 3.3V          ; 15.64 mA                ; 5.22 mA                   ; 10.42 mA                 ; 15.64 mA                         ;
++---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+(1) Currents reported in columns "Total Current Drawn", "Dynamic Current Drawn", and "Static Current Drawn" are sufficient for user operation of the device.  
+(2) Currents reported in column "Minimum Power Supply Current" are sufficient for  power-up, configuration, and user operation of the device.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Confidence Metric Details                                                                                                                          ;
++----------------------------------------------------------------------------------------+--------------+------------+---------------+---------------+
+; Data Source                                                                            ; Total        ; Pin        ; Registered    ; Combinational ;
++----------------------------------------------------------------------------------------+--------------+------------+---------------+---------------+
+; Simulation (from file)                                                                 ;              ;            ;               ;               ;
+;     -- Number of signals with Toggle Rate from Simulation                              ; 0 (0.0%)     ; 0 (0.0%)   ; 0 (0.0%)      ; 0 (0.0%)      ;
+;     -- Number of signals with Static Probability from Simulation                       ; 0 (0.0%)     ; 0 (0.0%)   ; 0 (0.0%)      ; 0 (0.0%)      ;
+;                                                                                        ;              ;            ;               ;               ;
+; Node, entity or clock assignment                                                       ;              ;            ;               ;               ;
+;     -- Number of signals with Toggle Rate from Node, entity or clock assignment        ; 3 (0.0%)     ; 1 (0.9%)   ; 0 (0.0%)      ; 2 (0.0%)      ;
+;     -- Number of signals with Static Probability from Node, entity or clock assignment ; 3 (0.0%)     ; 1 (0.9%)   ; 0 (0.0%)      ; 2 (0.0%)      ;
+;                                                                                        ;              ;            ;               ;               ;
+; Vectorless estimation                                                                  ;              ;            ;               ;               ;
+;     -- Number of signals with Toggle Rate from Vectorless estimation                   ; 6847 (99.6%) ; 85 (76.6%) ; 1850 (100.0%) ; 4912 (100.0%) ;
+;     -- Number of signals with Zero toggle rate, from Vectorless estimation             ; 19 (0.3%)    ; 1 (0.9%)   ; 8 (0.4%)      ; 10 (0.2%)     ;
+;     -- Number of signals with Static Probability from Vectorless estimation            ; 6847 (99.6%) ; 85 (76.6%) ; 1850 (100.0%) ; 4912 (100.0%) ;
+;                                                                                        ;              ;            ;               ;               ;
+; Default assignment                                                                     ;              ;            ;               ;               ;
+;     -- Number of signals with Toggle Rate from Default assignment                      ; 23 (0.3%)    ; 23 (20.7%) ; 0 (0.0%)      ; 0 (0.0%)      ;
+;     -- Number of signals with Static Probability from Default assignment               ; 25 (0.4%)    ; 25 (22.5%) ; 0 (0.0%)      ; 0 (0.0%)      ;
+;                                                                                        ;              ;            ;               ;               ;
+; Assumed 0                                                                              ;              ;            ;               ;               ;
+;     -- Number of signals with Toggle Rate assumed 0                                    ; 2 (0.0%)     ; 2 (1.8%)   ; 0 (0.0%)      ; 0 (0.0%)      ;
++----------------------------------------------------------------------------------------+--------------+------------+---------------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Activities                                                                                                                           ;
++--------+------+---------------------------------------------+-------------------------+--------------------+--------------------------------+
+; Signal ; Type ; Toggle Rate (millions of transitions / sec) ; Toggle Rate Data Source ; Static Probability ; Static Probability Data Source ;
++--------+------+---------------------------------------------+-------------------------+--------------------+--------------------------------+
+(1) The "Signal Activity" Table has been hidden. To show this table, please select the "Write signal activities to report file" option under "PowerPlay Power Analyzer Settings".
+
+
++-----------------------------------+
+; PowerPlay Power Analyzer Messages ;
++-----------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II PowerPlay Power Analyzer
+    Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
+    Info: Processing started: Sat Nov 27 01:23:02 2010
+Info: Command: quartus_pow --read_settings_files=on --write_settings_files=off ARM_System -c ARM_System
+Info: Low junction temperature is 0 degrees C
+Info: High junction temperature is 85 degrees C
+Info: Starting Vectorless Power Activity Estimation
+Info: Completed Vectorless Power Activity Estimation
+Warning: No board thermal model was selected.  Analyzing without board thermal modeling.
+Warning: Found 84 output pins without output pin load capacitance assignment
+    Warning: Pin "UART_TXD" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX7[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX7[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX7[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX7[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX7[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX7[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX7[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX6[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX6[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX6[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX6[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX6[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX6[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX6[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX5[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX5[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX5[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX5[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX5[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX5[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX5[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX4[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX4[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX4[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX4[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX4[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX4[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX4[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX3[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX3[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX3[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX3[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX3[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX3[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX3[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX2[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX2[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX2[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX2[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX2[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX2[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX2[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX1[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX1[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX1[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX1[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX1[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX1[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX1[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX0[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX0[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX0[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX0[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX0[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX0[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "HEX0[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDR[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDR[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDR[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDR[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDR[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDR[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDR[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDR[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDR[8]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDR[9]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDR[10]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDR[11]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDR[12]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDR[13]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDR[14]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDR[15]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDR[16]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDR[17]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDG[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDG[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDG[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDG[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDG[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDG[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDG[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDG[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "LEDG[8]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+Info: Average toggle rate for this design is 3.117 millions of transitions / sec
+Info: Total thermal power estimate for the design is 180.77 mW
+Info: Quartus II PowerPlay Power Analyzer was successful. 0 errors, 86 warnings
+    Info: Peak virtual memory: 197 megabytes
+    Info: Processing ended: Sat Nov 27 01:23:13 2010
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:06
+
+

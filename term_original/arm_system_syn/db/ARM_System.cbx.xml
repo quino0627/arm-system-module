@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="ARM_System">
+		<CBX_INST_ENTRY INSTANCE_NAME="|ARM_System|ram2port_inst_data:Inst_Data_Mem|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_a5d2.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

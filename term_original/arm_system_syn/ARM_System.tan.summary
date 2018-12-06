@@ -1,0 +1,86 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 7.624 ns
+From           : UART_RXD
+To             : miniUART:UART|RxUnit:RxDev|SampleCnt[3]
+From Clock     : --
+To Clock       : CLOCK_27
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 7.151 ns
+From           : GPIO:uGPIO|HEX4_R[6]
+To             : HEX4[6]
+From Clock     : CLOCK_27
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -1.774 ns
+From           : SW[0]
+To             : GPIO:uGPIO|key_detect:sw0|c_state.S1
+From Clock     : --
+To Clock       : CLOCK_27
+Failed Paths   : 0
+
+Type           : Clock Setup: 'ALTPLL_clkgen:pll0|altpll:altpll_component|_clk1'
+Slack          : 4.303 ns
+Required Time  : 10.00 MHz ( period = 100.000 ns )
+Actual Time    : N/A
+From           : armreduced:arm_cpu|ControlUnit:controlunit|MemtoReg
+To             : armreduced:arm_cpu|RegisterFile:registerfile|Rf[11][6]
+From Clock     : ALTPLL_clkgen:pll0|altpll:altpll_component|_clk0
+To Clock       : ALTPLL_clkgen:pll0|altpll:altpll_component|_clk1
+Failed Paths   : 0
+
+Type           : Clock Setup: 'ALTPLL_clkgen:pll0|altpll:altpll_component|_clk0'
+Slack          : 19.901 ns
+Required Time  : 10.00 MHz ( period = 100.000 ns )
+Actual Time    : N/A
+From           : armreduced:arm_cpu|PC[8]
+To             : ram2port_inst_data:Inst_Data_Mem|altsyncram:altsyncram_component|altsyncram_a5d2:auto_generated|ram_block1a12~porta_address_reg6
+From Clock     : ALTPLL_clkgen:pll0|altpll:altpll_component|_clk1
+To Clock       : ALTPLL_clkgen:pll0|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Clock Hold: 'ALTPLL_clkgen:pll0|altpll:altpll_component|_clk0'
+Slack          : -9.945 ns
+Required Time  : 10.00 MHz ( period = 100.000 ns )
+Actual Time    : N/A
+From           : armreduced:arm_cpu|ALU:alu|ALUFlags
+To             : armreduced:arm_cpu|ControlUnit:controlunit|MemWrite
+From Clock     : ALTPLL_clkgen:pll0|altpll:altpll_component|_clk0
+To Clock       : ALTPLL_clkgen:pll0|altpll:altpll_component|_clk0
+Failed Paths   : 2901
+
+Type           : Clock Hold: 'ALTPLL_clkgen:pll0|altpll:altpll_component|_clk1'
+Slack          : 0.527 ns
+Required Time  : 10.00 MHz ( period = 100.000 ns )
+Actual Time    : N/A
+From           : armreduced:arm_cpu|PC[31]
+To             : armreduced:arm_cpu|PC[31]
+From Clock     : ALTPLL_clkgen:pll0|altpll:altpll_component|_clk1
+To Clock       : ALTPLL_clkgen:pll0|altpll:altpll_component|_clk1
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 2901
+
+--------------------------------------------------------------------------------------
+

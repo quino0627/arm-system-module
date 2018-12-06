@@ -1,0 +1,12 @@
+PowerPlay Power Analyzer Status : Successful - Sat Nov 27 01:23:12 2010
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Web Edition
+Revision Name : ARM_System
+Top-level Entity Name : ARM_System
+Family : Cyclone II
+Device : EP2C35F672C6
+Power Models : Final
+Total Thermal Power Dissipation : 180.77 mW
+Core Dynamic Thermal Power Dissipation : 40.20 mW
+Core Static Thermal Power Dissipation : 80.16 mW
+I/O Thermal Power Dissipation : 60.41 mW
+Power Estimation Confidence : Low: user provided insufficient toggle rate data
